@@ -1,18 +1,18 @@
-![myInstallScript](https://sirenacorp.be/wp-content/uploads/2016/01/logo-1.png)
+![myInstallScript](https://makotonoblog.be/wp-content/uploads/2016/01/logo-1.png)
 
-Yggdrasil for Linux Mint 18
-===========================
+Yggdrasil NG
+============
 
-Warnings : this is a Beta version under dev !! However, the script is fully functional ;-)
+Warnings : this is a early alpha version under dev !!
 
-The purpose of this script is to provide a full set of tools to install, customize and tweak a fresh installation of Linux Mint 18.x (MATE, x86_64)
+The purpose of this script is to provide a full set of tools to install, customize and tweak a fresh installation of Linux Mint 18.x, Ubuntu 16.04 and derivatives
 
 Installation
 ------------
 
 ```
-git clone https://github.com/shakasan/Yggdrasil_LM18.git
-cd Yggdrasil_LM18
+git clone https://github.com/shakasan/yggdrasil_ng.git
+cd yggdrasil_ng
 chmod +x yggdrasil.sh
 ./yggdrasil.sh
 ```
@@ -20,10 +20,10 @@ chmod +x yggdrasil.sh
 Credits
 -------
 
-This script has been written by Francois B. (Makotosan/Shakasan)
+This script has been written by Francois B. (Makotosan)
 
 * Email : shakasan@sirenacorp.be
-* Website : https://sirenacorp.be/
+* Website : https://makotonoblog.be/
 
 Licence
 -------
