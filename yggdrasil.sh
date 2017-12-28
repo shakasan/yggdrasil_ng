@@ -2623,7 +2623,6 @@ uname -m
 #deCheck
 #depCheck
 
-# Useless by itself, but is used to don't be annoyed later in the script
 # NEVER run the script as root or with sudo !!!!
 if ! [ "$UID" -ne "0" ]; then
   printf "\n"
@@ -2631,6 +2630,8 @@ if ! [ "$UID" -ne "0" ]; then
   printf "\n\n"
   exit
 fi
+
+# Useless by itself, but is used to don't be annoyed later in the script
 sudo echo
 
 pressKey
