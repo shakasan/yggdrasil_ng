@@ -679,6 +679,13 @@ function updateSystem () {
   ret_code=$?
   retCode $ret_code
   printf "\n"
+
+  printf "[SNAP] refresh "
+  printf "\n[SNAP] refresh\n" &>> $logFile
+  sudo snap refresh &>> $logFile
+  ret_code=$?
+  retCode $ret_code
+  printf "\n"
 }
 
 #
@@ -743,10 +750,23 @@ function addRepo () {
 }
 
 #
+# install package manually
+# input : url of package, package name
+#
+function installPackageDpkg () {
+  runCmd "cd /tmp"
+  printf "\n"
+  runCmd "wget -q -O $2 $1 && sudo dpkg -i $2 "
+  printf "\n"
+  runCmd "sudo apt-get install -fy"
+  printf "\n"
+}
+
+#
 # install package from repositories
 # input : package manager, package name
-# package manager available : apt, pip, npm, gem
-# TODO: add apm, snap, flatpak, umake
+# package manager available : apt, pip, npm, gem, snap
+# TODO: add apm, flatpak, umake?
 #
 function installPackage () {
   typeset pkg="$*"
@@ -804,6 +824,20 @@ function installPackage () {
       installPackage apt "ruby-dev"
     fi
     ;;
+  "snap")
+    if which snap >/dev/null; then
+      printf "[SNAP] Installing by $* "
+      printf "\n[SNAP] installing by $*\n" &>> $logFile
+      sudo snap install $* &>> $logFile
+      ret_code=$?
+      retCode $ret_code
+      printf "\n"
+    else
+      printf "[ERR] snap not found, installing...\n"
+      printf "\n[ERR] snap not found, installing...\n" &>> $logFile
+      installPackage apt "snapd"
+    fi
+    ;;
   esac
 }
 
@@ -827,6 +861,9 @@ function checkAndInstallDep () {
         ;;
       "gem")
         installPackage gem $2
+        ;;
+      "snap")
+        installPackage snap $2
         ;;
     esac
   fi
@@ -909,48 +946,67 @@ function addRequiredPPA () {
   addPPA "ppa:ansible/ansible" # ansiaddmsg "Adding Opera repository"
 
   addKey "http://deb.opera.com/archive.key"
-  addRepo opera.list "deb http://deb.opera.com/opera-stable/ stable non-free"
+  addRepo opera.list \
+          "deb http://deb.opera.com/opera-stable/ stable non-free"
 
   addKey "https://dl.google.com/linux/linux_signing_key.pub"
-  addRepo google-chrome.list "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+  addRepo google-chrome.list \
+          "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
   addKey "https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key"
-  addRepo insync.list "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
+  addRepo insync.list \
+          "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
 
-  addKey "hkp://p80.pool.sks-keyservers.net:80" "58118E89F3A912897C070ADBF76221572C52609D"
-  addRepo docker.list "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+  addKey "hkp://p80.pool.sks-keyservers.net:80" \
+          "58118E89F3A912897C070ADBF76221572C52609D"
+  addRepo docker.list \
+          "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
 
   addKey "https://syncthing.net/release-key.txt"
-  addRepo syncthing.list "deb http://apt.syncthing.net/ syncthing release"
+  addRepo syncthing.list \
+          "deb http://apt.syncthing.net/ syncthing release"
 
   addKey "http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_16.04/Release.key"
-  addRepo owncloud-client.list "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/ /"
+  addRepo owncloud-client.list \
+          "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/ /"
 
   addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
-  addRepo mkv.list "deb http://mkvtoolnix.download/ubuntu/xenial/ ./" "deb-src http://mkvtoolnix.download/ubuntu/xenial/ ./ "
+  addRepo mkv.list \
+          "deb http://mkvtoolnix.download/ubuntu/xenial/ ./" \
+          "deb-src http://mkvtoolnix.download/ubuntu/xenial/ ./ "
 
   addKey "https://jgeboski.github.io/obs.key"
-  addRepo jgeboski.list "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
+  addRepo jgeboski.list \
+          "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
 
-  addKey "hkp://keyserver.ubuntu.com:80" "BBEBDCB318AD50EC6865090613B00F1FD2C19886"
-  addRepo spotify.list "deb http://repository.spotify.com stable non-free"
+  addKey "hkp://keyserver.ubuntu.com:80" \
+         "BBEBDCB318AD50EC6865090613B00F1FD2C19886"
+  addRepo spotify.list \
+          "deb http://repository.spotify.com stable non-free"
 
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
-  addRepo virtualbox.list "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+  addRepo virtualbox.list \
+          "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
 
   addKey "http://archive.getdeb.net/getdeb-archive.key"
-  addRepo getdeb.list "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps games"
+  addRepo getdeb.list \
+          "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps games"
 
   addKey "http://repo.vivaldi.com/stable/linux_signing_key.pub"
-  addKey "keyserver.ubuntu.com" "1397BC53640DB551"
-  addRepo vivaldi.list "deb http://repo.vivaldi.com/stable/deb/ stable main "
+  addKey "keyserver.ubuntu.com" \
+         "1397BC53640DB551"
+  addRepo vivaldi.list \
+          "deb http://repo.vivaldi.com/stable/deb/ stable main "
 
   addKey "https://download.sublimetext.com/sublimehq-pub.gpg"
-  addRepo sublime-text.list "deb https://download.sublimetext.com/ apt/dev/"
+  addRepo sublime-text.list \
+          "deb https://download.sublimetext.com/ apt/dev/"
 
-  addKey "hkp://pgp.mit.edu:80" "379CE192D401AB61"
-  addRepo etcher.list "deb https://dl.bintray.com/resin-io/debian stable etcher"
+  addKey "hkp://pgp.mit.edu:80" \
+         "379CE192D401AB61"
+  addRepo etcher.list \
+          "deb https://dl.bintray.com/resin-io/debian stable etcher"
 
   updateSystem
 }
@@ -1972,16 +2028,21 @@ function installCADMenu () {
   installAppsFromListMenu cad
 }
 
-#TODO:
-function installTeamViewer12 () {
-  cd /tmp
+#
+# install Teamviewer 13 (headless)
+#
+function installTeamViewer13 () {
+  msg "Install Teamviewer 13"
+  installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
+                     teamviewer12.deb
+}
 
-  msg "Downloading Teamviewer 12"
-  wget -O teamviewer12.deb https://download.teamviewer.com/download/teamviewer_i386.deb
-
-  msg "Installing Teamviewer 12"
-  sudo dpkg -i teamviewer12.deb
-  sudo apt-get install -fy
+#
+# install Teamviewer 13 (Menu)
+#
+function installTeamViewer13 () {
+  installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
+                     teamviewer12.deb
 }
 
 #
@@ -2007,8 +2068,7 @@ function enableUFW () {
   runCmd "sudo ufw enable"
 
   if which syncthing >/dev/null; then
-    msg "UFW Rules added for Syncthing"
-    sudo ufw allow syncthing
+    runCmd "sudo ufw allow syncthing"
   fi
 }
 
@@ -2034,25 +2094,36 @@ function enableNumLockX () {
   fi
 }
 
-#TODO:
+#
+# /tmp in RAM by modifying /etc/fstab
+#
 function enableTmpRAM () {
   msg "Enable /tmp in RAM by modifying /etc/fstab"
-  sudo sh -c "echo 'tmpfs      /tmp            tmpfs        defaults,size=2g           0    0' >> /etc/fstab"
-  msg "Reboot required"
+  runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab"
+  printf "[INFO] Reboot required"
 }
 
-#TODO:
+#
+# add screenfetch exec in .bashrc
+#
 function addScreenfetchBashrc () {
   msg "Adding screenfetch to .bashrc"
   checkAndInstallDep apt screenfetch
-  touch /home/$myHomedir/.bashrc
-  echo "screenfetch -t" >> /home/"$myHomedir"/.bashrc
+  runCmd "touch /home/$myHomedir/.bashrc"
+  printf "\n"
+  runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc"
+  printf "\n"
 }
 
-#TODO:
+#
+# cli history cmd timestamp enable
+#
 function enableHistoryTS () {
-  msg "CLI History TimeStamp Activation"
-  echo "export HISTTIMEFORMAT='%F %T  '" >> /home/"$myHomedir"/.bashrc
+  typeset ret_code
+  printf "CLI History TimeStamp enabling "
+  echo "export HISTTIMEFORMAT='%F %T  '" | tee -a /home/$myHomedir/.bashrc &>> $logFile
+  ret_code=$?
+  retCode $ret_code
 }
 
 #
@@ -2086,19 +2157,24 @@ function toolPacketLoss () {
   ping -q -c 10 google.com
 }
 
-#TODO:
+#
+# Optimization of SQLite databases of Firefox and Firefox Nightly
+#
 function toolOptimizeFirefox () {
-  msg "Firefox SQLite databases optimization"
-  pressKey "Please close Firefox BEFORE to proceed, which will be killed just after"
-  if which firefox >/dev/null; then
-    smsgn "Optimizing Firefox"
-    pkill -9 firefox
-    for f in ~/.mozilla/firefox/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
-  fi
-  if which firefox-trunk >/dev/null; then
-    smsgn "Optimizing Firefox Nightly"
-    pkill -9 firefox-trunk
-    for f in ~/.mozilla/firefox-trunk/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
+  if (whiptail --title "Firefox SQLite DB Optimization" --yesno "Terminate Firefox and proceed ?" 10 60) then
+    if which firefox >/dev/null; then
+      printf "Optimizing Firefox"
+      pkill -9 firefox
+      for f in ~/.mozilla/firefox/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
+    fi
+    if which firefox-trunk >/dev/null; then
+      printf "Optimizing Firefox Nightly"
+      pkill -9 firefox-trunk
+      for f in ~/.mozilla/firefox-trunk/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
+    fi
+    if (whiptail --title "Firefox SQLite DB Optimization - Reboot" --yesno "Reboot required, proceed now ?" 10 60) then
+      sudo reboot
+    fi
   fi
 }
 
