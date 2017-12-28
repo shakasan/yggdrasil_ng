@@ -746,6 +746,7 @@ function addRepo () {
 # install package from repositories
 # input : package manager, package name
 # package manager available : apt, pip, npm, gem
+# TODO: add apm, snap, flatpak, umake
 #
 function installPackage () {
   typeset pkg="$*"
@@ -1832,33 +1833,6 @@ function installAtom () {
 function installAtomMenu () {
   msg "Installing Atom and extensions"
   installAppsFromListMenu atom
-
-  # runCmd "sudo apt-get install -y atom"; smsgn "Installing atom"
-
-  # if which apm >/dev/null; then
-  #   msg "Apm installing Atom extensions"
-  #   runCmd "apm install sync-settings"; smsgn "APM Installing sync-settings"
-  # fi
-
-  # if which pip3 >/dev/null; then
-  #   msg "PIP installing : SQLParse"
-  #   sudo -H pip3 install --upgrade sqlparse
-
-  #   msg "PIP installing : flake8"
-  #   sudo -H pip3 install --upgrade flake8
-
-  #   msg "PIP installing : autopep8"
-  #   sudo -H pip3 install --upgrade autopep8
-  # else
-  #   installPython
-  # fi
-
-  # if which gem >/dev/null; then
-  #   msg "Gem installing : htmlbeautifier"
-  #   sudo gem install htmlbeautifier
-  # else
-  #   installRuby
-  # fi
 }
 
 #
