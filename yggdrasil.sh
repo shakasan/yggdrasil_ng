@@ -424,7 +424,14 @@ libreoffice;apt;office;libreoffice54
 winehq-devel;apt;wine;winehq-devel
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
-mongodb-org;apt;mongodb;mongodb-org"
+mongodb-org;apt;mongodb;mongodb-org
+qt4-dev-tools;apt;qt;qt4-dev-tools
+qt4-linguist-tools;apt;qt;qt4-linguist-tools
+qt5-doc;apt;qt;qt5-doc
+qttools5-doc;apt;qt;qttools5-doc
+qttools5-dev-tools;apt;qt;qttools5-dev-tools
+qttools5-examples;apt;qt;qttools5-examples
+qttools5-doc-html;apt;qt;qttools5-doc-html"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #
@@ -486,7 +493,22 @@ function addSpecificRepo_KodiNightly () {
 # fields : unique ID, function to process after install
 #
 AppsTrtFct="nitrogen;nitrogenTrtFct
-mongodb-org;mongodbTrtFct;"
+mongodb-org;mongodbTrtFct
+qttools5-dev-tools;qtTrtFct"
+
+#
+# QT5 Dev Tools
+#
+function qtTrtFct () {
+  runCmd "sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf"
+
+  createAppShortcut "/usr/bin/designer" \
+                    "/home/"$myHomedir"/.icons/qtdesigner.png" \
+                    "GNOME;GTK;Development;IDE" \
+                    "QT Designer 5" \
+                    "local" \
+  update-menus
+}
 
 #
 # MongoDB 3 CE
@@ -1715,28 +1737,6 @@ function installRuby () {
 #
 function installRubyMenu () {
   installAppsFromListMenu ruby
-}
-
-#TODO:
-function installQT () {
-  msg "Installing QT Dev apps and tools"
-
-  runCmd "sudo apt-get install -y qt4-dev-tools"; smsgn "Installing qt4-dev-tools"
-  runCmd "sudo apt-get install -y qt4-linguist-tools"; smsgn "Installing qt4-linguist-tools"
-  runCmd "sudo apt-get install -y qt5-doc qttools5-doc"; smsgn "Installing qt5-doc qttools5-doc"
-  runCmd "sudo apt-get install -y qttools5-dev-tools"; smsgn "Installing qttools5-dev-tools"
-  runCmd "sudo apt-get install -y qttools5-examples"; smsgn "Installing qttools5-examples"
-  runCmd "sudo apt-get install -y qttools5-doc-html"; smsgn "Installing qttools5-doc-html"
-
-  msg "Création du lien symbolique permettant à qtchooser de prendre qt5 par défaut"
-  sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf
-
-  createAppShortcut "/usr/bin/designer" \
-                    "/home/"$myHomedir"/.icons/qtdesigner.png" \
-                    "GNOME;GTK;Development;IDE" \
-                    "QT Designer 5" \
-                    "local" \
-  update-menus
 }
 
 #TODO:
