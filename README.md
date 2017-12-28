@@ -3,7 +3,8 @@
 Yggdrasil NG
 ============
 
-Warnings : this is a early alpha version under dev !!
+!! Warnings : this is a early alpha version under dev !!
+!! Please use the old version for now until this project is complete : [Yggdrasil_LM18](https://github.com/shakasan/Yggdrasil_LM18) !!
 
 The purpose of this script is to provide a full set of tools to install, customize and tweak a fresh installation of Linux Mint 18.x, Ubuntu 16.04 and derivatives
 
