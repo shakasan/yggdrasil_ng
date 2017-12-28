@@ -225,6 +225,18 @@ tmsu;apt;utilities;tmsu
 etcher-electron;apt;utilities;etcher-electron
 pdfgrep;apt;utilities;pdfgrep
 coinmon;npm;utilities;coinmon
+tldr;pip;utilities;tldr
+s-tui;pip;utilities;s-tui
+pip;pip;python;setuptools
+python3-dev;apt;python;python3-dev
+python3-pip;apt;python;python3-pip
+python3-pyqt5;apt;python;python3-pyqt5
+pyqt5-dev-tools;apt;python;pyqt5-dev-tools
+setuptools;pip;python;setuptools
+PyOpenGL;pip;python;PyOpenGL
+tweepy;pip;python;tweepy
+weppy;pip;python;weppy
+py-term;pip;python;py-term
 steam;apt;games;steam
 jstest-gtk;apt;games;jstest-gtk
 brasero;apt;burningtools;brasero
@@ -239,6 +251,10 @@ tshark;apt;nettools;tshark
 zenmap;apt;nettools;zenmap
 dsniff;apt;nettools;dsniff
 aircrack-ng;apt;nettools;aricrack-ng
+SpoofMAC;pip;nettools;SpoofMAC
+speedtest-cli;pip;nettools;speedtest-cli
+whatportis;pip;nettools;whatportis
+droopescan;pip;nettools;droopescan
 caja-share;apt;cajaplugins;caja-share
 caja-wallpaper;apt;cajaplugins;caja-wallpaper
 caja-sendto;apt;cajaplugins;caka-sendto
@@ -384,6 +400,9 @@ ack-grep;apt;dev;ack-grep
 ansible;apt;dev;ansible
 remark-lint;npm;dev;remark-lint
 jedi;npm;dev;jedi
+beautysh;pip;dev;beautys
+retext;pip;dev;retext
+mycli;pip;dev;mycli
 npm;apt;javascript;npm
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
@@ -753,6 +772,7 @@ function installPackage () {
       printf "[ERR] pip3 not found, installing...\n"
       printf "\n[ERR] pip3 not found, installing...\n" &>> $logFile
       installPackage apt "python3-pip"
+      installPackage pip "pip"
     fi
     ;;
   "npm")
@@ -1737,66 +1757,6 @@ function installRuby () {
 #
 function installRubyMenu () {
   installAppsFromListMenu ruby
-}
-
-#TODO:
-function installPython () {
-  msg "Installing Python Dev apps and tools"
-
-  runCmd "sudo apt-get install -y python3-dev"; smsgn "Installing python3-dev"
-  runCmd "sudo apt-get install -y python3-pip"; smsgn "Installing python3-pip"
-  runCmd "sudo apt-get install -y python3-pyqt5"; smsgn "Installing python3-pyqt5"
-  runCmd "sudo apt-get install -y pyqt5-dev-tools"; smsgn "Installing pyqt5-dev-tools"
-
-  if which pip3 >/dev/null; then
-    msg "Upgrading PIP"
-    sudo -H pip3 install --upgrade pip
-
-    msg "PIP installing : setuptools"
-    sudo -H pip3 install --upgrade setuptools
-
-    msg "PIP installing : MyCLI"
-    sudo -H pip3 install --upgrade mycli
-
-    msg "PIP installing : SpoofMAC"
-    sudo -H pip3 install --upgrade SpoofMAC
-
-    msg "PIP installing : speedtest-cli"
-    sudo -H pip3 install --upgrade speedtest-cli
-
-    msg "PIP installing : whatportis"
-    sudo -H pip3 install --upgrade whatportis
-
-    msg "PIP installing : py-term"
-    sudo -H pip3 install --upgrade py-term
-
-    msg "PIP installing : weppy"
-    sudo -H pip3 install --upgrade weppy
-
-    msg "PIP installing : retext"
-    sudo -H pip3 install --upgrade retext
-
-    msg "PIP installing : waybackpack"
-    sudo -H pip3 install --upgrade waybackpack
-
-    msg "PIP installing : tweepy"
-    sudo -H pip3 install --upgrade tweepy
-
-    msg "PIP installing : droopescan"
-    sudo -H pip3 install --upgrade droopescan
-
-    msg "PIP installing : PyOpenGL"
-    sudo -H pip3 install --upgrade PyOpenGL
-
-    msg "PIP installing : tldr"
-    sudo -H pip3 install --upgrade tldr
-
-    msg "PIP installing : s-tui"
-    sudo -H pip3 install --upgrade s-tui
-
-    msg "PIP installing : beautysh"
-    sudo -H pip3 install --upgrade beautysh
-  fi
 }
 
 #TODO:
