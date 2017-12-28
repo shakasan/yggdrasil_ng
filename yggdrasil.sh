@@ -224,6 +224,7 @@ screenkey;apt;utilities;screenkey
 tmsu;apt;utilities;tmsu
 etcher-electron;apt;utilities;etcher-electron
 pdfgrep;apt;utilities;pdfgrep
+coinmon;npm;utilities;coinmon
 steam;apt;games;steam
 jstest-gtk;apt;games;jstest-gtk
 brasero;apt;burningtools;brasero
@@ -381,6 +382,12 @@ shellcheck;apt;dev;shellcheck
 umbrello;apt;dev;umbrello
 ack-grep;apt;dev;ack-grep
 ansible;apt;dev;ansible
+remark-lint;npm;dev;remark-lint
+jedi;npm;dev;jedi
+npm;apt;javascript;npm
+javascript-common;apt;javascript;javascript-common
+yarn;npm;javascript;yarn
+jshint;npm;javascript;jshint
 oracle-java9-installer;apt;java9;oracle-java9-installer
 oracle-java9-set-default;apt;java9;oracle-java9-set-default
 php7.0-cli;apt;php;php7.0-cli
@@ -410,13 +417,14 @@ autopep8;pip;atom;autopep8
 htmlbeautifier;gem;atom;htmlbeautifier
 kodi;apt;beta;kodi-beta
 kodi;apt;nightly;kodi-nightly
-nitrogen:apt:nitrogen:nitrogen
-firefox-trunk:apt:nightly:firefox-trunk
-firefox-trunk-locale-fr:apt:nightly:firefox-trunk-locale-fr
-libreoffice:apt:office:libreoffice54
-winehq-devel:apt:wine:winehq-devel
-winetricks:apt:wine:winetricks
-playonlinux:apt:wine:playonlinux"
+nitrogen;apt;nitrogen;nitrogen
+firefox-trunk;apt;nightly;firefox-trunk
+firefox-trunk-locale-fr;apt;nightly;firefox-trunk-locale-fr
+libreoffice;apt;office;libreoffice54
+winehq-devel;apt;wine;winehq-devel
+winetricks;apt;wine;winetricks
+playonlinux;apt;wine;playonlinux
+mongodb-org;apt;mongodb;mongodb-org"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #
@@ -429,14 +437,23 @@ playonlinux:apt:wine:playonlinux"
 AppsRepo="kodi-beta;addSpecificRepo_KodiBeta
 kodi-nightly;addSpecificRepo_KodiNightly
 libreoffice54:addSpecificRepo_Libreoffice54
-winehq-devel:addSpecificRepo_Wine"
+winehq-devel:addSpecificRepo_Wine
+mongodb-org;addSpecificRepo_MongoDB3CE"
+
+#
+# MongoDB 3 CE
+#
+function addSpecificRepo_MongoDB3CE () {
+  addKey "hkp://keyserver.ubuntu.com:80" "2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5"
+  addRepo "mongodb-org-3.6.list" "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/testing multiverse"
+}
 
 #
 # Wine Build
 #
 function addSpecificRepo_Wine () {
   addKey "https://dl.winehq.org/wine-builds/Release.key"
-  addRepo "https://dl.winehq.org/wine-builds/ubuntu/"
+  addPPA "https://dl.winehq.org/wine-builds/ubuntu/"
 }
 
 #
@@ -468,7 +485,17 @@ function addSpecificRepo_KodiNightly () {
 # list of post install functions
 # fields : unique ID, function to process after install
 #
-AppsTrtFct="nitrogen;nitrogenTrtFct"
+AppsTrtFct="nitrogen;nitrogenTrtFct
+mongodb-org;mongodbTrtFct;"
+
+#
+# MongoDB 3 CE
+#
+function mongodbTrtFct () {
+  runCmd "sudo systemctl unmask mongodb.service"
+  runCmd "sudo systemctl enable mongodb"
+  runCmd "sudo systemctl start mongodb"
+}
 
 #
 # nitrogen post install function
@@ -1639,38 +1666,10 @@ function installJava9Menu () {
 }
 
 #TODO:
-function installJavaScript () {
-  msg "Installing JavaScript apps and tools"
-
-  runCmd "sudo apt-get install -y npm"; smsgn "Installing npm"
-  runCmd "sudo apt-get install -y javascript-common"; smsgn "Installing javascript-common"
-
-  if which npm >/dev/null; then
-    runCmd "sudo npm install -g yarn"; smsgn "NPM Installing yarn"
-    runCmd "sudo npm install -g remark-lint"; smsgn "NPM Installing remark-lint"
-    runCmd "sudo npm install -g jshint"; smsgn "NPM Installing jshint"
-    runCmd "sudo npm install -g jedi"; smsgn "NPM Installing jedi"
-    runCmd "sudo npm install -g coinmon"; smsgn "NPM Installing coinmon"
-  fi
-}
-
-#TODO:
 function installNode8LTS () {
   msg "Installing NodeJS 8 LTS"
   curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &>> $logFile && retCode $? && smsgn "Adding Node repository"
   runCmd "sudo apt-get install -y nodejs"; smsgn "Installing nodejs"
-}
-
-#TODO:
-function installMongoDB3CE () {
-  if which mongod >/dev/null; then
-    sudo systemctl stop mongodb && sudo rm -rf /var/log/mongodb && sudo rm -rf /var/lib/mongodb && sudo apt remove --purge mongodb &>> $logFile && retCode $? && smsgn "Removing old MongoDB installation"
-  fi
-  msg "Installing MongoDB 3 CE"
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 &>> $logFile && retCode $? && smsgn "Adding MongoDB repository key"
-  echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/testing multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list  && retCode $? && smsgn "Adding MongoDB repository"
-  updateSystem
-  runCmd "sudo apt-get install -y mongodb-org"; smsgn "Installing mongodb-org"
 }
 
 #
