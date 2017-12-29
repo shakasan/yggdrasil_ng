@@ -227,6 +227,7 @@ pdfgrep;apt;utilities;pdfgrep
 coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 s-tui;pip;utilities;s-tui
+gyazo;apt;utilities;gyazo
 pip;pip;python;setuptools
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
@@ -465,7 +466,18 @@ AppsRepo="kodi-beta;addSpecificRepo_KodiBeta
 kodi-nightly;addSpecificRepo_KodiNightly
 libreoffice54:addSpecificRepo_Libreoffice54
 winehq-devel:addSpecificRepo_Wine
-mongodb-org;addSpecificRepo_MongoDB3CE"
+mongodb-org;addSpecificRepo_MongoDB3CE
+gyazo;addSpecificRepo_Gyazo"
+
+#
+# Gyazo
+#
+function addSpecificRepo_Gyazo () {
+  addKey "https://packagecloud.io/gyazo/gyazo-for-linux/gpgkey"
+  addRepo gyazo_gyazo-for-linux.list \
+          "deb https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main" \
+          "deb-src https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main"
+}
 
 #
 # MongoDB 3 CE
@@ -757,9 +769,48 @@ function addRepo () {
 function installPackageDpkg () {
   runCmd "cd /tmp"
   printf "\n"
-  runCmd "wget -q -O $2 $1 && sudo dpkg -i $2 "
+  runCmd "wget -q -O $2 $1"
+  printf "\n"
+  runCmd "sudo dpkg -i $2 "
   printf "\n"
   runCmd "sudo apt-get install -fy"
+  printf "\n"
+}
+
+#
+# install app by remote shell script
+# input : script url, script name, opt extra param
+#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:
+function installAppRemoteScript () {
+  runCmd "cd /tmp"
+  printf "\n"
+  runCmd "wget -q -O $2 $1"
+  printf "\n"
+  runCmd "chmod +x $2"
+  printf "\n"
+
+}
+
+#
+# install app from archive
+# input : archive url, archive name, archive type, orig dir, dest dir
+#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:
+function installAppFromArchive () {
+  runCmd "cd /tmp"
+  printf "\n"
+  runCmd "wget -q -O $2 $1"
+  printf "\n"
+  case "$3" in
+    "tgz")
+      runCmd "tar xzf $2"
+      printf "\n"
+      ;;
+    "xz")
+      runCmd "tar xvJf $2"
+      printf "\n"
+      ;;
+  esac
+  runCmd "mkdir -p $5"
   printf "\n"
 }
 
@@ -1261,33 +1312,21 @@ function installInternetMenu () {
 function installInternetExt () {
   msg "Installing Internet apps and tools"
 
-  cd /tmp
-
   msg "Téléchargement de Skype"
-  wget https://go.skype.com/skypeforlinux-64.deb
-
-  msg "Installation de Skype"
-  sudo dpkg -i skypeforlinux-64.deb
-  sudo apt-get install -fy
+  installPackageDpkg https://go.skype.com/skypeforlinux-64.deb \
+                     skypeforlinux-64.deb
 
   msg "Téléchargement de Viber"
-  wget http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
-
-  msg "Installation de Viber"
-  sudo dpkg -i viber.deb
-  sudo apt-get install -fy
+  installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
+                     viber.deb
 
   msg "Téléchargement de MegaSync"
-  wget https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megasync-xUbuntu_16.04_amd64.deb
-
-  msg "Installation de MegaSync"
-  sudo dpkg -i megasync-xUbuntu_16.04_amd64.deb
-  sudo apt-get install -fy
+  installPackageDpkg https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megasync-xUbuntu_16.04_amd64.deb \
+                     megasync-xUbuntu_16.04_amd64.deb
 
   msg "Installation de Discord"
-  wget -O discord.deb https://discordapp.com/api/download?platform=linux&format=deb
-  sudo dpkg -i discord.deb
-  sudo apt-get install -fy
+  installPackageDpkg https://discordapp.com/api/download?platform=linux&format=deb \
+                     discord.deb
 
   msg "Téléchargement de Telegram Desktop"
   wget -O tsetup.tar.xz https://tdesktop.com/linux
@@ -1297,14 +1336,8 @@ function installInternetExt () {
   mv Telegram /home/$myHomedir/Apps
   sh -c "/home/"$myHomedir"/Apps/Telegram/Telegram &" && sleep 10 && pkill Telegram
 
-  msg "Téléchargement de Gyazo"
-  wget https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh
 
-  msg "Installation de Gyazo"
-  chmod +x script.deb.sh
-  sudo os=ubuntu dist=xenial ./script.deb.sh
-  sudo apt-get install -y gyazo
-
+  #TODO: archive no dir
   msg "Téléchargement de Franz"
   mkdir -p Franz
   cd Franz
@@ -1797,6 +1830,36 @@ function installNode8LTS () {
 }
 
 #
+# install Mongo DB 3 CE (headless)
+#
+function installMongo3CE () {
+  msg "Installing Mongo DB 3 CE Apps"
+  installAppsFromList mongodb-org
+}
+
+#
+# install Mongo DB 3 CE (Menu)
+#
+function installMongo3CEMenu () {
+  installAppsFromListMenu mongodb-org
+}
+
+#
+# install Python Apps (headless)
+#
+function installPython () {
+  msg "Installing Python apps and tools"
+  installAppsFromList python
+}
+
+#
+# install Python Apps (Menu)
+#
+function installPythonMenu () {
+  installAppsFromListMenu python
+}
+
+#
 # install PHP Apps (headless)
 #
 function installPHP () {
@@ -1809,6 +1872,21 @@ function installPHP () {
 #
 function installPHPMenu () {
   installAppsFromListMenu php
+}
+
+#
+# install QT Apps/tools (headless)
+#
+function installQT () {
+  msg "Installing QT apps and tools"
+  installAppsFromList qt
+}
+
+#
+# install QT Apps/tools (Menu)
+#
+function installQTMenu () {
+  installAppsFromListMenu qt
 }
 
 #
@@ -2065,7 +2143,7 @@ function installTeamViewer13 () {
 #
 # install Teamviewer 13 (Menu)
 #
-function installTeamViewer13 () {
+function installTeamViewer13Menu () {
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
                      teamviewer12.deb
 }
@@ -2418,7 +2496,7 @@ function showDevInstallMenu () {
     "androidstudio" "Android Studio" \
     "sublimetext" "Sublime Text" \
     "cad" "CAD tools" \
-    "teamviewer12" "Teamviewer 12" \
+    "teamviewer13" "Teamviewer 13" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
@@ -2433,6 +2511,7 @@ function showDevInstallMenu () {
       "nodelts")
         ;;
       "mongodb3ce")
+        installMongo3CEMenu
         ;;
       "php")
         installPHPMenu
@@ -2444,8 +2523,10 @@ function showDevInstallMenu () {
         installRubyMenu
         ;;
       "qt")
+        installQTMenu
         ;;
       "python")
+        installPythonMenu
         ;;
       "androidenv")
         ;;
@@ -2481,7 +2562,8 @@ function showDevInstallMenu () {
       "cad")
         installCADMenu
         ;;
-      "teamviewer12")
+      "teamviewer13")
+        installTeamViewer13Menu
         ;;
       "Back")
         break
