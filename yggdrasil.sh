@@ -1134,6 +1134,30 @@ function createAppShortcut () {
   fi
 }
 
+#
+# show usage for headless mode
+#
+function usage () {
+  printf "\n"
+  printf "$BOLDJAUNE"
+  printf "██╗   ██╗ ██████╗  ██████╗ ██████╗ ██████╗  █████╗ ███████╗██╗██╗     \n"
+  printf "╚██╗ ██╔╝██╔════╝ ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██║██║     \n"
+  printf " ╚████╔╝ ██║  ███╗██║  ███╗██║  ██║██████╔╝███████║███████╗██║██║     \n"
+  printf "  ╚██╔╝  ██║   ██║██║   ██║██║  ██║██╔══██╗██╔══██║╚════██║██║██║     \n"
+  printf "   ██║   ╚██████╔╝╚██████╔╝██████╔╝██║  ██║██║  ██║███████║██║███████╗\n"
+  printf "   ╚═╝    ╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝\n"
+  printf "$BOLDROUGE                 Customize Linux Mint & Ubuntu derivatives made easier\n"
+  printf "$BOLDBLANC         ver "$version" - GPLv3 - Francois B. (Makotosan) - makotonoblog.be\n"
+	printf "\n"
+	printf "$NORMAL"
+	printf "Usage : yggdrasil [options]\n"
+  printf "  -a : install all apps (except: customization,tweak,dev,nightly,beta,hardware)\n"
+  printf "  -c : install gtk themes and icons\n"
+	printf "  -v : show verison number\n"
+  printf "  -h : show help & informations\n"
+}
+
+
 #-----------------------------------------------------------------------------#
 # install, config, ... functions                                              #
 #-----------------------------------------------------------------------------#
@@ -2595,10 +2619,57 @@ function showHardwareMenu () {
 # Entry point of the script                                                  #
 #------------------------------------------------------------------------------#
 
-clear
+# NEVER run the script as root or with sudo !!!!
+if ! [ "$UID" -ne "0" ]; then
+  printf "\n"
+  printf "$BOLDROUGE""This script can't be run as root/sudo, please retry as normal user""$NORMAL"
+  printf "\n\n"
+  exit
+fi
 
 # add a mark to the log file at every script run
 echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]----------------------------------------------------------------------------" >> $logFile
+
+#
+# Headless Mode
+# arguments/options management with getopts
+#
+while getopts ":h,v,a,c" option; do
+  case "$option" in
+    a) # install all apps (except dev apps)
+      echo "all apps"
+      exit
+      ;;
+    c) # install themes and icons
+      echo "all themes and icons"
+      exit
+      ;;
+    h) # display help
+      usage
+      exit
+      ;;
+    v) # display version number
+      printf "Yggdrasil version : $version\n"
+      exit
+      ;;
+    :) # display error message in case of missing argument(s)
+      usage
+      printf "\nError : Option $OPTARG : missing argument\n"
+      exit 1
+      ;;
+    \?) # display error message in case of invalid option
+      usage
+      printf "\nError : $OPTARG : invalid option\n"
+      exit 1
+      ;;
+  esac
+done
+
+#
+# Menu Mode
+#
+
+clear
 
 printf "\n"
 printf "$BOLDJAUNE"
@@ -2610,8 +2681,8 @@ printf "   ██║   ╚██████╔╝╚██████╔╝█
 printf "   ╚═╝    ╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝\n"
 printf "$BOLDROUGE                 Customize Linux Mint & Ubuntu derivatives made easier\n"
 printf "$BOLDBLANC         ver "$version" - GPLv3 - Francois B. (Makotosan) - makotonoblog.be\n"
-
 printf "\n"
+
 printf "$BOLDVERT""User (userdir) :""$NORMAL"" $myHomedir\n"
 printf "$BOLDVERT""OS : ""$NORMAL"
 lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'
@@ -2624,14 +2695,6 @@ uname -m
 #deCheck
 #depCheck
 
-# NEVER run the script as root or with sudo !!!!
-if ! [ "$UID" -ne "0" ]; then
-  printf "\n"
-  printf "$BOLDROUGE""This script can't be run as root/sudo, please retry as normal user""$NORMAL"
-  printf "\n\n"
-  exit
-fi
-
 # Useless by itself, but is used to don't be annoyed later in the script
 sudo echo
 
@@ -2640,9 +2703,9 @@ pressKey
 # Apps dir created if necessary
 mkdir -p /home/$myHomedir/Apps
 
-#------------------------------------------------------------------------------#
-# Main menu                                                                    #
-#------------------------------------------------------------------------------#
+#
+# Main menu
+#
 
 while true; do # main menu loop
 
@@ -2702,7 +2765,6 @@ case $mainMenuOptions in
   "12")
     exit
     ;;
-
 esac # main menu
 
 done # end of main menu loop
