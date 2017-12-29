@@ -1627,25 +1627,6 @@ function installCardReaderMenu () {
   installAppsFromListMenu cardreader
 }
 
-#TODO:
-function installEpsonV500Photo () {
-  cd /tmp
-
-  msg "Téléchargement de iScan"
-  wget https://download2.ebz.epson.net/iscan/plugin/gt-x770/deb/x64/iscan-gt-x770-bundle-1.0.0.x64.deb.tar.gz
-
-  msg "Installation de iScan via DPKG"
-  tar xzf iscan-gt-x770-bundle-1.0.0.x64.deb.tar.gz
-  cd /tmp/iscan-gt-x770-bundle-1.0.0.x64.deb
-  ./install.sh
-
-  installPackage apt xsane
-
-  msg "Ajout à Xsane du backend epkowa du Scanner Epson Perfection V500"
-  sudo sh -c "echo '# Epson Perfection V500\n\
-  usb 0x04b8 0x0130' >> /etc/sane.d/epkowa.conf"
-}
-
 #
 # update AMD/Intel CPU Microcode
 #
@@ -1662,15 +1643,16 @@ function updateMicrocode () {
   printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version\n"
 }
 
-#TODO:
+#
+# fix some config issue with Intel Wireless 6320 cards
+#
 function fixWirelessIntel6320 () {
-  msg "Backup du fichier iwlwifi.conf"
-  sudo cp /etc/modprobe.d/iwlwifi.conf /etc/modprobe.d/iwlwifi.conf.bak
-
-  msg "Paramètres dans iwlwifi.conf"
-  echo options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8 | sudo tee /etc/modprobe.d/iwlwifi.conf
-
-  msg "!!! REBOOT Nécessaire !!!"
+  printf "[INFO] backuping config : "
+  runCmd "sudo cp /etc/modprobe.d/iwlwifi.conf /etc/modprobe.d/iwlwifi.conf.bak"
+  printf "[INFO] applying config : "
+  runCmd "echo options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8 | sudo tee /etc/modprobe.d/iwlwifi.conf"
+  printf "[INFO] reboot required !!!"
+  printf "\n"
 }
 
 #
@@ -2507,8 +2489,10 @@ function showDevInstallMenu () {
         installJava9
         ;;
       "javascriptbase")
+        #TODO:
         ;;
       "nodelts")
+        #TODO:
         ;;
       "mongodb3ce")
         installMongo3CEMenu
@@ -2529,6 +2513,7 @@ function showDevInstallMenu () {
         installPythonMenu
         ;;
       "androidenv")
+        #TODO:
         ;;
       "atom")
         installAtomMenu
@@ -2546,15 +2531,19 @@ function showDevInstallMenu () {
         installGeanyMenu
         ;;
       "eclipse")
+        #TODO:
         ;;
       "idea")
+        #TODO:
         ;;
       "pycharm")
         installPyCharmMenu
         ;;
       "vsc")
+        #TODO:
         ;;
       "androidstudio")
+        #TODO:
         ;;
       "sublimetext")
         installSublimeTextMenu
@@ -2680,6 +2669,16 @@ function showHardwareMenu () {
     25 80 16 \
     "cardreader" "Apps/tools needed for cardreaders" \
     "solaar" "Solaar for Logitech Unifying devices" \
+    "webcam" "Install webcam neede apps" \
+    "microcode" "Update Intel/AMD CPU microcode" \
+    "nvidia370" "Install Nvidia 370 graphic drivers" \
+    "nvidia375" "Install Nvidia 375 graphic drivers" \
+    "nvidia378" "Install Nvidia 378 graphic drivers" \
+    "nvidia381" "Install Nvidia 381 graphic drivers" \
+    "nvidia384" "Install Nvidia 384 graphic drivers" \
+    "tlp" "Install/Enable TLP for better power management " \
+    "keyid" "Add udev rules for Key-ID FIDO U2F usb key" \
+    "WI6320" "Fix Intel Wireless 6320 card config problem" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $hardwareMenuOptions in
@@ -2688,6 +2687,36 @@ function showHardwareMenu () {
         ;;
       "solaar")
         installAppsFromListMenu
+        ;;
+      "webcam")
+        installWebcamMenu
+        ;;
+      "microcode")
+        updateMicrocode
+        ;;
+      "nvidia370")
+        installNvidia370Menu
+        ;;
+      "nvidia375")
+        installNvidia375Menu
+        ;;
+      "nvidia378")
+        installNvidia378Menu
+        ;;
+      "nvidia381")
+        installNvidia381Menu
+        ;;
+      "nvidia384")
+        installNvidia384Menu
+        ;;
+      "tlp")
+        installTLPMenu
+        ;;
+      "keyid")
+        installKeyIDuDev
+        ;;
+      "WI6320")
+        fixWirelessIntel6320
         ;;
       "Back")
         break
@@ -2698,7 +2727,7 @@ function showHardwareMenu () {
 }
 
 #------------------------------------------------------------------------------#
-# Entry point of the script                                                  #
+# Entry point of the script                                                    #
 #------------------------------------------------------------------------------#
 
 # NEVER run the script as root or with sudo !!!!
@@ -2710,7 +2739,7 @@ if ! [ "$UID" -ne "0" ]; then
 fi
 
 # add a mark to the log file at every script run
-echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]----------------------------------------------------------------------------" >> $logFile
+echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >> $logFile
 
 #
 # Headless Mode
