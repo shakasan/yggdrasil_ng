@@ -2352,22 +2352,34 @@ function showConfigMenu () {
 
     case $configMenuOptions in
       "Ufw")
-        clear; enableUFW; pressKey
+        clear
+        enableUFW
+        pressKey
         ;;
       "NumLockX")
-        clear; enableNumLockX; pressKey
+        clear
+        enableNumLockX
+        pressKey
         ;;
       "TmpRAM")
-        clear; enableTmpRAM; pressKey
+        clear
+        enableTmpRAM
+        pressKey
         ;;
       "screenfetch")
-        clear; addScreenfetchBashrc; pressKey
+        clear
+        addScreenfetchBashrc
+        pressKey
         ;;
       "historyTS")
-        clear; enableHistoryTS; pressKey
+        clear
+        enableHistoryTS
+        pressKey
         ;;
       "unattendedUpgrades")
-        clear; installUnattendedUpgrades; pressKey
+        clear
+        installUnattendedUpgrades
+        pressKey
         ;;
       "Back")
         break
@@ -2446,6 +2458,9 @@ function showThemesInstallMenu () {
         ;;
       "icons")
         installIconsMenu
+        ;;
+      "plank")
+        #TODO:
         ;;
       "Back")
         break
