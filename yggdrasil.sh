@@ -1584,17 +1584,26 @@ function installIconsMenu () {
 function installPlankThemes () {
   msg "Installing Plank themes"
 
-  if which plank >/dev/null; then
-    if (( $(ps -ef | grep -v grep | grep plank | wc -l) > 0 )); then
-      sh -c "cd ~ && mkdir -p ~/.temp-plank-themer && cd ~/.temp-plank-themer && wget https://github.com/rhoconlinux/plank-themer/archive/master.zip && unzip master.zip && cd plank-themer-master/ && rm -fR ~/.config/plank/dock1/theme_index; rm -fR ~/.config/plank/dock1/themes-repo; cp -a theme_index/ ~/.config/plank/dock1 && cp -a themes-repo/ ~/.config/plank/dock1 && cd ~ && rm -R ~/.temp-plank-themer && sh ~/.config/plank/dock1/theme_index/plank-on-dock-themer.sh"
-    else
-      plank 2&>1 >/dev/null &
-      sleep 10
-      yes | sh -c "cd ~ && mkdir -p ~/.temp-plank-themer && cd ~/.temp-plank-themer && wget https://github.com/rhoconlinux/plank-themer/archive/master.zip && unzip master.zip && cd plank-themer-master/ && rm -fR ~/.config/plank/dock1/theme_index; rm -fR ~/.config/plank/dock1/themes-repo; cp -a theme_index/ ~/.config/plank/dock1 && cp -a themes-repo/ ~/.config/plank/dock1 && cd ~ && rm -R ~/.temp-plank-themer && sh ~/.config/plank/dock1/theme_index/plank-on-dock-themer.sh"
-    fi
-  else
-    msg "Plank must be installed first"
+  checkAndInstallDep apt plank
+
+  if ! (( $(ps -ef | grep -v grep | grep plank | wc -l) > 0 )); then
+    plank 2&>1 >/dev/null &
+    sleep 10
   fi
+
+  yes | sh -c "cd ~ \
+               && mkdir -p ~/.temp-plank-themer \
+               && cd ~/.temp-plank-themer \
+               && wget https://github.com/rhoconlinux/plank-themer/archive/master.zip \
+               && unzip master.zip \
+               && cd plank-themer-master/ \
+               && rm -fR ~/.config/plank/dock1/theme_index; \
+               rm -fR ~/.config/plank/dock1/themes-repo; \
+               cp -a theme_index/ ~/.config/plank/dock1 \
+               && cp -a themes-repo/ ~/.config/plank/dock1 \
+               && cd ~ \
+               && rm -R ~/.temp-plank-themer \
+               && sh ~/.config/plank/dock1/theme_index/plank-on-dock-themer.sh"
 }
 
 #
@@ -2186,6 +2195,7 @@ function enableTmpRAM () {
   msg "Enable /tmp in RAM by modifying /etc/fstab"
   runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab"
   printf "[INFO] Reboot required"
+  printf "\n"
 }
 
 #
@@ -2202,7 +2212,7 @@ function addScreenfetchBashrc () {
 
 #
 # cli history cmd timestamp enable
-#
+#TODO:
 function enableHistoryTS () {
   typeset ret_code
   printf "CLI History TimeStamp enabling "
