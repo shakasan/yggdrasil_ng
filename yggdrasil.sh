@@ -1186,9 +1186,9 @@ function createAppShortcut () {
 }
 
 #
-# show usage for headless mode
+# show Yggdrasil logo
 #
-function usage () {
+function dispLogo () {
   printf "\n"
   printf "$BOLDJAUNE"
   printf "██╗   ██╗ ██████╗  ██████╗ ██████╗ ██████╗  █████╗ ███████╗██╗██╗     \n"
@@ -1200,6 +1200,13 @@ function usage () {
   printf "$BOLDROUGE                 Customize Linux Mint & Ubuntu derivatives made easier\n"
   printf "$BOLDBLANC         ver "$version" - GPLv3 - Francois B. (Makotosan) - makotonoblog.be\n"
 	printf "\n"
+}
+
+#
+# show usage for headless mode
+#
+function usage () {
+  dispLogo
 	printf "$NORMAL"
 	printf "Usage : yggdrasil [options]\n"
   printf "  -a : install all apps (except: customization,tweak,dev,nightly,beta,hardware)\n"
@@ -2807,17 +2814,7 @@ done
 
 clear
 
-printf "\n"
-printf "$BOLDJAUNE"
-printf "██╗   ██╗ ██████╗  ██████╗ ██████╗ ██████╗  █████╗ ███████╗██╗██╗     \n"
-printf "╚██╗ ██╔╝██╔════╝ ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██║██║     \n"
-printf " ╚████╔╝ ██║  ███╗██║  ███╗██║  ██║██████╔╝███████║███████╗██║██║     \n"
-printf "  ╚██╔╝  ██║   ██║██║   ██║██║  ██║██╔══██╗██╔══██║╚════██║██║██║     \n"
-printf "   ██║   ╚██████╔╝╚██████╔╝██████╔╝██║  ██║██║  ██║███████║██║███████╗\n"
-printf "   ╚═╝    ╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝\n"
-printf "$BOLDROUGE                 Customize Linux Mint & Ubuntu derivatives made easier\n"
-printf "$BOLDBLANC         ver "$version" - GPLv3 - Francois B. (Makotosan) - makotonoblog.be\n"
-printf "\n"
+dispLogo
 
 printf "$BOLDVERT""User (userdir) :""$NORMAL"" $myHomedir\n"
 printf "$BOLDVERT""OS : ""$NORMAL"
