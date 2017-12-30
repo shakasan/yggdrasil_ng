@@ -1065,7 +1065,7 @@ function addRequiredPPA () {
 
 #
 # add specific repository for a given package
-# input : unique ID
+# input : unique ID, apt cache update yes/no
 #
 function addSpecificRepoFct () {
   for i in $AppsRepo; do
@@ -1076,7 +1076,9 @@ function addSpecificRepoFct () {
       eval "${appRepo[1]}"
     fi
   done
-  updateSystem
+  if [ "$2" == "yes" ]; then
+    updateSystem
+  fi
   #unset i
   #unset appRepo
 }
@@ -1106,6 +1108,14 @@ function installAppsFromList () {
     app=(${i//;/ })
     if [ "${app[2]}" == "$1" ]; then
       addSpecificRepoFct ${app[3]}
+    fi
+  done
+  unset i
+  unset app
+  updateSystem
+  for i in $Apps; do
+    app=(${i//;/ })
+    if [ "${app[2]}" == "$1" ]; then
       installPackage ${app[1]} ${app[0]}
       processAppTrtFct ${app[3]}
     fi
@@ -1138,6 +1148,17 @@ function installAppsFromListMenu () {
         app=(${i//;/ })
         if [ "${app[3]}" == "${pkgToInstall//\"}" ]; then
           addSpecificRepoFct ${app[3]}
+        fi
+      done
+    done
+    unset i
+    unset app
+    unset pkgToInstall
+    updateSystem
+    for pkgToInstall in $pkg; do
+      for i in $Apps; do
+        app=(${i//;/ })
+        if [ "${app[3]}" == "${pkgToInstall//\"}" ]; then
           installPackage ${app[1]} ${app[0]}
           processAppTrtFct ${app[3]}
         fi
@@ -1209,7 +1230,7 @@ function usage () {
   dispLogo
 	printf "$NORMAL"
 	printf "Usage : yggdrasil [options]\n"
-  printf "  -a : install all apps (except: customization,tweak,dev,nightly,beta,hardware)\n"
+  printf "  -a : install all apps (see doc for more details\n"
   printf "  -c : install gtk themes and icons\n"
 	printf "  -v : show verison number\n"
   printf "  -h : show help & informations\n"
@@ -2779,12 +2800,31 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 while getopts ":h,v,a,c" option; do
   case "$option" in
-    a) # install all apps (except dev apps)
-      echo "all apps"
+    a) # install all apps
+      #TODO:
+      msg "Installing all Apps"
+      installBase
+      installBurningTools
+      installCajaPlugins
+      installEbook
+      installGames
+      installGimpPlugins
+      installInternet
+      installJava9
+      installMiscUtilities
+      installMultimedia
+      installNetTools
+      installOffice
+      installPidginPlugins
+      installRhythmBoxPlugins
+      installWine
       exit
       ;;
     c) # install themes and icons
-      echo "all themes and icons"
+      #TODO:
+      msg "Installing all Themes and Icons"
+      installIcons
+      installThemes
       exit
       ;;
     h) # display help
