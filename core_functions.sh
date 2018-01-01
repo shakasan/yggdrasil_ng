@@ -592,7 +592,9 @@ function installAppsFromListMenu () {
     unset i
     unset app
     unset pkgToInstall
-    updateSystem
+    if [ "$repoAdded" -gt "0" ]; then
+      updateSystem
+    fi
     for pkgToInstall in $pkg; do
       for i in $Apps; do
         app=(${i//;/ })
