@@ -133,6 +133,8 @@ function updateSystem () {
   ret_code=$?
   retCode $ret_code
   printf "\n"
+
+  repoAdded=0
 }
 
 #
@@ -508,6 +510,7 @@ function addSpecificRepoFct () {
       printf "[ADD_REPO_FCT] for package : $1, "
       printf "add repo by function : ${appRepo[1]} \n"
       eval "${appRepo[1]}"
+      repoAdded=$(($repoAdded+1))
     fi
   done
   if [ "$2" == "yes" ]; then
@@ -546,7 +549,9 @@ function installAppsFromList () {
   done
   unset i
   unset app
-  updateSystem
+  if [ "$repoAdded" -gt "0" ]; then
+    updateSystem
+  fi
   for i in $Apps; do
     app=(${i//;/ })
     if [ "${app[2]}" == "$1" ]; then

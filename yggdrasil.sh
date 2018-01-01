@@ -38,8 +38,14 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 #
-while getopts ":h,v,a,c" option; do
+while getopts ":h,v,a,c,t" option; do
   case "$option" in
+    t) #test purpose only
+      installNightly
+      installBeta
+      installBase
+      exit
+      ;;
     a) # install all apps
       #TODO:
       msg "Installing all Apps"

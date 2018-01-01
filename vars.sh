@@ -37,6 +37,11 @@ cTime=$(date +%H:%M)
 cDate=$(date +%d-%m-%Y)
 
 #
+# repo/ppa added counter
+#
+repoAdded=0
+
+#
 # shell color codes
 #
 UNDERLINE=$(tput sgr 0 1)
