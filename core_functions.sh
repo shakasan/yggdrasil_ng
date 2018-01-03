@@ -257,7 +257,6 @@ function installAppFromArchive () {
 # package manager available : apt, pip, npm, gem, snap
 # TODO: add apm, flatpak, umake?
 # TODO: update npm before update/install pkg
-# FIXME: use pkg instead of $*
 #
 function installPackage () {
   typeset pkg="$*"
@@ -358,17 +357,6 @@ function checkAndInstallDep () {
         ;;
     esac
   fi
-}
-
-#
-# dependencies used in the script checked and installed if necessary
-#
-function depCheck () {
-  printf "$BOLDJAUNE""Script dependencies checking\n\n""$NORMAL"
-  checkAndInstallDep apt mpg123
-  checkAndInstallDep apt libnotify-bin
-  checkAndInstallDep apt lsb-release
-  checkAndInstallDep apt cifs-utils
 }
 
 #
