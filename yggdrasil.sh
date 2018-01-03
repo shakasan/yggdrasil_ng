@@ -38,7 +38,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 #
-while getopts ":h,v,a,c,t" option; do
+while getopts ":h,v,a,c,t,u" option; do
   case "$option" in
     t) #test purpose only
       installNightly
@@ -71,6 +71,10 @@ while getopts ":h,v,a,c,t" option; do
       msg "Installing all Themes and Icons"
       installIcons
       installThemes
+      exit
+      ;;
+    u)
+      updateSystem
       exit
       ;;
     h) # display help

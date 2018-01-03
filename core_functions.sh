@@ -102,6 +102,7 @@ function isMate () {
 
 #
 # system update
+#TODO: add pip, npm, gem
 #
 function updateSystem () {
   typeset ret_code
@@ -255,6 +256,8 @@ function installAppFromArchive () {
 # input : package manager, package name
 # package manager available : apt, pip, npm, gem, snap
 # TODO: add apm, flatpak, umake?
+# TODO: update npm before update/install pkg
+# FIXME: use pkg instead of $*
 #
 function installPackage () {
   typeset pkg="$*"
@@ -672,6 +675,7 @@ function usage () {
 	printf "Usage : yggdrasil [options]\n"
   printf "  -a : install all apps (see doc for more details\n"
   printf "  -c : install gtk themes and icons\n"
+  printf "  -u : update system (apt,snap,...)\n"
 	printf "  -v : show verison number\n"
   printf "  -h : show help & informations\n"
 }
