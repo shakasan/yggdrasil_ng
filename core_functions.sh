@@ -265,18 +265,18 @@ function installPackage () {
 
   case $1 in
   "apt")
-    printf "[APT] Installing by $* "
-    printf "\n[APT] installing by $*\n" &>> $logFile
-    sudo apt-get install -fy $* &>> $logFile
+    printf "[APT] Installing by $pkg "
+    printf "\n[APT] installing by $pkg\n" &>> $logFile
+    sudo apt-get install -fy $pkg &>> $logFile
     ret_code=$?
     retCode $ret_code
     printf "\n"
     ;;
   "pip")
     if which pip3 >/dev/null; then
-      printf "[PIP] Installing by $* "
-      printf "\n[PIP] installing by $*\n" &>> $logFile
-      sudo -H pip3 install --upgrade $* &>> $logFile
+      printf "[PIP] Installing by $pkg "
+      printf "\n[PIP] installing by $pkg\n" &>> $logFile
+      sudo -H pip3 install --upgrade $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
       printf "\n"
@@ -289,9 +289,9 @@ function installPackage () {
     ;;
   "npm")
     if which npm >/dev/null; then
-      printf "[NPM] Installing by $* "
-      printf "\n[NPM] installing by $*\n" &>> $logFile
-      sudo npm install -g $* &>> $logFile
+      printf "[NPM] Installing by $pkg "
+      printf "\n[NPM] installing by $pkg\n" &>> $logFile
+      sudo npm install -g $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
       printf "\n"
@@ -303,9 +303,9 @@ function installPackage () {
     ;;
   "gem")
     if which gem >/dev/null; then
-      printf "[GEM] Installing by $* "
-      printf "\n[GEM] installing by $*\n" &>> $logFile
-      sudo gem install $* &>> $logFile
+      printf "[GEM] Installing by $pkg "
+      printf "\n[GEM] installing by $pkg\n" &>> $logFile
+      sudo gem install $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
       printf "\n"
@@ -317,9 +317,9 @@ function installPackage () {
     ;;
   "snap")
     if which snap >/dev/null; then
-      printf "[SNAP] Installing by $* "
-      printf "\n[SNAP] installing by $*\n" &>> $logFile
-      sudo snap install $* &>> $logFile
+      printf "[SNAP] Installing by $pkg "
+      printf "\n[SNAP] installing by $pkg\n" &>> $logFile
+      sudo snap install $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
       printf "\n"
