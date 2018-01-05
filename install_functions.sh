@@ -14,6 +14,7 @@
 # install Base Apps (headless)
 #
 function installBase () {
+  msg "Installing Base Apps"
   installAppsFromList base
 }
 
@@ -28,6 +29,7 @@ function installBaseMenu () {
 # install Office Apps (headless)
 #
 function installOffice () {
+  msg "Installing Office Apps"
   installAppsFromList office
 }
 
@@ -42,6 +44,7 @@ function installOfficeMenu () {
 # install Multimedia Apps (headless)
 #
 function installMultimedia () {
+  msg "Installing Multimedia Apps"
   installAppsFromList multimedia
 }
 
@@ -80,19 +83,30 @@ function installMultimediaExt () {
   sudo apt-get install -fy
 }
 
-#TODO:
+#
+# install eBook Apps (headless)
+#
 function installEbook () {
-  msg "Installation eBook apps and tools"
-  runCmd "sudo apt-get install -y fbreader"; smsgn "Installing fbreader"
-  cd /tmp
-  runCmd "sudo -v && wget -q --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c \"import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()\""
-  smsgn "Installing calibre"
+  msg "Installing eBook Apps"
+  installAppsFromList ebook
+  #TODO:
+  # cd /tmp
+  # runCmd "sudo -v && wget -q --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c \"import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()\""
+  # smsgn "Installing calibre"
+}
+
+#
+# install eBook Apps (Menu)
+#
+function installEbookMenu () {
+  installAppsFromListMenu ebook
 }
 
 #
 # install Internet Apps (headless)
 #
 function installInternet () {
+  msg "Installing Internet Apps"
   echo "opera-stable opera-stable/add-deb-source boolean false" | sudo debconf-set-selections
   installAppsFromList internet
 }
@@ -157,6 +171,7 @@ function installInternetExt () {
 # install Misc Utilities Apps (headless)
 #
 function installMiscUtilities () {
+  msg "Installing utilities Apps"
   installAppsFromList utilities
 }
 

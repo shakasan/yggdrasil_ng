@@ -661,7 +661,7 @@ function usage () {
   dispLogo
 	printf "$NORMAL"
 	printf "Usage : yggdrasil [options]\n"
-  printf "  -a : install all apps (see doc for more details\n"
+  printf "  -f : full install (see doc for more details)\n"
   printf "  -c : install gtk themes and icons\n"
   printf "  -u : update system (apt,snap,...)\n"
 	printf "  -v : show verison number\n"

@@ -399,7 +399,8 @@ qt5-doc;apt;qt;qt5-doc
 qttools5-doc;apt;qt;qttools5-doc
 qttools5-dev-tools;apt;qt;qttools5-dev-tools
 qttools5-examples;apt;qt;qttools5-examples
-qttools5-doc-html;apt;qt;qttools5-doc-html"
+qttools5-doc-html;apt;qt;qttools5-doc-html
+fbreader;apt;ebook;fbreader"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #

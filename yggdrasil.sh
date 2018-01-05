@@ -38,7 +38,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 #
-while getopts ":h,v,a,c,t,u" option; do
+while getopts ":h,v,f,c,t,u" option; do
   case "$option" in
     t) #test purpose only
       installNightly
@@ -46,8 +46,9 @@ while getopts ":h,v,a,c,t,u" option; do
       installBase
       exit
       ;;
-    a) # install all apps
+    f) # install all apps
       #TODO:
+      addRequiredPPA
       msg "Installing all Apps"
       installBase
       installBurningTools
