@@ -175,11 +175,11 @@ coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 s-tui;pip;utilities;s-tui
 gyazo;apt;utilities;gyazo
-pip;pip;python;setuptools
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
+pip;pip;python;setuptools
 setuptools;pip;python;setuptools
 PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
