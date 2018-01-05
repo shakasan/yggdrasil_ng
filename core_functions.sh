@@ -334,7 +334,7 @@ function installPackage () {
 #
 # check dependency and install it if necessary
 # input : package manager, package name
-#
+#FIXME:
 function checkAndInstallDep () {
   if ! which $2 >/dev/null; then
     printf "[DEP] check dependency : $2 [ ""$BOLDROUGE""!!"$NORMAL" ]\n"

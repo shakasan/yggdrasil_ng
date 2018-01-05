@@ -978,25 +978,18 @@ function enableUFW () {
   fi
 }
 
-#TODO:
+#
+# enable numlock by default on LightDM
+#
 function enableNumLockX () {
   msg "Adding NumLockX to MDM/LightDM Default Init"
 
+  #FIXME:
   checkAndInstallDep apt numlockx
 
-  if which mdm >/dev/null; then
-    sudo cp /etc/mdm/Init/Default /etc/mdm/Init/Default.yggbak
-    sudo sed -i -e '
-    s!exit 0!#numlockx!
-    ' /etc/mdm/Init/Default
-    sudo sh -c "echo 'if [ -x /usr/bin/numlockx ]; then\n\
-    exec /usr/bin/numlockx on\n\
-    fi\n\
-    \n\
-    exit 0' >> /etc/mdm/Init/Default"
-  elif which lightdm >/dev/null; then
+  if which lightdm >/dev/null; then
     sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak
-    sudo bash -c "echo 'greeter-setup-script=/usr/bin/numlockx on' >> /etc/lightdm/lightdm.conf.d/70-linuxmint.conf"
+    echo "greeter-setup-script=/usr/bin/numlockx on" | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf
   fi
 }
 
@@ -1004,10 +997,11 @@ function enableNumLockX () {
 # /tmp in RAM by modifying /etc/fstab
 #
 function enableTmpRAM () {
-  msg "Enable /tmp in RAM by modifying /etc/fstab"
+  msg "Enabling /tmp in RAM by modifying /etc/fstab"
   runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab"
-  printf "[INFO] Reboot required"
-  printf "\n"
+  if (whiptail --title "/tmp in RAM - Reboot" --yesno "Reboot required, proceed now ?" 10 60) then
+    sudo reboot
+  fi
 }
 
 #
@@ -1024,7 +1018,7 @@ function addScreenfetchBashrc () {
 
 #
 # cli history cmd timestamp enable
-#TODO:
+#FIXME:
 function enableHistoryTS () {
   typeset ret_code
   printf "CLI History TimeStamp enabling "
@@ -1073,14 +1067,13 @@ function toolOptimizeFirefox () {
       printf "Optimizing Firefox"
       pkill -9 firefox
       for f in ~/.mozilla/firefox/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
+      printf "\n"
     fi
     if which firefox-trunk >/dev/null; then
       printf "Optimizing Firefox Nightly"
       pkill -9 firefox-trunk
       for f in ~/.mozilla/firefox-trunk/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
-    fi
-    if (whiptail --title "Firefox SQLite DB Optimization - Reboot" --yesno "Reboot required, proceed now ?" 10 60) then
-      sudo reboot
+      printf "\n"
     fi
   fi
 }
