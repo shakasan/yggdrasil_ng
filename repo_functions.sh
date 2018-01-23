@@ -432,7 +432,8 @@ function addSpecificRepo_Gyazo () {
 #
 function addSpecificRepo_MongoDB3CE () {
   addKey "hkp://keyserver.ubuntu.com:80" "2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5"
-  addRepo "mongodb-org-3.6.list" "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
+  addRepo "mongodb-org-3.6.list" \
+          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
 }
 
 #
@@ -503,7 +504,6 @@ function mongodbTrtFct () {
 # nitrogen post install function
 #
 function nitrogenTrtFct () {
-#  if [[ $DESKTOP_SESSION == *"mate"* ]]; then
   if isMate; then
     runCmd "gsettings set org.mate.background draw-background false"
     runCmd "gsettings set org.mate.background show-desktop-icons false"
