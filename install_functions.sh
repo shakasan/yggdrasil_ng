@@ -1113,14 +1113,13 @@ function showAboutBoxMenu () {
 whiptail \
 --title "About" \
 --msgbox "\n
-Author : Francois B. (Makotosan)
-Email : shakasan@sirenacorp.be
+ Author : Francois B. (Makotosan)
+  Email : shakasan@sirenacorp.be
 Website : https://makotonoblog.be/
-Github : https://github.com/shakasan/Yggdrasil
+ Github : https://github.com/shakasan/Yggdrasil
 Licence : GPLv3
-Version : '$version'\n
-This script has been written to makes my life easier when I have to (re)install my personal computers ;-)
-This is my first major shell sccript and use of whiptail,...
+Version : $version\n
+At the beginning, this script has been written to makes my life easier when I have to (re)install my personal computers ;-)
 Advices and remarks are welcome ^^" \
 20 80
 }
