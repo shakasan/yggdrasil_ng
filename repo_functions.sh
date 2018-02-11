@@ -388,7 +388,7 @@ kodi;apt;nightly;kodi-nightly
 nitrogen;apt;nitrogen;nitrogen
 firefox-trunk;apt;nightly;firefox-trunk
 firefox-trunk-locale-fr;apt;nightly;firefox-trunk-locale-fr
-libreoffice;apt;office;libreoffice54
+libreoffice;apt;office;libreoffice6
 winehq-devel;apt;wine;winehq-devel
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
@@ -412,7 +412,7 @@ fbreader;apt;ebook;fbreader"
 #
 AppsRepo="kodi-beta;addSpecificRepo_KodiBeta
 kodi-nightly;addSpecificRepo_KodiNightly
-libreoffice54:addSpecificRepo_Libreoffice54
+libreoffice6:addSpecificRepo_Libreoffice6
 winehq-devel:addSpecificRepo_Wine
 mongodb-org;addSpecificRepo_MongoDB3CE
 gyazo;addSpecificRepo_Gyazo"
@@ -445,10 +445,10 @@ function addSpecificRepo_Wine () {
 }
 
 #
-# LibreOffice 5.4
+# LibreOffice 6
 #
-function addSpecificRepo_Libreoffice54 () {
-  addPPA "ppa:libreoffice/libreoffice-5-4"
+function addSpecificRepo_Libreoffice6 () {
+  addPPA "sudo add-apt repository ppa:libreoffice/ppa"
 }
 
 #
