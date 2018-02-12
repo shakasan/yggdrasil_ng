@@ -402,7 +402,8 @@ qttools5-doc;apt;qt;qttools5-doc
 qttools5-dev-tools;apt;qt;qttools5-dev-tools
 qttools5-examples;apt;qt;qttools5-examples
 qttools5-doc-html;apt;qt;qttools5-doc-html
-fbreader;apt;ebook;fbreader"
+fbreader;apt;ebook;fbreader
+android-studio;apt;android-studio;android-studio"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #
@@ -418,7 +419,8 @@ libreoffice6:addSpecificRepo_Libreoffice6
 winehq-devel:addSpecificRepo_Wine
 mongodb-org;addSpecificRepo_MongoDB3CE
 gyazo;addSpecificRepo_Gyazo
-code;addSpecificRepo_VSCode"
+code;addSpecificRepo_VSCode
+android-studio;addSpecificRepo_AndroidStudio"
 
 #
 # Gyazo
@@ -475,6 +477,10 @@ function addSpecificRepo_VSCode () {
   addKey "https://packages.microsoft.com/keys/microsoft.asc"
   addRepo "vscode.list" \
           "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+}
+
+function addSpecificRepo_AndroidStudio () {
+  addPPA "ppa:maarten-fonville/android-studio"
 }
 
 #-----------------------------------------------------------------------------#

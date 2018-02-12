@@ -889,27 +889,33 @@ function installPyCharmMenu () {
 }
 
 #
-# install Pycharm Apps (headless)
+# install Visual Studio Code Apps (headless)
 #
 function installVisualStudioCode () {
-  msg "Installing PyCharm"
+  msg "Installing Visual Studio Code"
   installAppsFromList code
 }
 
 #
-# install Pycharm Apps (Menu)
+# install Visual Studio Code Apps (Menu)
 #
-function installVisualStudioCode () {
+function installVisualStudioCodeMenu () {
   installAppsFromListMenu code
 }
 
-#TODO:
+#
+# install Android-Studio Apps (headless)
+#
 function installAndroidStudio () {
-  if which umake >/dev/null; then
-    msg "Umake installing : Android-Studio"
-    sudo umake android android-studio
-  fi
+  msg "Installing Android-Studio"
+  installAppsFromList android-studio
 }
+
+#
+# install Android-Studio Apps (Menu)
+#
+function installAndroidStudioMenu () {
+  installAppsFromListMenu android-studio
 
 #
 # install SublimeText Apps (headless)
