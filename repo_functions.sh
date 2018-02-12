@@ -165,6 +165,7 @@ rarcrack;apt;utilities;rarcrack
 pdfcrack;apt;utilities;pdfcrack
 figlet;apt;utilities;figlet
 alltray;apt;utilities;alltray
+cheat;pip;utilities;cheat
 mate-sensors-applet-nvidia;apt;utilities;mate-sensors-applets-nvidia
 woeusb;apt;utilities;woeusb
 screenkey;apt;utilities;screenkey
