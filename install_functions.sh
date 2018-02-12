@@ -888,12 +888,19 @@ function installPyCharmMenu () {
   installAppsFromListMenu pycharm
 }
 
-#TODO:
+#
+# install Pycharm Apps (headless)
+#
 function installVisualStudioCode () {
-  if which umake >/dev/null; then
-    msg "Umake installing : Visual-studio-code"
-    sudo umake ide visual-studio-code
-  fi
+  msg "Installing PyCharm"
+  installAppsFromList code
+}
+
+#
+# install Pycharm Apps (Menu)
+#
+function installVisualStudioCode () {
+  installAppsFromListMenu code
 }
 
 #TODO:

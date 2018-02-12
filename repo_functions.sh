@@ -377,6 +377,7 @@ kicad;apt;cad;kicad
 kicad-locale-fr;apt;cad;kicad-locale-fr
 librecad;apt;cad;librecad
 freecad;apt;cad;freecad
+code;apt;code;code
 atom;apt;atom;atom
 sync-settings;apm;atom;sync-settings
 sqlparse;pip;atom;sqlparse
@@ -415,7 +416,8 @@ kodi-nightly;addSpecificRepo_KodiNightly
 libreoffice6:addSpecificRepo_Libreoffice6
 winehq-devel:addSpecificRepo_Wine
 mongodb-org;addSpecificRepo_MongoDB3CE
-gyazo;addSpecificRepo_Gyazo"
+gyazo;addSpecificRepo_Gyazo
+code;addSpecificRepo_VSCode"
 
 #
 # Gyazo
@@ -463,6 +465,15 @@ function addSpecificRepo_KodiBeta () {
 #
 function addSpecificRepo_KodiNightly () {
   addPPA "ppa:team-xbmc/xbmc-nightly"
+}
+
+#
+# Visual Studio Code repo
+#
+function addSpecificRepo_VSCode () {
+  addKey "https://packages.microsoft.com/keys/microsoft.asc"
+  addRepo "vscode.list" \
+          "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 }
 
 #-----------------------------------------------------------------------------#
