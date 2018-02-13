@@ -41,6 +41,8 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 while getopts ":h,v,f,c,t,u" option; do
   case "$option" in
     t) #test purpose only
+      installIdea
+      #installNetTools
       exit
       ;;
     f) # install all apps

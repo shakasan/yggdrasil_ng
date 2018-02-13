@@ -865,12 +865,19 @@ function installEclipse () {
   fi
 }
 
-#TODO:
+#
+# install IDEA Apps (headless)
+#
 function installIdea () {
-  if which umake >/dev/null; then
-    msg "Umake installing : Idea"
-    sudo umake ide idea
-  fi
+  msg "Installing Intellij-IDEA"
+  installAppsFromList idea
+}
+
+#
+# install IDEA Apps (Menu)
+#
+function installIdeaMenu () {
+  installAppsFromListMenu idea
 }
 
 #
@@ -908,14 +915,15 @@ function installVisualStudioCodeMenu () {
 #
 function installAndroidStudio () {
   msg "Installing Android-Studio"
-  installAppsFromList android-studio
+  installAppsFromList androidstudio
 }
 
 #
 # install Android-Studio Apps (Menu)
 #
 function installAndroidStudioMenu () {
-  installAppsFromListMenu android-studio
+  installAppsFromListMenu androidstudio
+}
 
 #
 # install SublimeText Apps (headless)

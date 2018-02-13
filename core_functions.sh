@@ -259,7 +259,7 @@ function installAppFromArchive () {
 # TODO: update npm before update/install pkg
 #
 function installPackage () {
-  typeset pkg="$*"
+  typeset pkg="$2"
   typeset ret_code
 
   case $1 in
@@ -318,7 +318,7 @@ function installPackage () {
     if which snap >/dev/null; then
       printf "[SNAP] Installing by $pkg "
       printf "\n[SNAP] installing by $pkg\n" &>> $logFile
-      sudo snap install $pkg &>> $logFile
+      sudo snap install $pkg --classic &>> $logFile
       ret_code=$?
       retCode $ret_code
       printf "\n"

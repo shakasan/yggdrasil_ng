@@ -403,7 +403,8 @@ qttools5-dev-tools;apt;qt;qttools5-dev-tools
 qttools5-examples;apt;qt;qttools5-examples
 qttools5-doc-html;apt;qt;qttools5-doc-html
 fbreader;apt;ebook;fbreader
-android-studio;apt;android-studio;android-studio"
+android-studio;apt;android-studio;android-studio
+intellij-idea-community;snap;idea;idea"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #
@@ -479,6 +480,9 @@ function addSpecificRepo_VSCode () {
           "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 }
 
+#
+# Android-Studio repo
+#
 function addSpecificRepo_AndroidStudio () {
   addPPA "ppa:maarten-fonville/android-studio"
 }
