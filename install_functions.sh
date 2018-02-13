@@ -1384,16 +1384,16 @@ function showDevInstallMenu () {
         #TODO:
         ;;
       "idea")
-        #TODO:
+        installIdeaMenu
         ;;
       "pycharm")
         installPyCharmMenu
         ;;
       "vsc")
-        #TODO:
+        installVisualStudioCodeMenu
         ;;
       "androidstudio")
-        #TODO:
+        installAndroidStudioMenu
         ;;
       "sublimetext")
         installSublimeTextMenu
