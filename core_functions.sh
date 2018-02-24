@@ -184,7 +184,7 @@ function addKey () {
 #
 function addRepo () {
   typeset ret_code
-  printf "[REPO] adding : $2 in $1"
+  printf "[REPO] adding : $2 in $1\n"
   printf "\n[REPO] adding $2 in $1\n" &>> $logFile
   echo $2 | sudo tee /etc/apt/sources.list.d/$1 &>> $logFile
   ret_code=$?
