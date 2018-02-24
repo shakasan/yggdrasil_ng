@@ -436,11 +436,6 @@ function addRequiredPPA () {
   addRepo insync.list \
           "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
 
-  addKey "hkp://p80.pool.sks-keyservers.net:80" \
-          "58118E89F3A912897C070ADBF76221572C52609D"
-  addRepo docker.list \
-          "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
-
   addKey "https://syncthing.net/release-key.txt"
   addRepo syncthing.list \
           "deb http://apt.syncthing.net/ syncthing release"
@@ -459,7 +454,7 @@ function addRequiredPPA () {
           "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
 
   addKey "hkp://keyserver.ubuntu.com:80" \
-         "BBEBDCB318AD50EC6865090613B00F1FD2C19886"
+         "0DF731E45CE24F27EEEB1450EFDC8610341D9410"
   addRepo spotify.list \
           "deb http://repository.spotify.com stable non-free"
 
@@ -473,8 +468,6 @@ function addRequiredPPA () {
           "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps games"
 
   addKey "http://repo.vivaldi.com/stable/linux_signing_key.pub"
-  addKey "keyserver.ubuntu.com" \
-         "1397BC53640DB551"
   addRepo vivaldi.list \
           "deb http://repo.vivaldi.com/stable/deb/ stable main "
 
