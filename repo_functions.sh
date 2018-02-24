@@ -33,7 +33,7 @@ debconf-utils;apt;base;debconf-utils
 idle3-tools;apt;base;idle3-tools
 snapd;apt;base;snapd
 sysstat;apt;base;sysstat
-spotify-client;apt;multimedia;spotify-client
+spotify;snap;multimedia;spotify
 slowmovideo;apt;multimedia;slowmovideo
 sayonara;apt;multimedia;sayonara
 qmmp;apt;multimedia;qmmp
@@ -466,7 +466,7 @@ function addSpecificRepo_Wine () {
 # LibreOffice 6
 #
 function addSpecificRepo_Libreoffice6 () {
-  addPPA "sudo add-apt repository ppa:libreoffice/ppa"
+  addPPA "ppa:libreoffice/ppa"
 }
 
 #
