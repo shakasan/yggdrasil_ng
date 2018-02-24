@@ -47,7 +47,7 @@ function retCode () {
   else
     printf "[ ""$BOLDROUGE""!!"$NORMAL" ] "
   fi
-  #printf "\n"
+  printf "\n"
 }
 
 #
