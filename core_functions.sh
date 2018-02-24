@@ -284,6 +284,7 @@ function installPackage () {
       printf "\n[ERR] pip3 not found, installing...\n" &>> $logFile
       installPackage apt "python3-pip"
       installPackage pip "pip"
+      installPackage pip "setuptools"
     fi
     ;;
   "npm")
