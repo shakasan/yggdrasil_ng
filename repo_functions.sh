@@ -394,7 +394,7 @@ libreoffice;apt;office;libreoffice6
 winehq-devel;apt;wine;winehq-devel
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
-mongodb-org;apt;mongodb;mongodb-org
+mongodb-org;apt;mongodb;mongodb
 qt4-dev-tools;apt;qt;qt4-dev-tools
 qt4-linguist-tools;apt;qt;qt4-linguist-tools
 qt5-doc;apt;qt;qt5-doc
@@ -418,7 +418,7 @@ AppsRepo="kodi-beta;addSpecificRepo_KodiBeta
 kodi-nightly;addSpecificRepo_KodiNightly
 libreoffice6:addSpecificRepo_Libreoffice6
 winehq-devel:addSpecificRepo_Wine
-mongodb-org;addSpecificRepo_MongoDB3CE
+mongodb;addSpecificRepo_MongoDB3CE
 gyazo;addSpecificRepo_Gyazo
 code;addSpecificRepo_VSCode
 android-studio;addSpecificRepo_AndroidStudio
@@ -429,7 +429,7 @@ docker-ce;addSpecificRepo_DockerCE"
 #
 function addSpecificRepo_DockerCE () {
   addKey "https://download.docker.com/linux/ubuntu/gpg"
-  addRepo "docker.list"
+  addRepo "docker.list" \
           "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 }
 
@@ -439,7 +439,7 @@ function addSpecificRepo_DockerCE () {
 #
 function addSpecificRepo_Gyazo () {
   addKey "https://packagecloud.io/gyazo/gyazo-for-linux/gpgkey"
-  addRepo gyazo_gyazo-for-linux.list \
+  addRepo "gyazo_gyazo-for-linux.list" \
           "deb https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main" \
           "deb-src https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main"
 }
@@ -448,7 +448,7 @@ function addSpecificRepo_Gyazo () {
 # MongoDB 3 CE
 #
 function addSpecificRepo_MongoDB3CE () {
-  addKey "hkp://keyserver.ubuntu.com:80" "2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5"
+  addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
   addRepo "mongodb-org-3.6.list" \
           "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
 }

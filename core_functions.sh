@@ -478,7 +478,7 @@ function addRequiredPPA () {
 
   addKey "hkp://pgp.mit.edu:80" \
          "379CE192D401AB61"
-  addRepo etcher.list \
+  addRepo "etcher.list" \
           "deb https://dl.bintray.com/resin-io/debian stable etcher"
 
   updateSystem
@@ -501,8 +501,8 @@ function addSpecificRepoFct () {
   if [ "$2" == "yes" ]; then
     updateSystem
   fi
-  #unset i
-  #unset appRepo
+  unset i
+  unset appRepo
 }
 
 #
