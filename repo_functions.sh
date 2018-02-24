@@ -174,7 +174,6 @@ etcher-electron;apt;utilities;etcher-electron
 pdfgrep;apt;utilities;pdfgrep
 coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
-s-tui;pip;utilities;s-tui
 gyazo;apt;utilities;gyazo
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
