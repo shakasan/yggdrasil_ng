@@ -348,6 +348,7 @@ shellcheck;apt;dev;shellcheck
 umbrello;apt;dev;umbrello
 ack-grep;apt;dev;ack-grep
 ansible;apt;dev;ansible
+docker-ce;apt;dev;docker-ce
 remark-lint;npm;dev;remark-lint
 jedi;npm;dev;jedi
 beautysh;pip;dev;beautys
@@ -421,7 +422,18 @@ winehq-devel:addSpecificRepo_Wine
 mongodb-org;addSpecificRepo_MongoDB3CE
 gyazo;addSpecificRepo_Gyazo
 code;addSpecificRepo_VSCode
-android-studio;addSpecificRepo_AndroidStudio"
+android-studio;addSpecificRepo_AndroidStudio
+docker-ce;addSpecificRepo_DockerCE"
+
+#
+# Docker CE
+#
+function addSpecificRepo_DockerCE () {
+  addKey "https://download.docker.com/linux/ubuntu/gpg"
+  addRepo "docker.list"
+          "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+}
+
 
 #
 # Gyazo
