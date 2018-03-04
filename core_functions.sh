@@ -424,6 +424,7 @@ function addRequiredPPA () {
   addPPA "ppa:quiterss/quiterss" # quiterss
   addPPA "ppa:tmsu/ppa" # tmsu
   addPPA "ppa:ansible/ansible" # ansiaddmsg "Adding Opera repository"
+  addPPA "ppa:wireshark-dev/stable" # wireshark
 
   addKey "http://deb.opera.com/archive.key"
   addRepo opera.list \
@@ -454,11 +455,6 @@ function addRequiredPPA () {
   addRepo jgeboski.list \
           "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
 
-  addKey "hkp://keyserver.ubuntu.com:80" \
-         "0DF731E45CE24F27EEEB1450EFDC8610341D9410"
-  addRepo spotify.list \
-          "deb http://repository.spotify.com stable non-free"
-
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
   addRepo virtualbox.list \
@@ -476,8 +472,9 @@ function addRequiredPPA () {
   addRepo sublime-text.list \
           "deb https://download.sublimetext.com/ apt/dev/"
 
-  addKey "hkp://pgp.mit.edu:80" \
-         "379CE192D401AB61"
+  addKey "https://dl.bintray.com/resin-io/debian/Release.gpg"
+  #"hkp://pgp.mit.edu:80" \
+         #"379CE192D401AB61"
   addRepo "etcher.list" \
           "deb https://dl.bintray.com/resin-io/debian stable etcher"
 
