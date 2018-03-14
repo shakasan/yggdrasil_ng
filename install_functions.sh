@@ -396,7 +396,7 @@ function installIconsMenu () {
 function installPlankThemes () {
   msg "Installing Plank themes"
 
-  checkAndInstallDep apt plank
+  checkAndInstallDep apt plank plank
 
   if ! (( $(ps -ef | grep -v grep | grep plank | wc -l) > 0 )); then
     plank 2&>1 >/dev/null &
@@ -1006,7 +1006,7 @@ function enableNumLockX () {
   msg "Adding NumLockX to MDM/LightDM Default Init"
 
   #FIXME:
-  checkAndInstallDep apt numlockx
+  checkAndInstallDep apt numlockx numlockx
 
   if which lightdm >/dev/null; then
     sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak
@@ -1030,7 +1030,7 @@ function enableTmpRAM () {
 #
 function addScreenfetchBashrc () {
   msg "Adding screenfetch to .bashrc"
-  checkAndInstallDep apt screenfetch
+  checkAndInstallDep apt screenfetch screenfetch
   runCmd "touch /home/$myHomedir/.bashrc"
   printf "\n"
   runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc"
@@ -1060,7 +1060,7 @@ function installUnattendedUpgrades () {
 # display useful system/hardware informations
 #
 function toolInxi () {
-  checkAndInstallDep apt inxi
+  checkAndInstallDep apt inxi inxi
   inxi -F
 }
 
@@ -1068,7 +1068,7 @@ function toolInxi () {
 # check bandwith and latency of the internet connection
 #
 function toolSpeedtestCli () {
-  checkAndInstallDep pip speedtest-cli
+  checkAndInstallDep pip speedtest-cli speedtest-cli
   speedtest-cli
 }
 
@@ -1112,7 +1112,7 @@ function toolAutoremove () {
 #
 function toolClearOldKernels () {
   msg "Removing old kernels (keeping the 3 last kernels)"
-  checkAndInstallDep apt byobu
+  checkAndInstallDep apt byobu purge-old-kernels
   runCmd "sudo purge-old-kernels --keep 3"
 }
 
@@ -1120,6 +1120,7 @@ function toolClearOldKernels () {
 # force soundcards detection
 #
 function toolSoundCardsDetection () {
+  msg "Detecting ALSA sound cards compatible"
   runCmd "sudo alsa force-reload"
 }
 

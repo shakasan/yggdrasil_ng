@@ -319,12 +319,12 @@ function installPackage () {
 
 #
 # check dependency and install it if necessary
-# input : package manager, package name
+# input : package manager, package name, cmd/bin to check
 #FIXME:
 function checkAndInstallDep () {
-  if ! which $2 >/dev/null; then
-    printf "[DEP] check dependency : $2 [ ""$BOLDROUGE""!!"$NORMAL" ]\n"
-    printf "[ERR] dependency $2 not found\n" &>> $logFile
+  if ! which $3 >/dev/null; then
+    printf "[DEP] dependency $2 not found [ ""$BOLDROUGE""!!"$NORMAL" ]\n"
+    printf "[DEP] dependency $2 not found\n" &>> $logFile
     case $1 in
       "apt")
         installPackage apt $2
