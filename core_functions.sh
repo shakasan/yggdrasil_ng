@@ -249,51 +249,14 @@ function addRepo () {
 # input : url of package, package name
 #
 function installPackageDpkg () {
-  runCmd "cd /tmp"
-  printf "\n"
-  runCmd "wget -q -O $2 $1"
-  printf "\n"
-  runCmd "sudo dpkg -i $2 "
-  printf "\n"
-  runCmd "sudo apt-get install -fy"
-  printf "\n"
-}
-
-#
-# install app by remote shell script
-# input : script url, script name, opt extra param
-#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:
-function installAppRemoteScript () {
-  runCmd "cd /tmp"
-  printf "\n"
-  runCmd "wget -q -O $2 $1"
-  printf "\n"
-  runCmd "chmod +x $2"
-  printf "\n"
-
-}
-
-#
-# install app from archive
-# input : archive url, archive name, archive type, orig dir, dest dir
-#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:#TODO:
-function installAppFromArchive () {
-  runCmd "cd /tmp"
-  printf "\n"
-  runCmd "wget -q -O $2 $1"
-  printf "\n"
-  case "$3" in
-    "tgz")
-      runCmd "tar xzf $2"
-      printf "\n"
-      ;;
-    "xz")
-      runCmd "tar xvJf $2"
-      printf "\n"
-      ;;
-  esac
-  runCmd "mkdir -p $5"
-  printf "\n"
+  printf "[PKG] Installing $2 from $1 "
+  printf "\n[PKG] installing $2 from $1\n" &>> $logFile
+  cd /tmp \
+  && wget -q -O $2 $1 \
+  && sudo dpkg -i $2 \
+  && sudo apt-get install -fy &>> $logFile
+  ret_code=$?
+  retCode $ret_code
 }
 
 #
