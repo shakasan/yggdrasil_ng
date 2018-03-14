@@ -112,28 +112,32 @@ function updateSystem () {
   sudo apt-get update &>> $logFile
   ret_code=$?
   retCode $ret_code
-  printf "\n"
 
   printf "[APT] upgrade "
   printf "\n[APT] upgrade\n" &>> $logFile
   sudo apt-get -y upgrade &>> $logFile
   ret_code=$?
   retCode $ret_code
-  printf "\n"
 
   printf "[APT] dist-upgrade "
   printf "\n[APT] dist-upgrade\n" &>> $logFile
   sudo apt-get -y dist-upgrade &>> $logFile
   ret_code=$?
   retCode $ret_code
-  printf "\n"
 
-  printf "[SNAP] refresh "
-  printf "\n[SNAP] refresh\n" &>> $logFile
-  sudo snap refresh &>> $logFile
-  ret_code=$?
-  retCode $ret_code
-  printf "\n"
+  if ! which snap >/dev/null; then
+    printf "[ERR] snap not found, installing...\n"
+    printf "\n[ERR] snap not found, installing...\n" &>> $logFile
+    installPackage apt "snapd"
+    ret_code=$?
+    if [ $ret_code == 0 ]; then
+      printf "[SNAP] refresh "
+      printf "\n[SNAP] refresh\n" &>> $logFile
+      sudo snap refresh &>> $logFile
+      ret_code=$?
+      retCode $ret_code
+    fi
+  fi
 
   repoAdded=0
 }
@@ -269,7 +273,6 @@ function installPackage () {
     sudo apt-get install -fy $pkg &>> $logFile
     ret_code=$?
     retCode $ret_code
-    printf "\n"
     ;;
   "pip")
     if which pip3 >/dev/null; then
@@ -278,7 +281,6 @@ function installPackage () {
       sudo -H pip3 install --upgrade $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
-      printf "\n"
     else
       printf "[ERR] pip3 not found, installing...\n"
       printf "\n[ERR] pip3 not found, installing...\n" &>> $logFile
@@ -294,7 +296,6 @@ function installPackage () {
       sudo npm install -g $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
-      printf "\n"
     else
       printf "[ERR] npm not found, installing...\n"
       printf "\n[ERR] npm not found, installing...\n" &>> $logFile
@@ -308,7 +309,6 @@ function installPackage () {
       sudo gem install $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
-      printf "\n"
     else
       printf "[ERR] gem not found, installing...\n"
       printf "\n[ERR] gem not found, installing...\n" &>> $logFile
@@ -322,7 +322,6 @@ function installPackage () {
       sudo snap install $pkg --classic &>> $logFile
       ret_code=$?
       retCode $ret_code
-      printf "\n"
     else
       printf "[ERR] snap not found, installing...\n"
       printf "\n[ERR] snap not found, installing...\n" &>> $logFile
