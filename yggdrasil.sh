@@ -121,7 +121,7 @@ uname -m
 # Useless by itself, but is used to don't be annoyed later in the script
 sudo echo
 
-# check and install/update dependencies
+# init, check and install/update dependencies
 yggInit
 
 pressKey
