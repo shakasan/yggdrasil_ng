@@ -102,6 +102,7 @@ function isMate () {
 
 #
 # check and install required dependencies for Yggdrasil
+# TODO: update npm before update/install pkg
 #
 function yggInit () {
   if ! which gem >/dev/null; then
@@ -264,7 +265,6 @@ function installPackageDpkg () {
 # input : package manager, package name
 # package manager available : apt, pip, npm, gem, snap
 # TODO: add apm, flatpak, umake?
-# TODO: update npm before update/install pkg
 #
 function installPackage () {
   typeset pkg="$2"
