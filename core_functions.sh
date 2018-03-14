@@ -186,13 +186,13 @@ function addKey () {
 #
 function addRepo () {
   typeset ret_code
-  printf "[REPO] adding : $2 in $1"
+  printf "[REPO] adding : $2 in $1 "
   printf "\n[REPO] adding $2 in $1\n" &>> $logFile
   echo $2 | sudo tee /etc/apt/sources.list.d/$1 &>> $logFile
   ret_code=$?
   retCode $ret_code
   if [ "$#" -eq 3 ]; then
-    printf "[REPO] adding : $3 in $1"
+    printf "[REPO] adding : $3 in $1 "
     printf "\n[REPO] adding $3 in $1\n" &>> $logFile
     echo $3 | sudo tee -a /etc/apt/sources.list.d/$1 &>> $logFile
     ret_code=$?
