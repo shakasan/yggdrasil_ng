@@ -44,7 +44,7 @@ while getopts ":h,v,f,c,t,u" option; do
       yggInit
       #installIdea
       #installNetTools
-      installOffice
+      #installOffice
       exit
       ;;
     f) # install all apps
