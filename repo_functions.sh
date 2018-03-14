@@ -416,8 +416,8 @@ intellij-idea-community;snap;idea;idea"
 #
 AppsRepo="kodi-beta;addSpecificRepo_KodiBeta
 kodi-nightly;addSpecificRepo_KodiNightly
-libreoffice6:addSpecificRepo_Libreoffice6
-winehq-devel:addSpecificRepo_Wine
+libreoffice6;addSpecificRepo_Libreoffice6
+winehq-devel;addSpecificRepo_Wine
 mongodb;addSpecificRepo_MongoDB3CE
 gyazo;addSpecificRepo_Gyazo
 code;addSpecificRepo_VSCode
