@@ -41,6 +41,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 while getopts ":h,v,f,c,t,u" option; do
   case "$option" in
     t) #test purpose only
+      yggInit
       #installIdea
       #installNetTools
       installOffice
@@ -48,9 +49,9 @@ while getopts ":h,v,f,c,t,u" option; do
       ;;
     f) # install all apps
       #TODO:
+      yggInit
       updateSystem
       addRequiredPPA
-      msg "Installing all Apps"
       installBase
       installBurningTools
       installCajaPlugins
@@ -70,12 +71,13 @@ while getopts ":h,v,f,c,t,u" option; do
       ;;
     c) # install themes and icons
       #TODO:
-      msg "Installing all Themes and Icons"
+      yggInit
       installIcons
       installThemes
       exit
       ;;
     u)
+      yggInit
       updateSystem
       exit
       ;;
@@ -118,6 +120,9 @@ uname -m
 
 # Useless by itself, but is used to don't be annoyed later in the script
 sudo echo
+
+# check and install/update dependencies
+yggInit
 
 pressKey
 

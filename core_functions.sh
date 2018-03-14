@@ -101,6 +101,56 @@ function isMate () {
 }
 
 #
+# check and install required dependencies for Yggdrasil
+#
+function yggInit () {
+  if ! which gem >/dev/null; then
+    printf "[INIT][GEM] not found, installing...\n"
+    printf "\n[INIT][GEM] not found, installing...\n" &>> $logFile
+    installPackage apt "ruby-dev"
+  else
+    printf "[INIT][GEM] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+  fi
+
+  if ! which snap >/dev/null; then
+    printf "[INIT][SNAP] not found, installing...\n"
+    printf "\n[INIT][SNAP] not found, installing...\n" &>> $logFile
+    installPackage apt "snapd"
+  else
+    printf "[INIT][SNAP] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+  fi
+
+  if ! which npm >/dev/null; then
+    printf "[INIT][NPM] not found, installing...\n"
+    printf "\n[INIT][NPM] not found, installing...\n" &>> $logFile
+    installPackage apt "npm"
+  else
+    printf "[INIT][NPM] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+  fi
+
+  printf "[INIT]"
+  installPackage apt "apt-transport-https"
+
+  if ! which pip3 >/dev/null; then
+    printf "[INIT][PIP] not found, installing...\n"
+    printf "\n[INIT][PIP] not found, installing...\n" &>> $logFile
+    printf "[INIT]"
+    installPackage apt "python3-pip"
+    printf "[INIT]"
+    installPackage pip "pip"
+    printf "[INIT]"
+    installPackage pip "setuptools"
+  else
+    printf "[INIT][PIP] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT]"
+    installPackage pip "pip"
+    printf "[INIT]"
+    installPackage pip "setuptools"
+  fi
+}
+
+
+#
 # system update
 #TODO: add pip, npm, gem
 #
@@ -125,18 +175,12 @@ function updateSystem () {
   ret_code=$?
   retCode $ret_code
 
-  if ! which snap >/dev/null; then
-    printf "[ERR] snap not found, installing...\n"
-    printf "\n[ERR] snap not found, installing...\n" &>> $logFile
-    installPackage apt "snapd"
+  if which snap >/dev/null; then
+    printf "[SNAP] refresh "
+    printf "\n[SNAP] refresh\n" &>> $logFile
+    sudo snap refresh &>> $logFile
     ret_code=$?
-    if [ $ret_code == 0 ]; then
-      printf "[SNAP] refresh "
-      printf "\n[SNAP] refresh\n" &>> $logFile
-      sudo snap refresh &>> $logFile
-      ret_code=$?
-      retCode $ret_code
-    fi
+    retCode $ret_code
   fi
 
   repoAdded=0
@@ -278,12 +322,6 @@ function installPackage () {
       sudo -H pip3 install --upgrade $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
-    else
-      printf "[ERR] pip3 not found, installing...\n"
-      printf "\n[ERR] pip3 not found, installing...\n" &>> $logFile
-      installPackage apt "python3-pip"
-      installPackage pip "pip"
-      installPackage pip "setuptools"
     fi
     ;;
   "npm")
@@ -293,10 +331,6 @@ function installPackage () {
       sudo npm install -g $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
-    else
-      printf "[ERR] npm not found, installing...\n"
-      printf "\n[ERR] npm not found, installing...\n" &>> $logFile
-      installPackage apt "npm"
     fi
     ;;
   "gem")
@@ -306,10 +340,6 @@ function installPackage () {
       sudo gem install $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
-    else
-      printf "[ERR] gem not found, installing...\n"
-      printf "\n[ERR] gem not found, installing...\n" &>> $logFile
-      installPackage apt "ruby-dev"
     fi
     ;;
   "snap")
@@ -319,10 +349,6 @@ function installPackage () {
       sudo snap install $pkg --classic &>> $logFile
       ret_code=$?
       retCode $ret_code
-    else
-      printf "[ERR] snap not found, installing...\n"
-      printf "\n[ERR] snap not found, installing...\n" &>> $logFile
-      installPackage apt "snapd"
     fi
     ;;
   esac
