@@ -468,9 +468,9 @@ function addRequiredPPA () {
   addRepo sublime-text.list \
           "deb https://download.sublimetext.com/ apt/dev/"
 
-  addKey "https://dl.bintray.com/resin-io/debian/Release.gpg"
-  #"hkp://pgp.mit.edu:80" \
-         #"379CE192D401AB61"
+  addKey "hkp://pgp.mit.edu:80" \
+         "379CE192D401AB61"
+         #"https://dl.bintray.com/resin-io/debian/Release.gpg"
   addRepo "etcher.list" \
           "deb https://dl.bintray.com/resin-io/debian stable etcher"
 
