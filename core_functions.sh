@@ -153,7 +153,6 @@ function addPPA () {
   sudo add-apt-repository -y $* &>> $logFile
   ret_code=$?
   retCode $ret_code
-  printf "\n"
 }
 
 #
@@ -179,7 +178,6 @@ function addKey () {
       retCode $ret_code
       ;;
   esac
-  printf "\n"
 }
 
 #
@@ -188,7 +186,7 @@ function addKey () {
 #
 function addRepo () {
   typeset ret_code
-  printf "[REPO] adding : $2 in $1\n"
+  printf "[REPO] adding : $2 in $1"
   printf "\n[REPO] adding $2 in $1\n" &>> $logFile
   echo $2 | sudo tee /etc/apt/sources.list.d/$1 &>> $logFile
   ret_code=$?
@@ -200,7 +198,6 @@ function addRepo () {
     ret_code=$?
     retCode $ret_code
   fi
-  printf "\n"
 }
 
 #
