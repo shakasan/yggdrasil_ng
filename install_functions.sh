@@ -1005,7 +1005,6 @@ function enableUFW () {
 function enableNumLockX () {
   msg "Adding NumLockX to MDM/LightDM Default Init"
 
-  #FIXME:
   checkAndInstallDep apt numlockx numlockx
 
   if which lightdm >/dev/null; then
