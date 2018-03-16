@@ -218,7 +218,9 @@ function addKey () {
     "2")
       printf "[REPO] adding key $2 from $1 "
       printf "\n[REPO] adding key $2 from $1\n" &>> $logFile
-      sudo apt-key adv --keyserver $1 --recv-keys $2 - &>> $logFile
+      #sudo apt-key adv --keyserver $1 --recv-keys $2 - &>> $logFile
+      gpg --keyserver $1 --recv-keys $2 \
+      && gpg -a --export $2 | sudo apt-key add - &>> $logFile
       ret_code=$?
       retCode $ret_code
       ;;
