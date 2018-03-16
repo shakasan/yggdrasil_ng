@@ -105,6 +105,14 @@ function isMate () {
 # TODO: update npm before update/install pkg
 #
 function yggInit () {
+  typeset ret_code
+
+  printf "[APT] update "
+  printf "\n[APT] update\n" &>> $logFile
+  sudo apt-get update &>> $logFile
+  ret_code=$?
+  retCode $ret_code
+
   if ! which gem >/dev/null; then
     printf "[INIT][GEM] not found, installing...\n"
     printf "\n[INIT][GEM] not found, installing...\n" &>> $logFile
