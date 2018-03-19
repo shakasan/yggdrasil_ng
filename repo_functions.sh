@@ -551,3 +551,124 @@ function nitrogenTrtFct () {
     printf "[ERR] only Mate Desktop is currently supported\n"
   fi
 }
+
+#
+# install required ppa and settings
+#
+function addRequiredPPA () {
+  msg "Adding PPA and repositories"
+
+  runCmd "sudo dpkg --add-architecture i386"
+
+  installPackage apt "apt-transport-https"
+
+  runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections"
+
+  addPPA "ppa:noobslab/themes" # themes from noobslab
+  addPPA "ppa:noobslab/icons" # icons from noobslab
+  addPPA "ppa:numix/ppa" # theme Numix
+  addPPA "ppa:ravefinity-project/ppa" # Themes
+  addPPA "ppa:teejee2008/ppa" # Aptik - Conky-Manage
+  addPPA "ppa:yktooo/ppa" # indicator-sound-switcher
+  addPPA "ppa:webupd8team/y-ppa-manager" # y-ppa-manager
+  addPPA "ppa:webupd8team/atom" # IDE
+  addPPA "ppa:videolan/stable-daily" # video player
+  addPPA "ppa:ubuntu-desktop/ubuntu-make" # ubuntu-make
+  addPPA "ppa:nowrep/qupzilla" # web browser
+  addPPA "ppa:atareao/atareao" # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
+  addPPA "ppa:fossfreedom/rhythmbox-plugins";  # Rhythmbox plugins
+  addPPA "ppa:fossfreedom/rhythmbox" # Rhythmbox
+  addPPA "ppa:nilarimogard/webupd8" # Audacious, Grive2, Pidgin-indicator
+  addPPA "ppa:oibaf/graphics-drivers" # free graphics-drivers + mesa
+  addPPA "ppa:team-xbmc/ppa" # Kodi
+  addPPA "ppa:webupd8team/java" # Oracle Java SE 7/8
+  addPPA "ppa:hugin/hugin-builds" # image editor
+  addPPA "ppa:mumble/release" # Mumble
+  addPPA "ppa:atareao/utext" # Markdown editor
+  addPPA "ppa:danielrichter2007/grub-customizer" # grub-customizer
+  addPPA "ppa:lucioc/sayonara" # audio player
+  addPPA "ppa:haraldhv/shotcut" # video editor
+  addPPA "ppa:flacon/ppa" # audio extraction
+  addPPA "ppa:jaap.karssenberg/zim" # local wiki
+  addPPA "ppa:pmjdebruijn/darktable-release" # raw editor
+  addPPA "ppa:js-reynaud/kicad-4" # CAD
+  addPPA "ppa:stebbins/handbrake-releases" # video transcoder
+  addPPA "ppa:webupd8team/brackets" # IDE
+  addPPA "ppa:graphics-drivers/ppa" # non-free nvidia drivers
+  addPPA "ppa:djcj/hybrid" # FFMpeg, MKVToolnix
+  addPPA "ppa:diodon-team/stable" # clipboard manager
+  addPPA "ppa:notepadqq-team/notepadqq" # notepad++ clone
+  addPPA "ppa:mariospr/frogr" # flickr manager
+  addPPA "ppa:ubuntuhandbook1/slowmovideo" # slow motion video editor
+  addPPA "ppa:transmissionbt/ppa" # bittorrent client
+  addPPA "ppa:geary-team/releases" # email client
+  addPPA "ppa:ubuntuhandbook1/corebird" # corebird
+  addPPA "ppa:tista/adapta" # adapta gtk theme
+  addPPA "ppa:maarten-baert/simplescreenrecorder" # simplescreenrecorder
+  addPPA "ppa:dhor/myway" # rawtherapee (newer version)
+  addPPA "ppa:zeal-developers/ppa" # Zeal (newer version)
+  addPPA "ppa:nextcloud-devs/client" # NextCloud client
+  addPPA "ppa:deluge-team/ppa" # Deluge P2P client
+  addPPA "ppa:kritalime/ppa" # Krita
+  addPPA "ppa:otto-kesselgulasch/gimp" # Gmic2
+  addPPA "ppa:ozmartian/apps" # Vidcutter
+  addPPA "ppa:fossproject/ppa" # green-recorder
+  addPPA "ppa:quiterss/quiterss" # quiterss
+  addPPA "ppa:tmsu/ppa" # tmsu
+  addPPA "ppa:ansible/ansible" # ansiaddmsg "Adding Opera repository"
+  addPPA "ppa:wireshark-dev/stable" # wireshark
+
+  addKey "http://deb.opera.com/archive.key"
+  addRepo opera.list \
+          "deb http://deb.opera.com/opera-stable/ stable non-free"
+
+  addKey "https://dl.google.com/linux/linux_signing_key.pub"
+  addRepo google-chrome.list \
+          "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+
+  addKey "https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key"
+  addRepo insync.list \
+          "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
+
+  addKey "https://syncthing.net/release-key.txt"
+  addRepo syncthing.list \
+          "deb http://apt.syncthing.net/ syncthing release"
+
+  addKey "http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_16.04/Release.key"
+  addRepo owncloud-client.list \
+          "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/ /"
+
+  addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
+  addRepo mkv.list \
+          "deb http://mkvtoolnix.download/ubuntu/xenial/ ./" \
+          "deb-src http://mkvtoolnix.download/ubuntu/xenial/ ./ "
+
+  addKey "https://jgeboski.github.io/obs.key"
+  addRepo jgeboski.list \
+          "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
+
+  addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
+  addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
+  addRepo virtualbox.list \
+          "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+
+  addKey "http://archive.getdeb.net/getdeb-archive.key"
+  addRepo getdeb.list \
+          "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps games"
+
+  addKey "http://repo.vivaldi.com/stable/linux_signing_key.pub"
+  addRepo vivaldi.list \
+          "deb http://repo.vivaldi.com/stable/deb/ stable main "
+
+  addKey "https://download.sublimetext.com/sublimehq-pub.gpg"
+  addRepo sublime-text.list \
+          "deb https://download.sublimetext.com/ apt/dev/"
+
+  addKey "hkp://pgp.mit.edu:80" \
+         "379CE192D401AB61"
+         #"https://dl.bintray.com/resin-io/debian/Release.gpg"
+  addRepo "etcher.list" \
+          "deb https://dl.bintray.com/resin-io/debian stable etcher"
+
+  updateSystem
+}
