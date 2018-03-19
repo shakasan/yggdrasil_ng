@@ -562,7 +562,7 @@ KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{idVendor}==\"096e\", ATTRS{idP
 \n\
 LABEL=\"u2f_end\"' > /etc/udev/rules.d/70-u2f.rules"
 
-  rmcCmd "sudo service udev restart"
+  runCmd "sudo service udev restart"
 }
 
 #
