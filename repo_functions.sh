@@ -354,6 +354,7 @@ beautysh;pip;dev;beautys
 retext;pip;dev;retext
 mycli;pip;dev;mycli
 npm;apt;javascript;npm
+nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 jshint;npm;javascript;jshint
@@ -439,7 +440,18 @@ nextcloud-client;addRepo_NextCloud
 wireshark;addRepo_WireShark
 darktable;addRepo_DarkTable
 brackets;addRepo_Brackets
-kicad;addRepo_Kicad"
+kicad;addRepo_Kicad
+nodejs8lts;addRepo_NodeLts8"
+
+#
+# Node 8 LTS
+#
+function addRepo_NodeLts8 () {
+  addKey "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+  addRepo "nodesource.list" \
+          "deb https://deb.nodesource.com/node_8.x xenial main" \
+          "deb-src https://deb.nodesource.com/node_8.x xenial main"
+}
 
 #
 # Kicad 4

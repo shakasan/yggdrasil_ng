@@ -595,13 +595,6 @@ function installJava9Menu () {
   installAppsFromListMenu java9
 }
 
-#TODO:
-function installNode8LTS () {
-  msg "Installing NodeJS 8 LTS"
-  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &>> $logFile && retCode $? && smsgn "Adding Node repository"
-  runCmd "sudo apt-get install -y nodejs"; smsgn "Installing nodejs"
-}
-
 #
 # install Mongo DB 3 CE (headless)
 #
