@@ -656,7 +656,36 @@ function addRepo_AndroidStudio () {
 #
 AppsTrtFct="nitrogen;nitrogen_TrtFct
 mongodb-org;mongodb_TrtFct
-qttools5-dev-tools;qt_TrtFct"
+qttools5-dev-tools;qt_TrtFct
+plank;plank_TrtFct"
+
+#
+# Plank themes
+#TODO: test it
+function plank_TrtFct () {
+  typeset ret_code
+
+  if ! (( $(ps -ef | grep -v grep | grep plank | wc -l) > 0 )); then
+    plank 2&>1 >/dev/null &
+    sleep 10
+  fi
+
+  yes | sh -c "cd ~ \
+               && mkdir -p ~/.temp-plank-themer \
+               && cd ~/.temp-plank-themer \
+               && wget https://github.com/rhoconlinux/plank-themer/archive/master.zip \
+               && unzip master.zip \
+               && cd plank-themer-master/ \
+               && rm -fR ~/.config/plank/dock1/theme_index; \
+               rm -fR ~/.config/plank/dock1/themes-repo; \
+               cp -a theme_index/ ~/.config/plank/dock1 \
+               && cp -a themes-repo/ ~/.config/plank/dock1 \
+               && cd ~ \
+               && rm -R ~/.temp-plank-themer \
+               && sh ~/.config/plank/dock1/theme_index/plank-on-dock-themer.sh" &>> $logFile
+  ret_code=$?
+  retCode $ret_code
+}
 
 #
 # QT5 Dev Tools
