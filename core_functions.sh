@@ -107,6 +107,10 @@ function isMate () {
 function yggInit () {
   typeset ret_code
 
+  if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ubuntu-make; then
+    addPPA "ppa:ubuntu-desktop/ubuntu-make"
+  fi
+
   printf "[APT] update "
   printf "\n[APT] update\n" &>> $logFile
   sudo apt-get update &>> $logFile

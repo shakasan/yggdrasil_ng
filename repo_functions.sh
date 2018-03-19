@@ -786,7 +786,6 @@ function addRequiredPPA () {
   addPPA "ppa:yktooo/ppa" # indicator-sound-switcher
   addPPA "ppa:webupd8team/y-ppa-manager" # y-ppa-manager
   addPPA "ppa:videolan/stable-daily" # video player
-  addPPA "ppa:ubuntu-desktop/ubuntu-make" # ubuntu-make
   addPPA "ppa:nowrep/qupzilla" # web browser
   addPPA "ppa:atareao/atareao" # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
   addPPA "ppa:fossfreedom/rhythmbox-plugins";  # Rhythmbox plugins
