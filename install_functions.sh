@@ -580,6 +580,22 @@ function installDevAppsMenu () {
   installAppsFromListMenu dev
 }
 
+
+#
+# install Javascript env (headless)
+#
+function installJavascript () {
+  msg "Installing Javascript env"
+  installAppsFromList javascript
+}
+
+#
+# install Javascript env (Menu)
+#
+function installJavascriptMenu () {
+  installAppsFromListMenu javascript
+}
+
 #
 # install JAVA 9 (headless)
 #
@@ -1267,7 +1283,7 @@ function showDevInstallMenu () {
     25 80 16 \
     "devbase" "dev apps and tools" \
     "java9" "Java 9 dev env" \
-    "javascriptbase" "JavaScript dev env" \
+    "javascript" "JavaScript dev env" \
     "nodelts" "NodeJS 8.x LTS" \
     "mongodb3ce" "MongoDB 3 CE" \
     "php" "PHP dev env" \
@@ -1298,11 +1314,8 @@ function showDevInstallMenu () {
       "java9")
         installJava9
         ;;
-      "javascriptbase")
-        #TODO:
-        ;;
-      "nodelts")
-        #TODO:
+      "javascript")
+        installJavascriptMenu
         ;;
       "mongodb3ce")
         installMongo3CEMenu
