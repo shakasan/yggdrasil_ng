@@ -615,7 +615,7 @@ function addRequiredPPA () {
   addPPA "ppa:fossproject/ppa" # green-recorder
   addPPA "ppa:quiterss/quiterss" # quiterss
   addPPA "ppa:tmsu/ppa" # tmsu
-  addPPA "ppa:ansible/ansible" # ansiaddmsg "Adding Opera repository"
+  addPPA "ppa:ansible/ansible" # ansible
   addPPA "ppa:wireshark-dev/stable" # wireshark
 
   addKey "http://deb.opera.com/archive.key"
