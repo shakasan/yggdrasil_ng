@@ -1001,10 +1001,10 @@ function addScreenfetchBashrc () {
 
 #
 # cli history cmd timestamp enable
-#FIXME:
+#
 function enableHistoryTS () {
   typeset ret_code
-  printf "CLI History TimeStamp enabling "
+  printf "Enabling CLI History TimeStamp "
   echo "export HISTTIMEFORMAT='%F %T  '" | tee -a /home/$myHomedir/.bashrc &>> $logFile
   ret_code=$?
   retCode $ret_code
