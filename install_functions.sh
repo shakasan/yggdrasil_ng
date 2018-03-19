@@ -74,13 +74,6 @@ function installMultimediaExt () {
                     "XnRetro" \
                     "local"
   update-menus
-
-  msg "Téléchargement de XnView"
-  wget http://download.xnview.com/XnViewMP-linux-x64.deb
-
-  msg "Installation de XnView"
-  sudo dpkg -i XnViewMP-linux-x64.deb
-  sudo apt-get install -fy
 }
 
 #
