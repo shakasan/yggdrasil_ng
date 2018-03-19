@@ -108,6 +108,7 @@ function yggInit () {
   typeset ret_code
 
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ubuntu-make; then
+    printf "[INIT]"
     addPPA "ppa:ubuntu-desktop/ubuntu-make"
   fi
 
