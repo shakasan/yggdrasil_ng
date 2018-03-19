@@ -1247,9 +1247,6 @@ function showThemesInstallMenu () {
       "icons")
         installIconsMenu
         ;;
-      "plank")
-        #TODO:
-        ;;
       "Back")
         break
         ;;
