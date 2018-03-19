@@ -414,20 +414,168 @@ intellij-idea-community;snap;idea;idea"
 # list of specific repositories
 # fields : unique ID, function to add repo
 #
-AppsRepo="kodi-beta;addSpecificRepo_KodiBeta
-kodi-nightly;addSpecificRepo_KodiNightly
-libreoffice6;addSpecificRepo_Libreoffice6
-winehq-devel;addSpecificRepo_Wine
-mongodb;addSpecificRepo_MongoDB3CE
-gyazo;addSpecificRepo_Gyazo
-code;addSpecificRepo_VSCode
-android-studio;addSpecificRepo_AndroidStudio
-docker-ce;addSpecificRepo_DockerCE"
+AppsRepo="kodi-beta;addRepo_KodiBeta
+kodi-nightly;addRepo_KodiNightly
+libreoffice6;addRepo_Libreoffice6
+winehq-devel;addRepo_Wine
+mongodb;addRepo_MongoDB3CE
+gyazo;addRepo_Gyazo
+code;addRepo_VSCode
+android-studio;addRepo_AndroidStudio
+docker-ce;addRepo_DockerCE
+ansible;addRepo_Ansible
+etcher-electron;addRepo_Etcher
+sublime-text;addRepo_SublimeText
+vivaldi-stable;addRepo_Vivaldi
+virtualbox-5.1;addRepo_VirtualBox
+owncloud-client;addRepo_OwnCloud
+syncthing-gtk;addRepo_Syncthing
+opera-stable;addRepo_Opera
+insync;addRepo_Insync
+google-chrome-stable;addRepo_ChromeStable
+atom;addRepo_Atom
+nextcloud-client;addRepo_NextCloud
+wireshark;addRepo_WireShark
+darktable;addRepo_DarkTable
+brackets;addRepo_Brackets
+kicad;addRepo_Kicad"
+
+#
+# Kicad 4
+#
+function addRepo_Kicad () {
+  addPPA "ppa:js-reynaud/kicad-4"
+}
+
+#
+# Brackets IDE
+#
+function addRepo_Brackets () {
+  addPPA "ppa:webupd8team/brackets"
+}
+
+#
+# Darktable RAW Editor
+#
+function addRepo_DarkTable () {
+  addPPA "ppa:pmjdebruijn/darktable-release"
+}
+
+#
+# WireShark
+#
+function addRepo_WireShark () {
+addPPA "ppa:wireshark-dev/stable"
+}
+
+#
+# NextCloud
+#
+function addRepo_NextCloud () {
+  addPPA "ppa:nextcloud-devs/client"
+}
+
+#
+# Atom IDE
+#
+function addRepo_Atom () {
+  addPPA "ppa:webupd8team/atom"
+}
+
+#
+# Google Chrome (stable)
+#
+function addRepo_ChromeStable () {
+  addKey "https://dl.google.com/linux/linux_signing_key.pub"
+  addRepo google-chrome.list \
+          "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+}
+
+#
+# Insync
+#
+function addRepo_Insync () {
+  addKey "https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key"
+  addRepo insync.list \
+          "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
+}
+
+#
+# Opera (stable)
+#
+function addRepo_Opera () {
+  addKey "http://deb.opera.com/archive.key"
+  addRepo opera.list \
+          "deb http://deb.opera.com/opera-stable/ stable non-free"
+}
+
+#
+# Syncthing
+#
+function addRepo_Syncthing () {
+  addKey "https://syncthing.net/release-key.txt"
+  addRepo syncthing.list \
+          "deb http://apt.syncthing.net/ syncthing release"
+}
+
+#
+# OwnCloud
+#
+function addRepo_OwnCloud () {
+  addKey "http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_16.04/Release.key"
+  addRepo owncloud-client.list \
+          "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/ /"
+}
+
+#
+# VirtualBox
+#
+function addRepo_VirtualBox () {
+  addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
+  addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
+  addRepo virtualbox.list \
+          "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+}
+
+#
+# Vivaldi
+#
+function addRepo_Vivaldi () {
+  addKey "http://repo.vivaldi.com/stable/linux_signing_key.pub"
+  addRepo vivaldi.list \
+          "deb http://repo.vivaldi.com/stable/deb/ stable main "
+}
+
+#
+# SublimeText
+#
+function addRepo_SublimeText () {
+  addKey "https://download.sublimetext.com/sublimehq-pub.gpg"
+  addRepo sublime-text.list \
+          "deb https://download.sublimetext.com/ apt/dev/"
+}
+
+#
+# Etcher
+#
+function addRepo_Etcher () {
+  addKey "hkp://pgp.mit.edu:80" \
+         "379CE192D401AB61"
+  addRepo "etcher.list" \
+          "deb https://dl.bintray.com/resin-io/debian stable etcher"
+}
+
+#
+# Ansible
+#
+function addRepo_Ansible () {
+  addPPA "ppa:ansible/ansible"
+}
 
 #
 # Docker CE
 #
-function addSpecificRepo_DockerCE () {
+function addRepo_DockerCE () {
   addKey "https://download.docker.com/linux/ubuntu/gpg"
   addRepo "docker.list" \
           "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
@@ -436,7 +584,7 @@ function addSpecificRepo_DockerCE () {
 #
 # Gyazo
 #
-function addSpecificRepo_Gyazo () {
+function addRepo_Gyazo () {
   addKey "https://packagecloud.io/gyazo/gyazo-for-linux/gpgkey"
   addRepo "gyazo_gyazo-for-linux.list" \
           "deb https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main" \
@@ -446,7 +594,7 @@ function addSpecificRepo_Gyazo () {
 #
 # MongoDB 3 CE
 #
-function addSpecificRepo_MongoDB3CE () {
+function addRepo_MongoDB3CE () {
   addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
   addRepo "mongodb-org-3.6.list" \
           "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
@@ -455,7 +603,7 @@ function addSpecificRepo_MongoDB3CE () {
 #
 # Wine Build
 #
-function addSpecificRepo_Wine () {
+function addRepo_Wine () {
   addKey "https://dl.winehq.org/wine-builds/Release.key"
   addPPA "https://dl.winehq.org/wine-builds/ubuntu/"
 }
@@ -463,37 +611,37 @@ function addSpecificRepo_Wine () {
 #
 # LibreOffice 6
 #
-function addSpecificRepo_Libreoffice6 () {
+function addRepo_Libreoffice6 () {
   addPPA "ppa:libreoffice/ppa"
 }
 
 #
-# Kodi Beta, repo
+# Kodi (Beta)
 #
-function addSpecificRepo_KodiBeta () {
+function addRepo_KodiBeta () {
   addPPA "ppa:team-xbmc/unstable"
 }
 
 #
-# Kodi Nightly repo
+# Kodi (Nightly)
 #
-function addSpecificRepo_KodiNightly () {
+function addRepo_KodiNightly () {
   addPPA "ppa:team-xbmc/xbmc-nightly"
 }
 
 #
-# Visual Studio Code repo
+# Visual Studio Code
 #
-function addSpecificRepo_VSCode () {
+function addRepo_VSCode () {
   addKey "https://packages.microsoft.com/keys/microsoft.asc"
   addRepo "vscode.list" \
           "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 }
 
 #
-# Android-Studio repo
+# Android-Studio
 #
-function addSpecificRepo_AndroidStudio () {
+function addRepo_AndroidStudio () {
   addPPA "ppa:maarten-fonville/android-studio"
 }
 
@@ -505,14 +653,14 @@ function addSpecificRepo_AndroidStudio () {
 # list of post install functions
 # fields : unique ID, function to process after install
 #
-AppsTrtFct="nitrogen;nitrogenTrtFct
-mongodb-org;mongodbTrtFct
-qttools5-dev-tools;qtTrtFct"
+AppsTrtFct="nitrogen;nitrogen_TrtFct
+mongodb-org;mongodb_TrtFct
+qttools5-dev-tools;qt_TrtFct"
 
 #
 # QT5 Dev Tools
 #
-function qtTrtFct () {
+function qt_TrtFct () {
   runCmd "sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf"
 
   createAppShortcut "/usr/bin/designer" \
@@ -526,7 +674,7 @@ function qtTrtFct () {
 #
 # MongoDB 3 CE
 #
-function mongodbTrtFct () {
+function mongodb_TrtFct () {
   runCmd "sudo systemctl unmask mongodb.service"
   runCmd "sudo systemctl enable mongodb"
   runCmd "sudo systemctl start mongodb"
@@ -535,7 +683,7 @@ function mongodbTrtFct () {
 #
 # nitrogen post install function
 #
-function nitrogenTrtFct () {
+function nitrogen_TrtFct () {
   if isMate; then
     runCmd "gsettings set org.mate.background draw-background false"
     runCmd "gsettings set org.mate.background show-desktop-icons false"
@@ -551,6 +699,8 @@ function nitrogenTrtFct () {
     printf "[ERR] only Mate Desktop is currently supported\n"
   fi
 }
+
+#-----------------------------------------------------------------------------#
 
 #
 # install required ppa and settings
@@ -571,7 +721,6 @@ function addRequiredPPA () {
   addPPA "ppa:teejee2008/ppa" # Aptik - Conky-Manage
   addPPA "ppa:yktooo/ppa" # indicator-sound-switcher
   addPPA "ppa:webupd8team/y-ppa-manager" # y-ppa-manager
-  addPPA "ppa:webupd8team/atom" # IDE
   addPPA "ppa:videolan/stable-daily" # video player
   addPPA "ppa:ubuntu-desktop/ubuntu-make" # ubuntu-make
   addPPA "ppa:nowrep/qupzilla" # web browser
@@ -590,10 +739,7 @@ function addRequiredPPA () {
   addPPA "ppa:haraldhv/shotcut" # video editor
   addPPA "ppa:flacon/ppa" # audio extraction
   addPPA "ppa:jaap.karssenberg/zim" # local wiki
-  addPPA "ppa:pmjdebruijn/darktable-release" # raw editor
-  addPPA "ppa:js-reynaud/kicad-4" # CAD
   addPPA "ppa:stebbins/handbrake-releases" # video transcoder
-  addPPA "ppa:webupd8team/brackets" # IDE
   addPPA "ppa:graphics-drivers/ppa" # non-free nvidia drivers
   addPPA "ppa:djcj/hybrid" # FFMpeg, MKVToolnix
   addPPA "ppa:diodon-team/stable" # clipboard manager
@@ -607,7 +753,6 @@ function addRequiredPPA () {
   addPPA "ppa:maarten-baert/simplescreenrecorder" # simplescreenrecorder
   addPPA "ppa:dhor/myway" # rawtherapee (newer version)
   addPPA "ppa:zeal-developers/ppa" # Zeal (newer version)
-  addPPA "ppa:nextcloud-devs/client" # NextCloud client
   addPPA "ppa:deluge-team/ppa" # Deluge P2P client
   addPPA "ppa:kritalime/ppa" # Krita
   addPPA "ppa:otto-kesselgulasch/gimp" # Gmic2
@@ -615,28 +760,6 @@ function addRequiredPPA () {
   addPPA "ppa:fossproject/ppa" # green-recorder
   addPPA "ppa:quiterss/quiterss" # quiterss
   addPPA "ppa:tmsu/ppa" # tmsu
-  addPPA "ppa:ansible/ansible" # ansible
-  addPPA "ppa:wireshark-dev/stable" # wireshark
-
-  addKey "http://deb.opera.com/archive.key"
-  addRepo opera.list \
-          "deb http://deb.opera.com/opera-stable/ stable non-free"
-
-  addKey "https://dl.google.com/linux/linux_signing_key.pub"
-  addRepo google-chrome.list \
-          "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-
-  addKey "https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key"
-  addRepo insync.list \
-          "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
-
-  addKey "https://syncthing.net/release-key.txt"
-  addRepo syncthing.list \
-          "deb http://apt.syncthing.net/ syncthing release"
-
-  addKey "http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_16.04/Release.key"
-  addRepo owncloud-client.list \
-          "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/ /"
 
   addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
   addRepo mkv.list \
@@ -647,28 +770,9 @@ function addRequiredPPA () {
   addRepo jgeboski.list \
           "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
 
-  addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
-  addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
-  addRepo virtualbox.list \
-          "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
-
   addKey "http://archive.getdeb.net/getdeb-archive.key"
   addRepo getdeb.list \
           "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps games"
-
-  addKey "http://repo.vivaldi.com/stable/linux_signing_key.pub"
-  addRepo vivaldi.list \
-          "deb http://repo.vivaldi.com/stable/deb/ stable main "
-
-  addKey "https://download.sublimetext.com/sublimehq-pub.gpg"
-  addRepo sublime-text.list \
-          "deb https://download.sublimetext.com/ apt/dev/"
-
-  addKey "hkp://pgp.mit.edu:80" \
-         "379CE192D401AB61"
-         #"https://dl.bintray.com/resin-io/debian/Release.gpg"
-  addRepo "etcher.list" \
-          "deb https://dl.bintray.com/resin-io/debian stable etcher"
 
   updateSystem
 }
