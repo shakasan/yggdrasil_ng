@@ -116,15 +116,6 @@ function installInternetExt () {
   installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
                      viber.deb
 
-  msg "Téléchargement de Telegram Desktop"
-  wget -O tsetup.tar.xz https://tdesktop.com/linux
-
-  msg "Installation de Telegram Desktop"
-  tar xvJf tsetup.tar.xz
-  mv Telegram /home/$myHomedir/Apps
-  sh -c "/home/"$myHomedir"/Apps/Telegram/Telegram &" && sleep 10 && pkill Telegram
-
-
   #TODO: archive no dir
   msg "Téléchargement de Franz"
   mkdir -p Franz
