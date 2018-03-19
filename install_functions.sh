@@ -89,10 +89,6 @@ function installMultimediaExt () {
 function installEbook () {
   msg "Installing eBook Apps"
   installAppsFromList ebook
-  #TODO:
-  # cd /tmp
-  # runCmd "sudo -v && wget -q --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c \"import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()\""
-  # smsgn "Installing calibre"
 }
 
 #

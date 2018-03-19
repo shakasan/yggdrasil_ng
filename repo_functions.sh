@@ -403,6 +403,7 @@ qttools5-dev-tools;apt;qt;qttools5-dev-tools
 qttools5-examples;apt;qt;qttools5-examples
 qttools5-doc-html;apt;qt;qttools5-doc-html
 fbreader;apt;ebook;fbreader
+calibre;apt;ebook;calibre
 android-studio;apt;android-studio;android-studio
 intellij-idea-community;snap;idea;idea"
 
