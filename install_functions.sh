@@ -112,21 +112,9 @@ function installInternetMenu () {
 function installInternetExt () {
   msg "Installing Internet apps and tools"
 
-  msg "Téléchargement de Skype"
-  installPackageDpkg https://go.skype.com/skypeforlinux-64.deb \
-                     skypeforlinux-64.deb
-
   msg "Téléchargement de Viber"
   installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
                      viber.deb
-
-  msg "Téléchargement de MegaSync"
-  installPackageDpkg https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megasync-xUbuntu_16.04_amd64.deb \
-                     megasync-xUbuntu_16.04_amd64.deb
-
-  msg "Installation de Discord"
-  installPackageDpkg https://discordapp.com/api/download?platform=linux&format=deb \
-                     discord.deb
 
   msg "Téléchargement de Telegram Desktop"
   wget -O tsetup.tar.xz https://tdesktop.com/linux

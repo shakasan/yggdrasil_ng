@@ -104,6 +104,7 @@ owncloud-client;apt;internet;owncloud-client
 syncthing-gtk;apt;internet;syncthing-gtk
 syncthing;apt;internet;syncthing
 insync;apt;internet;insync
+discord;snap;internet;discord
 quiterss;apt;internet;quiterss
 frogr;apt;internet;frogr
 opera-stable;apt;internet;opera-stable
@@ -443,6 +444,15 @@ darktable;addRepo_DarkTable
 brackets;addRepo_Brackets
 kicad;addRepo_Kicad
 nodejs8lts;addRepo_NodeLts8"
+
+#
+# Skype for Linux
+#
+function addRepo_SkypeForLinux () {
+  addKey "https://repo.skype.com/data/SKYPE-GPG-KEY"
+  addRepo "skypeforlinux.list" \
+          "deb [arch=amd64] https://repo.skype.com/deb stable main"
+}
 
 #
 # Node 8 LTS
