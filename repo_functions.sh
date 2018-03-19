@@ -123,6 +123,8 @@ california;apt;internet;california
 midori;apt;internet;midori
 geary;apt;internet;geary
 corebird;apt;internet;corebird
+telegram;apt;internet;telegram
+skypeforlinux;apt;internet;skypeforlinux
 nextcloud-client;apt;internet;nextcloud-client
 nextcloud-client-caja;apt;internet;nextcloud-client-caja
 deluge-gtk;apt;internet;deluge-gtk
@@ -443,7 +445,16 @@ wireshark;addRepo_WireShark
 darktable;addRepo_DarkTable
 brackets;addRepo_Brackets
 kicad;addRepo_Kicad
-nodejs8lts;addRepo_NodeLts8"
+nodejs8lts;addRepo_NodeLts8
+telegram;addRepo_Telegram
+skypeforlinux;addRepo_SkypeForLinux"
+
+#
+# Telegram
+#
+function addRepo_Telegram () {
+  addPPA "ppa:atareao/telegram"
+}
 
 #
 # Skype for Linux
