@@ -350,7 +350,7 @@ ansible;apt;dev;ansible
 docker-ce;apt;dev;docker-ce
 remark-lint;npm;dev;remark-lint
 jedi;npm;dev;jedi
-beautysh;pip;dev;beautys
+beautysh;pip;dev;beautysh
 retext;pip;dev;retext
 mycli;pip;dev;mycli
 npm;apt;javascript;npm
