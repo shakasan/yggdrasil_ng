@@ -108,8 +108,11 @@ function yggInit () {
   typeset ret_code
 
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ubuntu-make; then
-    printf "[INIT]"
+    printf "[INIT][UMAKE] PPA not found, adding PPA...\n"
+    printf "[INIT][UMAKE] PPA not found, adding PPA...\n" &>> $logFile
     addPPA "ppa:ubuntu-desktop/ubuntu-make"
+  else
+    printf "[INIT][UMAKE] PPA found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
   fi
 
   printf "[APT] update "
@@ -117,6 +120,17 @@ function yggInit () {
   sudo apt-get update &>> $logFile
   ret_code=$?
   retCode $ret_code
+
+  printf "[INIT]"
+  installPackage apt "apt-transport-https"
+
+  if ! which umake >/dev/null; then
+    printf "[INIT][UMAKE] not found, installing...\n"
+    printf "\n[INIT][UMAKE] not found, installing...\n" &>> $logFile
+    installPackage apt "ubuntu-make"
+  else
+    printf "[INIT][UMAKE] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+  fi
 
   if ! which gem >/dev/null; then
     printf "[INIT][GEM] not found, installing...\n"
@@ -141,9 +155,6 @@ function yggInit () {
   else
     printf "[INIT][NPM] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
   fi
-
-  printf "[INIT]"
-  installPackage apt "apt-transport-https"
 
   if ! which pip3 >/dev/null; then
     printf "[INIT][PIP] not found, installing...\n"
