@@ -960,7 +960,7 @@ function enableNumLockX () {
 
   if which lightdm >/dev/null; then
     sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak
-    echo "greeter-setup-script=/usr/bin/numlockx on" | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf
+    echo -e "\ngreeter-setup-script=/usr/bin/numlockx on" | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf
   fi
 }
 
