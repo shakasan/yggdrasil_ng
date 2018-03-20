@@ -361,6 +361,7 @@ npm;apt;javascript;npm
 nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
+emma;npm;javascript;emma
 jshint;npm;javascript;jshint
 oracle-java9-installer;apt;java9;oracle-java9-installer
 oracle-java9-set-default;apt;java9;oracle-java9-set-default
