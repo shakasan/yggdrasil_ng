@@ -403,17 +403,18 @@ function updateMicrocode () {
     installPackage apt amd64-microcode
   fi
   newMicrocode=`cat /proc/cpuinfo | grep -i --color microcode -m 1`
-  printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version\n"
+  printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version"
+  printf "\n"
 }
 
 #
 # fix some config issue with Intel Wireless 6320 cards
 #
 function fixWirelessIntel6320 () {
-  printf "[INFO] backuping config : "
-  runCmd "sudo cp /etc/modprobe.d/iwlwifi.conf /etc/modprobe.d/iwlwifi.conf.bak"
-  printf "[INFO] applying config : "
-  runCmd "echo options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8 | sudo tee /etc/modprobe.d/iwlwifi.conf"
+  runCmd "sudo cp /etc/modprobe.d/iwlwifi.conf /etc/modprobe.d/iwlwifi.conf.bak" \
+         "backing up config file"
+  runCmd "echo options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8 | sudo tee /etc/modprobe.d/iwlwifi.conf" \
+         "applying new config"
   printf "[INFO] reboot required !!!"
   printf "\n"
 }
@@ -534,7 +535,8 @@ KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{idVendor}==\"096e\", ATTRS{idP
 \n\
 LABEL=\"u2f_end\"' > /etc/udev/rules.d/70-u2f.rules"
 
-  runCmd "sudo service udev restart"
+  runCmd "sudo service udev restart" \
+         "restarting UDEV service"
 }
 
 #
@@ -677,8 +679,8 @@ function installRubyMenu () {
 function installAndroidEnv () {
   msg="Installing Android environment"
 
-  msg "PATH in .bashrc"
-  touch /home/$myHomedir/.bashrc
+  runCmd "touch /home/$myHomedir/.bashrc" \
+         "creating .bashrc file if necessary"
   sh -c "echo '\n\nexport PATH=${PATH}:/home/'$myHomedir'/Android/Sdk/tools:/home/'$myHomedir'/Android/Sdk/platform-tools' >> /home/$myHomedir/.bashrc"
 
   msg "Adding UDEV rules"
@@ -721,8 +723,8 @@ SUBSYSTEM==\"usb\", ATTR{idVendor}==\"2340\", MODE=\"0666\", OWNER=\""$myHomedir
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0930\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Toshiba\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"19d2\", MODE=\"0666\", OWNER=\""$myHomedir"\" # ZTE' > /etc/udev/rules.d/99-android.rules"
 
-  msg "Restarting UDEV service"
-  sudo service udev restart
+  runCmd "sudo service udev restart" \
+         "restarting UDEV service"
 
   createAppShortcut "/home/"$myHomedir"/tools/Android/Sdk/tools/android" \
                     "/home/"$myHomedir"/.icons/android.png" \
@@ -943,10 +945,12 @@ function enableUnboundMenu () {
 #
 function enableUFW () {
   msg "Enabling FireWall (UFW)"
-  runCmd "sudo ufw enable"
+  runCmd "sudo ufw enable"\
+         "enabling UFW at boot"
 
   if which syncthing >/dev/null; then
-    runCmd "sudo ufw allow syncthing"
+    runCmd "sudo ufw allow syncthing" \
+           "adding UFW rules for Syncthing"
   fi
 }
 
@@ -955,12 +959,12 @@ function enableUFW () {
 #
 function enableNumLockX () {
   msg "Adding NumLockX to MDM/LightDM Default Init"
-
   checkAndInstallDep apt numlockx numlockx
-
   if which lightdm >/dev/null; then
-    sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak
-    echo -e "\ngreeter-setup-script=/usr/bin/numlockx on" | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf
+    runCmd "sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak" \
+           "backing up original config file"
+    runCmd "echo -e '\ngreeter-setup-script=/usr/bin/numlockx on' | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
+           "enabling numlockx on in lightdm at boot"
   fi
 }
 
@@ -968,8 +972,8 @@ function enableNumLockX () {
 # /tmp in RAM by modifying /etc/fstab
 #
 function enableTmpRAM () {
-  msg "Enabling /tmp in RAM by modifying /etc/fstab"
-  runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab"
+  runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab" \
+         "enabling /tmp in RAM by modifying /etc/fstab"
   if (whiptail --title "/tmp in RAM - Reboot" --yesno "Reboot required, proceed now ?" 10 60) then
     sudo reboot
   fi
@@ -981,10 +985,10 @@ function enableTmpRAM () {
 function addScreenfetchBashrc () {
   msg "Adding screenfetch to .bashrc"
   checkAndInstallDep apt screenfetch screenfetch
-  runCmd "touch /home/$myHomedir/.bashrc"
-  printf "\n"
-  runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc"
-  printf "\n"
+  runCmd "touch /home/$myHomedir/.bashrc" \
+         "create .bashrc file if necessary"
+  runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc" \
+         "add screenfetch to .bashrc"
 }
 
 #
@@ -1054,7 +1058,8 @@ function toolOptimizeFirefox () {
 #
 function toolAutoremove () {
   msg "Cleaning useless deb package(s)"
-  runCmd "sudo apt-get -y autoremove"
+  runCmd "sudo apt-get -y autoremove" \
+         "removing not necessary dependencies"
 }
 
 #
@@ -1063,15 +1068,16 @@ function toolAutoremove () {
 function toolClearOldKernels () {
   msg "Removing old kernels (keeping the 3 last kernels)"
   checkAndInstallDep apt byobu purge-old-kernels
-  runCmd "sudo purge-old-kernels --keep 3"
+  runCmd "sudo purge-old-kernels --keep 3" \
+         "removing old kernels"
 }
 
 #
 # force soundcards detection
 #
 function toolSoundCardsDetection () {
-  msg "Detecting ALSA sound cards compatible"
-  runCmd "sudo alsa force-reload"
+  runCmd "sudo alsa force-reload" \
+         "detecting ALSA sound cards"
 }
 
 #-----------------------------------------------------------------------------#

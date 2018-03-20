@@ -725,7 +725,8 @@ function plank_TrtFct () {
 # QT5 Dev Tools
 #
 function qt_TrtFct () {
-  runCmd "sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf"
+  runCmd "sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf" \
+         "set QT5 as default"
 
   createAppShortcut "/usr/bin/designer" \
                     "/home/"$myHomedir"/.icons/qtdesigner.png" \
@@ -739,9 +740,12 @@ function qt_TrtFct () {
 # MongoDB 3 CE
 #
 function mongodb_TrtFct () {
-  runCmd "sudo systemctl unmask mongodb.service"
-  runCmd "sudo systemctl enable mongodb"
-  runCmd "sudo systemctl start mongodb"
+  runCmd "sudo systemctl unmask mongodb.service" \
+         "unmask systemd mongodb service"
+  runCmd "sudo systemctl enable mongodb" \
+         "enabling mongodb service at boot"
+  runCmd "sudo systemctl start mongodb" \
+         "starting mongodb service"
 }
 
 #
@@ -749,8 +753,10 @@ function mongodb_TrtFct () {
 #
 function nitrogen_TrtFct () {
   if isMate; then
-    runCmd "gsettings set org.mate.background draw-background false"
-    runCmd "gsettings set org.mate.background show-desktop-icons false"
+    runCmd "gsettings set org.mate.background draw-background false" \
+           "disabling Caja background management"
+    runCmd "gsettings set org.mate.background show-desktop-icons false" \
+           "disabling Caja desktop icons management"
 
     createAppShortcut "bash -c \"sleep 10; nitrogen --restore\"" \
                       "/home/"$myHomedir".icons/franz.png" \
@@ -772,11 +778,13 @@ function nitrogen_TrtFct () {
 function addRequiredPPA () {
   msg "Adding PPA and repositories"
 
-  runCmd "sudo dpkg --add-architecture i386"
+  runCmd "sudo dpkg --add-architecture i386" \
+         "adding i386 architecture"
 
   installPackage apt "apt-transport-https"
 
-  runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections"
+  runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
+         "apply settings for science-config pkg"
 
   addPPA "ppa:noobslab/themes" # themes from noobslab
   addPPA "ppa:noobslab/icons" # icons from noobslab
