@@ -447,7 +447,15 @@ brackets;addRepo_Brackets
 kicad;addRepo_Kicad
 nodejs8lts;addRepo_NodeLts8
 telegram;addRepo_Telegram
-skypeforlinux;addRepo_SkypeForLinux"
+skypeforlinux;addRepo_SkypeForLinux
+shotwell;addRepo_Shotwell"
+
+#
+# Shotwell
+#
+function addRepo_Shotwell () {
+  addPPA "ppa:yg-jensge/shotwell"
+}
 
 #
 # Telegram
