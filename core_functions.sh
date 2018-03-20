@@ -58,8 +58,8 @@ function runCmd () {
   typeset txt="$2"
   typeset ret_code
 
-  printf "[CMD] executing : $txt "
-  printf "\n[CMD] executing $txt : $cmd\n" &>> $logFile
+  printf "[CMD] $txt "
+  printf "\n[CMD] $txt : $cmd\n" &>> $logFile
   eval $cmd" &>> $logFile"
   ret_code=$?
   retCode $ret_code
