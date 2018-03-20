@@ -116,8 +116,8 @@ function yggInit () {
     printf "[INIT][UMAKE] PPA found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
   fi
 
-  printf "[APT] update "
-  printf "\n[APT] update\n" &>> $logFile
+  printf "[INIT][APT] update "
+  printf "\n[INIT][APT] update\n" &>> $logFile
   sudo apt-get update &>> $logFile
   ret_code=$?
   retCode $ret_code
