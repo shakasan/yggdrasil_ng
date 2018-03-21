@@ -821,7 +821,6 @@ function addRequiredPPA () {
   addPPA "ppa:jaap.karssenberg/zim" # local wiki
   addPPA "ppa:stebbins/handbrake-releases" # video transcoder
   addPPA "ppa:graphics-drivers/ppa" # non-free nvidia drivers
-  addPPA "ppa:djcj/hybrid" # FFMpeg, MKVToolnix
   addPPA "ppa:diodon-team/stable" # clipboard manager
   addPPA "ppa:notepadqq-team/notepadqq" # notepad++ clone
   addPPA "ppa:mariospr/frogr" # flickr manager
