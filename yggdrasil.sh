@@ -55,8 +55,10 @@ while getopts ":h,v,f,c,t,u" option; do
       updateSystem
       addRequiredPPA
       installBase
+      installOffice
       installBurningTools
       installCajaPlugins
+      installNautilusAndPlugins
       installEbook
       installGames
       installGimpPlugins
