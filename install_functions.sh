@@ -1094,7 +1094,7 @@ whiptail \
  Author : Francois B. (Makotosan)
   Email : shakasan@sirenacorp.be
 Website : https://makotonoblog.be/
- Github : https://github.com/shakasan/Yggdrasil
+ Github : https://github.com/shakasan/yggdrasil_ng
 Licence : GPLv3
 Version : $version\n
 At the beginning, this script has been written to makes my life easier when I have to (re)install my personal computers ;-)
