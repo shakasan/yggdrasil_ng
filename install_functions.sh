@@ -55,27 +55,6 @@ function installMultimediaMenu () {
   installAppsFromListMenu multimedia
 }
 
-#TODO:
-function installMultimediaExt () {
-  msg "Installing Multimedia apps and tools"
-
-  cd /tmp
-
-  msg "Téléchargement de XnRetro"
-  wget http://download.xnview.com/XnRetro-linux.tgz
-
-  msg "Installation de XnRetro"
-  tar xzf XnRetro-linux.tgz
-  mv XnRetro /home/$myHomedir/Apps
-
-  createAppShortcut "/home/"$myHomedir"/Apps/XnRetro/xnretro.sh" \
-                    "/home/"$myHomedir"/Apps/XnRetro/xnretro.png" \
-                    "Graphics" \
-                    "XnRetro" \
-                    "local"
-  update-menus
-}
-
 #
 # install eBook Apps (headless)
 #
