@@ -14,6 +14,8 @@ source ./vars.sh
 source ./core_functions.sh
 source ./repo_functions.sh
 source ./install_functions.sh
+source ./menus_functions.sh
+source ./tools_functions.sh
 
 #
 # check if the script is running in root/sudo

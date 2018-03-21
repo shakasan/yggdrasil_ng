@@ -3,7 +3,7 @@
 #    compatibility :  Mint 18, Ubuntu 16.04, Elementary and other derivatives  #
 #    author : Francois B. (Makotosan/Shakasan)                                 #
 #    licence : GPLv3                                                           #
-#    website : https://makotonoblog.be/
+#    website : https://makotonoblog.be/                                        #
 #------------------------------------------------------------------------------#
 
 #-----------------------------------------------------------------------------#
