@@ -67,6 +67,7 @@ while getopts ":h,v,f,c,t,u" option; do
       installPidginPlugins
       installRhythmBoxPlugins
       installWine
+      installViber
       exit
       ;;
     c) # install themes and icons

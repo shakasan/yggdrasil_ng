@@ -108,14 +108,25 @@ function installInternetMenu () {
   installAppsFromListMenu internet
 }
 
-#TODO:
-function installInternetExt () {
-  msg "Installing Internet apps and tools"
-
-  msg "Téléchargement de Viber"
+#
+# Viber (headless)
+#
+function installViber () {
   installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
                      viber.deb
+}
 
+#
+# Viber (Menu)
+#
+function installViberMenu () {
+  msg "Install Viber"
+  installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
+                     viber.deb
+}
+
+#TODO:
+function installInternetExt () {
   #TODO: archive no dir
   msg "Téléchargement de Franz"
   mkdir -p Franz
@@ -1388,6 +1399,7 @@ function showAppInstallMenu () {
     "pidgin" "Pidgin plugins" \
     "nitrogen" "Nitrogen WP Manager" \
     "wine" "Wine Builds" \
+    "viber" "Viber IM desktop app" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $appsInstallMenuOptions in
@@ -1435,6 +1447,9 @@ function showAppInstallMenu () {
         ;;
       "wine")
         installWineMenu
+        ;;
+      "viber")
+        installViberMenu
         ;;
       "Back")
         break
