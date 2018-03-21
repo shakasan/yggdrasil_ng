@@ -125,25 +125,21 @@ function installViberMenu () {
                      viber.deb
 }
 
-#TODO:
-function installInternetExt () {
-  #TODO: archive no dir
-  msg "Téléchargement de Franz"
-  mkdir -p Franz
-  cd Franz
-  wget -O franz.tgz https://github.com/imprecision/franz-app/releases/download/3.1.0/Franz-linux-x64-3.1.0.tgz
+#
+# Franz (headless)
+#
+function installFranz () {
+  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
+                     franz.deb
+}
 
-  msg "Installation de Franz"
-  tar xzf franz.tgz
-  cd ..
-  mv Franz /home/$myHomedir/Apps
-
-  createAppShortcut "/home/"$myHomedir"/Apps/Franz/Franz" \
-                    "/home/"$myHomedir".icons/franz.png" \
-                    "Network;InstantMessaging" \
-                    "Franz" \
-                    "local"
-  update-menus
+#
+# Franz (Menu)
+#
+function installFranzMenu () {
+  msg "Install Franz"
+  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
+                     franz.deb
 }
 
 #
