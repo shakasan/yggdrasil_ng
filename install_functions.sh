@@ -910,3 +910,18 @@ function installTeamViewer13Menu () {
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
                      teamviewer13.deb
 }
+
+#
+# install/enable Unboud (headless)
+#
+function enableUnbound () {
+  msg "Installing Unbound"
+  installAppsFromList unbound
+}
+
+#
+# install/enable Unboud (Menu)
+#
+function enableUnboundMenu () {
+  installAppsFromListMenu unbound
+}

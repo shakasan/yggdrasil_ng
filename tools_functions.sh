@@ -11,21 +11,6 @@
 #-----------------------------------------------------------------------------#
 
 #
-# install/enable Unboud (headless)
-#
-function enableUnbound () {
-  msg "Installing Unbound"
-  installAppsFromList unbound
-}
-
-#
-# install/enable Unboud (Menu)
-#
-function enableUnboundMenu () {
-  installAppsFromListMenu unbound
-}
-
-#
 # enable ufw at boot time and add rules for installed apps
 #
 function enableUFW () {
@@ -47,9 +32,9 @@ function enableNumLockX () {
   checkAndInstallDep apt numlockx numlockx
   if which lightdm >/dev/null; then
     runCmd "sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak" \
-           "backing up original config file"
+           "Backing up original config file"
     runCmd "echo -e '\ngreeter-setup-script=/usr/bin/numlockx on' | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
-           "enabling numlockx on in lightdm at boot"
+           "Enabling numlockx on in lightdm at boot"
   fi
 }
 
@@ -58,7 +43,7 @@ function enableNumLockX () {
 #
 function enableTmpRAM () {
   runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab" \
-         "enabling /tmp in RAM by modifying /etc/fstab"
+         "Enabling /tmp in RAM by modifying /etc/fstab"
   if (whiptail --title "/tmp in RAM - Reboot" --yesno "Reboot required, proceed now ?" 10 60) then
     sudo reboot
   fi
@@ -71,9 +56,9 @@ function addScreenfetchBashrc () {
   msg "Adding screenfetch to .bashrc"
   checkAndInstallDep apt screenfetch screenfetch
   runCmd "touch /home/$myHomedir/.bashrc" \
-         "create .bashrc file if necessary"
+         "Creating .bashrc file if necessary"
   runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc" \
-         "add screenfetch to .bashrc"
+         "Adding screenfetch to .bashrc"
 }
 
 #
@@ -99,16 +84,16 @@ function installUnattendedUpgrades () {
 # display useful system/hardware informations
 #
 function toolInxi () {
-  checkAndInstallDep apt inxi inxi
-  inxi -F
+  checkAndInstallDep apt inxi inxi \
+  && inxi -F
 }
 
 #
 # check bandwith and latency of the internet connection
 #
 function toolSpeedtestCli () {
-  checkAndInstallDep pip speedtest-cli speedtest-cli
-  speedtest-cli
+  checkAndInstallDep pip speedtest-cli speedtest-cli \
+  && speedtest-cli
 }
 
 #
@@ -142,19 +127,17 @@ function toolOptimizeFirefox () {
 # remove useless packages (depedencies)
 #
 function toolAutoremove () {
-  msg "Cleaning useless deb package(s)"
   runCmd "sudo apt-get -y autoremove" \
-         "removing not necessary dependencies"
+         "Removing not necessary dependencies"
 }
 
 #
 # remove old versions of installed kernels
 #
 function toolClearOldKernels () {
-  msg "Removing old kernels (keeping the 3 last kernels)"
   checkAndInstallDep apt byobu purge-old-kernels
   runCmd "sudo purge-old-kernels --keep 3" \
-         "removing old kernels"
+         "Removing old kernels"
 }
 
 #
@@ -162,5 +145,5 @@ function toolClearOldKernels () {
 #
 function toolSoundCardsDetection () {
   runCmd "sudo alsa force-reload" \
-         "detecting ALSA sound cards"
+         "Detecting ALSA sound cards"
 }
