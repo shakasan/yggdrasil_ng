@@ -914,7 +914,7 @@ function installCADMenu () {
 function installTeamViewer13 () {
   msg "Install Teamviewer 13"
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
-                     teamviewer12.deb
+                     teamviewer13.deb
 }
 
 #
@@ -922,7 +922,7 @@ function installTeamViewer13 () {
 #
 function installTeamViewer13Menu () {
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
-                     teamviewer12.deb
+                     teamviewer13.deb
 }
 
 #
