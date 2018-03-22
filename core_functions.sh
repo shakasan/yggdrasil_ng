@@ -547,12 +547,13 @@ function usage () {
   dispSysInfos
   printf "\n"
 	printf $NORMAL
-	printf "Usage : yggdrasil [options]\n"
-  printf "  -f : full install (see doc for more details)\n"
-  printf "  -c : install gtk themes and icons\n"
-  printf "  -u : update system (apt,snap,...)\n"
-	printf "  -v : show verison number\n"
-  printf "  -h : show help & informations\n"
+	printf "Usage : yggdrasil [options]\n\n"
+  printf " "$BOLDVERT"-f"$NORMAL" : full install (see doc for more details)\n"
+  printf " "$BOLDVERT"-c"$NORMAL" : install gtk themes and icons\n"
+  printf " "$BOLDVERT"-u"$NORMAL" : update system (apt,snap,...)\n"
+	printf " "$BOLDVERT"-v"$NORMAL" : show verison number\n"
+  printf " "$BOLDVERT"-h"$NORMAL" : show help & informations\n"
+  printf "\n"
 }
 
 function dispSysInfos () {
