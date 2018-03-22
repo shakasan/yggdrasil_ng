@@ -10,12 +10,12 @@
 #
 # include functions and vars from external files
 #
-source ./vars.sh
-source ./core_functions.sh
-source ./repo_functions.sh
-source ./install_functions.sh
-source ./menus_functions.sh
-source ./tools_functions.sh
+source $(dirname $0)/vars.sh
+source $(dirname $0)/core_functions.sh
+source $(dirname $0)/repo_functions.sh
+source $(dirname $0)/install_functions.sh
+source $(dirname $0)/menus_functions.sh
+source $(dirname $0)/tools_functions.sh
 
 #
 # check if the script is running in root/sudo

@@ -23,7 +23,7 @@ myHomedir=$(whoami)
 #
 # script base dir
 #
-scriptDir=$(pwd)
+scriptDir=$(dirname $0)
 
 #
 # logfile
