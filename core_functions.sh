@@ -103,7 +103,6 @@ function isMate () {
 
 #
 # check and install required dependencies for Yggdrasil
-# TODO: update npm before update/install pkg
 #
 function yggInit () {
   typeset ret_code
