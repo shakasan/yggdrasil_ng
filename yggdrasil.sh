@@ -115,8 +115,10 @@ done
 
 clear
 
+# show Yggdrasil logo
 dispLogo
 
+# show system informations
 dispSysInfos
 
 # Useless by itself, but is used to don't be annoyed later in the script
