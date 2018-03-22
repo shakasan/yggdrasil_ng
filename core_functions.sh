@@ -71,7 +71,7 @@ function runCmd () {
 function pressKey () {
   printf "$*\n"
   if which mpg123 >/dev/null; then
-    mpg123 -q $scriptDir/notify.mp3 &
+    mpg123 -q /opt/yggdrasil/notify.mp3 &
   fi
   printf $INV
   read -p "Press <Enter> key to continue ..."

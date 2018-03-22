@@ -13,17 +13,12 @@
 #
 # app version number
 #
-version="0.3.0"
+version="0.4.0"
 
 #
 # myHomedir is used in full paths to the homedir
 #
 myHomedir=$(whoami)
-
-#
-# script base dir
-#
-scriptDir=$(dirname $0)
 
 #
 # logfile
