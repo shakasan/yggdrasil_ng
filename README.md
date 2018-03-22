@@ -1,7 +1,7 @@
 ![yggdrasil](logo.png)
 
-Yggdrasil NG
-============
+About
+-----
 
 !! Warnings : this is a early alpha version under dev !!
 
