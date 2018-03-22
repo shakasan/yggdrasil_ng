@@ -43,14 +43,14 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 while getopts ":h,v,f,c,t,u" option; do
   case "$option" in
     t) #test purpose only
-      yggInit
+      #yggInit
       #installIdea
       #installNetTools
       #installOffice
+      #addPPA "tmsu/ppa"
       exit
       ;;
     f) # install all apps
-      #TODO:
       yggInit
       updateSystem
       addRequiredPPA
@@ -76,8 +76,9 @@ while getopts ":h,v,f,c,t,u" option; do
       exit
       ;;
     c) # install themes and icons
-      #TODO:
       yggInit
+      updateSystem
+      addRequiredPPA
       installIcons
       installThemes
       exit
