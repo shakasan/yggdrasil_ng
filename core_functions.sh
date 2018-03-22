@@ -29,12 +29,12 @@ function smsg () {
 #
 function msg () {
   printf "\n"
-  printf "$JAUNE"
+  printf $JAUNE
   if [ "$#" -gt "0" ]; then
     printf "$*\n"
     /usr/bin/notify-send -t 7000 "$*"
   fi
-  printf "$NORMAL"
+  printf $NORMAL
 }
 
 #
@@ -43,9 +43,9 @@ function msg () {
 function retCode () {
   typeset ret_code="$1"
   if [ $ret_code == 0 ]; then
-    printf "[ ""$BOLDVERT""OK"$NORMAL" ] "
+    printf "[ "$BOLDVERT"OK"$NORMAL" ] "
   else
-    printf "[ ""$BOLDROUGE""!!"$NORMAL" ] "
+    printf "[ "$BOLDROUGE"!!"$NORMAL" ] "
   fi
   printf "\n"
 }
@@ -73,9 +73,9 @@ function pressKey () {
   if which mpg123 >/dev/null; then
     mpg123 -q $scriptDir/notify.mp3 &
   fi
-  printf "$INV"
+  printf $INV
   read -p "Press <Enter> key to continue ..."
-  printf "$NORMAL"
+  printf $NORMAL
 }
 
 #
@@ -113,7 +113,7 @@ function yggInit () {
     printf "[INIT][UMAKE] PPA not found, adding PPA...\n" &>> $logFile
     addPPA "ubuntu-desktop/ubuntu-make"
   else
-    printf "[INIT][UMAKE] PPA found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT][UMAKE] PPA found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
   printf "[INIT][APT] update "
@@ -130,7 +130,7 @@ function yggInit () {
     printf "\n[INIT][UMAKE] not found, installing...\n" &>> $logFile
     installPackage apt "ubuntu-make"
   else
-    printf "[INIT][UMAKE] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT][UMAKE] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
   if ! which gem >/dev/null; then
@@ -138,7 +138,7 @@ function yggInit () {
     printf "\n[INIT][GEM] not found, installing...\n" &>> $logFile
     installPackage apt "ruby-dev"
   else
-    printf "[INIT][GEM] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT][GEM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
   if ! which snap >/dev/null; then
@@ -146,7 +146,7 @@ function yggInit () {
     printf "\n[INIT][SNAP] not found, installing...\n" &>> $logFile
     installPackage apt "snapd"
   else
-    printf "[INIT][SNAP] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT][SNAP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
   if ! which npm >/dev/null; then
@@ -154,7 +154,7 @@ function yggInit () {
     printf "\n[INIT][NPM] not found, installing...\n" &>> $logFile
     installPackage apt "npm"
   else
-    printf "[INIT][NPM] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT][NPM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
   if ! which pip3 >/dev/null; then
@@ -167,7 +167,7 @@ function yggInit () {
     printf "[INIT]"
     installPackage pip "setuptools"
   else
-    printf "[INIT][PIP] found [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[INIT][PIP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
     printf "[INIT]"
     installPackage pip "pip"
     printf "[INIT]"
@@ -226,10 +226,8 @@ function addPPA () {
     ret_code=$?
     retCode $ret_code
   else
-    printf "[PPA] PPA already added [ ""$BOLDVERT""OK"$NORMAL" ] \n"
+    printf "[PPA] PPA already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
-
-
 }
 
 #
@@ -250,7 +248,6 @@ function addKey () {
     "2")
       printf "[REPO] adding key $2 from $1 "
       printf "\n[REPO] adding key $2 from $1\n" &>> $logFile
-      #sudo apt-key adv --keyserver $1 --recv-keys $2 - &>> $logFile
       gpg --keyserver $1 --recv-keys $2 &>> $logFile \
       && gpg -a --export $2 | sudo apt-key add - &>> $logFile
       ret_code=$?
@@ -357,7 +354,7 @@ function installPackage () {
 #
 function checkAndInstallDep () {
   if ! which $3 >/dev/null; then
-    printf "[DEP] dependency $2 not found [ ""$BOLDROUGE""!!"$NORMAL" ]\n"
+    printf "[DEP] dependency $2 not found [ "$BOLDROUGE"!!"$NORMAL" ]\n"
     printf "[DEP] dependency $2 not found\n" &>> $logFile
     case $1 in
       "apt")
@@ -531,7 +528,7 @@ function createAppShortcut () {
 #
 function dispLogo () {
   printf "\n"
-  printf "$BOLDJAUNE"
+  printf $BOLDJAUNE
   printf "██╗   ██╗ ██████╗  ██████╗ ██████╗ ██████╗  █████╗ ███████╗██╗██╗     \n"
   printf "╚██╗ ██╔╝██╔════╝ ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██║██║     \n"
   printf " ╚████╔╝ ██║  ███╗██║  ███╗██║  ██║██████╔╝███████║███████╗██║██║     \n"
@@ -550,7 +547,7 @@ function usage () {
   dispLogo
   dispSysInfos
   printf "\n"
-	printf "$NORMAL"
+	printf $NORMAL
 	printf "Usage : yggdrasil [options]\n"
   printf "  -f : full install (see doc for more details)\n"
   printf "  -c : install gtk themes and icons\n"
@@ -560,18 +557,18 @@ function usage () {
 }
 
 function dispSysInfos () {
-  printf "$BOLDVERT""Architecture : ""$NORMAL"
+  printf $BOLDVERT"Architecture : "$NORMAL
   uname -m
 
-  printf "$BOLDVERT""User (userdir) :""$NORMAL"" $myHomedir\n"
+  printf $BOLDVERT"User (userdir) :"$NORMAL" $myHomedir\n"
 
-  printf "$BOLDVERT""OS : ""$NORMAL"
+  printf $BOLDVERT"OS : "$NORMAL
   lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'
 
-  printf "$BOLDVERT""Kernel : ""$NORMAL"
+  printf $BOLDVERT"Kernel : "$NORMAL
   uname -r
 
-  printf "$BOLDVERT""Desktop : ""$NORMAL"
+  printf $BOLDVERT"Desktop : "$NORMAL
   case $XDG_CURRENT_DESKTOP in
     "ENLIGHTENMENT")
       printf "Enlightenment"
@@ -607,7 +604,7 @@ function dispSysInfos () {
       ;;
   esac
 
-  printf "$BOLDVERT""Shell : ""$NORMAL"
+  printf $BOLDVERT"Shell : "$NORMAL
 	shellType=$(ps -p $PPID -o cmd --no-heading)
   shellType=${shellType/-}
   shellType=${shellType//*\/}
