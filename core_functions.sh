@@ -572,7 +572,6 @@ function dispSysInfos () {
   uname -r
 
   printf "$BOLDVERT""Desktop : ""$NORMAL"
-  #printf $DESKTOP_SESSION"\n"
   case $XDG_CURRENT_DESKTOP in
     "ENLIGHTENMENT")
       printf "Enlightenment"
