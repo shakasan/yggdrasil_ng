@@ -548,6 +548,8 @@ function dispLogo () {
 #
 function usage () {
   dispLogo
+  dispSysInfos
+  printf "\n"
 	printf "$NORMAL"
 	printf "Usage : yggdrasil [options]\n"
   printf "  -f : full install (see doc for more details)\n"
@@ -555,4 +557,60 @@ function usage () {
   printf "  -u : update system (apt,snap,...)\n"
 	printf "  -v : show verison number\n"
   printf "  -h : show help & informations\n"
+}
+
+function dispSysInfos () {
+  printf "$BOLDVERT""Architecture : ""$NORMAL"
+  uname -m
+
+  printf "$BOLDVERT""User (userdir) :""$NORMAL"" $myHomedir\n"
+
+  printf "$BOLDVERT""OS : ""$NORMAL"
+  lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'
+
+  printf "$BOLDVERT""Kernel : ""$NORMAL"
+  uname -r
+
+  printf "$BOLDVERT""Desktop : ""$NORMAL"
+  #printf $DESKTOP_SESSION"\n"
+  case $XDG_CURRENT_DESKTOP in
+    "ENLIGHTENMENT")
+      printf "Enlightenment"
+      printf "\n"
+      ;;
+    "GNOME")
+      printf "Gnome"
+      printf "\n"
+      ;;
+    "KDE")
+      printf "KDE"
+      printf "\n"
+      ;;
+    "LXDE")
+      printf "LXDE"
+      printf "\n"
+      ;;
+    "MATE")
+      printf "Mate"
+      printf "\n"
+      ;;
+    "XFCE")
+      printf "XFCE"
+      printf "\n"
+      ;;
+    "X-Cinnamon")
+      printf "Cinnamon"
+      printf "\n"
+      ;;
+    "Unity")
+      printf "Unity"
+      printf "\n"
+      ;;
+  esac
+
+  printf "$BOLDVERT""Shell : ""$NORMAL"
+	shellType=$(ps -p $PPID -o cmd --no-heading)
+  shellType=${shellType/-}
+  shellType=${shellType//*\/}
+  printf $shellType"\n"
 }

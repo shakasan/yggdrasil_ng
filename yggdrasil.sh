@@ -117,13 +117,7 @@ clear
 
 dispLogo
 
-printf "$BOLDVERT""User (userdir) :""$NORMAL"" $myHomedir\n"
-printf "$BOLDVERT""OS : ""$NORMAL"
-lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'
-printf "$BOLDVERT""Kernel : ""$NORMAL"
-uname -r
-printf "$BOLDVERT""Architecture : ""$NORMAL"
-uname -m
+dispSysInfos
 
 # Useless by itself, but is used to don't be annoyed later in the script
 sudo echo
