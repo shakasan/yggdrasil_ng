@@ -1,4 +1,4 @@
-![myInstallScript](https://makotonoblog.be/wp-content/uploads/2016/01/logo-1.png)
+![yggdrasil](logo.png)
 
 Yggdrasil NG
 ============
