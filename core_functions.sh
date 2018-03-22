@@ -557,17 +557,22 @@ function usage () {
 }
 
 function dispSysInfos () {
+  # CPU Architecture
   printf $BOLDVERT"Architecture : "$NORMAL
   uname -m
 
+  # Current user homedir
   printf $BOLDVERT"User (userdir) :"$NORMAL" $myHomedir\n"
 
+  # Linux Distro Name
   printf $BOLDVERT"OS : "$NORMAL
   lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'
 
+  # Kernel version
   printf $BOLDVERT"Kernel : "$NORMAL
   uname -r
 
+  # Desktop Name
   printf $BOLDVERT"Desktop : "$NORMAL
   case $XDG_CURRENT_DESKTOP in
     "ENLIGHTENMENT")
@@ -604,6 +609,12 @@ function dispSysInfos () {
       ;;
   esac
 
+  # Screen Resolution
+  printf $BOLDVERT"Screen resolution : "$NORMAL
+  xdpyinfo | sed -n 's/.*dim.* \([0-9]*x[0-9]*\) .*/\1/pg' | tr '\n' ' '
+  printf "\n"
+
+  # Type of Shell
   printf $BOLDVERT"Shell : "$NORMAL
 	shellType=$(ps -p $PPID -o cmd --no-heading)
   shellType=${shellType/-}
