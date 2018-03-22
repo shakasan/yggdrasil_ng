@@ -1,1 +1,0 @@
-/opt/yggdrasil/yggdrasil.sh

@@ -1,9 +1,0 @@
-Package: yggdrasil
-Version: 0.4.0
-Section: utils
-Priority: optional
-Architecture: all
-Depends: bash, lsb-release, apt-transport-https, ruby-dev, snapd, npm, python3-pip, libnotify-bin, wget, curl, software-properties-common, terminator
-Maintainer: Francois B. (Makoto) <shakasan@sirenacorp.be>
-Description: Customize Linux Mint & other Ubuntu derivatives made easier. This is a post install script.
-Homepage: https://makotonoblog.be/
