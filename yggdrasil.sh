@@ -23,7 +23,7 @@ source ./tools_functions.sh
 #
 if ! [ "$UID" -ne "0" ]; then
   printf "\n"
-  printf "$BOLDROUGE""This script can't be run as root/sudo, please retry as normal user""$NORMAL"
+  printf $BOLDROUGE"Yggdrasil can't be run as root/sudo, please retry as normal user"$NORMAL
   printf "\n\n"
   exit
 fi
