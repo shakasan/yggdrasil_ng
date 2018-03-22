@@ -1,5 +1,7 @@
 *.bak
 backup/*
-deb/*
+deb/build.sh
+deb/rebuild.sh
+deb/*.deb
 .remote-sync.json
 *.sync-conflict-*
