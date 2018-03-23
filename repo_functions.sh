@@ -190,7 +190,6 @@ PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
 weppy;pip;python;weppy
 py-term;pip;python;py-term
-steam;apt;games;steam
 jstest-gtk;apt;games;jstest-gtk
 brasero;apt;burningtools;brasero
 k3b;apt;burningtools;k3b

@@ -167,6 +167,13 @@ function installGamesMenu () {
 }
 
 #
+# Steam (Menu only, due to licence agreement)
+#
+function installSteamMenu () {
+  installPackage apt steam
+}
+
+#
 # install Burning Apps (headless)
 #
 function installBurningTools () {
