@@ -100,6 +100,7 @@ radiotray;apt;multimedia;radiotray
 quodlibet;apt;multimedia;quodlibet
 python-cddb;apt;multimedia;python-cddb
 python-musicbrainz2;apt;multimedia;python-musicbrainz2
+gmusicbrowser;apt;multimedia;gmusicbrowser
 owncloud-client;apt;internet;owncloud-client
 syncthing-gtk;apt;internet;syncthing-gtk
 syncthing;apt;internet;syncthing
