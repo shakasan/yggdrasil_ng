@@ -40,7 +40,7 @@ function enableNumLockX () {
 
 #
 # /tmp in RAM by modifying /etc/fstab
-#
+#TODO: add possibily to choose amount of ram
 function enableTmpRAM () {
   runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab" \
          "Enabling /tmp in RAM by modifying /etc/fstab"
