@@ -97,8 +97,10 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
+      exit
+      ;;
     f) # full install
-       # except 
+       # except
        # apps : Nitrogen, Beta apps, Nightly, Unboud
        # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
        #      tlp, KeyID
