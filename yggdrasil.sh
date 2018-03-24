@@ -50,7 +50,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 #
-while getopts ":h,v,f,c,t,u,a" option; do
+while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
   case "$option" in
     t) #test purpose only
       #yggInit
@@ -144,6 +144,36 @@ while getopts ":h,v,f,c,t,u,a" option; do
       addRequiredPPA
       installIcons
       installThemes
+      exit
+      ;;
+    d) # install Unbound DNS Cache
+      yggInit
+      updateSystem
+      enableUnbound
+      exit
+      ;;
+    k) # cardreader
+      yggInit
+      updateSystem
+      installCardReader
+      exit
+      ;;
+    s) # solaar for logitech devices
+      yggInit
+      updateSystem
+      installSolaar
+      exit
+      ;;
+    t) # tlp (laptop or low energy usage)
+      yggInit
+      updateSystem
+      installTLP
+      exit
+      ;;
+    n) # latest nvidia driver (see menus if need older version)
+      yggInit
+      updateSystem
+      installNvidia384
       exit
       ;;
     u)
