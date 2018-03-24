@@ -50,7 +50,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 #
-while getopts ":h,v,f,c,t,u" option; do
+while getopts ":h,v,f,c,t,u,a" option; do
   case "$option" in
     t) #test purpose only
       #yggInit
@@ -60,7 +60,13 @@ while getopts ":h,v,f,c,t,u" option; do
       #addPPA "tmsu/ppa"
       exit
       ;;
-    f) # install all apps
+    a) # install all apps
+       # except 
+       # apps : Nitrogen, Beta apps, Nightly, Unboud
+       # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
+       #      tlp, KeyID
+       # dev apps : all
+       # customization : themes, icons
       yggInit
       updateSystem
       addRequiredPPA
@@ -83,6 +89,53 @@ while getopts ":h,v,f,c,t,u" option; do
       installWine
       installViber
       installFranz
+      installTeamViewer13
+      installWebcam
+      updateMicrocode
+      enableUFW
+      enableNumLockX
+      addScreenfetchBashrc
+      enableHistoryTS
+      installUnattendedUpgrades
+    f) # full install
+       # except 
+       # apps : Nitrogen, Beta apps, Nightly, Unboud
+       # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
+       #      tlp, KeyID
+       # tweak : /tmp in ram
+       #TODO: dev apps
+      yggInit
+      updateSystem
+      addRequiredPPA
+      installBase
+      installOffice
+      installBurningTools
+      installCajaPlugins
+      installNautilusAndPlugins
+      installEbook
+      installGames
+      installGimpPlugins
+      installInternet
+      installJava9
+      installMiscUtilities
+      installMultimedia
+      installNetTools
+      installOffice
+      installPidginPlugins
+      installRhythmBoxPlugins
+      installWine
+      installViber
+      installFranz
+      installTeamViewer13
+      installWebcam
+      updateMicrocode
+      enableUFW
+      enableNumLockX
+      addScreenfetchBashrc
+      enableHistoryTS
+      installUnattendedUpgrades
+      installIcons
+      installThemes
       exit
       ;;
     c) # install themes and icons
