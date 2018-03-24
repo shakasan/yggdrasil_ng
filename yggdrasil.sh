@@ -61,7 +61,7 @@ while getopts ":h,v,f,c,t,u,a" option; do
       exit
       ;;
     a) # install all apps
-       # except 
+       # except
        # apps : Nitrogen, Beta apps, Nightly, Unboud
        # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
        #      tlp, KeyID
