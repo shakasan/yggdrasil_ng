@@ -793,8 +793,11 @@ function addRequiredPPA () {
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
 
-  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections" \
+  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
          "Accepting Oracle Java SE 9"
+
+  runCmd "echowireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections" \
+         "Setting Wireshark as root only"
 
   addPPA "noobslab/themes" # themes from noobslab
   addPPA "noobslab/icons" # icons from noobslab
