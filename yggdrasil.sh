@@ -193,7 +193,7 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
     n) # latest nvidia driver (see menus if need older version)
       yggInit
       updateSystem
-      installNvidia384
+      installNvidia390
       exit
       ;;
     u)

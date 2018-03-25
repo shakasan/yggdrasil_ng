@@ -411,6 +411,8 @@ function showHardwareMenu () {
     "nvidia378" "Install Nvidia 378 graphic drivers" \
     "nvidia381" "Install Nvidia 381 graphic drivers" \
     "nvidia384" "Install Nvidia 384 graphic drivers" \
+    "nvidia387" "Install Nvidia 387 graphic drivers" \
+    "nvidia390" "Install Nvidia 390 graphic drivers" \
     "tlp" "Install/Enable TLP for better power management " \
     "keyid" "Add udev rules for Key-ID FIDO U2F usb key" \
     "WI6320" "Fix Intel Wireless 6320 card config problem" \
@@ -443,6 +445,12 @@ function showHardwareMenu () {
         ;;
       "nvidia384")
         installNvidia384Menu
+        ;;
+      "nvidia387")
+        installNvidia387Menu
+        ;;
+      "nvidia390")
+        installNvidia390Menu
         ;;
       "tlp")
         installTLPMenu

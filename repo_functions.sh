@@ -332,6 +332,14 @@ nvidia-384;apt;nvidia-384;nvidia-384
 nvidia-settings;apt;nvidia-384;nvidia-settings
 nvidia-opencl-icd-384;apt;nvidia-384;nvidia-opencl-icd-384
 libcuda1-384;apt;nvidia-384;libcuda1-384
+nvidia-387;apt;nvidia-387;nvidia-387
+nvidia-settings;apt;nvidia-387;nvidia-settings
+nvidia-opencl-icd-387;apt;nvidia-387;nvidia-opencl-icd-387
+libcuda1-387;apt;nvidia-387;libcuda1-387
+nvidia-390;apt;nvidia-390;nvidia-390
+nvidia-settings;apt;nvidia-390;nvidia-settings
+nvidia-opencl-icd-390;apt;nvidia-390;nvidia-opencl-icd-390
+libcuda1-390;apt;nvidia-390;libcuda1-390
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 agave;apt;dev;agave

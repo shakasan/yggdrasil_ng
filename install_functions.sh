@@ -487,6 +487,34 @@ function installNvidia384Menu () {
 }
 
 #
+# install Nvidia Drivers (headless)
+#
+function installNvidia387 () {
+  installAppsFromList nvidia-387
+}
+
+#
+# install Nvidia Drivers (Menu)
+#
+function installNvidia387Menu () {
+  installAppsFromListMenu nvidia-387
+}
+
+#
+# install Nvidia Drivers (headless)
+#
+function installNvidia390 () {
+  installAppsFromList nvidia-390
+}
+
+#
+# install Nvidia Drivers (Menu)
+#
+function installNvidia390Menu () {
+  installAppsFromListMenu nvidia-390
+}
+
+#
 # install TLP App (headless)
 #
 function installTLP () {
