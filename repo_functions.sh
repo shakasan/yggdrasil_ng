@@ -785,9 +785,6 @@ function nitrogen_TrtFct () {
 # install required ppa and settings
 #
 function addRequiredPPA () {
-  runCmd "sudo dpkg --add-architecture i386" \
-         "adding i386 architecture"
-
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
 

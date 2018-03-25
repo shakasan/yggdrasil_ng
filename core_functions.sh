@@ -107,6 +107,14 @@ function isMate () {
 function yggInit () {
   typeset ret_code
 
+  if ! dpkg --print-foreign-architectures | grep -qi i386; then
+    printf "[INIT]"
+    runCmd "sudo dpkg --add-architecture i386" \
+           "adding i386 architecture"
+  else
+    printf "[INIT] i386 architecture already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
+  fi
+
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ubuntu-make; then
     printf "[INIT][UMAKE] PPA not found, adding PPA...\n"
     printf "[INIT][UMAKE] PPA not found, adding PPA...\n" &>> $logFile
