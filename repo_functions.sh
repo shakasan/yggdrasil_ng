@@ -806,8 +806,8 @@ function addRequiredPPA () {
   addPPA "videolan/stable-daily" # video player
   addPPA "nowrep/qupzilla" # web browser
   addPPA "atareao/atareao" # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
-  addPPA "fossfreedom/rhythmbox-plugins";  # Rhythmbox plugins
   addPPA "fossfreedom/rhythmbox" # Rhythmbox
+  addPPA "fossfreedom/rhythmbox-plugins";  # Rhythmbox plugins
   addPPA "nilarimogard/webupd8" # Audacious, Grive2, Pidgin-indicator
   addPPA "oibaf/graphics-drivers" # free graphics-drivers + mesa
   addPPA "team-xbmc/ppa" # Kodi
