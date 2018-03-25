@@ -178,7 +178,7 @@ function installSteamMenu () {
 #
 function installBurningTools () {
   msg "Installing CD/DVD/BD Burning apps and tools"
-  installAppsFromListMenu burningtools
+  installAppsFromList burningtools
 }
 
 #
