@@ -50,7 +50,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
+while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,T" option; do
   case "$option" in
     T) #test purpose only
       yggInit
@@ -107,6 +107,7 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
       installViber
       installFranz
       installTeamViewer13
+      toolAutoremove
       exit
       ;;
     f) # full install
@@ -156,6 +157,7 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
       installViber
       installFranz
       installTeamViewer13
+      toolAutoremove
       exit
       ;;
     c) # install themes and icons
@@ -164,6 +166,12 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
       addRequiredPPA
       installIcons
       installThemes
+      exit
+      ;;
+    w) # nitrogen
+      yggInit
+      updateSystem
+      installNitrogen
       exit
       ;;
     d) # install Unbound DNS Cache
@@ -199,6 +207,10 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
     u)
       yggInit
       updateSystem
+      exit
+      ;;
+    p)
+      toolAutoremove
       exit
       ;;
     h) # display help

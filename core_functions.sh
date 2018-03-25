@@ -558,6 +558,7 @@ function usage () {
   printf " "$BOLDVERT"-f"$NORMAL" : install everything (see doc for exceptions)\n"
   printf " "$BOLDVERT"-a"$NORMAL" : install all apps\n"
   printf " "$BOLDVERT"-c"$NORMAL" : install gtk themes and icons\n"
+  printf " "$BOLDVERT"-w"$NORMAL" : install Nitrogen + remove desktop management from caja\n"
   printf " "$BOLDVERT"-d"$NORMAL" : install DNS Cache Unbound\n"
   printf " "$BOLDVERT"-k"$NORMAL" : install cardreader apps\n"
   printf " "$BOLDVERT"-s"$NORMAL" : install Solaar for Logitech devices\n"
