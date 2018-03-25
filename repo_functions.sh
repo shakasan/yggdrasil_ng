@@ -785,8 +785,6 @@ function nitrogen_TrtFct () {
 # install required ppa and settings
 #
 function addRequiredPPA () {
-  msg "Adding PPA and repositories"
-
   runCmd "sudo dpkg --add-architecture i386" \
          "adding i386 architecture"
 
@@ -794,6 +792,9 @@ function addRequiredPPA () {
 
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
+
+  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections" \
+         "Accepting Oracle Java SE 9"
 
   addPPA "noobslab/themes" # themes from noobslab
   addPPA "noobslab/icons" # icons from noobslab

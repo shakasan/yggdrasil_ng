@@ -383,8 +383,8 @@ function addSpecificRepoFct () {
   for i in $AppsRepo; do
     appRepo=(${i//;/ })
     if [ "${appRepo[0]}" == "$1" ]; then
-      printf "[ADD_REPO] for package : $1, "
-      printf "add repo by function : ${appRepo[1]} \n"
+      printf "[ADD] package -- $1 -- repo/ppa "
+      printf "added by function -- ${appRepo[1]} --\n"
       eval "${appRepo[1]}"
       repoAdded=$(($repoAdded+1))
     fi
@@ -404,8 +404,8 @@ function processAppTrtFct () {
   for i in $AppsTrtFct; do
     appTrtFct=(${i//;/ })
     if [ "${appTrtFct[0]}" == "$1" ]; then
-      printf "[TRT_FCT] for package : $1, "
-      printf "processing function : ${appTrtFct[1]} \n"
+      printf "[TRT] package -- $1 -- "
+      printf "post install processed by -- ${appTrtFct[1]} --"
       eval "${appTrtFct[1]}"
     fi
   done

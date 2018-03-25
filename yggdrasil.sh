@@ -67,31 +67,37 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
        #      tlp, KeyID
        # dev apps : all
        # customization : themes, icons
+      msg "Initializing"
       yggInit
+      msg "Updating the system"
       updateSystem
+      msg "Adding required repo/ppa"
       addRequiredPPA
+      msg "Installing Apps"
       installBase
       installOffice
       installBurningTools
-      installCajaPlugins
-      installNautilusAndPlugins
       installEbook
       installGames
-      installGimpPlugins
       installInternet
       installJava9
       installMiscUtilities
       installMultimedia
       installNetTools
       installOffice
-      installPidginPlugins
-      installRhythmBoxPlugins
       installWine
       installViber
       installFranz
       installTeamViewer13
+      installCajaPlugins
+      installNautilusAndPlugins
+      installGimpPlugins
+      installPidginPlugins
+      installRhythmBoxPlugins
+      msg "Installing HW related"
       installWebcam
       updateMicrocode
+      msg "Applying system customizations"
       enableUFW
       enableNumLockX
       addScreenfetchBashrc
@@ -106,36 +112,43 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
        #      tlp, KeyID
        # tweak : /tmp in ram
        #TODO: dev apps
+      msg "Initializing"
       yggInit
+      msg "Updating the system"
       updateSystem
+      msg "Adding required repo/ppa"
       addRequiredPPA
+      msg "Installing Apps"
       installBase
       installOffice
       installBurningTools
-      installCajaPlugins
-      installNautilusAndPlugins
       installEbook
       installGames
-      installGimpPlugins
       installInternet
       installJava9
       installMiscUtilities
       installMultimedia
       installNetTools
       installOffice
-      installPidginPlugins
-      installRhythmBoxPlugins
       installWine
       installViber
       installFranz
       installTeamViewer13
+      installCajaPlugins
+      installNautilusAndPlugins
+      installGimpPlugins
+      installPidginPlugins
+      installRhythmBoxPlugins
+      msg "Installing HW related"
       installWebcam
       updateMicrocode
+      msg "Applying system customizations"
       enableUFW
       enableNumLockX
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
+      msg "Installing additional themes/icons"
       installIcons
       installThemes
       exit
