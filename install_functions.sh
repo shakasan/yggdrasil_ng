@@ -162,6 +162,14 @@ function installGamesMenu () {
 # Steam (Menu only, due to licence agreement)
 #
 function installSteamMenu () {
+  rundCmd "echo steam	steam/purge	note | sudo debconf-set-selections" \
+        "accepting steam licence"
+
+  rundCmd "echo steam	steam/license	note | sudo debconf-set-selections" \
+          "accepting steam licence 2/3"
+
+  rundCmd "echo steam	steam/question	select	I AGREE | sudo debconf-set-selections" \
+          "accepting steam licence 3/3"
   installPackage apt steam
 }
 

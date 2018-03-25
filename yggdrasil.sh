@@ -49,15 +49,18 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 
 #
 # arguments/options management with getopts
-#
-while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
+
+while getopts ":h,v,f,c,u,a,d,k,s,t,n,T" option; do
   case "$option" in
-    t) #test purpose only
-      #yggInit
+    T) #test purpose only
+      yggInit
       #installIdea
       #installNetTools
       #installOffice
       #addPPA "tmsu/ppa"
+      updateSystem
+      addRequiredPPA
+      installTeamViewer13
       exit
       ;;
     a) # install all apps

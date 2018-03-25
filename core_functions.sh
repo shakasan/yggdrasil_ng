@@ -182,7 +182,6 @@ function yggInit () {
   fi
 }
 
-
 #
 # system update
 #TODO: add pip, npm, gem
@@ -291,9 +290,9 @@ function installPackageDpkg () {
   printf "[PKG] Installing $2 from $1 "
   printf "\n[PKG] installing $2 from $1\n" &>> $logFile
   cd /tmp \
-  && wget -q -O $2 $1 \
-  && sudo dpkg -i $2 \
-  && sudo apt-get install -fy &>> $logFile
+  && wget -q -O $2 $1 &>> $logFile \
+  && sudo dpkg -i $2 &>> $logFile
+  sudo apt-get install -fy &>> $logFile
   ret_code=$?
   retCode $ret_code
 }

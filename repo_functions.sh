@@ -649,7 +649,8 @@ function addRepo_MongoDB3CE () {
 #
 function addRepo_Wine () {
   addKey "https://dl.winehq.org/wine-builds/Release.key"
-  addPPA "https://dl.winehq.org/wine-builds/ubuntu/"
+  addRepo "winehq.list" \
+          "deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main"
 }
 
 #
