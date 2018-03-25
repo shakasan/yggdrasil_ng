@@ -50,7 +50,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,T" option; do
+while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,p,T" option; do
   case "$option" in
     T) #test purpose only
       yggInit

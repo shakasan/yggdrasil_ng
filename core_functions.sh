@@ -565,6 +565,7 @@ function usage () {
   printf " "$BOLDVERT"-t"$NORMAL" : install TLP for Laptops and low energy usage\n"
   printf " "$BOLDVERT"-n"$NORMAL" : install lastest Nvidia graphic drivers\n"
   printf " "$BOLDVERT"-u"$NORMAL" : update system (apt,snap,...)\n"
+  printf " "$BOLDVERT"-p"$NORMAL" : clean useless packages\n"
 	printf " "$BOLDVERT"-v"$NORMAL" : show verison number\n"
   printf " "$BOLDVERT"-h"$NORMAL" : show help & informations\n"
   printf "\n"
