@@ -82,6 +82,7 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,p,T" option; do
       installBurningTools
       installEbook
       installGames
+      installSteam
       installInternet
       installJava9
       installMiscUtilities
@@ -112,8 +113,8 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,p,T" option; do
       ;;
     f) # full install
        # except
-       # apps : Nitrogen, Beta apps, Nightly, Unboud
-       # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
+       # apps : Beta apps, Nightly
+       # hw : solaar, fixWirelessIntel6320, nvidia drivers
        #      tlp, KeyID
        # tweak : /tmp in ram
        #TODO: dev apps
@@ -129,6 +130,7 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,p,T" option; do
       installBurningTools
       installEbook
       installGames
+      installSteam
       installInternet
       installJava9
       installMiscUtilities
@@ -144,12 +146,15 @@ while getopts ":h,v,f,c,u,a,d,k,s,t,n,w,p,T" option; do
       msg "Installing HW related"
       installWebcam
       updateMicrocode
+      installCardReader
       msg "Applying system customizations"
       enableUFW
       enableNumLockX
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
+      installNitrogen
+      enableUnbound
       msg "Installing additional themes/icons"
       installIcons
       installThemes
