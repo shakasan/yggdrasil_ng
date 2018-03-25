@@ -86,9 +86,6 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
       installNetTools
       installOffice
       installWine
-      installViber
-      installFranz
-      installTeamViewer13
       installCajaPlugins
       installNautilusAndPlugins
       installGimpPlugins
@@ -103,6 +100,10 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
+      msg "Installing external apps"
+      installViber
+      installFranz
+      installTeamViewer13
       exit
       ;;
     f) # full install
@@ -131,9 +132,6 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
       installNetTools
       installOffice
       installWine
-      installViber
-      installFranz
-      installTeamViewer13
       installCajaPlugins
       installNautilusAndPlugins
       installGimpPlugins
@@ -151,6 +149,10 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
       msg "Installing additional themes/icons"
       installIcons
       installThemes
+      msg "Installing external apps"
+      installViber
+      installFranz
+      installTeamViewer13
       exit
       ;;
     c) # install themes and icons
