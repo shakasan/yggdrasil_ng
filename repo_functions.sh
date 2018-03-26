@@ -101,6 +101,7 @@ quodlibet;apt;multimedia;quodlibet
 python-cddb;apt;multimedia;python-cddb
 python-musicbrainz2;apt;multimedia;python-musicbrainz2
 gmusicbrowser;apt;multimedia;gmusicbrowser
+peek;apt;multimedia;peek
 owncloud-client;apt;internet;owncloud-client
 syncthing-gtk;apt;internet;syncthing-gtk
 syncthing;apt;internet;syncthing
@@ -457,7 +458,15 @@ kicad;addRepo_Kicad
 nodejs8lts;addRepo_NodeLts8
 telegram;addRepo_Telegram
 skypeforlinux;addRepo_SkypeForLinux
-shotwell;addRepo_Shotwell"
+shotwell;addRepo_Shotwell
+peek;addRepo_Peek"
+
+#
+# Peek
+#
+function addRepo_Peek () {
+  addPPA "ppa:peek-developers/stable"
+}
 
 #
 # Shotwell
