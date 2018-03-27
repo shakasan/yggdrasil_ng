@@ -560,7 +560,7 @@ function usage () {
   printf " "$BOLDVERT"-c"$NORMAL" : install gtk themes and icons\n"
   printf " "$BOLDVERT"-w"$NORMAL" : install Nitrogen + remove desktop management from caja\n"
   printf " "$BOLDVERT"-d"$NORMAL" : install DNS Cache Unbound\n"
-  printf " "$BOLDVERT"-k"$NORMAL" : install cardreader apps\n"
+  printf " "$BOLDVERT"-q"$NORMAL" : install cardreader apps\n"
   printf " "$BOLDVERT"-s"$NORMAL" : install Solaar for Logitech devices\n"
   printf " "$BOLDVERT"-t"$NORMAL" : install TLP for Laptops and low energy usage\n"
   printf " "$BOLDVERT"-n"$NORMAL" : install lastest Nvidia graphic drivers\n"
