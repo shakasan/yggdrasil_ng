@@ -366,6 +366,7 @@ jedi;npm;dev;jedi
 beautysh;pip;dev;beautysh
 retext;pip;dev;retext
 mycli;pip;dev;mycli
+sqlitebrowser;apt;dev;sqlitebrowser
 npm;apt;javascript;npm
 nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
@@ -459,7 +460,15 @@ nodejs8lts;addRepo_NodeLts8
 telegram;addRepo_Telegram
 skypeforlinux;addRepo_SkypeForLinux
 shotwell;addRepo_Shotwell
-peek;addRepo_Peek"
+peek;addRepo_Peek
+sqlitebrowser;addRepo_SQLiteBrowser"
+
+#
+# SQLiteBrowser
+#
+function addRepo_SQLiteBrowser () {
+  addPPA "ppa:linuxgndu/sqlitebrowser"
+}
 
 #
 # Peek
