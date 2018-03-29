@@ -388,7 +388,7 @@ codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
 geany-plugin-markdown;apt;geany;geany-plugin-markdown
-pycharm;apt;pycharm;pycharm
+pycharm-community;snap;pycharm-community;pycharm-community
 sublime-text;apt;sublime-text;sublime-text
 kicad;apt;cad;kicad
 kicad-locale-fr;apt;cad;kicad-locale-fr
