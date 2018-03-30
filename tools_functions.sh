@@ -14,7 +14,6 @@
 # enable ufw at boot time and add rules for installed apps
 #
 function enableUFW () {
-  msg "Enabling FireWall (UFW)"
   runCmd "sudo ufw enable"\
          "enabling UFW at boot"
 
@@ -28,13 +27,12 @@ function enableUFW () {
 # enable numlock by default on LightDM
 #
 function enableNumLockX () {
-  msg "Adding NumLockX to MDM/LightDM Default Init"
   checkAndInstallDep apt numlockx numlockx
   if which lightdm >/dev/null; then
     runCmd "sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak" \
-           "Backing up original config file"
+           "backing up lightdm original config file"
     runCmd "echo -e '\ngreeter-setup-script=/usr/bin/numlockx on' | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
-           "Enabling numlockx on in lightdm at boot"
+           "enabling numlockx on in lightdm at boot"
   fi
 }
 
@@ -43,7 +41,7 @@ function enableNumLockX () {
 #TODO: add possibily to choose amount of ram
 function enableTmpRAM () {
   runCmd "echo 'tmpfs /tmp tmpfs defaults,size=2g 0 0' | sudo tee -a /etc/fstab" \
-         "Enabling /tmp in RAM by modifying /etc/fstab"
+         "enabling /tmp in RAM by modifying /etc/fstab"
   if (whiptail --title "/tmp in RAM - Reboot" --yesno "Reboot required, proceed now ?" 10 60) then
     sudo reboot
   fi
@@ -53,12 +51,11 @@ function enableTmpRAM () {
 # add screenfetch exec in .bashrc
 #
 function addScreenfetchBashrc () {
-  msg "Adding screenfetch to .bashrc"
   checkAndInstallDep apt screenfetch screenfetch
   runCmd "touch /home/$myHomedir/.bashrc" \
-         "Creating .bashrc file if necessary"
+         "creating .bashrc file if necessary" \
   runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc" \
-         "Adding screenfetch to .bashrc"
+         "adding screenfetch to .bashrc"
 }
 
 #
@@ -66,7 +63,7 @@ function addScreenfetchBashrc () {
 #
 function enableHistoryTS () {
   typeset ret_code
-  printf "Enabling CLI History TimeStamp "
+  printf "enabling CLI History TimeStamp "
   echo "export HISTTIMEFORMAT='%F %T  '" | tee -a /home/$myHomedir/.bashrc &>> $logFile
   ret_code=$?
   retCode $ret_code
@@ -76,8 +73,7 @@ function enableHistoryTS () {
 # install/enable auto install of security updates
 #
 function installUnattendedUpgrades () {
-  msg "Installing unattended-upgrades"
-  installPackage apt "unattended-upgrades"
+  installPackage apt unattended-upgrades
 }
 
 #
@@ -128,16 +124,16 @@ function toolOptimizeFirefox () {
 #
 function toolAutoremove () {
   runCmd "sudo apt-get -y autoremove" \
-         "Removing not necessary dependencies"
+         "removing not necessary dependencies"
 }
 
 #
 # remove old versions of installed kernels
 #
 function toolClearOldKernels () {
-  checkAndInstallDep apt byobu purge-old-kernels
-  runCmd "sudo purge-old-kernels --keep 3" \
-         "Removing old kernels"
+  checkAndInstallDep apt ukuu ukuu \
+  && runCmd "sudo ukuu --purge-old-kernels --yes" \
+            "removing old kernels"
 }
 
 #
@@ -145,5 +141,5 @@ function toolClearOldKernels () {
 #
 function toolSoundCardsDetection () {
   runCmd "sudo alsa force-reload" \
-         "Detecting ALSA sound cards"
+         "detecting ALSA sound cards"
 }

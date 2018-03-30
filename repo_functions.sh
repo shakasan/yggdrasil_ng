@@ -462,7 +462,17 @@ telegram;addRepo_Telegram
 skypeforlinux;addRepo_SkypeForLinux
 shotwell;addRepo_Shotwell
 peek;addRepo_Peek
-sqlitebrowser;addRepo_SQLiteBrowser"
+sqlitebrowser;addRepo_SQLiteBrowser
+ukuu;addRepo_Teejee2008
+aptik;addRepo_Teejee2008
+conky-manager;addRepo_Teejee2008"
+
+#
+#
+#
+function addRepo_Teejee2008 () {
+  addPPA "teejee2008/ppa"
+}
 
 #
 # SQLiteBrowser
@@ -820,7 +830,7 @@ function addRequiredPPA () {
   addPPA "noobslab/icons" # icons from noobslab
   addPPA "numix/ppa" # theme Numix
   addPPA "ravefinity-project/ppa" # Themes
-  addPPA "teejee2008/ppa" # Aptik - Conky-Manage
+  #addPPA "teejee2008/ppa" # Aptik - Conky-Manage - Ukuu
   addPPA "yktooo/ppa" # indicator-sound-switcher
   addPPA "webupd8team/y-ppa-manager" # y-ppa-manager
   addPPA "videolan/stable-daily" # video player

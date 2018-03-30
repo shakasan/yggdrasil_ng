@@ -50,7 +50,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,T" option; do
+while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k,T" option; do
   case "$option" in
     T) #test purpose only
       yggInit
@@ -70,6 +70,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,T" option; do
        #      tlp, KeyID
        # dev apps : all
        # customization : themes, icons
+       # sys : latest kernel
       msg "Initializing"
       yggInit
       msg "Updating the system"
@@ -155,6 +156,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,T" option; do
       installUnattendedUpgrades
       installNitrogen
       enableUnbound
+      kernelUpdate
       msg "Installing additional themes/icons"
       installIcons
       installThemes
@@ -207,6 +209,12 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,T" option; do
       yggInit
       updateSystem
       installNvidia390
+      exit
+      ;;
+    k)
+      yggInit
+      updateSystem
+      kernelUpdate
       exit
       ;;
     u)
