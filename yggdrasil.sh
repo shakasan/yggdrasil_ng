@@ -49,15 +49,18 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 
 #
 # arguments/options management with getopts
-#
-while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
+
+while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,T" option; do
   case "$option" in
-    t) #test purpose only
-      #yggInit
+    T) #test purpose only
+      yggInit
       #installIdea
       #installNetTools
       #installOffice
       #addPPA "tmsu/ppa"
+      updateSystem
+      addRequiredPPA
+      installTeamViewer13
       exit
       ;;
     a) # install all apps
@@ -67,77 +70,99 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
        #      tlp, KeyID
        # dev apps : all
        # customization : themes, icons
+      msg "Initializing"
       yggInit
+      msg "Updating the system"
       updateSystem
+      msg "Adding required repo/ppa"
       addRequiredPPA
+      msg "Installing Apps"
       installBase
       installOffice
       installBurningTools
-      installCajaPlugins
-      installNautilusAndPlugins
       installEbook
       installGames
-      installGimpPlugins
+      installSteam
       installInternet
       installJava9
       installMiscUtilities
       installMultimedia
       installNetTools
       installOffice
+      installWine
+      installCajaPlugins
+      installNautilusAndPlugins
+      installGimpPlugins
       installPidginPlugins
       installRhythmBoxPlugins
-      installWine
-      installViber
-      installFranz
-      installTeamViewer13
+      msg "Installing HW related"
       installWebcam
       updateMicrocode
+      msg "Applying system customizations"
       enableUFW
       enableNumLockX
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
+      msg "Installing external apps"
+      installViber
+      installFranz
+      installTeamViewer13
+      toolAutoremove
       exit
       ;;
     f) # full install
        # except
-       # apps : Nitrogen, Beta apps, Nightly, Unboud
-       # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
+       # apps : Beta apps, Nightly
+       # hw : solaar, fixWirelessIntel6320, nvidia drivers
        #      tlp, KeyID
        # tweak : /tmp in ram
        #TODO: dev apps
+      msg "Initializing"
       yggInit
+      msg "Updating the system"
       updateSystem
+      msg "Adding required repo/ppa"
       addRequiredPPA
+      msg "Installing Apps"
       installBase
       installOffice
       installBurningTools
-      installCajaPlugins
-      installNautilusAndPlugins
       installEbook
       installGames
-      installGimpPlugins
+      installSteam
       installInternet
       installJava9
       installMiscUtilities
       installMultimedia
       installNetTools
       installOffice
+      installWine
+      installCajaPlugins
+      installNautilusAndPlugins
+      installGimpPlugins
       installPidginPlugins
       installRhythmBoxPlugins
-      installWine
-      installViber
-      installFranz
-      installTeamViewer13
+      msg "Installing HW related"
       installWebcam
       updateMicrocode
+      installCardReader
+      msg "Applying system customizations"
       enableUFW
       enableNumLockX
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
+      installNitrogen
+      enableUnbound
+      msg "Installing additional themes/icons"
       installIcons
       installThemes
+      msg "Installing external apps"
+      installViber
+      installFranz
+      installTeamViewer13
+      toolAutoremove
       exit
       ;;
     c) # install themes and icons
@@ -148,13 +173,19 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
       installThemes
       exit
       ;;
+    w) # nitrogen
+      yggInit
+      updateSystem
+      installNitrogen
+      exit
+      ;;
     d) # install Unbound DNS Cache
       yggInit
       updateSystem
       enableUnbound
       exit
       ;;
-    k) # cardreader
+    q) # cardreader
       yggInit
       updateSystem
       installCardReader
@@ -175,12 +206,16 @@ while getopts ":h,v,f,c,t,u,a,d,k,s,t,n" option; do
     n) # latest nvidia driver (see menus if need older version)
       yggInit
       updateSystem
-      installNvidia384
+      installNvidia390
       exit
       ;;
     u)
       yggInit
       updateSystem
+      exit
+      ;;
+    p)
+      toolAutoremove
       exit
       ;;
     h) # display help

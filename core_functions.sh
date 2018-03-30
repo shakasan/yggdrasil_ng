@@ -107,6 +107,14 @@ function isMate () {
 function yggInit () {
   typeset ret_code
 
+  if ! dpkg --print-foreign-architectures | grep -qi i386; then
+    printf "[INIT]"
+    runCmd "sudo dpkg --add-architecture i386" \
+           "adding i386 architecture"
+  else
+    printf "[INIT] i386 architecture already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
+  fi
+
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ubuntu-make; then
     printf "[INIT][UMAKE] PPA not found, adding PPA...\n"
     printf "[INIT][UMAKE] PPA not found, adding PPA...\n" &>> $logFile
@@ -173,7 +181,6 @@ function yggInit () {
     installPackage pip "setuptools"
   fi
 }
-
 
 #
 # system update
@@ -283,9 +290,9 @@ function installPackageDpkg () {
   printf "[PKG] Installing $2 from $1 "
   printf "\n[PKG] installing $2 from $1\n" &>> $logFile
   cd /tmp \
-  && wget -q -O $2 $1 \
-  && sudo dpkg -i $2 \
-  && sudo apt-get install -fy &>> $logFile
+  && wget -q -O $2 $1 &>> $logFile \
+  && sudo dpkg -i $2 &>> $logFile
+  sudo apt-get install -fy &>> $logFile
   ret_code=$?
   retCode $ret_code
 }
@@ -383,8 +390,8 @@ function addSpecificRepoFct () {
   for i in $AppsRepo; do
     appRepo=(${i//;/ })
     if [ "${appRepo[0]}" == "$1" ]; then
-      printf "[ADD_REPO] for package : $1, "
-      printf "add repo by function : ${appRepo[1]} \n"
+      printf "[ADD] package -- $1 -- repo/ppa "
+      printf "added by function -- ${appRepo[1]} --\n"
       eval "${appRepo[1]}"
       repoAdded=$(($repoAdded+1))
     fi
@@ -404,8 +411,8 @@ function processAppTrtFct () {
   for i in $AppsTrtFct; do
     appTrtFct=(${i//;/ })
     if [ "${appTrtFct[0]}" == "$1" ]; then
-      printf "[TRT_FCT] for package : $1, "
-      printf "processing function : ${appTrtFct[1]} \n"
+      printf "[TRT] package -- $1 -- "
+      printf "post install processed by -- ${appTrtFct[1]} --"
       eval "${appTrtFct[1]}"
     fi
   done
@@ -548,15 +555,17 @@ function usage () {
   printf "\n"
 	printf $NORMAL
 	printf "Usage : yggdrasil [options]\n\n"
-  printf " "$BOLDVERT"-f"$NORMAL" : install everything (see doc for exceptions)\n"
+  printf " "$BOLDVERT"-f"$NORMAL" : install everything (=a+c+w+d+q)\n"
   printf " "$BOLDVERT"-a"$NORMAL" : install all apps\n"
-  printf " "$BOLDVERT"-c"$NORMAL" : install gtk themes and icons\n"
+  printf " "$BOLDVERT"-c"$NORMAL" : install Themes and Icons\n"
+  printf " "$BOLDVERT"-w"$NORMAL" : install Nitrogen + remove desktop management from caja\n"
   printf " "$BOLDVERT"-d"$NORMAL" : install DNS Cache Unbound\n"
-  printf " "$BOLDVERT"-k"$NORMAL" : install cardreader apps\n"
-  printf " "$BOLDVERT"-s"$NORMAL" : install Solaar for Logitech devices\n"
+  printf " "$BOLDVERT"-q"$NORMAL" : install cardreader apps\n"
+  printf " "$BOLDVERT"-s"$NORMAL" : install Solaar for Logitech Unifying devices\n"
   printf " "$BOLDVERT"-t"$NORMAL" : install TLP for Laptops and low energy usage\n"
   printf " "$BOLDVERT"-n"$NORMAL" : install lastest Nvidia graphic drivers\n"
   printf " "$BOLDVERT"-u"$NORMAL" : update system (apt,snap,...)\n"
+  printf " "$BOLDVERT"-p"$NORMAL" : clean useless packages\n"
 	printf " "$BOLDVERT"-v"$NORMAL" : show verison number\n"
   printf " "$BOLDVERT"-h"$NORMAL" : show help & informations\n"
   printf "\n"

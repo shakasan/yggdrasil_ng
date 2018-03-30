@@ -14,7 +14,6 @@
 # install Base Apps (headless)
 #
 function installBase () {
-  msg "Installing Base Apps"
   installAppsFromList base
 }
 
@@ -29,7 +28,6 @@ function installBaseMenu () {
 # install Office Apps (headless)
 #
 function installOffice () {
-  msg "Installing Office Apps"
   installAppsFromList office
 }
 
@@ -44,7 +42,6 @@ function installOfficeMenu () {
 # install Multimedia Apps (headless)
 #
 function installMultimedia () {
-  msg "Installing Multimedia Apps"
   installAppsFromList multimedia
 }
 
@@ -59,7 +56,6 @@ function installMultimediaMenu () {
 # install eBook Apps (headless)
 #
 function installEbook () {
-  msg "Installing eBook Apps"
   installAppsFromList ebook
 }
 
@@ -74,8 +70,8 @@ function installEbookMenu () {
 # install Internet Apps (headless)
 #
 function installInternet () {
-  msg "Installing Internet Apps"
-  echo "opera-stable opera-stable/add-deb-source boolean false" | sudo debconf-set-selections
+  runCmd "echo opera-stable opera-stable/add-deb-source boolean false | sudo debconf-set-selections" \
+         "setting as do not add repo"
   installAppsFromList internet
 }
 
@@ -83,7 +79,8 @@ function installInternet () {
 # install Internet Apps (Menu)
 #
 function installInternetMenu () {
-  echo "opera-stable opera-stable/add-deb-source boolean false" | sudo debconf-set-selections
+  runCmd "echo opera-stable opera-stable/add-deb-source boolean false | sudo debconf-set-selections" \
+         "setting as do not add repo"
   installAppsFromListMenu internet
 }
 
@@ -99,7 +96,6 @@ function installViber () {
 # Viber (Menu)
 #
 function installViberMenu () {
-  msg "Install Viber"
   installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
                      viber.deb
 }
@@ -116,7 +112,6 @@ function installFranz () {
 # Franz (Menu)
 #
 function installFranzMenu () {
-  msg "Install Franz"
   installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
                      franz.deb
 }
@@ -125,7 +120,6 @@ function installFranzMenu () {
 # install Misc Utilities Apps (headless)
 #
 function installMiscUtilities () {
-  msg "Installing utilities Apps"
   installAppsFromList utilities
 }
 
@@ -140,7 +134,6 @@ function installMiscUtilitiesMenu () {
 # install Wine Build (headless)
 #
 function installWine () {
-  msg "Installing Wine Apps"
   installAppsFromList wine
 }
 
@@ -155,7 +148,6 @@ function installWineMenu () {
 # install Game Apps (headless)
 #
 function installGames () {
-  msg "Installing Games apps and tools"
   installAppsFromList games
 }
 
@@ -167,9 +159,32 @@ function installGamesMenu () {
 }
 
 #
-# Steam (Menu only, due to licence agreement)
+# Steam (headless)
+#
+function installSteam () {
+  runCmd "echo steam	steam/purge	note | sudo debconf-set-selections" \
+        "accepting steam licence"
+
+  runCmd "echo steam	steam/license	note | sudo debconf-set-selections" \
+          "accepting steam licence 2/3"
+
+  runCmd "echo steam	steam/question	select	I AGREE | sudo debconf-set-selections" \
+          "accepting steam licence 3/3"
+  installPackage apt steam
+}
+
+#
+# Steam (Menu)
 #
 function installSteamMenu () {
+  runCmd "echo steam	steam/purge	note | sudo debconf-set-selections" \
+        "accepting steam licence"
+
+  runCmd "echo steam	steam/license	note | sudo debconf-set-selections" \
+          "accepting steam licence 2/3"
+
+  runCmd "echo steam	steam/question	select	I AGREE | sudo debconf-set-selections" \
+          "accepting steam licence 3/3"
   installPackage apt steam
 }
 
@@ -177,8 +192,7 @@ function installSteamMenu () {
 # install Burning Apps (headless)
 #
 function installBurningTools () {
-  msg "Installing CD/DVD/BD Burning apps and tools"
-  installAppsFromListMenu burningtools
+  installAppsFromList burningtools
 }
 
 #
@@ -192,7 +206,8 @@ function installBurningToolsMenu () {
 # install Network Apps (headless)
 #
 function installNetTools () {
-  msg "Installing Network apps and tools"
+  runCmd "echo wireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections" \
+         "setting Wireshark as root only"
   installAppsFromList nettools
 }
 
@@ -200,6 +215,8 @@ function installNetTools () {
 # install Network Apps (Menu)
 #
 function installNetToolsMenu () {
+  runCmd "echo wireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections" \
+         "setting Wireshark as root only"
   installAppsFromListMenu nettools
 }
 
@@ -207,7 +224,6 @@ function installNetToolsMenu () {
 # install Caja Plugins (headless)
 #
 function installCajaPlugins () {
-  msg "Installing Caja extensions"
   installAppsFromList cajaplugins
 }
 
@@ -222,7 +238,6 @@ function installCajaPluginsMenu () {
 # install Nautilus Apps + plugins (headless)
 #
 function installNautilusAndPlugins () {
-  msg "Installing Nautilus and extensions"
   installAppsFromList nautilus
 }
 
@@ -237,7 +252,6 @@ function installNautilusAndPluginsMenu () {
 # install Gimp plugins (headless)
 #
 function installGimpPlugins () {
-  msg "Installing Gimp extensions"
   installAppsFromList gimp
 }
 
@@ -252,7 +266,6 @@ function installGimpPluginsMenu () {
 # install RhythmBox plugins (headless)
 #
 function installRhythmBoxPlugins () {
-  msg "Installing RhythmBox extensions"
   installAppsFromList rhythmbox
 }
 
@@ -267,7 +280,6 @@ function installRhythmBoxPluginsMenu () {
 # install Pidgin plugins (headless)
 #
 function installPidginPlugins () {
-  msg "Installing Pidgin extensions"
   installAppsFromList pidgin
 }
 
@@ -282,7 +294,6 @@ function installPidginPluginsMenu () {
 # install Nitrogen app (headless)
 #
 function installNitrogen () {
-  msg "Installing Nitrogren"
   installAppsFromList nitrogen
 }
 
@@ -297,7 +308,6 @@ function installNitrogenMenu () {
 # install Beta Apps (headless)
 #
 function installBeta () {
-  msg "Installing Beta Apps"
   installAppsFromList beta
 }
 
@@ -312,7 +322,6 @@ function installBetaMenu () {
 # install Nightly Apps (headless)
 #
 function installNightly () {
-  msg "Installing Nightly Apps"
   installAppsFromList nightly
 }
 
@@ -327,7 +336,6 @@ function installNightlyMenu () {
 # install GTK Themes (headless)
 #
 function installThemes () {
-  msg "Installing themes"
   installAppsFromList gtkthemes
 }
 
@@ -342,7 +350,6 @@ function installThemesMenu () {
 # install Icon Themes (headless)
 #
 function installIcons () {
-  msg "Installing icons"
   installAppsFromList icons
 }
 
@@ -357,7 +364,6 @@ function installIconsMenu () {
 # install Solaar App (headless)
 #
 function installSolaar () {
-  msg "Installing Solaar"
   installAppsFromList solaar
 }
 
@@ -372,7 +378,6 @@ function installSolaarMenu () {
 # install CardReader Apps (headless)
 #
 function installCardReader () {
-  msg "Installing CardReader and utils"
   installAppsFromList cardreader
 }
 
@@ -416,7 +421,6 @@ function fixWirelessIntel6320 () {
 # install Webcam Apps (headless)
 #
 function installWebcam () {
-  msg "Installing Apps needed for Webcams"
   installAppsFromList webcam
 }
 
@@ -431,7 +435,6 @@ function installWebcamMenu () {
 # install Nvidia Drivers (headless)
 #
 function installNvidia370 () {
-  msg "Installing Nvidia 370 driver"
   installAppsFromList nvidia-370
 }
 
@@ -446,7 +449,6 @@ function installNvidia370Menu () {
 # install Nvidia Drivers (headless)
 #
 function installNvidia375 () {
-  msg "Installing Nvidia 375 driver"
   installAppsFromList nvidia-375
 }
 
@@ -461,7 +463,6 @@ function installNvidia375Menu () {
 # install Nvidia Drivers (headless)
 #
 function installNvidia378 () {
-  msg "Installing Nvidia 378 driver"
   installAppsFromList nvidia-378
 }
 
@@ -476,7 +477,6 @@ function installNvidia378Menu () {
 # install Nvidia Drivers (headless)
 #
 function installNvidia381 () {
-  msg "Installing Nvidia 381 driver"
   installAppsFromList nvidia-381
 }
 
@@ -491,7 +491,6 @@ function installNvidia381Menu () {
 # install Nvidia Drivers (headless)
 #
 function installNvidia384 () {
-  msg "Installing Nvidia 384 driver"
   installAppsFromList nvidia-384
 }
 
@@ -503,10 +502,37 @@ function installNvidia384Menu () {
 }
 
 #
+# install Nvidia Drivers (headless)
+#
+function installNvidia387 () {
+  installAppsFromList nvidia-387
+}
+
+#
+# install Nvidia Drivers (Menu)
+#
+function installNvidia387Menu () {
+  installAppsFromListMenu nvidia-387
+}
+
+#
+# install Nvidia Drivers (headless)
+#
+function installNvidia390 () {
+  installAppsFromList nvidia-390
+}
+
+#
+# install Nvidia Drivers (Menu)
+#
+function installNvidia390Menu () {
+  installAppsFromListMenu nvidia-390
+}
+
+#
 # install TLP App (headless)
 #
 function installTLP () {
-  msg "Installing TLP"
   installAppsFromList tlp
 }
 
@@ -519,7 +545,6 @@ function installTLPMenu () {
 
 #TODO:
 function installKeyIDuDev () {
-  msg "Adding UDEV rules"
   sudo sh -c "echo '# this udev file should be used with udev 188 and newer\n\
 ACTION!=\"add|change\", GOTO=\"u2f_end\"\n\
 \n\
@@ -536,7 +561,6 @@ LABEL=\"u2f_end\"' > /etc/udev/rules.d/70-u2f.rules"
 # install Dev Apps (headless)
 #
 function installDevApps () {
-  msg "Installing base Dev apps and tools"
   installAppsFromList dev
 }
 
@@ -552,7 +576,6 @@ function installDevAppsMenu () {
 # install Javascript env (headless)
 #
 function installJavascript () {
-  msg "Installing Javascript env"
   installAppsFromList javascript
 }
 
@@ -567,7 +590,8 @@ function installJavascriptMenu () {
 # install JAVA 9 (headless)
 #
 function installJava9 () {
-  msg "Installing Java9 + set as Default"
+  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
+         "accepting Oracle Java SE 9 licence agreement"
   installAppsFromList java9
 }
 
@@ -575,6 +599,8 @@ function installJava9 () {
 # install JAVA 9 (Menu)
 #
 function installJava9Menu () {
+  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
+         "accepting Oracle Java SE 9 licence agreement"
   installAppsFromListMenu java9
 }
 
@@ -582,7 +608,6 @@ function installJava9Menu () {
 # install Mongo DB 3 CE (headless)
 #
 function installMongo3CE () {
-  msg "Installing Mongo DB 3 CE Apps"
   installAppsFromList mongodb-org
 }
 
@@ -597,7 +622,6 @@ function installMongo3CEMenu () {
 # install Python Apps (headless)
 #
 function installPython () {
-  msg "Installing Python apps and tools"
   installAppsFromList python
 }
 
@@ -612,7 +636,6 @@ function installPythonMenu () {
 # install PHP Apps (headless)
 #
 function installPHP () {
-  msg "Installing PHP apps and tools"
   installAppsFromList php
 }
 
@@ -627,7 +650,6 @@ function installPHPMenu () {
 # install QT Apps/tools (headless)
 #
 function installQT () {
-  msg "Installing QT apps and tools"
   installAppsFromList qt
 }
 
@@ -642,7 +664,6 @@ function installQTMenu () {
 # install LUA Apps (headless)
 #
 function installLUA () {
-  msg "Installing LUA apps and tools"
   installAppsFromList lua
 }
 
@@ -657,7 +678,6 @@ function installLUAMenu () {
 # install Ruby Apps (headless)
 #
 function installRuby () {
-  msg "Installing Ruby apps and tools"
   installAppsFromList ruby
 }
 
@@ -731,7 +751,6 @@ SUBSYSTEM==\"usb\", ATTR{idVendor}==\"19d2\", MODE=\"0666\", OWNER=\""$myHomedir
 # install Atom App (headless)
 #
 function installAtom () {
-  msg "Installing Atom and extensions"
   installAppsFromList atom
 }
 
@@ -739,7 +758,6 @@ function installAtom () {
 # install Atom App (menu)
 #
 function installAtomMenu () {
-  msg "Installing Atom and extensions"
   installAppsFromListMenu atom
 }
 
@@ -747,7 +765,6 @@ function installAtomMenu () {
 # install Anjuta Apps (headless)
 #
 function installAnjuta () {
-  msg "Installing Anjuta"
   installAppsFromList anjuta
 }
 
@@ -762,7 +779,6 @@ function installAnjutaMenu () {
 # install Brackets Apps (headless)
 #
 function installBrackets () {
-  msg "Installing Brackets"
   installAppsFromList brackets
 }
 
@@ -777,7 +793,6 @@ function installBracketsMenu () {
 # install CodeBlocks Apps (headless)
 #
 function installCodeBlocks () {
-  msg "Installing CodeBlocks"
   installAppsFromList codeblocks
 }
 
@@ -792,7 +807,6 @@ function installCodeBlocksMenu () {
 # install Geany Apps (headless)
 #
 function installGeany () {
-  msg "Installing Geany and extensions"
   installAppsFromList geany
 }
 
@@ -815,7 +829,6 @@ function installEclipse () {
 # install IDEA Apps (headless)
 #
 function installIdea () {
-  msg "Installing Intellij-IDEA"
   installAppsFromList idea
 }
 
@@ -830,7 +843,6 @@ function installIdeaMenu () {
 # install Pycharm Apps (headless)
 #
 function installPyCharm () {
-  msg "Installing PyCharm"
   installAppsFromList pycharm
 }
 
@@ -845,7 +857,6 @@ function installPyCharmMenu () {
 # install Visual Studio Code Apps (headless)
 #
 function installVisualStudioCode () {
-  msg "Installing Visual Studio Code"
   installAppsFromList code
 }
 
@@ -860,7 +871,6 @@ function installVisualStudioCodeMenu () {
 # install Android-Studio Apps (headless)
 #
 function installAndroidStudio () {
-  msg "Installing Android-Studio"
   installAppsFromList androidstudio
 }
 
@@ -875,7 +885,6 @@ function installAndroidStudioMenu () {
 # install SublimeText Apps (headless)
 #
 function installSublimeText() {
-  msg "Installing Sublime-Text"
   installAppsFromList sublime-text
 }
 
@@ -890,7 +899,6 @@ function installSublimeTextMenu() {
 # install CAD Apps (headless)
 #
 function installCAD () {
-  msg "Installing CAD apps and tools"
   installAppsFromList cad
 }
 
@@ -905,7 +913,6 @@ function installCADMenu () {
 # install Teamviewer 13 (headless)
 #
 function installTeamViewer13 () {
-  msg "Install Teamviewer 13"
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
                      teamviewer13.deb
 }
@@ -922,7 +929,6 @@ function installTeamViewer13Menu () {
 # install/enable Unboud (headless)
 #
 function enableUnbound () {
-  msg "Installing Unbound"
   installAppsFromList unbound
 }
 
