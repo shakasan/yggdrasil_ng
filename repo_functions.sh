@@ -101,7 +101,6 @@ quodlibet;apt;multimedia;quodlibet
 python-cddb;apt;multimedia;python-cddb
 python-musicbrainz2;apt;multimedia;python-musicbrainz2
 gmusicbrowser;apt;multimedia;gmusicbrowser
-peek;apt;multimedia;peek
 owncloud-client;apt;internet;owncloud-client
 syncthing-gtk;apt;internet;syncthing-gtk
 syncthing;apt;internet;syncthing
@@ -333,14 +332,6 @@ nvidia-384;apt;nvidia-384;nvidia-384
 nvidia-settings;apt;nvidia-384;nvidia-settings
 nvidia-opencl-icd-384;apt;nvidia-384;nvidia-opencl-icd-384
 libcuda1-384;apt;nvidia-384;libcuda1-384
-nvidia-387;apt;nvidia-387;nvidia-387
-nvidia-settings;apt;nvidia-387;nvidia-settings
-nvidia-opencl-icd-387;apt;nvidia-387;nvidia-opencl-icd-387
-libcuda1-387;apt;nvidia-387;libcuda1-387
-nvidia-390;apt;nvidia-390;nvidia-390
-nvidia-settings;apt;nvidia-390;nvidia-settings
-nvidia-opencl-icd-390;apt;nvidia-390;nvidia-opencl-icd-390
-libcuda1-390;apt;nvidia-390;libcuda1-390
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 agave;apt;dev;agave
@@ -366,7 +357,6 @@ jedi;npm;dev;jedi
 beautysh;pip;dev;beautysh
 retext;pip;dev;retext
 mycli;pip;dev;mycli
-sqlitebrowser;apt;dev;sqlitebrowser
 npm;apt;javascript;npm
 nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
@@ -388,7 +378,7 @@ codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
 geany-plugin-markdown;apt;geany;geany-plugin-markdown
-pycharm-community;snap;pycharm-community;pycharm-community
+pycharm;apt;pycharm;pycharm
 sublime-text;apt;sublime-text;sublime-text
 kicad;apt;cad;kicad
 kicad-locale-fr;apt;cad;kicad-locale-fr
@@ -459,23 +449,7 @@ kicad;addRepo_Kicad
 nodejs8lts;addRepo_NodeLts8
 telegram;addRepo_Telegram
 skypeforlinux;addRepo_SkypeForLinux
-shotwell;addRepo_Shotwell
-peek;addRepo_Peek
-sqlitebrowser;addRepo_SQLiteBrowser"
-
-#
-# SQLiteBrowser
-#
-function addRepo_SQLiteBrowser () {
-  addPPA "ppa:linuxgndu/sqlitebrowser"
-}
-
-#
-# Peek
-#
-function addRepo_Peek () {
-  addPPA "ppa:peek-developers/stable"
-}
+shotwell;addRepo_Shotwell"
 
 #
 # Shotwell
@@ -675,8 +649,7 @@ function addRepo_MongoDB3CE () {
 #
 function addRepo_Wine () {
   addKey "https://dl.winehq.org/wine-builds/Release.key"
-  addRepo "winehq.list" \
-          "deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main"
+  addPPA "https://dl.winehq.org/wine-builds/ubuntu/"
 }
 
 #
@@ -812,6 +785,13 @@ function nitrogen_TrtFct () {
 # install required ppa and settings
 #
 function addRequiredPPA () {
+  msg "Adding PPA and repositories"
+
+  runCmd "sudo dpkg --add-architecture i386" \
+         "adding i386 architecture"
+
+  installPackage apt "apt-transport-https"
+
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
 
@@ -825,8 +805,8 @@ function addRequiredPPA () {
   addPPA "videolan/stable-daily" # video player
   addPPA "nowrep/qupzilla" # web browser
   addPPA "atareao/atareao" # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
-  addPPA "fossfreedom/rhythmbox" # Rhythmbox
   addPPA "fossfreedom/rhythmbox-plugins";  # Rhythmbox plugins
+  addPPA "fossfreedom/rhythmbox" # Rhythmbox
   addPPA "nilarimogard/webupd8" # Audacious, Grive2, Pidgin-indicator
   addPPA "oibaf/graphics-drivers" # free graphics-drivers + mesa
   addPPA "team-xbmc/ppa" # Kodi
