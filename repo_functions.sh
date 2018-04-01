@@ -181,6 +181,7 @@ pdfgrep;apt;utilities;pdfgrep
 coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
+fdupes;apt;utilities;fdupes
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
