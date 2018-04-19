@@ -348,7 +348,7 @@ notepadqq;apt;dev;notepadqq
 agave;apt;dev;agave
 utext;apt;dev;utext
 gpick;apt;dev;gpick
-virtualbox-5.1;apt;dev;virtualbox-5.1
+virtualbox-5.2;apt;dev;virtualbox-5.2
 build-essential;apt;dev;build-essential
 ubuntu-make;apt;dev;ubuntu-make
 ghex;apt;dev;ghex
