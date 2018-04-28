@@ -237,7 +237,7 @@ function addPPA () {
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q $*; then
     printf "[PPA] adding : $* "
     printf "\n[PPA] adding $*\n" &>> $logFile
-    sudo add-apt-repository -y "ppa:"$* &>> $logFile
+    sudo add-apt-repository -y $* &>> $logFile
     ret_code=$?
     retCode $ret_code
   else

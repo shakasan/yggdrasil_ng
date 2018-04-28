@@ -472,35 +472,35 @@ conky-manager;addRepo_Teejee2008"
 #
 #
 function addRepo_Teejee2008 () {
-  addPPA "teejee2008/ppa"
+  addPPA ppa:teejee2008/ppa
 }
 
 #
 # SQLiteBrowser
 #
 function addRepo_SQLiteBrowser () {
-  addPPA "ppa:linuxgndu/sqlitebrowser"
+  addPPA ppa:linuxgndu/sqlitebrowser
 }
 
 #
 # Peek
 #
 function addRepo_Peek () {
-  addPPA "ppa:peek-developers/stable"
+  addPPA ppa:peek-developers/stable
 }
 
 #
 # Shotwell
 #
 function addRepo_Shotwell () {
-  addPPA "yg-jensge/shotwell"
+  addPPA ppa:yg-jensge/shotwell
 }
 
 #
 # Telegram
 #
 function addRepo_Telegram () {
-  addPPA "atareao/telegram"
+  addPPA ppa:atareao/telegram
 }
 
 #
@@ -526,42 +526,42 @@ function addRepo_NodeLts8 () {
 # Kicad 4
 #
 function addRepo_Kicad () {
-  addPPA "js-reynaud/kicad-4"
+  addPPA ppa:js-reynaud/kicad-4
 }
 
 #
 # Brackets IDE
 #
 function addRepo_Brackets () {
-  addPPA "webupd8team/brackets"
+  addPPA ppa:webupd8team/brackets
 }
 
 #
 # Darktable RAW Editor
 #
 function addRepo_DarkTable () {
-  addPPA "pmjdebruijn/darktable-release"
+  addPPA ppa:pmjdebruijn/darktable-release
 }
 
 #
 # WireShark
 #
 function addRepo_WireShark () {
-addPPA "wireshark-dev/stable"
+addPPA ppa:wireshark-dev/stable
 }
 
 #
 # NextCloud
 #
 function addRepo_NextCloud () {
-  addPPA "nextcloud-devs/client"
+  addPPA ppa:nextcloud-devs/client
 }
 
 #
 # Atom IDE
 #
 function addRepo_Atom () {
-  addPPA "webupd8team/atom"
+  addPPA ppa:webupd8team/atom
 }
 
 #
@@ -651,7 +651,7 @@ function addRepo_Etcher () {
 # Ansible
 #
 function addRepo_Ansible () {
-  addPPA "ansible/ansible"
+  addPPA ppa:ansible/ansible
 }
 
 #
@@ -695,21 +695,21 @@ function addRepo_Wine () {
 # LibreOffice 6
 #
 function addRepo_Libreoffice6 () {
-  addPPA "libreoffice/ppa"
+  addPPA ppa:libreoffice/ppa
 }
 
 #
 # Kodi (Beta)
 #
 function addRepo_KodiBeta () {
-  addPPA "team-xbmc/unstable"
+  addPPA ppa:team-xbmc/unstable
 }
 
 #
 # Kodi (Nightly)
 #
 function addRepo_KodiNightly () {
-  addPPA "team-xbmc/xbmc-nightly"
+  addPPA ppa:team-xbmc/xbmc-nightly
 }
 
 #
@@ -725,7 +725,7 @@ function addRepo_VSCode () {
 # Android-Studio
 #
 function addRepo_AndroidStudio () {
-  addPPA "maarten-fonville/android-studio"
+  addPPA ppa:maarten-fonville/android-studio
 }
 
 #-----------------------------------------------------------------------------#
@@ -827,50 +827,49 @@ function addRequiredPPA () {
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
 
-  addPPA "noobslab/themes" # themes from noobslab
-  addPPA "noobslab/icons" # icons from noobslab
-  addPPA "numix/ppa" # theme Numix
-  addPPA "ravefinity-project/ppa" # Themes
-  #addPPA "teejee2008/ppa" # Aptik - Conky-Manage - Ukuu
-  addPPA "yktooo/ppa" # indicator-sound-switcher
-  addPPA "webupd8team/y-ppa-manager" # y-ppa-manager
-  addPPA "videolan/stable-daily" # video player
-  addPPA "nowrep/qupzilla" # web browser
-  addPPA "atareao/atareao" # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
-  addPPA "fossfreedom/rhythmbox" # Rhythmbox
-  addPPA "fossfreedom/rhythmbox-plugins";  # Rhythmbox plugins
-  addPPA "nilarimogard/webupd8" # Audacious, Grive2, Pidgin-indicator
-  addPPA "oibaf/graphics-drivers" # free graphics-drivers + mesa
-  addPPA "team-xbmc/ppa" # Kodi
-  addPPA "webupd8team/java" # Oracle Java SE 7/8
-  addPPA "hugin/hugin-builds" # image editor
-  addPPA "mumble/release" # Mumble
-  addPPA "atareao/utext" # Markdown editor
-  addPPA "danielrichter2007/grub-customizer" # grub-customizer
-  addPPA "lucioc/sayonara" # audio player
-  addPPA "haraldhv/shotcut" # video editor
-  addPPA "flacon/ppa" # audio extraction
-  addPPA "jaap.karssenberg/zim" # local wiki
-  addPPA "stebbins/handbrake-releases" # video transcoder
-  addPPA "graphics-drivers/ppa" # non-free nvidia drivers
-  addPPA "diodon-team/stable" # clipboard manager
-  addPPA "notepadqq-team/notepadqq" # notepad++ clone
-  addPPA "mariospr/frogr" # flickr manager
-  addPPA "ubuntuhandbook1/slowmovideo" # slow motion video editor
-  addPPA "transmissionbt/ppa" # bittorrent client
-  addPPA "geary-team/releases" # email client
-  addPPA "ubuntuhandbook1/corebird" # corebird
-  addPPA "tista/adapta" # adapta gtk theme
-  addPPA "maarten-baert/simplescreenrecorder" # simplescreenrecorder
-  addPPA "dhor/myway" # rawtherapee (newer version)
-  addPPA "zeal-developers/ppa" # Zeal (newer version)
-  addPPA "deluge-team/ppa" # Deluge P2P client
-  addPPA "kritalime/ppa" # Krita
-  addPPA "otto-kesselgulasch/gimp" # Gmic2
-  addPPA "ozmartian/apps" # Vidcutter
-  addPPA "fossproject/ppa" # green-recorder
-  addPPA "quiterss/quiterss" # quiterss
-  addPPA "tmsu/ppa" # tmsu
+  addPPA ppa:noobslab/themes # themes from noobslab
+  addPPA ppa:noobslab/icons # icons from noobslab
+  addPPA ppa:numix/ppa # theme Numix
+  addPPA ppa:ravefinity-project/ppa # Themes
+  addPPA ppa:yktooo/ppa # indicator-sound-switcher
+  addPPA ppa:webupd8team/y-ppa-manager # y-ppa-manager
+  addPPA ppa:videolan/stable-daily # video player
+  addPPA ppa:nowrep/qupzilla # web browser
+  addPPA ppa:atareao/atareao # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
+  addPPA ppa:fossfreedom/rhythmbox # Rhythmbox
+  addPPA ppa:fossfreedom/rhythmbox-plugins;  # Rhythmbox plugins
+  addPPA ppa:nilarimogard/webupd8 # Audacious, Grive2, Pidgin-indicator
+  addPPA ppa:oibaf/graphics-drivers # free graphics-drivers + mesa
+  addPPA ppa:team-xbmc/ppa # Kodi
+  addPPA ppa:webupd8team/java # Oracle Java SE 7/8
+  addPPA ppa:hugin/hugin-builds # image editor
+  addPPA ppa:mumble/release # Mumble
+  addPPA ppa:atareao/utext # Markdown editor
+  addPPA ppa:danielrichter2007/grub-customizer # grub-customizer
+  addPPA ppa:lucioc/sayonara # audio player
+  addPPA ppa:haraldhv/shotcut # video editor
+  addPPA ppa:flacon/ppa # audio extraction
+  addPPA ppa:jaap.karssenberg/zim # local wiki
+  addPPA ppa:stebbins/handbrake-releases # video transcoder
+  addPPA ppa:graphics-drivers/ppa # non-free nvidia drivers
+  addPPA ppa:diodon-team/stable # clipboard manager
+  addPPA ppa:notepadqq-team/notepadqq # notepad++ clone
+  addPPA ppa:mariospr/frogr # flickr manager
+  addPPA ppa:ubuntuhandbook1/slowmovideo # slow motion video editor
+  addPPA ppa:transmissionbt/ppa # bittorrent client
+  addPPA ppa:geary-team/releases # email client
+  addPPA ppa:ubuntuhandbook1/corebird # corebird
+  addPPA ppa:tista/adapta # adapta gtk theme
+  addPPA ppa:maarten-baert/simplescreenrecorder # simplescreenrecorder
+  addPPA ppa:dhor/myway # rawtherapee (newer version)
+  addPPA ppa:zeal-developers/ppa # Zeal (newer version)
+  addPPA ppa:deluge-team/ppa # Deluge P2P client
+  addPPA ppa:kritalime/ppa # Krita
+  addPPA ppa:otto-kesselgulasch/gimp # Gmic2
+  addPPA ppa:ozmartian/apps # Vidcutter
+  addPPA ppa:fossproject/ppa # green-recorder
+  addPPA ppa:quiterss/quiterss # quiterss
+  addPPA ppa:tmsu/ppa # tmsu
 
   addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
   addRepo mkv.list \
