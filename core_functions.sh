@@ -193,7 +193,7 @@ function kernelUpdate () {
 
 #
 # system update
-#TODO: add pip, npm, gem
+#TODO: add pip, npm (yarn?), gem
 #
 function updateSystem () {
   typeset ret_code
@@ -310,7 +310,7 @@ function installPackageDpkg () {
 # install package from repositories
 # input : package manager, package name
 # package manager available : apt, pip, npm, gem, snap
-# TODO: add apm, flatpak, umake?
+# TODO: add apm, flatpak, umake?, use yarn instead of npm ?
 #
 function installPackage () {
   typeset pkg="$2"
