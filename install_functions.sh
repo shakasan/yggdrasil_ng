@@ -530,6 +530,20 @@ function installNvidia390Menu () {
 }
 
 #
+# install Nvidia Drivers (headless)
+#
+function installNvidia396 () {
+  installAppsFromList nvidia-396
+}
+
+#
+# install Nvidia Drivers (Menu)
+#
+function installNvidia396Menu () {
+  installAppsFromListMenu nvidia-396
+}
+
+#
 # install TLP App (headless)
 #
 function installTLP () {

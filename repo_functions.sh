@@ -343,6 +343,10 @@ nvidia-390;apt;nvidia-390;nvidia-390
 nvidia-settings;apt;nvidia-390;nvidia-settings
 nvidia-opencl-icd-390;apt;nvidia-390;nvidia-opencl-icd-390
 libcuda1-390;apt;nvidia-390;libcuda1-390
+nvidia-396;apt;nvidia-396;nvidia-396
+nvidia-settings;apt;nvidia-396;nvidia-settings
+nvidia-opencl-icd-396;apt;nvidia-396;nvidia-opencl-icd-396
+libcuda1-396;apt;nvidia-396;libcuda1-396
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 agave;apt;dev;agave

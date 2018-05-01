@@ -52,17 +52,6 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 
 while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k,T" option; do
   case "$option" in
-    T) #test purpose only
-      yggInit
-      #installIdea
-      #installNetTools
-      #installOffice
-      #addPPA "tmsu/ppa"
-      updateSystem
-      addRequiredPPA
-      installTeamViewer13
-      exit
-      ;;
     a) # install all apps
        # except
        # apps : Nitrogen, Beta apps, Nightly, Unboud
@@ -208,7 +197,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k,T" option; do
     n) # latest nvidia driver (see menus if need older version)
       yggInit
       updateSystem
-      installNvidia390
+      installNvidia396
       exit
       ;;
     k)
