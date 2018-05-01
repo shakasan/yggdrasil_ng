@@ -471,14 +471,14 @@ avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6"
 
 #
-#
+# Avidemux
 #
 function addRepo_Avidemux2.6 () {
   addPPA ppa:ubuntuhandbook1/avidemux
 }
 
 #
-#
+# aptik, conky-manager, selene, timeshift, ukuu
 #
 function addRepo_Teejee2008 () {
   addPPA ppa:teejee2008/ppa
