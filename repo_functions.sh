@@ -466,7 +466,16 @@ peek;addRepo_Peek
 sqlitebrowser;addRepo_SQLiteBrowser
 ukuu;addRepo_Teejee2008
 aptik;addRepo_Teejee2008
-conky-manager;addRepo_Teejee2008"
+conky-manager;addRepo_Teejee2008
+avidemux2.6-plugins-qt;addRepo_Avidemux2.6
+avidemux2.6-qt;addRepo_Avidemux2.6"
+
+#
+#
+#
+function addRepo_Avidemux2.6 () {
+  addPPA ppa:ubuntuhandbook1/avidemux
+}
 
 #
 #
@@ -879,10 +888,6 @@ function addRequiredPPA () {
   addKey "https://jgeboski.github.io/obs.key"
   addRepo jgeboski.list \
           "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
-
-  addKey "http://archive.getdeb.net/getdeb-archive.key"
-  addRepo getdeb.list \
-          "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps games"
 
   updateSystem
 }
