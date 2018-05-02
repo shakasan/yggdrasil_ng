@@ -432,6 +432,20 @@ function installWebcamMenu () {
 }
 
 #
+# install latest versions of graphic drivers, mesa, .... (headless)
+#
+function installOibaf () {
+  addRepo_Oibaf
+}
+
+#
+# install latest versions of graphic drivers, mesa, .... (Menu)
+#
+function installOibafMenu () {
+  addRepo_Oibaf
+}
+
+#
 # install Nvidia Drivers (headless)
 #
 function installNvidia370 () {
