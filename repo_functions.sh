@@ -182,7 +182,7 @@ coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
-vulkan;apt;utilities;vulkan
+vulkan-utils;apt;utilities;vulkan-utils
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
@@ -563,7 +563,7 @@ rhythmbox-plugin-tray-icon;addRepo_Rhythmbox
 rhythmbox-plugin-visualizer;addRepo_Rhythmbox
 rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
 rhythmbox-plugins;addRepo_Rhythmbox
-vulkan;addRepo_NvidiaDrivers
+vulkan-utils;addRepo_NvidiaDrivers
 nvidia-settings;addRepo_NvidiaDrivers
 nvidia-370;addRepo_NvidiaDrivers
 nvidia-opencl-icd-370;addRepo_NvidiaDrivers
