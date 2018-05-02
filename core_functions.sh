@@ -107,6 +107,9 @@ function isMate () {
 function yggInit () {
   typeset ret_code
 
+  runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
+         "apply settings for science-config pkg"
+
   if ! dpkg --print-foreign-architectures | grep -qi i386; then
     printf "[INIT]"
     runCmd "sudo dpkg --add-architecture i386" \

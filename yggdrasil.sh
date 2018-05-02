@@ -64,8 +64,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k,T" option; do
       yggInit
       msg "Updating the system"
       updateSystem
-      msg "Adding required repo/ppa"
-      addRequiredPPA
       msg "Installing Apps"
       installBase
       installOffice
@@ -112,8 +110,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k,T" option; do
       yggInit
       msg "Updating the system"
       updateSystem
-      msg "Adding required repo/ppa"
-      addRequiredPPA
       msg "Installing Apps"
       installBase
       installOffice
@@ -159,7 +155,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k,T" option; do
     c) # install themes and icons
       yggInit
       updateSystem
-      addRequiredPPA
       installIcons
       installThemes
       exit
@@ -268,17 +263,16 @@ mainMenuOptions=$(whiptail \
 --menu "This tool will help you to install all needed applications and cutomize your fresh install of Mint/Ubuntu/Elementary/..." \
 25 80 16 \
 "1" "System update" \
-"2" "Add required PPA/Repo" \
-"3" "Applications" \
-"4" "Applications (BETA)" \
-"5" "Applications (Nightly)" \
-"6" "Themes & Icons" \
-"7" "Dev Apps" \
-"8" "System Config" \
-"9" "System Tools" \
-"10" "Reboot this computer" \
-"11" "About Yggdrasil" \
-"12" "Quit"  3>&1 1>&2 2>&3)
+"2" "Applications" \
+"3" "Applications (BETA)" \
+"4" "Applications (Nightly)" \
+"5" "Themes & Icons" \
+"6" "Dev Apps" \
+"7" "System Config" \
+"8" "System Tools" \
+"9" "Reboot this computer" \
+"10" "About Yggdrasil" \
+"11" "Quit"  3>&1 1>&2 2>&3)
 
 case $mainMenuOptions in
   "1")
@@ -286,37 +280,33 @@ case $mainMenuOptions in
     pressKey
     ;;
   "2")
-    addRequiredPPA
-    pressKey
-    ;;
-  "3")
     showAppInstallMenu
     ;;
-  "4")
+  "3")
     showAppBetaInstallMenu
     ;;
-  "5")
+  "4")
     showAppNightlyInstallMenu
     ;;
-  "6")
+  "5")
     showThemesInstallMenu
     ;;
-  "7")
+  "6")
     showDevInstallMenu
     ;;
-  "8")
+  "7")
     showConfigMenu;
     ;;
-  "9")
+  "8")
     showSysToolsMenu
     ;;
-  "10")
+  "9")
     showRebootBoxMenu
     ;;
-  "11")
+  "10")
     showAboutBoxMenu
     ;;
-  "12")
+  "11")
     exit
     ;;
 esac # main menu

@@ -108,7 +108,6 @@ syncthing;apt;internet;syncthing
 insync;apt;internet;insync
 discord;snap;internet;discord
 quiterss;apt;internet;quiterss
-frogr;apt;internet;frogr
 opera-stable;apt;internet;opera-stable
 google-chrome-stable;apt;internet;google-chrome-stable
 xchat-gnome;apt;internet;xchat-gnome
@@ -116,7 +115,6 @@ xchat-gnome-indicator;apt;internet;xchat-gnome-indicator
 chromium-browser;apt;internet;chromium-browser
 chromium-browser-l10n;apt;internet;chromium-browser-l10n
 dropbox;apt;internet;dropbox
-qupzilla;apt;internet;qupzilla
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
@@ -132,7 +130,9 @@ nextcloud-client-caja;apt;internet;nextcloud-client-caja
 deluge-gtk;apt;internet;deluge-gtk
 deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
+transmission-gtk;apt;internet;transmission-gtk
 qtqr;apt;utilities;qtqr
+gqrcode;apt;utilities;gqrcode
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
 xcalib;apt;utilities;xcalib
@@ -182,6 +182,7 @@ coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
+vulkan;apt;utilities;vulkan
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
@@ -299,7 +300,6 @@ radiance-flat-colors;apt;gtkthemes;radiance-flat-colors
 vibrancy-colors;apt;gtkthemes;vibrancy-colors
 vivacious-colors;apt;gtkthemes;vivacious-colors
 numix-gtk-theme;apt;gtkthemes;numix-gtk-theme
-adapta-gtk-theme;apt;gtkthemes;adapta-gtk-theme
 arc-icons;apt;icons;arc-icons
 ultra-flat-icons;apt;icons;ultra-flat-icons
 myelementary;apt;icons;myelementary
@@ -377,7 +377,7 @@ npm;apt;javascript;npm
 nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
-emma;npm;javascript;emma
+emma-cli;npm;javascript;emma-cli
 jshint;npm;javascript;jshint
 oracle-java9-installer;apt;java9;oracle-java9-installer
 oracle-java9-set-default;apt;java9;oracle-java9-set-default
@@ -472,7 +472,426 @@ ukuu;addRepo_Teejee2008
 aptik;addRepo_Teejee2008
 conky-manager;addRepo_Teejee2008
 avidemux2.6-plugins-qt;addRepo_Avidemux2.6
-avidemux2.6-qt;addRepo_Avidemux2.6"
+avidemux2.6-qt;addRepo_Avidemux2.6
+tmsu;addRepo_Tmsu
+quiterss;addRepo_Quiterss
+transmission-gtk;addRepo_Transmissionbt
+handbrake;addRepo_Handbrake
+notepadqq;addRepo_Notepadqq
+mumble;addRepo_Mumble
+utext;addRepo_Utext
+flacon;addRepo_Flacon
+y-ppa-manager;addRepo_YPPAManager
+shotcut;addRepo_Shotcut
+diodon;addRepo_Diodon
+sayonara;addRepo_Sayonara
+zeal;addRepo_Zeal
+corebird;addRepo_Corebird
+deluge-torrent;addRepo_Deluge
+deluge-gtk;addRepo_Deluge
+kodi;addRepo_Kodi
+indicator-sound-switcher;addRepo_IndicatorSoundSwitcher
+krita;addRepo_Krita
+gimp-gmic;addRepo_Gimp
+gimp;addRepo_Gimp
+geary;addRepo_Geary
+vidcutter;addRepo_Vidcutter
+ambiance-crunchy;addRepo_NoobslabThemes
+arc-theme;addRepo_NoobslabThemes
+ambiance-colors;addRepo_Ravefinity
+radiance-colors;addRepo_Ravefinity
+ambiance-flat-colors;addRepo_Ravefinity
+vivacious-colors-gtk-dark;addRepo_Ravefinity
+vivacious-colors-gtk-light;addRepo_Ravefinity
+yosembiance-gtk-theme;addRepo_NoobslabThemes
+ambiance-blackout-colors;addRepo_Ravefinity
+ambiance-blackout-flat-colors;addRepo_Ravefinity
+radiance-flat-colors;addRepo_Ravefinity
+vibrancy-colors;addRepo_Ravefinity
+vivacious-colors;addRepo_NoobslabThemes
+arc-icons;addRepo_NoobslabIcons
+ultra-flat-icons;addRepo_NoobslabIcons
+myelementary;addRepo_NoobslabIcons
+ghost-flat-icons;addRepo_NoobslabIcons
+faenza-icon-theme;addRepo_NoobslabIcons
+vibrantly-simple-icon-theme;addRepo_Ravefinity
+rave-x-colors-icons;addRepo_Ravefinity
+ravefinity-x-icons;addRepo_Ravefinity
+oracle-java9-installer;addRepo_Java
+oracle-java9-set-default;addRepo_Java
+green-recorder;addRepo_GreenRecorder
+hugin;addRepo_Hugin
+simplescreenrecorder;addRepo_SimpleScreenRecorder
+simplescreenrecorder-lib;addRepo_SimpleScreenRecorder
+simplescreenrecorder-lib:i386;addRepo_SimpleScreenRecorder
+slowmovideo;addRepo_Slowmovideo
+zim;addRepo_Zim
+grub-customizer;addRepo_GrubCustomizer
+vlc;addRepo_VLC
+numix-gtk-theme;addRepo_Numix
+numix-icon-theme;addRepo_Numix
+numix-icon-theme-circle;addRepo_Numix
+rhythmbox-plugin-alternative-toolbar;addRepo_Rhythmbox
+rhythmbox-plugin-artdisplay;addRepo_Rhythmbox
+rhythmbox-plugin-cdrecorder;addRepo_Rhythmbox
+rhythmbox-plugin-close-on-hide;addRepo_Rhythmbox
+rhythmbox-plugin-countdown-playlist;addRepo_Rhythmbox
+rhythmbox-plugin-coverart-browser;addRepo_Rhythmbox
+rhythmbox-plugin-coverart-search;addRepo_Rhythmbox
+rhythmbox-plugin-desktopart;addRepo_Rhythmbox
+rhythmbox-plugin-equalizer;addRepo_Rhythmbox
+rhythmbox-plugin-fileorganizer;addRepo_Rhythmbox
+rhythmbox-plugin-fullscreen;addRepo_Rhythmbox
+rhythmbox-plugin-hide;addRepo_Rhythmbox
+rhythmbox-plugin-jumptowindow;addRepo_Rhythmbox
+rhythmbox-plugin-llyrics;addRepo_Rhythmbox
+rhythmbox-plugin-looper;addRepo_Rhythmbox
+rhythmbox-plugin-opencontainingfolder;addRepo_Rhythmbox
+rhythmbox-plugin-parametriceq;addRepo_Rhythmbox
+rhythmbox-plugin-playlist-import-export;addRepo_Rhythmbox
+rhythmbox-plugin-podcast-pos;addRepo_Rhythmbox
+rhythmbox-plugin-randomalbumplayer;addRepo_Rhythmbox
+rhythmbox-plugin-rating-filters;addRepo_Rhythmbox
+rhythmbox-plugin-remembertherhythm;addRepo_Rhythmbox
+rhythmbox-plugin-repeat-one-song;addRepo_Rhythmbox
+rhythmbox-plugin-rhythmweb;addRepo_Rhythmbox
+rhythmbox-plugin-screensaver;addRepo_Rhythmbox
+rhythmbox-plugin-smallwindow;addRepo_Rhythmbox
+rhythmbox-plugin-spectrum;addRepo_Rhythmbox
+rhythmbox-plugin-suspend;addRepo_Rhythmbox
+rhythmbox-plugin-tray-icon;addRepo_Rhythmbox
+rhythmbox-plugin-visualizer;addRepo_Rhythmbox
+rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
+rhythmbox-plugins;addRepo_Rhythmbox
+vulkan;addRepo_NvidiaDrivers
+nvidia-settings;addRepo_NvidiaDrivers
+nvidia-370;addRepo_NvidiaDrivers
+nvidia-opencl-icd-370;addRepo_NvidiaDrivers
+nvidia-375;addRepo_NvidiaDrivers
+nvidia-opencl-icd-375;addRepo_NvidiaDrivers
+nvidia-378;addRepo_NvidiaDrivers
+nvidia-opencl-icd-378;addRepo_NvidiaDrivers
+libcuda1-378;addRepo_NvidiaDrivers
+nvidia-381;addRepo_NvidiaDrivers
+nvidia-opencl-icd-381;addRepo_NvidiaDrivers
+libcuda1-381;addRepo_NvidiaDrivers
+nvidia-384;addRepo_NvidiaDrivers
+nvidia-opencl-icd-384;addRepo_NvidiaDrivers
+libcuda1-384;addRepo_NvidiaDrivers
+nvidia-387;addRepo_NvidiaDrivers
+nvidia-opencl-icd-387;addRepo_NvidiaDrivers
+libcuda1-387;addRepo_NvidiaDrivers
+nvidia-390;addRepo_NvidiaDrivers
+nvidia-opencl-icd-390;addRepo_NvidiaDrivers
+libcuda1-390;addRepo_NvidiaDrivers
+nvidia-396;addRepo_NvidiaDrivers
+nvidia-opencl-icd-396;addRepo_NvidiaDrivers
+libcuda1-396;addRepo_NvidiaDrivers
+rawtherapee;addRepo_DhorMyWay
+entangle;addRepo_DhorMyWay
+mkvtoolnix-gui;addRepo_MKVToolnix
+purple-facebook;addRepo_Jgeboski
+cpu-g;addRepo_Atareao
+gqrcode;addRepo_Atareao
+imagedownloader;addRepo_Atareao
+audacious;addRepo_Webupd8
+nautilus-columns;addRepo_Webupd8
+nautilus-terminal;addRepo_Webupd8
+purple-hangouts;addRepo_Webupd8
+purple-skypeweb;addRepo_Webupd8
+qt5ct;addRepo_Webupd8
+syncthing-gtk;addRepo_Webupd8
+telegram-purple;addRepo_Webupd8
+screenkey;addRepo_Webupd8
+yad;addRepo_Webupd8
+woeusb;addRepo_Webupd8"
+
+#
+# Audacious, Guake
+#
+function addRepo_Webupd8 () {
+  addPPA ppa:nilarimogard/webupd8
+}
+
+#
+# cpu-g, gqrcode, imagedownloader
+#
+function addRepo_Atareao () {
+  addPPA ppa:atareao/atareao
+}
+
+#
+# purple facebook
+#
+function addRepo_Jgeboski () {
+  addKey "https://jgeboski.github.io/obs.key"
+  addRepo jgeboski.list \
+          "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
+}
+
+#
+# MKVToolnix
+#
+function addRepo_MKVToolnix () {
+  addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
+  addRepo mkv.list \
+          "deb http://mkvtoolnix.download/ubuntu/xenial/ ./" \
+          "deb-src http://mkvtoolnix.download/ubuntu/xenial/ ./ "
+}
+
+#
+# Entangle, Rawtherapee
+#
+function addRepo_DhorMyWay () {
+  addPPA ppa:dhor/myway
+}
+
+#
+# Nvidia drivers
+#
+function addRepo_NvidiaDrivers () {
+  addPPA ppa:graphics-drivers/ppa
+}
+
+#
+# Rhythmbox
+#
+function addRepo_Rhythmbox () {
+  addPPA ppa:fossfreedom/rhythmbox
+  addPPA ppa:fossfreedom/rhythmbox-plugins
+}
+
+#
+# Numix themes/icons
+#
+function addRepo_Numix () {
+  addPPA ppa:numix/ppa
+}
+
+#
+# ravefinity themes
+#
+function addRepo_Ravefinity () {
+  addPPA ppa:ravefinity-project/ppa
+}
+
+#
+# VLC
+#
+function addRepo_VLC () {
+  addPPA ppa:videolan/stable-daily
+}
+
+#
+# Grub-Customizer
+#
+function addRepo_GrubCustomizer () {
+  addPPA ppa:danielrichter2007/grub-customizer
+}
+
+#
+# Zim
+#
+function addRepo_Zim () {
+  addPPA ppa:jaap.karssenberg/zim
+}
+
+#
+# Slowmovideo
+#
+function addRepo_Slowmovideo () {
+  addPPA ppa:ubuntuhandbook1/slowmovideo
+}
+
+#
+# Simple-Screen-Recorder
+#
+function addRepo_SimpleScreenRecorder () {
+  addPPA ppa:maarten-baert/simplescreenrecorder
+}
+
+#
+# Hugin
+#
+function addRepo_Hugin () {
+  addPPA ppa:hugin/hugin-builds
+}
+
+#
+# Green-Recorder
+#
+function addRepo_GreenRecorder () {
+  addPPA ppa:fossproject/ppa
+}
+
+#
+# Oracle JAVA 7/8/9
+#
+function addRepo_Java () {
+  addPPA ppa:webupd8team/java
+}
+
+#
+# Noobslab icons
+#
+function addRepo_NoobslabIcons () {
+  addPPA ppa:noobslab/icons
+}
+
+#
+# Noobslab themes
+#
+function addRepo_NoobslabThemes () {
+  addPPA ppa:noobslab/themes
+}
+
+#
+# Vidcutter
+#
+function addRepo_Vidcutter () {
+  addPPA ppa:ozmartian/apps
+}
+
+
+#
+# Geary
+#
+function addRepo_Geary () {
+  addPPA ppa:geary-team/releases
+}
+
+#
+# Gimp / Gmic
+#
+function addRepo_Gimp () {
+addPPA ppa:otto-kesselgulasch/gimp
+}
+
+#
+# Krita
+#
+function addRepo_Krita () {
+  addPPA ppa:kritalime/ppa
+}
+
+#
+# indicator-sound-switcher
+#
+function addRepo_IndicatorSoundSwitcher () {
+  addPPA ppa:yktooo/ppa
+}
+
+#
+# Kodi / XBMC
+#
+function addRepo_Kodi () {
+addPPA ppa:team-xbmc/ppa
+}
+
+#
+# Deluge
+#
+function addRepo_Deluge () {
+addPPA ppa:deluge-team/ppa
+}
+
+#
+# Corebird
+#
+function addRepo_Corebird () {
+addPPA ppa:ubuntuhandbook1/corebird
+}
+
+#
+# Zeal
+#
+function addRepo_Zeal () {
+  addPPA ppa:zeal-developers/ppa
+}
+
+#
+# Sayonara
+#
+function addRepo_Sayonara () {
+addPPA ppa:lucioc/sayonara
+}
+
+#
+# Diodon
+#
+function addRepo_Diodon () {
+  addPPA ppa:diodon-team/stable
+}
+
+#
+# Shotcut
+#
+function addRepo_Shotcut () {
+  addPPA ppa:haraldhv/shotcut
+}
+
+#
+# Y-PPA-Manager
+#
+function addRepo_YPPAManager () {
+addPPA ppa:webupd8team/y-ppa-manager
+}
+
+#
+# flacon
+#
+function addRepo_Flacon () {
+  addPPA ppa:flacon/ppa
+}
+
+#
+# Utext
+#
+function addRepo_Utext () {
+  addPPA ppa:atareao/utext
+}
+
+#
+# Mumble
+#
+function addRepo_Mumble () {
+  addPPA ppa:mumble/release
+}
+
+#
+# Notepadqq
+#
+function addRepo_Notepadqq () {
+  addPPA ppa:notepadqq-team/notepadqq
+}
+
+#
+# Handbrake
+#
+function addRepo_Handbrake () {
+  addPPA ppa:stebbins/handbrake-releases
+}
+
+#
+# Transmission-BT
+#
+function addRepo_Transmissionbt () {
+  addPPA ppa:transmissionbt/ppa
+}
+
+#
+# QuiteRSS
+#
+function addRepo_Quiterss () {
+  addPPA ppa:quiterss/quiterss
+}
+
+#
+# TMSU
+#
+function addRepo_Tmsu () {
+  addPPA ppa:tmsu/ppa
+}
 
 #
 # Avidemux
@@ -829,69 +1248,4 @@ function nitrogen_TrtFct () {
   else
     printf "[ERR] only Mate Desktop is currently supported\n"
   fi
-}
-
-#-----------------------------------------------------------------------------#
-
-#
-# install required ppa and settings
-#
-function addRequiredPPA () {
-  runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
-         "apply settings for science-config pkg"
-
-  addPPA ppa:noobslab/themes # themes from noobslab
-  addPPA ppa:noobslab/icons # icons from noobslab
-  addPPA ppa:numix/ppa # theme Numix
-  addPPA ppa:ravefinity-project/ppa # Themes
-  addPPA ppa:yktooo/ppa # indicator-sound-switcher
-  addPPA ppa:webupd8team/y-ppa-manager # y-ppa-manager
-  addPPA ppa:videolan/stable-daily # video player
-  addPPA ppa:nowrep/qupzilla # web browser
-  addPPA ppa:atareao/atareao # pushbullet-indicator, imagedownloader, gqrcode, cpu-g
-  addPPA ppa:fossfreedom/rhythmbox # Rhythmbox
-  addPPA ppa:fossfreedom/rhythmbox-plugins;  # Rhythmbox plugins
-  addPPA ppa:nilarimogard/webupd8 # Audacious, Grive2, Pidgin-indicator
-  addPPA ppa:oibaf/graphics-drivers # free graphics-drivers + mesa
-  addPPA ppa:team-xbmc/ppa # Kodi
-  addPPA ppa:webupd8team/java # Oracle Java SE 7/8
-  addPPA ppa:hugin/hugin-builds # image editor
-  addPPA ppa:mumble/release # Mumble
-  addPPA ppa:atareao/utext # Markdown editor
-  addPPA ppa:danielrichter2007/grub-customizer # grub-customizer
-  addPPA ppa:lucioc/sayonara # audio player
-  addPPA ppa:haraldhv/shotcut # video editor
-  addPPA ppa:flacon/ppa # audio extraction
-  addPPA ppa:jaap.karssenberg/zim # local wiki
-  addPPA ppa:stebbins/handbrake-releases # video transcoder
-  addPPA ppa:graphics-drivers/ppa # non-free nvidia drivers
-  addPPA ppa:diodon-team/stable # clipboard manager
-  addPPA ppa:notepadqq-team/notepadqq # notepad++ clone
-  addPPA ppa:mariospr/frogr # flickr manager
-  addPPA ppa:ubuntuhandbook1/slowmovideo # slow motion video editor
-  addPPA ppa:transmissionbt/ppa # bittorrent client
-  addPPA ppa:geary-team/releases # email client
-  addPPA ppa:ubuntuhandbook1/corebird # corebird
-  addPPA ppa:tista/adapta # adapta gtk theme
-  addPPA ppa:maarten-baert/simplescreenrecorder # simplescreenrecorder
-  addPPA ppa:dhor/myway # rawtherapee (newer version)
-  addPPA ppa:zeal-developers/ppa # Zeal (newer version)
-  addPPA ppa:deluge-team/ppa # Deluge P2P client
-  addPPA ppa:kritalime/ppa # Krita
-  addPPA ppa:otto-kesselgulasch/gimp # Gmic2
-  addPPA ppa:ozmartian/apps # Vidcutter
-  addPPA ppa:fossproject/ppa # green-recorder
-  addPPA ppa:quiterss/quiterss # quiterss
-  addPPA ppa:tmsu/ppa # tmsu
-
-  addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
-  addRepo mkv.list \
-          "deb http://mkvtoolnix.download/ubuntu/xenial/ ./" \
-          "deb-src http://mkvtoolnix.download/ubuntu/xenial/ ./ "
-
-  addKey "https://jgeboski.github.io/obs.key"
-  addRepo jgeboski.list \
-          "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
-
-  updateSystem
 }
