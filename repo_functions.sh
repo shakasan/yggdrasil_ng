@@ -368,7 +368,6 @@ docker-ce;apt;dev;docker-ce
 remark-lint;npm;dev;remark-lint
 jedi;npm;dev;jedi
 beautysh;pip;dev;beautysh
-retext;pip;dev;retext
 mycli;pip;dev;mycli
 sqlitebrowser;apt;dev;sqlitebrowser
 npm;apt;javascript;npm
