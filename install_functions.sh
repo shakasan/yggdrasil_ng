@@ -951,6 +951,7 @@ function installTeamViewer13 () {
 function installTeamViewer13Menu () {
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
                      teamviewer13.deb
+  pressKey
 }
 
 #

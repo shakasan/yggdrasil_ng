@@ -56,7 +56,7 @@ synfigstudio;apt;multimedia;synfigstudio
 mkvtoolnix-gui;apt;multimedia;mkvtoolnix-gui
 rawtherapee;apt;multimedia;rawtherapee
 hugin;apt;multimedia;hugin
-xnviewmp;apt;multimedia;xnviewmp
+xnview;apt;multimedia;xnview
 asunder;apt;multimedia;asunder
 milkytracker;apt;multimedia;milkytracker
 pitivi;apt;multimedia;pitivi
@@ -391,7 +391,7 @@ codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
 geany-plugin-markdown;apt;geany;geany-plugin-markdown
-pycharm-community;snap;pycharm-community;pycharm-community
+pycharm-community;snap;pycharm;pycharm
 sublime-text;apt;sublime-text;sublime-text
 kicad;apt;cad;kicad
 kicad-locale-fr;apt;cad;kicad-locale-fr
@@ -423,7 +423,7 @@ qttools5-examples;apt;qt;qttools5-examples
 qttools5-doc-html;apt;qt;qttools5-doc-html
 fbreader;apt;ebook;fbreader
 calibre;apt;ebook;calibre
-android-studio;apt;android-studio;android-studio
+android-studio;apt;androidstudio;androidstudio
 intellij-idea-community;snap;idea;idea"
 
 #-----------------------------------------------------------------------------#
@@ -441,7 +441,7 @@ winehq-devel;addRepo_Wine
 mongodb;addRepo_MongoDB3CE
 gyazo;addRepo_Gyazo
 code;addRepo_VSCode
-android-studio;addRepo_AndroidStudio
+androidstudio;addRepo_AndroidStudio
 docker-ce;addRepo_DockerCE
 ansible;addRepo_Ansible
 etcher-electron;addRepo_Etcher
