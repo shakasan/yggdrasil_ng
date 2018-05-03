@@ -615,21 +615,21 @@ function installJavascriptMenu () {
 }
 
 #
-# install JAVA 9 (headless)
+# install JAVA 10 (headless)
 #
-function installJava9 () {
-  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
-         "accepting Oracle Java SE 9 licence agreement"
-  installAppsFromList java9
+function installJava10 () {
+  runCmd "echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
+         "accepting Oracle Java SE 10 licence agreement"
+  installAppsFromList java10
 }
 
 #
-# install JAVA 9 (Menu)
+# install JAVA 10 (Menu)
 #
-function installJava9Menu () {
-  runCmd "echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
-         "accepting Oracle Java SE 9 licence agreement"
-  installAppsFromListMenu java9
+function installJava10Menu () {
+  runCmd "echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
+         "accepting Oracle Java SE 10 licence agreement"
+  installAppsFromListMenu java10
 }
 
 #

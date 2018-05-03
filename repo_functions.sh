@@ -377,8 +377,8 @@ javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 emma-cli;npm;javascript;emma-cli
 jshint;npm;javascript;jshint
-oracle-java9-installer;apt;java9;oracle-java9-installer
-oracle-java9-set-default;apt;java9;oracle-java9-set-default
+oracle-java10-installer;apt;java10;oracle-java10-installer
+oracle-java10-set-default;apt;java10;oracle-java10-set-default
 php7.0-cli;apt;php;php7.0-cli
 php-pear;apt;php;php-pear
 composer;apt;php;composer
@@ -515,8 +515,8 @@ faenza-icon-theme;addRepo_NoobslabIcons
 vibrantly-simple-icon-theme;addRepo_Ravefinity
 rave-x-colors-icons;addRepo_Ravefinity
 ravefinity-x-icons;addRepo_Ravefinity
-oracle-java9-installer;addRepo_Java
-oracle-java9-set-default;addRepo_Java
+oracle-java10-installer;addRepo_Java10
+oracle-java10-set-default;addRepo_Java10
 green-recorder;addRepo_GreenRecorder
 hugin;addRepo_Hugin
 simplescreenrecorder;addRepo_SimpleScreenRecorder
@@ -732,10 +732,10 @@ function addRepo_GreenRecorder () {
 }
 
 #
-# Oracle JAVA 7/8/9
+# Oracle JAVA 10
 #
-function addRepo_Java () {
-  addPPA ppa:webupd8team/java
+function addRepo_Java10 () {
+  addPPA ppa:linuxuprising/java
 }
 
 #

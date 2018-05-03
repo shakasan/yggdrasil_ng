@@ -186,7 +186,7 @@ function showDevInstallMenu () {
     --menu "Install Dev apps from different submenus" \
     25 80 16 \
     "devbase" "dev apps and tools" \
-    "java9" "Java 9 dev env" \
+    "java10" "Java 10 dev env" \
     "javascript" "JavaScript dev env" \
     "nodelts" "NodeJS 8.x LTS" \
     "mongodb3ce" "MongoDB 3 CE" \
@@ -215,8 +215,8 @@ function showDevInstallMenu () {
       "devbase")
         installDevAppsMenu
         ;;
-      "java9")
-        installJava9
+      "java10")
+        installJava10
         ;;
       "javascript")
         installJavascriptMenu
