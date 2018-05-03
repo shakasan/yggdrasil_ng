@@ -188,7 +188,6 @@ function showDevInstallMenu () {
     "devbase" "dev apps and tools" \
     "java10" "Java 10 dev env" \
     "javascript" "JavaScript dev env" \
-    "nodelts" "NodeJS 8.x LTS" \
     "mongodb3ce" "MongoDB 3 CE" \
     "php" "PHP dev env" \
     "lua" "Lua dev env" \

@@ -636,14 +636,14 @@ function installJava10Menu () {
 # install Mongo DB 3 CE (headless)
 #
 function installMongo3CE () {
-  installAppsFromList mongodb-org
+  installAppsFromList mongodb
 }
 
 #
 # install Mongo DB 3 CE (Menu)
 #
 function installMongo3CEMenu () {
-  installAppsFromListMenu mongodb-org
+  installAppsFromListMenu mongodb
 }
 
 #

@@ -1175,7 +1175,7 @@ function addRepo_AndroidStudio () {
 # fields : unique ID, function to process after install
 #
 AppsTrtFct="nitrogen;nitrogen_TrtFct
-mongodb-org;mongodb_TrtFct
+mongodb;mongodb_TrtFct
 qttools5-dev-tools;qt_TrtFct
 plank;plank_TrtFct"
 
