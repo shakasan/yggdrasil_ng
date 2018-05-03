@@ -632,8 +632,8 @@ function addRepo_Jgeboski () {
 function addRepo_MKVToolnix () {
   addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
   addRepo mkv.list \
-          "deb http://mkvtoolnix.download/ubuntu/xenial/ ./" \
-          "deb-src http://mkvtoolnix.download/ubuntu/xenial/ ./ "
+          "deb https://mkvtoolnix.download/ubuntu/ xenial main" \
+          "deb-src https://mkvtoolnix.download/ubuntu/ xenial main"
 }
 
 #
