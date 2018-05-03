@@ -155,7 +155,6 @@ aptik;apt;utilities;aptik
 gufw;apt;utilities;gufw
 numlockx;apt;utilities;numlockx
 grub-customizer;apt;utilities;grub-customizer
-chmsee;apt;utilities;chmsee
 unetbootin;apt;utilities;unebootin
 zim;apt;utilities;zim
 diodon;apt;utilities;diodon
@@ -235,7 +234,6 @@ ooo-thumbnailer;apt;nautilus;ooo-thumbnailer
 nautilus-dropbox;apt;nautilus;nautilus-dropbox
 nautilus-script-manager;apt;nautilus;nautilus-script-manager
 nautilus-columns;apt;nautilus;nautilus-columns
-nautilus-flickr-uploader;apt;nautilus;nautilus-flickr-uploader
 insync-nautilus;apt;nautilus;insync-nautilus
 gtkam-gimp;apt;gimp;gtkam-gimp
 gimp-gluas;apt;gimp;gimp-gluas

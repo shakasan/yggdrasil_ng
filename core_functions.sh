@@ -403,7 +403,7 @@ function addSpecificRepoFct () {
     appRepo=(${i//;/ })
     if [ "${appRepo[0]}" == "$1" ]; then
       printf "[ADD] package -- $1 -- repo/ppa "
-      printf "added by function -- ${appRepo[1]} --\n"
+      printf "added by function -- ${appRepo[1]}\n"
       eval "${appRepo[1]}"
       repoAdded=$(($repoAdded+1))
     fi
