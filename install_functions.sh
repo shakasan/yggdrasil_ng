@@ -89,7 +89,8 @@ function installInternetMenu () {
 #
 function installViber () {
   installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
-                     viber.deb
+                     viber.deb \
+                     no
 }
 
 #
@@ -97,7 +98,8 @@ function installViber () {
 #
 function installViberMenu () {
   installPackageDpkg http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb \
-                     viber.deb
+                     viber.deb \
+                     yes
 }
 
 #
@@ -105,7 +107,8 @@ function installViberMenu () {
 #
 function installFranz () {
   installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
-                     franz.deb
+                     franz.deb \
+                     no
 }
 
 #
@@ -113,7 +116,8 @@ function installFranz () {
 #
 function installFranzMenu () {
   installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
-                     franz.deb
+                     franz.deb \
+                     yes
 }
 
 #
@@ -942,7 +946,8 @@ function installCADMenu () {
 #
 function installTeamViewer13 () {
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
-                     teamviewer13.deb
+                     teamviewer13.deb \
+                     no
 }
 
 #
@@ -950,8 +955,8 @@ function installTeamViewer13 () {
 #
 function installTeamViewer13Menu () {
   installPackageDpkg https://download.teamviewer.com/download/linux/teamviewer_amd64.deb \
-                     teamviewer13.deb
-  pressKey
+                     teamviewer13.deb \
+                     yes
 }
 
 #

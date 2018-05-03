@@ -296,7 +296,7 @@ function addRepo () {
 
 #
 # install package manually
-# input : url of package, package name
+# input : url of package, package name, menu mode
 #
 function installPackageDpkg () {
   printf "[PKG] Installing $2 from $1 "
@@ -307,6 +307,9 @@ function installPackageDpkg () {
   sudo apt-get install -fy &>> $logFile
   ret_code=$?
   retCode $ret_code
+  if [ "$3" == "yes" ]; then
+    pressKey
+  fi
 }
 
 #
