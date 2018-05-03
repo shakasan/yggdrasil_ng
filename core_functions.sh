@@ -237,7 +237,11 @@ function updateSystem () {
 function addPPA () {
   typeset ret_code
 
-  if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q $*; then
+  prefix="ppa:"
+  str="$*"
+  str2search=${str#$prefix}
+
+  if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ${str2search}; then
     printf "[PPA] adding : $* "
     printf "\n[PPA] adding $*\n" &>> $logFile
     sudo add-apt-repository -y $* &>> $logFile
