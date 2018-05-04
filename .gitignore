@@ -3,3 +3,4 @@ backup/*
 deb/*
 .remote-sync.json
 *.sync-conflict-*
+utils/*
