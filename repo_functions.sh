@@ -1226,12 +1226,10 @@ function qt_TrtFct () {
 # MongoDB 3 CE
 #
 function mongodb_TrtFct () {
-  runCmd "sudo systemctl unmask mongodb.service" \
-         "unmask systemd mongodb service"
-  runCmd "sudo systemctl enable mongodb" \
-         "enabling mongodb service at boot"
-  runCmd "sudo systemctl start mongodb" \
-         "starting mongodb service"
+  runCmd "sudo systemctl enable mongod.service" \
+         "enabling mongod service at boot"
+  runCmd "sudo systemctl start mongod.service" \
+         "starting mongod service"
 }
 
 #
