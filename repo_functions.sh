@@ -358,7 +358,6 @@ glade;apt;dev;glade
 eric;apt;dev;eric
 bluefish;apt;dev;bluefish
 meld;apt;dev;meld
-bluegriffon;apt;dev;bluegriffon
 zeal;apt;dev;zeal
 shellcheck;apt;dev;shellcheck
 umbrello;apt;dev;umbrello
