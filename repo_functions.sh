@@ -212,6 +212,7 @@ speedtest-cli;pip;nettools;speedtest-cli
 whatportis;pip;nettools;whatportis
 droopescan;pip;nettools;droopescan
 nethogs;apt;nettools;nethogs
+ssh_scan;gem;nettools;sshscan
 caja-share;apt;cajaplugins;caja-share
 caja-wallpaper;apt;cajaplugins;caja-wallpaper
 caja-sendto;apt;cajaplugins;caka-sendto
