@@ -107,6 +107,7 @@ function isMate () {
 function yggInit () {
   typeset ret_code
 
+  printf "[INIT]"
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
 
@@ -162,7 +163,7 @@ function yggInit () {
   if ! which npm >/dev/null; then
     printf "[INIT][NPM] not found, installing...\n"
     printf "\n[INIT][NPM] not found, installing...\n" &>> $logFile
-    installPackage apt "npm"
+    installPackage apt "nodejs"
   else
     printf "[INIT][NPM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
