@@ -370,7 +370,6 @@ remark-lint;npm;dev;remark-lint
 beautysh;pip;dev;beautysh
 mycli;pip;dev;mycli
 sqlitebrowser;apt;dev;sqlitebrowser
-npm;apt;javascript;npm
 nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
