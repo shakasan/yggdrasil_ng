@@ -139,9 +139,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
-      installNitrogen
       enableUnbound
-      kernelUpdate
       msg "Installing additional themes/icons"
       installIcons
       installThemes
