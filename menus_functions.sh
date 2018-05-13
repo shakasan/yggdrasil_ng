@@ -194,7 +194,6 @@ function showDevInstallMenu () {
     "ruby" "Ruby dev env" \
     "qt" "QT dev env" \
     "python" "Python dev env" \
-    "androidenv" "Set Android env" \
     "atom" "Atom" \
     "anjuta" "Anjuta" \
     "brackets" "Brackets" \
@@ -238,9 +237,6 @@ function showDevInstallMenu () {
       "python")
         installPythonMenu
         ;;
-      "androidenv")
-        #TODO:
-        ;;
       "atom")
         installAtomMenu
         ;;
@@ -257,7 +253,7 @@ function showDevInstallMenu () {
         installGeanyMenu
         ;;
       "eclipse")
-        #TODO:
+        installEclipse
         ;;
       "idea")
         installIdeaMenu
