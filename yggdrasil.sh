@@ -53,13 +53,6 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
   case "$option" in
     a) # install all apps
-       # except
-       # apps : Nitrogen, Beta apps, Nightly, Unboud
-       # hw : solaar, cardreader, fixWirelessIntel6320, nvidia drivers
-       #      tlp, KeyID
-       # dev apps : all
-       # customization : themes, icons
-       # sys : latest kernel
       msg "Initializing"
       yggInit
       msg "Updating the system"
@@ -100,12 +93,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       exit
       ;;
     f) # full install
-       # except
-       # apps : Beta apps, Nightly
-       # hw : solaar, fixWirelessIntel6320, nvidia drivers
-       #      tlp, KeyID
-       # tweak : /tmp in ram
-       #TODO: dev apps
       msg "Initializing"
       yggInit
       msg "Updating the system"
