@@ -998,7 +998,9 @@ function addRepo_NextCloud () {
 # Atom IDE
 #
 function addRepo_Atom () {
-  addPPA ppa:webupd8team/atom
+  addKey "https://packagecloud.io/AtomEditor/atom/gpgkey"
+  addRepo atom.list \
+          "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
 }
 
 #
