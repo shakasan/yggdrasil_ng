@@ -432,7 +432,7 @@ function processAppTrtFct () {
     appTrtFct=(${i//;/ })
     if [ "${appTrtFct[0]}" == "$1" ]; then
       printf "[TRT] package -- $1 -- "
-      printf "post install processed by -- ${appTrtFct[1]} --"
+      printf "post install processed by -- ${appTrtFct[1]}\n"
       eval "${appTrtFct[1]}"
     fi
   done
