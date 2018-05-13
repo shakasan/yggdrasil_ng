@@ -367,7 +367,6 @@ ack-grep;apt;dev;ack-grep
 ansible;apt;dev;ansible
 docker-ce;apt;dev;docker-ce
 remark-lint;npm;dev;remark-lint
-jedi;npm;dev;jedi
 beautysh;pip;dev;beautysh
 mycli;pip;dev;mycli
 sqlitebrowser;apt;dev;sqlitebrowser
