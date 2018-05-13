@@ -199,7 +199,6 @@ function showDevInstallMenu () {
     "brackets" "Brackets" \
     "codeblocks" "CodeBlocks" \
     "geany" "Geany" \
-    "eclipse" "Eclipse" \
     "idea" "Idea" \
     "pycharm" "PyCharm" \
     "vsc" "Visual Studio Code" \
@@ -251,9 +250,6 @@ function showDevInstallMenu () {
         ;;
       "geany")
         installGeanyMenu
-        ;;
-      "eclipse")
-        installEclipse
         ;;
       "idea")
         installIdeaMenu

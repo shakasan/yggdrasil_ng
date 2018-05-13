@@ -849,14 +849,6 @@ function installGeanyMenu () {
   installAppsFromListMenu geany
 }
 
-#TODO:
-function installEclipse () {
-  if which umake >/dev/null; then
-    msg "Umake installing : Eclipse"
-    sudo umake ide eclipse
-  fi
-}
-
 #
 # install IDEA Apps (headless)
 #
