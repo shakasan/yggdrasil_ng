@@ -396,16 +396,20 @@ function installCardReaderMenu () {
 # update AMD/Intel CPU Microcode
 #
 function updateMicrocode () {
+  msg "CPU Microcode updating"
   oldMicrocode=`cat /proc/cpuinfo | grep -i --color microcode -m 1`
   intel=`cat /proc/cpuinfo | grep -i Intel | wc -l`
   amd=`cat /proc/cpuinfo | grep -i Amd | wc -l`
   if [ "$intel" -gt "0" ]; then
+    printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version"
     installPackage apt intel-microcode
   elif [ "$amd" -gt "0" ]; then
     installPackage apt amd64-microcode
+    printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version"
+  elif
+    printf "[INFO] No Intel/AMD CPU found"
   fi
   newMicrocode=`cat /proc/cpuinfo | grep -i --color microcode -m 1`
-  printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version"
   printf "\n"
 }
 
