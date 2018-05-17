@@ -774,13 +774,6 @@ SUBSYSTEM==\"usb\", ATTR{idVendor}==\"19d2\", MODE=\"0666\", OWNER=\""$myHomedir
 
   runCmd "sudo service udev restart" \
          "restarting UDEV service"
-
-  createAppShortcut "/home/"$myHomedir"/tools/Android/Sdk/tools/android" \
-                    "/home/"$myHomedir"/.icons/android.png" \
-                    "GNOME;GTK;Development;IDE" \
-                    "Android SDK" \
-                    "local" \
-  update-menus
 }
 
 #

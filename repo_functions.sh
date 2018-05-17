@@ -1215,7 +1215,7 @@ function qt_TrtFct () {
          "set QT5 as default"
 
   createAppShortcut "/usr/bin/designer" \
-                    "/home/"$myHomedir"/.icons/qtdesigner.png" \
+                    "" \
                     "GNOME;GTK;Development;IDE" \
                     "QT Designer 5" \
                     "local" \
@@ -1243,7 +1243,7 @@ function nitrogen_TrtFct () {
            "disabling Caja desktop icons management"
 
     createAppShortcut "bash -c \"sleep 10; nitrogen --restore\"" \
-                      "/home/"$myHomedir".icons/franz.png" \
+                      "/usr/share/icons/hicolor/48x48/apps/nitrogen.png" \
                       "Network;InstantMessaging" \
                       "Nitrogen" \
                       "local" \
