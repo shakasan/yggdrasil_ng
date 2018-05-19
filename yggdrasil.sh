@@ -11,21 +11,12 @@
 # include functions and vars from external files
 #
 dir=$(dirname $0)
-if [ ! $dir == "/opt/yggdrasil" ]; then
-  source /opt/yggdrasil/vars.sh
-  source /opt/yggdrasil/core_functions.sh
-  source /opt/yggdrasil/repo_functions.sh
-  source /opt/yggdrasil/install_functions.sh
-  source /opt/yggdrasil/menus_functions.sh
-  source /opt/yggdrasil/tools_functions.sh
-else
-  source $(dirname $0)/vars.sh
-  source $(dirname $0)/core_functions.sh
-  source $(dirname $0)/repo_functions.sh
-  source $(dirname $0)/install_functions.sh
-  source $(dirname $0)/menus_functions.sh
-  source $(dirname $0)/tools_functions.sh
-fi
+source /opt/yggdrasil/vars.sh
+source /opt/yggdrasil/core_functions.sh
+source /opt/yggdrasil/repo_functions.sh
+source /opt/yggdrasil/install_functions.sh
+source /opt/yggdrasil/menus_functions.sh
+source /opt/yggdrasil/tools_functions.sh
 
 #
 # check if the script is running in root/sudo
