@@ -1178,10 +1178,24 @@ AppsTrtFct="nitrogen;nitrogen_TrtFct
 mongodb;mongodb_TrtFct
 qttools5-dev-tools;qt_TrtFct
 plank;plank_TrtFct
-androidstudio;android_TrtFct"
+androidstudio;android_TrtFct
+nodejs8lts;nodejs8lts_TrtFct"
 
 #
 #
+#
+function nodejs8lts_TrtFct () {
+  msg "Sanitizing NodeJS install"
+  if which /usr/local/bin/node >/dev/null; then
+    runCmd "sudo rm /usr/local/bin/node" \
+           "cleaning/removing legacy node files"
+  else
+    print "[INFO] nothing to clean, good :-)"
+  fi
+}
+
+#
+# Android Env for adb, fastboot, ....
 #
 function android_TrtFct () {
   msg "Adding Android devices UDEV rules"
