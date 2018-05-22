@@ -1308,7 +1308,7 @@ function nitrogen_TrtFct () {
 
     createAppShortcut "bash -c \"sleep 10; nitrogen --restore\"" \
                       "/usr/share/icons/hicolor/48x48/apps/nitrogen.png" \
-                      "Network;InstantMessaging" \
+                      "Utility;GTK" \
                       "Nitrogen" \
                       "local" \
                       "start"
