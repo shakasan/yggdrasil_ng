@@ -115,7 +115,7 @@ xchat-gnome;apt;internet;xchat-gnome
 xchat-gnome-indicator;apt;internet;xchat-gnome-indicator
 chromium-browser;apt;internet;chromium-browser
 chromium-browser-l10n;apt;internet;chromium-browser-l10n
-dropbox;apt;internet;dropbox
+nautilus-dropbox;apt;internet;nautilus-dropbox
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
