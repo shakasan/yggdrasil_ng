@@ -14,24 +14,28 @@ dir=$(dirname $0)
 source /opt/yggdrasil/vars.sh
 
 OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-if [[ $OS == *"Linux Mint 18"* ]]; then
-  source /opt/yggdrasil/core_functions_ub1604.sh
-  source /opt/yggdrasil/repo_functions_ub1604.sh
-  source /opt/yggdrasil/install_functions_ub1604.sh
-  source /opt/yggdrasil/menus_functions_ub1604.sh
-  source /opt/yggdrasil/tools_functions_ub1604.sh
-elif [[ $OS == *"Ubuntu 18.04 LTS"* ]]; then
-  source /opt/yggdrasil/core_functions_ub1804.sh
-  source /opt/yggdrasil/repo_functions_ub1804.sh
-  source /opt/yggdrasil/install_functions_ub1804.sh
-  source /opt/yggdrasil/menus_functions_ub1804.sh
-  source /opt/yggdrasil/tools_functions_ub1804.sh
-else
-  printf "\n"
-  printf $BOLDROUGE"Distribution non supportée/testée"$NORMAL
-  printf "\n\n"
-  exit
-fi
+
+case $OS in
+  *"Ubuntu 18.04 LTS"* | *"Linux Mint 18"*)
+    source /opt/yggdrasil/core_functions_ub1604.sh
+    source /opt/yggdrasil/repo_functions_ub1604.sh
+    source /opt/yggdrasil/install_functions_ub1604.sh
+    source /opt/yggdrasil/menus_functions_ub1604.sh
+    source /opt/yggdrasil/tools_functions_ub1604.sh
+    ;;
+  *"Ubuntu 18.04 LTS"* | *"Linux Mint 19"*)
+    source /opt/yggdrasil/core_functions_ub1804.sh
+    source /opt/yggdrasil/repo_functions_ub1804.sh
+    source /opt/yggdrasil/install_functions_ub1804.sh
+    source /opt/yggdrasil/menus_functions_ub1804.sh
+    source /opt/yggdrasil/tools_functions_ub1804.sh
+    ;;
+  *)
+    printf "\n"
+    printf $BOLDROUGE"Distribution non supportée/testée"$NORMAL
+    printf "\n\n"
+    ;;
+esac
 
 #
 # check if the script is running in root/sudo
