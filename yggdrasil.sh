@@ -12,23 +12,20 @@
 #
 dir=$(dirname $0)
 source /opt/yggdrasil/vars.sh
+source /opt/yggdrasil/core_functions.sh
+source /opt/yggdrasil/tools_functions.sh
 
 OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-
 case $OS in
   *"Ubuntu 18.04 LTS"* | *"Linux Mint 18"*)
-    source /opt/yggdrasil/core_functions_ub1604.sh
     source /opt/yggdrasil/repo_functions_ub1604.sh
     source /opt/yggdrasil/install_functions_ub1604.sh
     source /opt/yggdrasil/menus_functions_ub1604.sh
-    source /opt/yggdrasil/tools_functions_ub1604.sh
     ;;
   *"Ubuntu 18.04 LTS"* | *"Linux Mint 19"*)
-    source /opt/yggdrasil/core_functions_ub1804.sh
     source /opt/yggdrasil/repo_functions_ub1804.sh
     source /opt/yggdrasil/install_functions_ub1804.sh
     source /opt/yggdrasil/menus_functions_ub1804.sh
-    source /opt/yggdrasil/tools_functions_ub1804.sh
     ;;
   *)
     printf "\n"
