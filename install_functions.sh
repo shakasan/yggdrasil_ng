@@ -895,13 +895,6 @@ function installTeamViewer13Menu () {
 #
 # install/enable Unboud (headless)
 #
-function enableUnbound () {
+function installUnbound () {
   installAppsFromList unbound
-}
-
-#
-# install/enable Unboud (Menu)
-#
-function enableUnboundMenu () {
-  installAppsFromListMenu unbound
 }

@@ -56,6 +56,7 @@ function showConfigMenu () {
     "screenfetch" "screenfetch added to .bashrc" \
     "historyTS" "TimeStamp enabled in Shell History" \
     "unattendedUpgrades" "Enable automatic security updates" \
+    "Unbound" "Enable Unbound DNS Cache server" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $configMenuOptions in
@@ -87,6 +88,11 @@ function showConfigMenu () {
       "unattendedUpgrades")
         clear
         installUnattendedUpgrades
+        pressKey
+        ;;
+      "Unbound")
+        clear
+        installUnbound
         pressKey
         ;;
       "Back")
