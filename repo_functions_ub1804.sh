@@ -377,7 +377,7 @@ nitrogen;apt;nitrogen;nitrogen
 firefox-trunk;apt;nightly;firefox-trunk
 firefox-trunk-locale-fr;apt;nightly;firefox-trunk-locale-fr
 libreoffice;apt;office;libreoffice6
-winehq-devel;apt;wine;winehq-devel
+wine-development;apt;wine;wine-development
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
 mongodb-org;apt;mongodb;mongodb
