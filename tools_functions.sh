@@ -35,6 +35,8 @@ function enableUFW () {
 function enableNumLockX () {
   checkAndInstallDep apt numlockx numlockx
   if which lightdm >/dev/null; then
+    runCmd "sudo touch /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
+           "creating lightdm config file if necessary"
     runCmd "sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak" \
            "backing up lightdm original config file"
     runCmd "echo -e '\ngreeter-setup-script=/usr/bin/numlockx on' | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
