@@ -27,7 +27,10 @@ elif [[ $OS == *"Ubuntu 18.04 LTS"* ]]; then
   source /opt/yggdrasil/menus_functions_ub1804.sh
   source /opt/yggdrasil/tools_functions_ub1804.sh
 else
-  return 1
+  printf "\n"
+  printf $BOLDROUGE"Distribution non supportée/testée"$NORMAL
+  printf "\n\n"
+  exit
 fi
 
 #
