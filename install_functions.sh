@@ -393,7 +393,7 @@ function updateMicrocode () {
   elif [ "$amd" -gt "0" ]; then
     installPackage apt amd64-microcode
     printf "[INFO] Microcode updated from "$oldMicrocode" version to "$newMicrocode" version"
-  elif
+  else
     printf "[INFO] No Intel/AMD CPU found"
   fi
   newMicrocode=`cat /proc/cpuinfo | grep -i --color microcode -m 1`
