@@ -449,62 +449,6 @@ function installOibafMenu () {
 #
 # install Nvidia Drivers (headless)
 #
-function installNvidia370 () {
-  installAppsFromList nvidia-370
-}
-
-#
-# install Nvidia Drivers (Menu)
-#
-function installNvidia370Menu () {
-  installAppsFromListMenu nvidia-370
-}
-
-#
-# install Nvidia Drivers (headless)
-#
-function installNvidia375 () {
-  installAppsFromList nvidia-375
-}
-
-#
-# install Nvidia Drivers (Menu)
-#
-function installNvidia375Menu () {
-  installAppsFromListMenu nvidia-375
-}
-
-#
-# install Nvidia Drivers (headless)
-#
-function installNvidia378 () {
-  installAppsFromList nvidia-378
-}
-
-#
-# install Nvidia Drivers (Menu)
-#
-function installNvidia378Menu () {
-  installAppsFromListMenu nvidia-378
-}
-
-#
-# install Nvidia Drivers (headless)
-#
-function installNvidia381 () {
-  installAppsFromList nvidia-381
-}
-
-#
-# install Nvidia Drivers (Menu)
-#
-function installNvidia381Menu () {
-  installAppsFromListMenu nvidia-381
-}
-
-#
-# install Nvidia Drivers (headless)
-#
 function installNvidia384 () {
   installAppsFromList nvidia-384
 }
@@ -548,14 +492,14 @@ function installNvidia390Menu () {
 # install Nvidia Drivers (headless)
 #
 function installNvidia396 () {
-  installAppsFromList nvidia-396
+  installAppsFromList nvidia-driver-396
 }
 
 #
 # install Nvidia Drivers (Menu)
 #
 function installNvidia396Menu () {
-  installAppsFromListMenu nvidia-396
+  installAppsFromListMenu nvidia-driver-396
 }
 
 #
