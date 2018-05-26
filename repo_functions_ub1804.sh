@@ -636,8 +636,8 @@ function addRepo_Jgeboski () {
 function addRepo_MKVToolnix () {
   addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
   addRepo mkv.list \
-          "deb https://mkvtoolnix.download/ubuntu/ xenial main" \
-          "deb-src https://mkvtoolnix.download/ubuntu/ xenial main"
+          "deb https://mkvtoolnix.download/ubuntu/ bionic main" \
+          "deb-src https://mkvtoolnix.download/ubuntu/ bionic main"
 }
 
 #
@@ -960,8 +960,8 @@ function addRepo_SkypeForLinux () {
 function addRepo_NodeLts8 () {
   addKey "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
   addRepo "nodesource.list" \
-          "deb https://deb.nodesource.com/node_8.x xenial main" \
-          "deb-src https://deb.nodesource.com/node_8.x xenial main"
+          "deb https://deb.nodesource.com/node_8.x bionic main" \
+          "deb-src https://deb.nodesource.com/node_8.x bionic main"
 }
 
 #
@@ -1023,7 +1023,7 @@ function addRepo_ChromeStable () {
 function addRepo_Insync () {
   addKey "https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key"
   addRepo insync.list \
-          "deb http://apt.insynchq.com/ubuntu xenial non-free contrib"
+          "deb http://apt.insynchq.com/ubuntu bionic non-free contrib"
 }
 
 #
@@ -1060,7 +1060,7 @@ function addRepo_VirtualBox () {
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
   addRepo virtualbox.list \
-          "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+          "deb http://download.virtualbox.org/virtualbox/debian bionic contrib"
 }
 
 #
@@ -1104,7 +1104,7 @@ function addRepo_Ansible () {
 function addRepo_DockerCE () {
   addKey "https://download.docker.com/linux/ubuntu/gpg"
   addRepo "docker.list" \
-          "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+          "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 }
 
 #
@@ -1113,8 +1113,8 @@ function addRepo_DockerCE () {
 function addRepo_Gyazo () {
   addKey "https://packagecloud.io/gyazo/gyazo-for-linux/gpgkey"
   addRepo "gyazo_gyazo-for-linux.list" \
-          "deb https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main" \
-          "deb-src https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ xenial main"
+          "deb https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ bionic main" \
+          "deb-src https://packagecloud.io/gyazo/gyazo-for-linux/ubuntu/ bionic main"
 }
 
 #
@@ -1123,7 +1123,7 @@ function addRepo_Gyazo () {
 function addRepo_MongoDB3CE () {
   addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
   addRepo "mongodb-org-3.6.list" \
-          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
+          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse"
 }
 
 #
@@ -1132,7 +1132,7 @@ function addRepo_MongoDB3CE () {
 function addRepo_Wine () {
   addKey "https://dl.winehq.org/wine-builds/Release.key"
   addRepo "winehq.list" \
-          "deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main"
+          "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
 }
 
 #
