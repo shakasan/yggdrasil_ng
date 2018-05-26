@@ -76,7 +76,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installMiscUtilities
       installMultimedia
       installNetTools
-      installOffice
       installWine
       installCajaPlugins
       installNautilusAndPlugins
@@ -116,7 +115,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installMiscUtilities
       installMultimedia
       installNetTools
-      installOffice
       installWine
       installCajaPlugins
       installNautilusAndPlugins

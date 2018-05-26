@@ -605,7 +605,6 @@ function addRepo_NvidiaDrivers () {
 # Rhythmbox
 #
 function addRepo_Rhythmbox () {
-  #addPPA ppa:fossfreedom/rhythmbox
   addPPA ppa:fossfreedom/rhythmbox-plugins
 }
 
