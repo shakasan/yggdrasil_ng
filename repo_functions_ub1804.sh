@@ -313,7 +313,6 @@ faenza-icon-theme;apt;icons;faenza-icon-theme
 faience-icon-theme;apt;icons;faience-icon-theme
 vibrantly-simple-icon-theme;apt;icons;vibrantly-simple-icon-theme
 rave-x-colors-icons;apt;icons;rave-x-colors-icons
-ravefinity-x-icons;apt;icons;ravefinity-x-icons
 numix-icon-theme;apt;icons;numix-icon-theme
 numix-icon-theme-circle;apt;icons;numix-icon-theme-circle
 solaar;apt;solaar;solaar
@@ -483,27 +482,6 @@ gimp-gmic;addRepo_Gimp
 gimp;addRepo_Gimp
 geary;addRepo_Geary
 vidcutter;addRepo_Vidcutter
-ambiance-crunchy;addRepo_NoobslabThemes
-arc-theme;addRepo_NoobslabThemes
-ambiance-colors;addRepo_Ravefinity
-radiance-colors;addRepo_Ravefinity
-ambiance-flat-colors;addRepo_Ravefinity
-vivacious-colors-gtk-dark;addRepo_Ravefinity
-vivacious-colors-gtk-light;addRepo_Ravefinity
-yosembiance-gtk-theme;addRepo_NoobslabThemes
-ambiance-blackout-colors;addRepo_Ravefinity
-ambiance-blackout-flat-colors;addRepo_Ravefinity
-radiance-flat-colors;addRepo_Ravefinity
-vibrancy-colors;addRepo_Ravefinity
-vivacious-colors;addRepo_NoobslabThemes
-arc-icons;addRepo_NoobslabIcons
-ultra-flat-icons;addRepo_NoobslabIcons
-myelementary;addRepo_NoobslabIcons
-ghost-flat-icons;addRepo_NoobslabIcons
-faenza-icon-theme;addRepo_NoobslabIcons
-vibrantly-simple-icon-theme;addRepo_Ravefinity
-rave-x-colors-icons;addRepo_Ravefinity
-ravefinity-x-icons;addRepo_Ravefinity
 oracle-java10-installer;addRepo_Java10
 oracle-java10-set-default;addRepo_Java10
 green-recorder;addRepo_GreenRecorder
@@ -665,13 +643,6 @@ function addRepo_Numix () {
 }
 
 #
-# ravefinity themes
-#
-function addRepo_Ravefinity () {
-  addPPA ppa:ravefinity-project/ppa
-}
-
-#
 # VLC
 #
 function addRepo_VLC () {
@@ -725,20 +696,6 @@ function addRepo_GreenRecorder () {
 #
 function addRepo_Java10 () {
   addPPA ppa:linuxuprising/java
-}
-
-#
-# Noobslab icons
-#
-function addRepo_NoobslabIcons () {
-  addPPA ppa:noobslab/icons
-}
-
-#
-# Noobslab themes
-#
-function addRepo_NoobslabThemes () {
-  addPPA ppa:noobslab/themes
 }
 
 #
