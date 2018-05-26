@@ -256,8 +256,6 @@ rhythmbox-plugin-artdisplay;apt;rhythmbox;rhythmbox-plugin-artdisplay
 rhythmbox-plugin-cdrecorder;apt;rhythmbox;rhythmbox-plugin-cdrecorder
 rhythmbox-plugin-close-on-hide;apt;rhythmbox;rhythmbox-plugin-close-on-hide
 rhythmbox-plugin-countdown-playlist;apt;rhythmbox;rhythmbox-plugin-countdown-playlist
-rhythmbox-plugin-coverart-browser;apt;rhythmbox;rhythmbox-plugin-coverart-browser
-rhythmbox-plugin-coverart-search;apt;rhythmbox;rhythmbox-pluginn-coverart-search
 rhythmbox-plugin-desktopart;apt;rhythmbox;rhythmbox-plugin-desktopart
 rhythmbox-plugin-equalizer;apt;rhythmbox;rhythmbox-plugin-equalizer
 rhythmbox-plugin-fileorganizer;apt;rhythmbox;rhythmbox-plugin-fileorganizer
@@ -279,8 +277,6 @@ rhythmbox-plugin-screensaver;apt;rhythmbox;rhythmbox-plugin-screensaver
 rhythmbox-plugin-smallwindow;apt;rhythmbox;rhythmbox-plugin-smallwindow
 rhythmbox-plugin-spectrum;apt;rhythmbox;rhythmbox-plugin-spectrum
 rhythmbox-plugin-suspend;apt;rhythmbox;rhythmbox-plugin-suspend
-rhythmbox-plugin-tray-icon;apt;rhythmbox;rhythmbox-plugin-tray-icon
-rhythmbox-plugin-visualizer;apt;rhythmbox;rhythmbox-plugin-visualizer
 rhythmbox-plugin-wikipedia;apt;rhythmbox;rhythmbox-plugin-wikipedia
 rhythmbox-plugins;apt;rhythmbox;rhythmbox-plugins
 telegram-purple;apt;pidgin;telegram-purple
@@ -483,8 +479,6 @@ rhythmbox-plugin-artdisplay;addRepo_Rhythmbox
 rhythmbox-plugin-cdrecorder;addRepo_Rhythmbox
 rhythmbox-plugin-close-on-hide;addRepo_Rhythmbox
 rhythmbox-plugin-countdown-playlist;addRepo_Rhythmbox
-rhythmbox-plugin-coverart-browser;addRepo_Rhythmbox
-rhythmbox-plugin-coverart-search;addRepo_Rhythmbox
 rhythmbox-plugin-desktopart;addRepo_Rhythmbox
 rhythmbox-plugin-equalizer;addRepo_Rhythmbox
 rhythmbox-plugin-fileorganizer;addRepo_Rhythmbox
@@ -506,8 +500,6 @@ rhythmbox-plugin-screensaver;addRepo_Rhythmbox
 rhythmbox-plugin-smallwindow;addRepo_Rhythmbox
 rhythmbox-plugin-spectrum;addRepo_Rhythmbox
 rhythmbox-plugin-suspend;addRepo_Rhythmbox
-rhythmbox-plugin-tray-icon;addRepo_Rhythmbox
-rhythmbox-plugin-visualizer;addRepo_Rhythmbox
 rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
 rhythmbox-plugins;addRepo_Rhythmbox
 vulkan-utils;addRepo_NvidiaDrivers
@@ -613,7 +605,7 @@ function addRepo_NvidiaDrivers () {
 # Rhythmbox
 #
 function addRepo_Rhythmbox () {
-  addPPA ppa:fossfreedom/rhythmbox
+  #addPPA ppa:fossfreedom/rhythmbox
   addPPA ppa:fossfreedom/rhythmbox-plugins
 }
 
