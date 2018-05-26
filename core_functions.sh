@@ -119,13 +119,8 @@ function yggInit () {
     printf "[INIT] i386 architecture already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
-  if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ubuntu-make; then
-    printf "[INIT][UMAKE] PPA not found, adding PPA...\n"
-    printf "[INIT][UMAKE] PPA not found, adding PPA...\n" &>> $logFile
-    addPPA "ubuntu-desktop/ubuntu-make"
-  else
-    printf "[INIT][UMAKE] PPA found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-  fi
+  printf "[INIT]"
+  addPPA ppa:ubuntu-desktop/ubuntu-make
 
   printf "[INIT][APT] update "
   printf "\n[INIT][APT] update\n" &>> $logFile
