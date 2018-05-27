@@ -166,9 +166,12 @@ function installGamesMenu () {
 # Steam (headless)
 #
 function installSteam () {
-  runCmd "echo steam steam/purge \"note\" | sudo debconf-set-selections \"accepting steam licence\""
-  runCmd "echo steam steam/license \"note\" | sudo debconf-set-selections \"accepting steam licence 2/3\""
-  runCmd "echo steam steam/question select \"I AGREE\" | sudo debconf-set-selections \"accepting steam licence 3/3\""
+  runCmd "echo \"steam steam/purge note\" | sudo debconf-set-selections" \
+         "accepting steam licence"
+  runCmd "echo \"steam steam/license note\" | sudo debconf-set-selections" \
+         "accepting steam licence 2/3"
+  runCmd "echo \"steam steam/question select I AGREE\" | sudo debconf-set-selections" \
+         "accepting steam licence 3/3"
   installPackage apt steam
 }
 
