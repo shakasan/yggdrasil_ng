@@ -72,7 +72,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installGames
       installSteam
       installInternet
-      installJava9
+      installJava10
       installMiscUtilities
       installMultimedia
       installNetTools
@@ -111,7 +111,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installGames
       installSteam
       installInternet
-      installJava9
+      installJava10
       installMiscUtilities
       installMultimedia
       installNetTools
