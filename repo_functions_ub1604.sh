@@ -453,7 +453,7 @@ sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
 virtualbox-5.2;addRepo_VirtualBox
 owncloud-client;addRepo_OwnCloud
-syncthing-gtk;addRepo_Syncthing
+syncthing;addRepo_Syncthing
 opera-stable;addRepo_Opera
 insync;addRepo_Insync
 google-chrome-stable;addRepo_ChromeStable
