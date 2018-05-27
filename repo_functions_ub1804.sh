@@ -180,7 +180,6 @@ cheat;pip;utilities;cheat
 mate-sensors-applet-nvidia;apt;utilities;mate-sensors-applets-nvidia
 woeusb;apt;utilities;woeusb
 screenkey;apt;utilities;screenkey
-tmsu;apt;utilities;tmsu
 etcher-electron;apt;utilities;etcher-electron
 pdfgrep;apt;utilities;pdfgrep
 coinmon;npm;utilities;coinmon
@@ -427,7 +426,6 @@ aptik;addRepo_Teejee2008
 conky-manager;addRepo_Teejee2008
 avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6
-tmsu;addRepo_Tmsu
 quiterss;addRepo_Quiterss
 transmission-gtk;addRepo_Transmissionbt
 handbrake;addRepo_Handbrake
@@ -795,13 +793,6 @@ function addRepo_Transmissionbt () {
 #
 function addRepo_Quiterss () {
   addPPA ppa:quiterss/quiterss
-}
-
-#
-# TMSU
-#
-function addRepo_Tmsu () {
-  addPPA ppa:tmsu/ppa
 }
 
 #
