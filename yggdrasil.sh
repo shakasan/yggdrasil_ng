@@ -95,6 +95,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installViber
       installFranz
       installTeamViewer13
+      installXnViewMP
       toolAutoremove
       exit
       ;;
@@ -139,6 +140,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installViber
       installFranz
       installTeamViewer13
+      installXnViewMP
       toolAutoremove
       exit
       ;;

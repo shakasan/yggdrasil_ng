@@ -40,11 +40,9 @@ idle3-tools;apt;base;idle3-tools
 snapd;apt;base;snapd
 sysstat;apt;base;sysstat
 spotify;snap;multimedia;spotify
-slowmovideo;apt;multimedia;slowmovideo
 sayonara;apt;multimedia;sayonara
 qmmp;apt;multimedia;qmmp
 qmmp-plugin-projectm;apt;multimedia;qmmp-plugin-projectm
-shotcut;apt;multimedia;shotcut
 audacious;apt;multimedia;audacious
 dia;apt;multimedia;dia
 mpv;apt;multimedia;mpv
@@ -60,7 +58,6 @@ synfigstudio;apt;multimedia;synfigstudio
 mkvtoolnix-gui;apt;multimedia;mkvtoolnix-gui
 rawtherapee;apt;multimedia;rawtherapee
 hugin;apt;multimedia;hugin
-xnview;apt;multimedia;xnview
 asunder;apt;multimedia;asunder
 milkytracker;apt;multimedia;milkytracker
 pitivi;apt;multimedia;pitivi
@@ -68,7 +65,6 @@ openshot;apt;multimedia;openshot
 smplayer;apt;multimedia;smplayer
 smplayer-themes;apt;multimedia;smplayer-themes
 smplayer-l10n;apt;multimedia;smplayer-l10n
-gnome-mplayer;apt;multimedia;gnome-mplayer
 handbrake;apt;multimedia;handbrake
 avidemux2.6-qt;apt;multimedia;avidemux2.6-qt
 avidemux2.6-plugins-qt;apt;multimedia;avidemux2.6-plugins-qt
@@ -107,23 +103,17 @@ gmusicbrowser;apt;multimedia;gmusicbrowser
 peek;apt;multimedia;peek
 bino;apt;multimedia;bino
 owncloud-client;apt;internet;owncloud-client
-syncthing-gtk;apt;internet;syncthing-gtk
 syncthing;apt;internet;syncthing
 insync;apt;internet;insync
 discord;snap;internet;discord
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
 google-chrome-stable;apt;internet;google-chrome-stable
-xchat-gnome;apt;internet;xchat-gnome
-xchat-gnome-indicator;apt;internet;xchat-gnome-indicator
 chromium-browser;apt;internet;chromium-browser
 chromium-browser-l10n;apt;internet;chromium-browser-l10n
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
-imagedownloader;apt;internet;imagedownloader
-california;apt;internet;california
-midori;apt;internet;midori
 geary;apt;internet;geary
 corebird;apt;internet;corebird
 telegram;apt;internet;telegram
@@ -135,11 +125,8 @@ deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
 qtqr;apt;utilities;qtqr
-gqrcode;apt;utilities;gqrcode
-cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
 xcalib;apt;utilities;xcalib
-conky-manager;apt;utilities;conky-manager
 conky-all;apt;utilities;conky-all
 plank;apt;utilities;plank
 indicator-sound-switcher;apt;utilities;indicator-sound-switcher
@@ -158,10 +145,8 @@ aptik;apt;utilities;aptik
 gufw;apt;utilities;gufw
 numlockx;apt;utilities;numlockx
 grub-customizer;apt;utilities;grub-customizer
-unetbootin;apt;utilities;unebootin
 zim;apt;utilities;zim
 diodon;apt;utilities;diodon
-pyrenamer;apt;utilities;pyrenamer
 qt5ct;apt;utilities;qt5ct
 qt4-qtconfig;apt;utilities;qt4-qtconfig
 byobu;apt;utilities;byobu
@@ -210,7 +195,6 @@ dsniff;apt;nettools;dsniff
 aircrack-ng;apt;nettools;aricrack-ng
 SpoofMAC;pip;nettools;SpoofMAC
 speedtest-cli;pip;nettools;speedtest-cli
-whatportis;pip;nettools;whatportis
 nethogs;apt;nettools;nethogs
 ssh_scan;gem;nettools;sshscan
 caja-share;apt;cajaplugins;caja-share
@@ -305,7 +289,6 @@ nvidia-utils-396;apt;nvidia-driver-396;nvidia-utils-396
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 agave;apt;dev;agave
-utext;apt;dev;utext
 gpick;apt;dev;gpick
 virtualbox-5.2;apt;dev;virtualbox-5.2
 build-essential;apt;dev;build-essential
@@ -402,7 +385,7 @@ sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
 virtualbox-5.2;addRepo_VirtualBox
 owncloud-client;addRepo_OwnCloud
-syncthing-gtk;addRepo_Syncthing
+syncthing;addRepo_Syncthing
 opera-stable;addRepo_Opera
 insync;addRepo_Insync
 google-chrome-stable;addRepo_ChromeStable
@@ -420,18 +403,14 @@ peek;addRepo_Peek
 sqlitebrowser;addRepo_SQLiteBrowser
 ukuu;addRepo_Teejee2008
 aptik;addRepo_Teejee2008
-conky-manager;addRepo_Teejee2008
 avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6
 quiterss;addRepo_Quiterss
 transmission-gtk;addRepo_Transmissionbt
 handbrake;addRepo_Handbrake
 notepadqq;addRepo_Notepadqq
-mumble;addRepo_Mumble
-utext;addRepo_Utext
 flacon;addRepo_Flacon
 y-ppa-manager;addRepo_YPPAManager
-shotcut;addRepo_Shotcut
 diodon;addRepo_Diodon
 sayonara;addRepo_Sayonara
 zeal;addRepo_Zeal
@@ -448,14 +427,11 @@ vidcutter;addRepo_Vidcutter
 oracle-java10-installer;addRepo_Java10
 oracle-java10-set-default;addRepo_Java10
 green-recorder;addRepo_GreenRecorder
-hugin;addRepo_Hugin
 simplescreenrecorder;addRepo_SimpleScreenRecorder
 simplescreenrecorder-lib;addRepo_SimpleScreenRecorder
 simplescreenrecorder-lib:i386;addRepo_SimpleScreenRecorder
-slowmovideo;addRepo_Slowmovideo
 zim;addRepo_Zim
 grub-customizer;addRepo_GrubCustomizer
-vlc;addRepo_VLC
 numix-gtk-theme;addRepo_Numix
 numix-icon-theme;addRepo_Numix
 numix-icon-theme-circle;addRepo_Numix
@@ -487,7 +463,6 @@ rhythmbox-plugin-spectrum;addRepo_Rhythmbox
 rhythmbox-plugin-suspend;addRepo_Rhythmbox
 rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
 rhythmbox-plugins;addRepo_Rhythmbox
-vulkan-utils;addRepo_NvidiaDrivers
 nvidia-settings;addRepo_NvidiaDrivers
 nvidia-370;addRepo_NvidiaDrivers
 nvidia-opencl-icd-370;addRepo_NvidiaDrivers
@@ -515,12 +490,8 @@ rawtherapee;addRepo_DhorMyWay
 entangle;addRepo_DhorMyWay
 mkvtoolnix-gui;addRepo_MKVToolnix
 purple-facebook;addRepo_Jgeboski
-cpu-g;addRepo_Atareao
-gqrcode;addRepo_Atareao
-imagedownloader;addRepo_Atareao
 audacious;addRepo_Webupd8
 qt5ct;addRepo_Webupd8
-syncthing-gtk;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8"
@@ -530,13 +501,6 @@ woeusb;addRepo_Webupd8"
 #
 function addRepo_Webupd8 () {
   addPPA ppa:nilarimogard/webupd8
-}
-
-#
-# cpu-g, gqrcode, imagedownloader
-#
-function addRepo_Atareao () {
-  addPPA ppa:atareao/atareao
 }
 
 #
@@ -596,13 +560,6 @@ function addRepo_Numix () {
 }
 
 #
-# VLC
-#
-function addRepo_VLC () {
-  addPPA ppa:videolan/stable-daily
-}
-
-#
 # Grub-Customizer
 #
 function addRepo_GrubCustomizer () {
@@ -617,24 +574,10 @@ function addRepo_Zim () {
 }
 
 #
-# Slowmovideo
-#
-function addRepo_Slowmovideo () {
-  addPPA ppa:ubuntuhandbook1/slowmovideo
-}
-
-#
 # Simple-Screen-Recorder
 #
 function addRepo_SimpleScreenRecorder () {
   addPPA ppa:maarten-baert/simplescreenrecorder
-}
-
-#
-# Hugin
-#
-function addRepo_Hugin () {
-  addPPA ppa:hugin/hugin-builds
 }
 
 #
@@ -730,13 +673,6 @@ function addRepo_Diodon () {
 }
 
 #
-# Shotcut
-#
-function addRepo_Shotcut () {
-  addPPA ppa:haraldhv/shotcut
-}
-
-#
 # Y-PPA-Manager
 #
 function addRepo_YPPAManager () {
@@ -748,20 +684,6 @@ addPPA ppa:webupd8team/y-ppa-manager
 #
 function addRepo_Flacon () {
   addPPA ppa:flacon/ppa
-}
-
-#
-# Utext
-#
-function addRepo_Utext () {
-  addPPA ppa:atareao/utext
-}
-
-#
-# Mumble
-#
-function addRepo_Mumble () {
-  addPPA ppa:mumble/release
 }
 
 #

@@ -127,6 +127,24 @@ function installFranzMenu () {
 }
 
 #
+# XnViewMP (headless)
+#
+function installXnViewMP () {
+  installPackageDpkg https://download.xnview.com/XnViewMP-linux-x64.deb \
+                     xnviewmp.deb \
+                     no
+}
+
+#
+# XnViewMP (Menu)
+#
+function installXnViewMP () {
+  installPackageDpkg https://download.xnview.com/XnViewMP-linux-x64.deb \
+                     xnviewmp.deb \
+                     yes
+}
+
+#
 # install Misc Utilities Apps (headless)
 #
 function installMiscUtilities () {

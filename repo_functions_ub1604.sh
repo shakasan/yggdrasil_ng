@@ -62,7 +62,6 @@ synfigstudio;apt;multimedia;synfigstudio
 mkvtoolnix-gui;apt;multimedia;mkvtoolnix-gui
 rawtherapee;apt;multimedia;rawtherapee
 hugin;apt;multimedia;hugin
-xnview;apt;multimedia;xnview
 asunder;apt;multimedia;asunder
 milkytracker;apt;multimedia;milkytracker
 pitivi;apt;multimedia;pitivi
