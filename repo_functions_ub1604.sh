@@ -225,6 +225,7 @@ caja-image-converter;apt;cajaplugins;caja-image-converter
 insync-caja;apt;cajaplugins;insync-caja
 nautilus;apt;nautilus;nautilus
 file-roller;apt;nautilus;file-roller
+nautilus-terminal;apt;nautilus;nautilus-terminal
 nautilus-emblems;apt;nautilus;nautilus-emblems
 nautilus-image-manipulator;apt;nautilus;nautilus-image-manipulator
 nautilus-image-converter;apt;nautilus;nautilus-image-converter
@@ -600,6 +601,8 @@ nautilus-columns;addRepo_Webupd8
 nautilus-terminal;addRepo_Webupd8
 purple-hangouts;addRepo_Webupd8
 purple-skypeweb;addRepo_Webupd8
+pidgin-hangouts;addRepo_Webupd8
+pidgin-skypeweb;addRepo_Webupd8
 qt5ct;addRepo_Webupd8
 syncthing-gtk;addRepo_Webupd8
 telegram-purple;addRepo_Webupd8

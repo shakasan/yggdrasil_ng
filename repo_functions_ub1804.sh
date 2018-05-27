@@ -121,7 +121,6 @@ xchat-gnome;apt;internet;xchat-gnome
 xchat-gnome-indicator;apt;internet;xchat-gnome-indicator
 chromium-browser;apt;internet;chromium-browser
 chromium-browser-l10n;apt;internet;chromium-browser-l10n
-nautilus-dropbox;apt;internet;nautilus-dropbox
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
@@ -226,10 +225,8 @@ insync-caja;apt;cajaplugins;insync-caja
 nautilus;apt;nautilus;nautilus
 file-roller;apt;nautilus;file-roller
 nautilus-emblems;apt;nautilus;nautilus-emblems
-nautilus-image-manipulator;apt;nautilus;nautilus-image-manipulator
 nautilus-image-converter;apt;nautilus;nautilus-image-converter
 nautilus-compare;apt;nautilus;nautilus-compare
-nautilus-actions;apt;nautilus;nautilus-actions
 nautilus-sendto;apt;nautilus;nautilus-sendto
 nautilus-share;apt;nautilus;nautilus-share
 nautilus-wipe;apt;nautilus;nautilus-wipe
@@ -250,7 +247,6 @@ gimp-lensfun;apt;gimp;gimp-lensfun
 gimp-gmic;apt;gimp;gimp-gmic
 gimp-ufraw;apt;gimp;gimp-ufraw
 gimp-texturize;apt;gimp;gimp-texturize
-gimp-plugin-registry;apt;gimp;gimp-plugin-registry
 rhythmbox-plugin-alternative-toolbar;apt;rhythmbox;rhythmbox-plugin-alternative-toolbar
 rhythmbox-plugin-artdisplay;apt;rhythmbox;rhythmbox-plugin-artdisplay
 rhythmbox-plugin-cdrecorder;apt;rhythmbox;rhythmbox-plugin-cdrecorder
@@ -279,13 +275,8 @@ rhythmbox-plugin-spectrum;apt;rhythmbox;rhythmbox-plugin-spectrum
 rhythmbox-plugin-suspend;apt;rhythmbox;rhythmbox-plugin-suspend
 rhythmbox-plugin-wikipedia;apt;rhythmbox;rhythmbox-plugin-wikipedia
 rhythmbox-plugins;apt;rhythmbox;rhythmbox-plugins
-telegram-purple;apt;pidgin;telegram-purple
 pidgin-skype;apt;pidgin;pidgin-skype
 purple-facebook;apt;pidgin;purple-facebook
-purple-hangouts;apt;pidgin;purple-hangouts
-pidgin-hangouts;apt;pidgin;pidgin-hangouts
-pidgin-skypeweb;apt;pidgin;pidgin-skypeweb
-purple-skypeweb;apt;pidgin;purple-skypeweb
 unbound;apt;unbound;unbound
 arc-theme;apt;gtkthemes;arc-theme
 numix-gtk-theme;apt;gtkthemes;numix-gtk-theme
@@ -404,7 +395,6 @@ intellij-idea-community;snap;idea;idea"
 AppsRepo="kodi-beta;addRepo_KodiBeta
 kodi-nightly;addRepo_KodiNightly
 libreoffice6;addRepo_Libreoffice6
-winehq-devel;addRepo_Wine
 mongodb;addRepo_MongoDB3CE
 gyazo;addRepo_Gyazo
 code;addRepo_VSCode
@@ -534,13 +524,8 @@ cpu-g;addRepo_Atareao
 gqrcode;addRepo_Atareao
 imagedownloader;addRepo_Atareao
 audacious;addRepo_Webupd8
-nautilus-columns;addRepo_Webupd8
-nautilus-terminal;addRepo_Webupd8
-purple-hangouts;addRepo_Webupd8
-purple-skypeweb;addRepo_Webupd8
 qt5ct;addRepo_Webupd8
 syncthing-gtk;addRepo_Webupd8
-telegram-purple;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8"
@@ -1045,10 +1030,10 @@ function addRepo_MongoDB3CE () {
 #
 # Wine Build
 #
-function addRepo_Wine () {
-  addKey "https://dl.winehq.org/wine-builds/Release.key"
-  addRepo "winehq.list" \
-          "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
+# function addRepo_Wine () {
+#   addKey "https://dl.winehq.org/wine-builds/Release.key"
+#   addRepo "winehq.list" \
+#           "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
 }
 
 #
