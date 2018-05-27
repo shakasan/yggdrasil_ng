@@ -50,8 +50,6 @@ dia;apt;multimedia;dia
 mpv;apt;multimedia;mpv
 picard;apt;multimedia;picard
 inkscape;apt;multimedia;inkscape
-aegisub;apt;multimedia;aegisub
-aegisub-l10n;apt;multimedia;aegisub-l10n
 mypaint;apt;multimedia;mypaint
 mypaint-data-extras;apt;multimedia;mypaint-data-extras
 audacity;apt;multimedia;audacity
@@ -70,7 +68,6 @@ openshot;apt;multimedia;openshot
 smplayer;apt;multimedia;smplayer
 smplayer-themes;apt;multimedia;smplayer-themes
 smplayer-l10n;apt;multimedia;smplayer-l10n
-selene;apt;multimedia;selene
 gnome-mplayer;apt;multimedia;gnome-mplayer
 handbrake;apt;multimedia;handbrake
 avidemux2.6-qt;apt;multimedia;avidemux2.6-qt

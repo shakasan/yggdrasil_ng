@@ -473,6 +473,7 @@ sqlitebrowser;addRepo_SQLiteBrowser
 ukuu;addRepo_Teejee2008
 aptik;addRepo_Teejee2008
 conky-manager;addRepo_Teejee2008
+selene;addRepo_Teejee2008
 avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6
 tmsu;addRepo_Tmsu
