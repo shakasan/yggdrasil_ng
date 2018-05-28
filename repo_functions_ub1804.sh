@@ -511,7 +511,7 @@ function addRepo_Webupd8 () {
 function addRepo_Jgeboski () {
   addKey "https://jgeboski.github.io/obs.key"
   addRepo jgeboski.list \
-          "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_16.04/ ./"
+          "deb http://download.opensuse.org/repositories/home:/jgeboski/xUbuntu_18.04/ ./"
 }
 
 #
