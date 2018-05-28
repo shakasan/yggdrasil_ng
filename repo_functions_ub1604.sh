@@ -200,6 +200,7 @@ weppy;pip;python;weppy
 py-term;pip;python;py-term
 jstest-gtk;apt;games;jstest-gtk
 dosbox;apt;games;dosbox
+steam;apt;steam;steam
 brasero;apt;burningtools;brasero
 k3b;apt;burningtools;k3b
 k3b-extrathemes;apt;burningtools;k3b-extrathemes
@@ -1176,6 +1177,56 @@ function addRepo_AndroidStudio () {
 }
 
 #-----------------------------------------------------------------------------#
+# Package pre install functions list                                         #
+#-----------------------------------------------------------------------------#
+
+#
+# list of pre install functions
+# fields : unique ID, function to process after install
+#
+AppsPreTrtFct="opera-stable;opera_PreTrtFct
+steam;steam_PreTrtFct
+wireshark;wireshark_PreTrtFct
+oracle-java10-installer;java10_PreTrtFct
+oracle-java10-set-default;java10_PreTrtFct"
+
+#
+# JAVA 10
+#
+function java10_PreTrtFct () {
+  runCmd "echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
+         "accepting Oracle Java SE 10 licence agreement"
+}
+
+#
+# Opera
+#
+function opera_PreTrtFct () {
+  runCmd "echo opera-stable opera-stable/add-deb-source boolean false | sudo debconf-set-selections" \
+         "setting as do not add repo"
+}
+
+#
+# Steam
+#
+function steam_PreTrtFct () {
+  runCmd "echo \"steam steam/purge note\" | sudo debconf-set-selections" \
+         "accepting steam licence"
+  runCmd "echo \"steam steam/license note\" | sudo debconf-set-selections" \
+         "accepting steam licence 2/3"
+  runCmd "echo \"steam steam/question select I AGREE\" | sudo debconf-set-selections" \
+         "accepting steam licence 3/3"
+}
+
+#
+# Wireshark
+#
+function wireshark_PreTrtFct () {
+  runCmd "echo wireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections" \
+         "setting Wireshark as root only"
+}
+
+#-----------------------------------------------------------------------------#
 # Package post install functions list                                         #
 #-----------------------------------------------------------------------------#
 
@@ -1183,17 +1234,18 @@ function addRepo_AndroidStudio () {
 # list of post install functions
 # fields : unique ID, function to process after install
 #
-AppsTrtFct="nitrogen;nitrogen_TrtFct
-mongodb;mongodb_TrtFct
-qttools5-dev-tools;qt_TrtFct
-plank;plank_TrtFct
-androidstudio;android_TrtFct
-nodejs8lts;nodejs8lts_TrtFct"
+AppsPostTrtFct="nitrogen;nitrogen_PostTrtFct
+mongodb;mongodb_PostTrtFct
+qttools5-dev-tools;qt_PostTrtFct
+plank;plank_PostTrtFct
+androidstudio;android_PostTrtFct
+nodejs8lts;nodejs8lts_PostTrtFct
+mc;mc_PostTrtFct"
 
 #
+# NodeJS 8 LTS
 #
-#
-function nodejs8lts_TrtFct () {
+function nodejs8lts_PostTrtFct () {
   msg "Sanitizing NodeJS install"
   if which /usr/local/bin/node >/dev/null; then
     runCmd "sudo rm /usr/local/bin/node" \
@@ -1206,7 +1258,7 @@ function nodejs8lts_TrtFct () {
 #
 # Android Env for adb, fastboot, ....
 #
-function android_TrtFct () {
+function android_PostTrtFct () {
   msg "Adding Android devices UDEV rules"
 
   sudo sh -c "echo 'SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0502\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Acer\n\
@@ -1255,7 +1307,7 @@ SUBSYSTEM==\"usb\", ATTR{idVendor}==\"19d2\", MODE=\"0666\", OWNER=\""$myHomedir
 #
 # Plank themes
 #TODO: test it
-function plank_TrtFct () {
+function plank_PostTrtFct () {
   typeset ret_code
 
   if ! (( $(ps -ef | grep -v grep | grep plank | wc -l) > 0 )); then
@@ -1283,7 +1335,7 @@ function plank_TrtFct () {
 #
 # QT5 Dev Tools
 #
-function qt_TrtFct () {
+function qt_PostTrtFct () {
   runCmd "sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf" \
          "set QT5 as default"
 
@@ -1298,7 +1350,7 @@ function qt_TrtFct () {
 #
 # MongoDB 3 CE
 #
-function mongodb_TrtFct () {
+function mongodb_PostTrtFct () {
   runCmd "sudo systemctl enable mongod.service" \
          "enabling mongod service at boot"
   runCmd "sudo systemctl start mongod.service" \
@@ -1308,7 +1360,7 @@ function mongodb_TrtFct () {
 #
 # nitrogen post install function
 #
-function nitrogen_TrtFct () {
+function nitrogen_PostTrtFct () {
   if isMate; then
     runCmd "gsettings set org.mate.background draw-background false" \
            "disabling Caja background management"

@@ -70,8 +70,6 @@ function installEbookMenu () {
 # install Internet Apps (headless)
 #
 function installInternet () {
-  runCmd "echo opera-stable opera-stable/add-deb-source boolean false | sudo debconf-set-selections" \
-         "setting as do not add repo"
   installAppsFromList internet
 }
 
@@ -79,8 +77,6 @@ function installInternet () {
 # install Internet Apps (Menu)
 #
 function installInternetMenu () {
-  runCmd "echo opera-stable opera-stable/add-deb-source boolean false | sudo debconf-set-selections" \
-         "setting as do not add repo"
   installAppsFromListMenu internet
 }
 
@@ -166,20 +162,14 @@ function installGamesMenu () {
 # Steam (headless)
 #
 function installSteam () {
-  runCmd "echo \"steam steam/purge note\" | sudo debconf-set-selections" \
-         "accepting steam licence"
-  runCmd "echo \"steam steam/license note\" | sudo debconf-set-selections" \
-         "accepting steam licence 2/3"
-  runCmd "echo \"steam steam/question select I AGREE\" | sudo debconf-set-selections" \
-         "accepting steam licence 3/3"
-  installPackage apt steam
+  installAppsFromList steam
 }
 
 #
 # Steam (Menu)
 #
 function installSteamMenu () {
-  installPackage apt steam
+  installAppsFromListMenu steam
 }
 
 #
@@ -200,8 +190,6 @@ function installBurningToolsMenu () {
 # install Network Apps (headless)
 #
 function installNetTools () {
-  runCmd "echo wireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections" \
-         "setting Wireshark as root only"
   installAppsFromList nettools
 }
 
@@ -209,8 +197,6 @@ function installNetTools () {
 # install Network Apps (Menu)
 #
 function installNetToolsMenu () {
-  runCmd "echo wireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections" \
-         "setting Wireshark as root only"
   installAppsFromListMenu nettools
 }
 
@@ -616,8 +602,6 @@ function installJavascriptMenu () {
 # install JAVA 10 (headless)
 #
 function installJava10 () {
-  runCmd "echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
-         "accepting Oracle Java SE 10 licence agreement"
   installAppsFromList java10
 }
 
@@ -625,8 +609,6 @@ function installJava10 () {
 # install JAVA 10 (Menu)
 #
 function installJava10Menu () {
-  runCmd "echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
-         "accepting Oracle Java SE 10 licence agreement"
   installAppsFromListMenu java10
 }
 

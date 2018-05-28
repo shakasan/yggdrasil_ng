@@ -426,17 +426,26 @@ function addSpecificRepoFct () {
 
 #
 # find and execute Pre/Post install functions for a specific app
-# input : unique ID
+# input : unique ID, pre/post
 #
 function processAppTrtFct () {
-  for i in $AppsTrtFct; do
-    appTrtFct=(${i//;/ })
-    if [ "${appTrtFct[0]}" == "$1" ]; then
-      printf "[TRT] package -- $1 -- "
-      printf "post install processed by -- ${appTrtFct[1]}\n"
-      eval "${appTrtFct[1]}"
-    fi
-  done
+  if [ "$2" == "post" ]; then
+    for i in $AppsPostTrtFct; do
+      appPostTrtFct=(${i//;/ })
+      if [ "${appPostTrtFct[0]}" == "$1" ]; then
+        printf "[TRT][POST][$1][${appPostTrtFct[1]}]\n"
+        eval "${appPostTrtFct[1]}"
+      fi
+    done
+  else
+    for i in $AppsPreTrtFct; do
+      appPreTrtFct=(${i//;/ })
+      if [ "${appPreTrtFct[0]}" == "$1" ]; then
+        printf "[TRT][PRE][$1][${appPreTrtFct[1]}]\n"
+        eval "${appPreTrtFct[1]}"
+      fi
+    done
+  fi
 }
 
 #
@@ -459,8 +468,9 @@ function installAppsFromList () {
   for i in $Apps; do
     app=(${i//;/ })
     if [ "${app[2]}" == "$1" ]; then
+      processAppTrtFct ${app[3]} post
       installPackage ${app[1]} ${app[0]}
-      processAppTrtFct ${app[3]}
+      processAppTrtFct ${app[3]} post
     fi
   done
 }
@@ -503,8 +513,9 @@ function installAppsFromListMenu () {
       for i in $Apps; do
         app=(${i//;/ })
         if [ "${app[3]}" == "${pkgToInstall//\"}" ]; then
+          processAppTrtFct ${app[3]} pre
           installPackage ${app[1]} ${app[0]}
-          processAppTrtFct ${app[3]}
+          processAppTrtFct ${app[3]} post
         fi
       done
     done
