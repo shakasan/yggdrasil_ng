@@ -615,7 +615,7 @@ function addRepo_Geary () {
 # Gimp / Gmic
 #
 function addRepo_Gimp () {
-addPPA ppa:otto-kesselgulasch/gimp
+  addPPA ppa:otto-kesselgulasch/gimp
 }
 
 #
@@ -636,21 +636,21 @@ function addRepo_IndicatorSoundSwitcher () {
 # Kodi / XBMC
 #
 function addRepo_Kodi () {
-addPPA ppa:team-xbmc/ppa
+  addPPA ppa:team-xbmc/ppa
 }
 
 #
 # Deluge
 #
 function addRepo_Deluge () {
-addPPA ppa:deluge-team/ppa
+  addPPA ppa:deluge-team/ppa
 }
 
 #
 # Corebird
 #
 function addRepo_Corebird () {
-addPPA ppa:ubuntuhandbook1/corebird
+  addPPA ppa:ubuntuhandbook1/corebird
 }
 
 #
@@ -802,7 +802,7 @@ function addRepo_DarkTable () {
 # WireShark
 #
 function addRepo_WireShark () {
-addPPA ppa:wireshark-dev/stable
+  addPPA ppa:wireshark-dev/stable
 }
 
 #

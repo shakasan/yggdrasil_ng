@@ -779,7 +779,7 @@ function addRepo_Geary () {
 # Gimp / Gmic
 #
 function addRepo_Gimp () {
-addPPA ppa:otto-kesselgulasch/gimp
+  addPPA ppa:otto-kesselgulasch/gimp
 }
 
 #
@@ -800,21 +800,21 @@ function addRepo_IndicatorSoundSwitcher () {
 # Kodi / XBMC
 #
 function addRepo_Kodi () {
-addPPA ppa:team-xbmc/ppa
+  addPPA ppa:team-xbmc/ppa
 }
 
 #
 # Deluge
 #
 function addRepo_Deluge () {
-addPPA ppa:deluge-team/ppa
+  addPPA ppa:deluge-team/ppa
 }
 
 #
 # Corebird
 #
 function addRepo_Corebird () {
-addPPA ppa:ubuntuhandbook1/corebird
+  addPPA ppa:ubuntuhandbook1/corebird
 }
 
 #
@@ -828,7 +828,7 @@ function addRepo_Zeal () {
 # Sayonara
 #
 function addRepo_Sayonara () {
-addPPA ppa:lucioc/sayonara
+  addPPA ppa:lucioc/sayonara
 }
 
 #
@@ -849,7 +849,7 @@ function addRepo_Shotcut () {
 # Y-PPA-Manager
 #
 function addRepo_YPPAManager () {
-addPPA ppa:webupd8team/y-ppa-manager
+  addPPA ppa:webupd8team/y-ppa-manager
 }
 
 #
