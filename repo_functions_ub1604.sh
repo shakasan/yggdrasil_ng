@@ -99,6 +99,7 @@ entangle;apt;multimedia;entangle
 krita;apt;multimedia;krita
 soundconverter;apt;multimedia;soundconverter
 gimp;apt;multimedia;gimp
+gcolor2;apt;multimedia;gcolor2
 vidcutter;apt;multimedia;vidcutter
 green-recorder;apt;multimedia;green-recorder
 radiotray;apt;multimedia;radiotray
