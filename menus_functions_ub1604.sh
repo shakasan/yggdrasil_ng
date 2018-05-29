@@ -308,7 +308,6 @@ function showAppInstallMenu () {
     "internet" "Internet Apps" \
     "utilities" "Misc Utilities" \
     "games" "Games & tools" \
-    "steam" "Steam" \
     "burningtools" "Disc Burning and tools" \
     "nettools" "Network tools" \
     "cajaplugins" "Caja Plugins" \
@@ -339,9 +338,6 @@ function showAppInstallMenu () {
         ;;
       "games")
         installGamesMenu
-        ;;
-      "steam")
-        installSteamMenu
         ;;
       "burningtools")
         installBurningToolsMenu

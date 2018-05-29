@@ -29,7 +29,7 @@ case $OS in
     ;;
   *)
     printf "\n"
-    printf $BOLDROUGE"Distribution non supportée/testée"$NORMAL
+    printf $BOLDROUGE"Linux distro not supported"$NORMAL
     printf "\n\n"
     ;;
 esac
