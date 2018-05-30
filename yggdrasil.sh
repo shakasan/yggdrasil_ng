@@ -54,16 +54,22 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 # Headless Mode                                                               #
 #-----------------------------------------------------------------------------#
 
+# display logo in CLI mode
+[[ $# -gt 0 ]] && dispLogo
+
 #
 # arguments/options management with getopts
 
 while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
   case "$option" in
     a) # install all apps
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Apps"
       installBase
       installOffice
@@ -97,13 +103,15 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installTeamViewer13
       installXnViewMP
       toolAutoremove
-      exit
       ;;
     f) # full install
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Apps"
       installBase
       installOffice
@@ -142,89 +150,106 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installTeamViewer13
       installXnViewMP
       toolAutoremove
-      exit
       ;;
     c) # install themes and icons
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Icons/Themes"
       installIcons
       installThemes
-      exit
       ;;
     w) # nitrogen
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Nitrogen"
       installNitrogen
-      exit
       ;;
     d) # install Unbound DNS Cache
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Unbound"
       installUnbound
-      exit
       ;;
     q) # cardreader
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Card Readers Apps"
       installCardReader
-      exit
       ;;
     s) # solaar for logitech devices
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Solaar"
       installSolaar
-      exit
       ;;
     t) # tlp (laptop or low energy usage)
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing TLP"
       installTLP
-      exit
       ;;
     n) # latest nvidia driver (see menus if need older version)
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Nvidia Latest Driver"
       installNvidia396
-      exit
       ;;
     g) # latest feee graphic drivers, mesa, ...
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Installing Free Graphic Drivers"
       installOibaf
-      exit
       ;;
     k)
-      msg "Initializing"
-      yggInit
-      msg "Updating the system"
-      updateSystem
+      if [ "$ygginitCount" -eq "0" ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=$(($ygginitCount+1))
+      fi
       msg "Updating Kernel"
       kernelUpdate
-      exit
       ;;
     u)
       msg "Initializing"
@@ -257,6 +282,9 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       ;;
   esac
 done
+
+# if CLI mode, no need to run the menus...
+[[ $# -gt 0 ]] && exit
 
 #-----------------------------------------------------------------------------#
 # Menu Mode                                                                   #

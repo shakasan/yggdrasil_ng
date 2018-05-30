@@ -37,6 +37,12 @@ cDate=$(date +%d-%m-%Y)
 repoAdded=0
 
 #
+# ygginit flag for CLI mode
+#
+ygginitCount=0
+
+
+#
 # shell color codes
 #
 UNDERLINE=$(tput sgr 0 1)

@@ -574,6 +574,7 @@ function dispLogo () {
   printf "   ╚═╝    ╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝\n"
   printf "$BOLDROUGE                 Customize Linux Mint & Ubuntu derivatives made easier\n"
   printf "$BOLDBLANC         ver "$version" - GPLv3 - Francois B. (Makotosan) - makotonoblog.be\n"
+  printf $NORMAL
 	printf "\n"
 }
 
