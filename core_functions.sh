@@ -576,7 +576,6 @@ function dispLogo () {
 # show usage for headless mode
 #
 function usage () {
-  dispLogo
   dispSysInfos
   printf "\n"
 	printf $NORMAL
