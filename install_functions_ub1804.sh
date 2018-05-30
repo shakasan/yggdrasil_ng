@@ -750,6 +750,20 @@ function installIdeaMenu () {
 }
 
 #
+# install Eclipse Apps (headless)
+#
+function installEclipse () {
+  installAppsFromList eclipse
+}
+
+#
+# install Eclipse Apps (Menu)
+#
+function installEclipseMenu () {
+  installAppsFromListMenu eclipse
+}
+
+#
 # install Pycharm Apps (headless)
 #
 function installPyCharm () {

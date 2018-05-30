@@ -363,7 +363,8 @@ qttools5-doc-html;apt;qt;qttools5-doc-html
 fbreader;apt;ebook;fbreader
 calibre;apt;ebook;calibre
 android-studio;apt;androidstudio;androidstudio
-intellij-idea-community;snap;idea;idea"
+intellij-idea-community;snap;idea;idea
+eclipse;snap;eclipse;eclipse"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #

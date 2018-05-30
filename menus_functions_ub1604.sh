@@ -212,6 +212,7 @@ function showDevInstallMenu () {
     "codeblocks" "CodeBlocks" \
     "geany" "Geany" \
     "idea" "Idea" \
+    "eclipse" "Eclipse" \
     "pycharm" "PyCharm" \
     "vsc" "Visual Studio Code" \
     "androidstudio" "Android Studio" \
@@ -265,6 +266,9 @@ function showDevInstallMenu () {
         ;;
       "idea")
         installIdeaMenu
+        ;;
+      "eclipse")
+        installEclipseMenu
         ;;
       "pycharm")
         installPyCharmMenu
