@@ -1324,6 +1324,7 @@ function plank_PostTrtFct () {
                && cd plank-themer-master/ \
                && rm -fR ~/.config/plank/dock1/theme_index; \
                rm -fR ~/.config/plank/dock1/themes-repo; \
+               mkdir -p ~/.config/plank/dock1; \
                cp -a theme_index/ ~/.config/plank/dock1 \
                && cp -a themes-repo/ ~/.config/plank/dock1 \
                && cd ~ \
