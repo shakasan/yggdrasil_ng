@@ -405,7 +405,7 @@ function addSpecificRepoFct () {
   for i in $AppsRepo; do
     appRepo=(${i//;/ })
     if [ "${appRepo[0]}" == "$1" ]; then
-      printf "[ADD_REPP_PPA][$1][${appRepo[1]}]"
+      printf "[ADD_REPP_PPA][$1][${appRepo[1]}]...\n"
       eval "${appRepo[1]}"
       repoAdded=$(($repoAdded+1))
     fi
