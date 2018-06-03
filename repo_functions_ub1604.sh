@@ -1241,8 +1241,7 @@ mongodb;mongodb_PostTrtFct
 qttools5-dev-tools;qt_PostTrtFct
 plank;plank_PostTrtFct
 androidstudio;android_PostTrtFct
-nodejs8lts;nodejs8lts_PostTrtFct
-mc;mc_PostTrtFct"
+nodejs8lts;nodejs8lts_PostTrtFct"
 
 #
 # NodeJS 8 LTS
