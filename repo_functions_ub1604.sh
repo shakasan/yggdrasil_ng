@@ -133,7 +133,6 @@ corebird;apt;internet;corebird
 telegram;apt;internet;telegram
 skypeforlinux;apt;internet;skypeforlinux
 nextcloud-client;apt;internet;nextcloud-client
-nextcloud-client-caja;apt;internet;nextcloud-client-caja
 deluge-gtk;apt;internet;deluge-gtk
 deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
@@ -224,6 +223,7 @@ caja-wallpaper;apt;cajaplugins;caja-wallpaper
 caja-sendto;apt;cajaplugins;caka-sendto
 caja-image-converter;apt;cajaplugins;caja-image-converter
 insync-caja;apt;cajaplugins;insync-caja
+nextcloud-client-caja;apt;cajaplugins;nextcloud-client-caja
 nautilus;apt;nautilus;nautilus
 file-roller;apt;nautilus;file-roller
 nautilus-terminal;apt;nautilus;nautilus-terminal

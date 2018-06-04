@@ -102,7 +102,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installFranz
       installTeamViewer13
       installXnViewMP
-      toolAutoremove
       ;;
     f) # full install
       if [ "$ygginitCount" -eq "0" ]; then
@@ -149,7 +148,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installFranz
       installTeamViewer13
       installXnViewMP
-      toolAutoremove
       ;;
     c) # install themes and icons
       if [ "$ygginitCount" -eq "0" ]; then

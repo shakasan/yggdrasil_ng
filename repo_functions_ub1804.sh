@@ -93,7 +93,6 @@ entangle;apt;multimedia;entangle
 krita;apt;multimedia;krita
 soundconverter;apt;multimedia;soundconverter
 gimp;apt;multimedia;gimp
-gcolor2;apt;multimedia;gcolor2
 vidcutter;apt;multimedia;vidcutter
 green-recorder;apt;multimedia;green-recorder
 radiotray;apt;multimedia;radiotray
@@ -120,7 +119,6 @@ corebird;apt;internet;corebird
 telegram;apt;internet;telegram
 skypeforlinux;apt;internet;skypeforlinux
 nextcloud-client;apt;internet;nextcloud-client
-nextcloud-client-caja;apt;internet;nextcloud-client-caja
 deluge-gtk;apt;internet;deluge-gtk
 deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
@@ -204,6 +202,7 @@ caja-wallpaper;apt;cajaplugins;caja-wallpaper
 caja-sendto;apt;cajaplugins;caka-sendto
 caja-image-converter;apt;cajaplugins;caja-image-converter
 insync-caja;apt;cajaplugins;insync-caja
+nextcloud-client-caja;apt;cajaplugins;nextcloud-client-caja
 nautilus;apt;nautilus;nautilus
 file-roller;apt;nautilus;file-roller
 nautilus-emblems;apt;nautilus;nautilus-emblems
@@ -219,7 +218,6 @@ nautilus-ideviceinfo;apt;nautilus;nautilus-ideviceinfo
 ooo-thumbnailer;apt;nautilus;ooo-thumbnailer
 nautilus-dropbox;apt;nautilus;nautilus-dropbox
 nautilus-script-manager;apt;nautilus;nautilus-script-manager
-nautilus-columns;apt;nautilus;nautilus-columns
 insync-nautilus;apt;nautilus;insync-nautilus
 gtkam-gimp;apt;gimp;gtkam-gimp
 gimp-gluas;apt;gimp;gimp-gluas
@@ -262,7 +260,6 @@ purple-facebook;apt;pidgin;purple-facebook
 unbound;apt;unbound;unbound
 arc-theme;apt;gtkthemes;arc-theme
 numix-gtk-theme;apt;gtkthemes;numix-gtk-theme
-arc-icons;apt;icons;arc-icons
 faenza-icon-theme;apt;icons;faenza-icon-theme
 numix-icon-theme;apt;icons;numix-icon-theme
 numix-icon-theme-circle;apt;icons;numix-icon-theme-circle

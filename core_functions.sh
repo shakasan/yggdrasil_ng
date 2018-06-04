@@ -175,6 +175,8 @@ function yggInit () {
   else
     printf "[INIT][PIP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
     printf "[INIT]"
+    installPackage apt "python3-distutils"
+    printf "[INIT]"
     installPackage pip "pip"
     printf "[INIT]"
     installPackage pip "setuptools"
@@ -280,17 +282,21 @@ function addKey () {
 #
 function addRepo () {
   typeset ret_code
-  printf "[REPO] adding : $2 in $1 "
-  printf "\n[REPO] adding $2 in $1\n" &>> $logFile
-  echo $2 | sudo tee /etc/apt/sources.list.d/$1 &>> $logFile
-  ret_code=$?
-  retCode $ret_code
-  if [ "$#" -eq 3 ]; then
-    printf "[REPO] adding : $3 in $1 "
-    printf "\n[REPO] adding $3 in $1\n" &>> $logFile
-    echo $3 | sudo tee -a /etc/apt/sources.list.d/$1 &>> $logFile
+  if [ ! -f /etc/apt/sources.list.d/$1 ]; then
+    printf "[REPO] adding : $2 in $1 "
+    printf "\n[REPO] adding $2 in $1\n" &>> $logFile
+    echo $2 | sudo tee /etc/apt/sources.list.d/$1 &>> $logFile
     ret_code=$?
     retCode $ret_code
+    if [ "$#" -eq 3 ]; then
+      printf "[REPO] adding : $3 in $1 "
+      printf "\n[REPO] adding $3 in $1\n" &>> $logFile
+      echo $3 | sudo tee -a /etc/apt/sources.list.d/$1 &>> $logFile
+      ret_code=$?
+      retCode $ret_code
+    fi
+  else
+    printf "[REPO] already added [ "$BOLDVERT"OK"$NORMAL" ]  "
   fi
 }
 
@@ -461,7 +467,7 @@ function installAppsFromList () {
   for i in $Apps; do
     app=(${i//;/ })
     if [ "${app[2]}" == "$1" ]; then
-      processAppTrtFct ${app[3]} post
+      processAppTrtFct ${app[3]} pre
       installPackage ${app[1]} ${app[0]}
       processAppTrtFct ${app[3]} post
     fi
