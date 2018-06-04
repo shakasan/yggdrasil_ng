@@ -411,7 +411,6 @@ flacon;addRepo_Flacon
 y-ppa-manager;addRepo_YPPAManager
 diodon;addRepo_Diodon
 sayonara;addRepo_Sayonara
-zeal;addRepo_Zeal
 corebird;addRepo_Corebird
 deluge-torrent;addRepo_Deluge
 deluge-gtk;addRepo_Deluge
@@ -647,13 +646,6 @@ function addRepo_Deluge () {
 #
 function addRepo_Corebird () {
   addPPA ppa:ubuntuhandbook1/corebird
-}
-
-#
-# Zeal
-#
-function addRepo_Zeal () {
-  addPPA ppa:zeal-developers/ppa
 }
 
 #

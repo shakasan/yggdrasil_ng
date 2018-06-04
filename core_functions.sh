@@ -79,11 +79,23 @@ function pressKey () {
 }
 
 #
-# check if OS is Mint
+# check if OS is Mint 18
 #
-function isMint () {
+function isMint18 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
   if [[ $OS == *"Linux Mint 18"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#
+# check if OS is Mint 19
+#
+function isMint18 () {
+  OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
+  if [[ $OS == *"Linux Mint 19"* ]]; then
     return 0
   else
     return 1
@@ -168,16 +180,20 @@ function yggInit () {
     printf "\n[INIT][PIP] not found, installing...\n" &>> $logFile
     printf "[INIT]"
     installPackage apt "python3-pip"
-    printf "[INIT]"
-    installPackage apt "python3-distutils"
+    if isMint19; then
+      printf "[INIT]"
+      installPackage apt "python3-distutils"
+    fi
     printf "[INIT]"
     installPackage pip "pip"
     printf "[INIT]"
     installPackage pip "setuptools"
   else
     printf "[INIT][PIP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-    printf "[INIT]"
-    installPackage apt "python3-distutils"
+    if isMint19; then
+      printf "[INIT]"
+      installPackage apt "python3-distutils"
+    fi
     printf "[INIT]"
     installPackage pip "pip"
     printf "[INIT]"
