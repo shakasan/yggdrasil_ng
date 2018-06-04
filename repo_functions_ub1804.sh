@@ -169,11 +169,8 @@ gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
 vulkan-utils;apt;utilities;vulkan-utils
 python3-dev;apt;python;python3-dev
-python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
-pip;pip;python;setuptools
-setuptools;pip;python;setuptools
 PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
 weppy;pip;python;weppy
