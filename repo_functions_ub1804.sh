@@ -286,7 +286,6 @@ nvidia-settings;apt;nvidia-driver-396;nvidia-settings
 nvidia-utils-396;apt;nvidia-driver-396;nvidia-utils-396
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
-agave;apt;dev;agave
 gpick;apt;dev;gpick
 virtualbox-5.2;apt;dev;virtualbox-5.2
 build-essential;apt;dev;build-essential
