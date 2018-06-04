@@ -428,6 +428,7 @@ function addSpecificRepoFct () {
 # input : unique ID, pre/post
 #
 function processAppTrtFct () {
+  typeset i
   if [ "$2" == "post" ]; then
     for i in $AppsPostTrtFct; do
       appPostTrtFct=(${i//;/ })
@@ -445,6 +446,7 @@ function processAppTrtFct () {
       fi
     done
   fi
+  unset i
 }
 
 #
