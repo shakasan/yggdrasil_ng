@@ -134,7 +134,7 @@ function installXnViewMP () {
 #
 # XnViewMP (Menu)
 #
-function installXnViewMP () {
+function installXnViewMPMenu () {
   installPackageDpkg https://download.xnview.com/XnViewMP-linux-x64.deb \
                      xnviewmp.deb \
                      yes
