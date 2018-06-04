@@ -314,7 +314,7 @@ function addRepo () {
       retCode $ret_code
     fi
   else
-    printf "[REPO] already added [ "$BOLDVERT"OK"$NORMAL" ]  "
+    printf "[REPO] already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 }
 

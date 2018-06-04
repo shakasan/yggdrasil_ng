@@ -924,7 +924,7 @@ function addRepo_Gyazo () {
 function addRepo_MongoDB3CE () {
   addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
   addRepo "mongodb-org-3.6.list" \
-          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse"
+          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
 }
 
 #
