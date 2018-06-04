@@ -169,6 +169,8 @@ function yggInit () {
     printf "[INIT]"
     installPackage apt "python3-pip"
     printf "[INIT]"
+    installPackage apt "python3-distutils"
+    printf "[INIT]"
     installPackage pip "pip"
     printf "[INIT]"
     installPackage pip "setuptools"
