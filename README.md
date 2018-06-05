@@ -5,7 +5,7 @@ About
 
 !! Warnings : this is a early beta version !!
 
-The purpose of this script is to provide a full set of tools to install, customize and tweak a fresh installation of Linux Mint 18.x, Ubuntu 16.04 and derivatives
+The purpose of this script is to provide a full set of tools to install, customize and tweak a fresh installation of Linux Mint 18.x/19.x, Ubuntu 16.04/18.04 and derivatives
 
 Installation
 ------------
