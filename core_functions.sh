@@ -154,6 +154,7 @@ function yggInit () {
   printf "[INIT]"
   installPackage apt "apt-transport-https"
 
+  # UMAKE
   if ! which umake >/dev/null; then
     printf "[INIT][UMAKE] not found, installing...\n"
     printf "\n[INIT][UMAKE] not found, installing...\n" &>> $logFile
@@ -162,6 +163,7 @@ function yggInit () {
     printf "[INIT][UMAKE] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
+  # GEM
   if ! which gem >/dev/null; then
     printf "[INIT][GEM] not found, installing...\n"
     printf "\n[INIT][GEM] not found, installing...\n" &>> $logFile
@@ -170,6 +172,7 @@ function yggInit () {
     printf "[INIT][GEM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
+  # SNAP
   if ! which snap >/dev/null; then
     printf "[INIT][SNAP] not found, installing...\n"
     printf "\n[INIT][SNAP] not found, installing...\n" &>> $logFile
@@ -178,6 +181,7 @@ function yggInit () {
     printf "[INIT][SNAP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
+  # NPM
   if ! which npm >/dev/null; then
     printf "[INIT][NPM] not found, installing...\n"
     printf "\n[INIT][NPM] not found, installing...\n" &>> $logFile
@@ -186,6 +190,7 @@ function yggInit () {
     printf "[INIT][NPM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
+  # PIP3
   if ! which pip3 >/dev/null; then
     printf "[INIT][PIP] not found, installing...\n"
     printf "\n[INIT][PIP] not found, installing...\n" &>> $logFile
