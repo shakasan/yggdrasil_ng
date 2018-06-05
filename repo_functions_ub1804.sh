@@ -1185,7 +1185,20 @@ function nitrogen_PostTrtFct () {
                       "local" \
                       "start"
     update-menus
+  elif isCinnamon; then
+    runCmd "gsettings set org.nemo.desktop draw-background false" \
+           "disabling Caja background management"
+    runCmd "gsettings set org.nemo.desktop show-desktop-icons false" \
+           "disabling Caja desktop icons management"
+
+    createAppShortcut "bash -c \"sleep 10; nitrogen --restore\"" \
+                      "/usr/share/icons/hicolor/48x48/apps/nitrogen.png" \
+                      "Utility;GTK" \
+                      "Nitrogen" \
+                      "local" \
+                      "start"
+    update-menus
   else
-    printf "[ERR] only Mate Desktop is currently supported\n"
+    printf "[ERR] only Mate/Cinnamon Desktop is currently supported\n"
   fi
 }

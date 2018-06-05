@@ -114,6 +114,17 @@ function isMate () {
 }
 
 #
+# heck if DE is Cinnamon
+#
+function isCinnamon () {
+  if [[ $DESKTOP_SESSION == *"cinnamon"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#
 # check and install required dependencies for Yggdrasil
 #
 function yggInit () {
