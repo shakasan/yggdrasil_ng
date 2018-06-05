@@ -104,6 +104,7 @@ peek;apt;multimedia;peek
 bino;apt;multimedia;bino
 owncloud-client;apt;internet;owncloud-client
 syncthing;apt;internet;syncthing
+syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
 discord;snap;internet;discord
 quiterss;apt;internet;quiterss
@@ -387,6 +388,7 @@ vivaldi-stable;addRepo_Vivaldi
 virtualbox-5.2;addRepo_VirtualBox
 owncloud-client;addRepo_OwnCloud
 syncthing;addRepo_Syncthing
+syncthinggtk;addRepo_SyncthingGtk
 opera-stable;addRepo_Opera
 insync;addRepo_Insync
 google-chrome-stable;addRepo_ChromeStable
@@ -496,6 +498,15 @@ qt5ct;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8"
+
+#
+# Syncthing-GTK
+#
+function addRepo_SyncthingGtk () {
+  addKey "https://download.opensuse.org/repositories/home:kozec/xUbuntu_18.04/Release.key"
+  addRepo syncthinggtk.list \
+          "deb http://download.opensuse.org/repositories/home:/kozec/xUbuntu_18.04/ /"
+}
 
 #
 # Audacious, Guake
