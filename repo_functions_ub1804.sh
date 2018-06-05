@@ -125,6 +125,7 @@ deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
 qtqr;apt;utilities;qtqr
+cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
 xcalib;apt;utilities;xcalib
 conky-all;apt;utilities;conky-all
@@ -497,7 +498,15 @@ audacious;addRepo_Webupd8
 qt5ct;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
-woeusb;addRepo_Webupd8"
+woeusb;addRepo_Webupd8
+cpu-g;addRepo_Atareao"
+
+#
+# Atareao ppa
+#
+function addRepo_Atareao () {
+  addPPA ppa:atareao/atareao
+}
 
 #
 # Syncthing-GTK
