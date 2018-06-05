@@ -63,12 +63,12 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
   case "$option" in
     a) # install all apps
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Apps"
       installBase
@@ -104,12 +104,12 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installXnViewMP
       ;;
     f) # full install
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Apps"
       installBase
@@ -150,101 +150,101 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installXnViewMP
       ;;
     c) # install themes and icons
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Icons/Themes"
       installIcons
       installThemes
       ;;
     w) # nitrogen
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Nitrogen"
       installNitrogen
       ;;
     d) # install Unbound DNS Cache
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Unbound"
       installUnbound
       ;;
     q) # cardreader
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Card Readers Apps"
       installCardReader
       ;;
     s) # solaar for logitech devices
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Solaar"
       installSolaar
       ;;
     t) # tlp (laptop or low energy usage)
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing TLP"
       installTLP
       ;;
     n) # latest nvidia driver (see menus if need older version)
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Nvidia Latest Driver"
       installNvidia396
       ;;
     g) # latest feee graphic drivers, mesa, ...
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Installing Free Graphic Drivers"
       installOibaf
       ;;
     k)
-      if [ "$ygginitCount" -eq "0" ]; then
+      if [ $ygginitCount = false ]; then
         msg "Initializing"
         yggInit
         msg "Updating the system"
         updateSystem
-        ygginitCount=$(($ygginitCount+1))
+        ygginitCount=true
       fi
       msg "Updating Kernel"
       kernelUpdate

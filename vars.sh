@@ -39,7 +39,7 @@ repoAdded=0
 #
 # ygginit flag for CLI mode
 #
-ygginitCount=0
+ygginitCount=false
 
 
 #
