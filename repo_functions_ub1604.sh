@@ -189,8 +189,11 @@ gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
 vulkan-utils;apt;utilities;vulkan-utils
 python3-dev;apt;python;python3-dev
+python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
+pip;pip;python;setuptools
+setuptools;pip;python;setuptools
 PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
 weppy;pip;python;weppy
@@ -1257,7 +1260,7 @@ function nodejs8lts_PostTrtFct () {
 # Android Env for adb, fastboot, ....
 #
 function android_PostTrtFct () {
-  msg "Adding Android devices UDEV rules"
+  printf "[CMD] Adding Android devices UDEV rules "
 
   sudo sh -c "echo 'SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0502\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Acer\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0b05\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Asus\n\
@@ -1297,6 +1300,9 @@ SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0fce\", MODE=\"0666\", OWNER=\""$myHomedir
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"2340\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Teleepoch\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0930\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Toshiba\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"19d2\", MODE=\"0666\", OWNER=\""$myHomedir"\" # ZTE' > /etc/udev/rules.d/99-android.rules"
+
+  ret_code=$?
+  retCode $ret_code
 
   runCmd "sudo service udev restart" \
          "restarting UDEV service"

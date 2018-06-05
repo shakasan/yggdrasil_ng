@@ -93,7 +93,7 @@ function isMint18 () {
 #
 # check if OS is Mint 19
 #
-function isMint18 () {
+function isMint19 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
   if [[ $OS == *"Linux Mint 19"* ]]; then
     return 0

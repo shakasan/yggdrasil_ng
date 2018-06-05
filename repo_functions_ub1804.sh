@@ -169,8 +169,11 @@ gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
 vulkan-utils;apt;utilities;vulkan-utils
 python3-dev;apt;python;python3-dev
+python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
+pip;pip;python;setuptools
+setuptools;pip;python;setuptools
 PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
 weppy;pip;python;weppy
@@ -263,6 +266,7 @@ numix-icon-theme-circle;apt;icons;numix-icon-theme-circle
 solaar;apt;solaar;solaar
 pcscd;apt;cardreader;pcscd
 pcsc-tools;apt;cardreader;pcsc-tools
+libacr38u;apt;cardreader;libacr38u
 guvcview;apt;webcam;guvcview
 cheese;apt;webcam;cheese
 nvidia-384;apt;nvidia-384;nvidia-384
@@ -283,6 +287,7 @@ nvidia-settings;apt;nvidia-driver-396;nvidia-settings
 nvidia-utils-396;apt;nvidia-driver-396;nvidia-utils-396
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
+agave;apt;dev;agave
 gpick;apt;dev;gpick
 virtualbox-5.2;apt;dev;virtualbox-5.2
 build-essential;apt;dev;build-essential
@@ -309,7 +314,7 @@ emma-cli;npm;javascript;emma-cli
 jshint;npm;javascript;jshint
 oracle-java10-installer;apt;java10;oracle-java10-installer
 oracle-java10-set-default;apt;java10;oracle-java10-set-default
-php7.2-cli;apt;php;php7.2-cli
+php7.0-cli;apt;php;php7.0-cli
 php-pear;apt;php;php-pear
 composer;apt;php;composer
 luajit;apt;lua;luajit
@@ -321,6 +326,7 @@ codeblocks;apt;codeblocks;codeblocks
 codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
+geany-plugin-markdown;apt;geany;geany-plugin-markdown
 pycharm-community;snap;pycharm;pycharm
 sublime-text;apt;sublime-text;sublime-text
 kicad;apt;cad;kicad
@@ -407,6 +413,7 @@ flacon;addRepo_Flacon
 y-ppa-manager;addRepo_YPPAManager
 diodon;addRepo_Diodon
 sayonara;addRepo_Sayonara
+zeal;addRepo_Zeal
 corebird;addRepo_Corebird
 deluge-torrent;addRepo_Deluge
 deluge-gtk;addRepo_Deluge
@@ -642,6 +649,13 @@ function addRepo_Deluge () {
 #
 function addRepo_Corebird () {
   addPPA ppa:ubuntuhandbook1/corebird
+}
+
+#
+# Zeal
+#
+function addRepo_Zeal () {
+  addPPA ppa:zeal-developers/ppa
 }
 
 #
@@ -920,7 +934,7 @@ function addRepo_Gyazo () {
 function addRepo_MongoDB3CE () {
   addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
   addRepo "mongodb-org-3.6.list" \
-          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
+          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse"
 }
 
 #
@@ -1050,7 +1064,7 @@ function nodejs8lts_PostTrtFct () {
 # Android Env for adb, fastboot, ....
 #
 function android_PostTrtFct () {
-  msg "Adding Android devices UDEV rules"
+  printf "[CMD] Adding Android devices UDEV rules "
 
   sudo sh -c "echo 'SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0502\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Acer\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0b05\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Asus\n\
@@ -1090,6 +1104,9 @@ SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0fce\", MODE=\"0666\", OWNER=\""$myHomedir
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"2340\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Teleepoch\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"0930\", MODE=\"0666\", OWNER=\""$myHomedir"\" # Toshiba\n\
 SUBSYSTEM==\"usb\", ATTR{idVendor}==\"19d2\", MODE=\"0666\", OWNER=\""$myHomedir"\" # ZTE' > /etc/udev/rules.d/99-android.rules"
+
+  ret_code=$?
+  retCode $ret_code
 
   runCmd "sudo service udev restart" \
          "restarting UDEV service"
