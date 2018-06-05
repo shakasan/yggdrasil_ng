@@ -43,6 +43,7 @@ spotify;snap;multimedia;spotify
 sayonara;apt;multimedia;sayonara
 qmmp;apt;multimedia;qmmp
 qmmp-plugin-projectm;apt;multimedia;qmmp-plugin-projectm
+shotcut;snap;multimedia;shotcut
 audacious;apt;multimedia;audacious
 dia;apt;multimedia;dia
 mpv;apt;multimedia;mpv
