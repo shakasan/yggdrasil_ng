@@ -556,15 +556,24 @@ function installTLPMenu () {
   installAppsFromListMenu tlp
 }
 
-#TODO:
+#
+# Key-ID USB Fido U2F device udev rules
+#
 function installKeyIDuDev () {
-  sudo sh -c "echo '# this udev file should be used with udev 188 and newer\n\
-ACTION!=\"add|change\", GOTO=\"u2f_end\"\n\
-\n\
-# Key-ID FIDO U2F\n\
-KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{idVendor}==\"096e\", ATTRS{idProduct}==\"0850|0880\", TAG+=\"uaccess\"\n\
-\n\
-LABEL=\"u2f_end\"' > /etc/udev/rules.d/70-u2f.rules"
+  printf "[CMD] Adding Key-ID device UDEV rules "
+
+cat << EOF | sudo tee /etc/udev/rules.d/70-u2f.rules
+# this udev file should be used with udev 188 and newer\n\
+ACTION!="add|change", GOTO="u2f_end"
+
+# Key-ID FIDO U2F
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="096e", ATTRS{idProduct}=="0850|0880", TAG+="uaccess"
+
+LABEL="u2f_end"
+EOF
+
+  ret_code=$?
+  retCode $ret_code
 
   runCmd "sudo service udev restart" \
          "restarting UDEV service"
