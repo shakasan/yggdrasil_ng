@@ -1186,7 +1186,7 @@ function addRepo_AndroidStudio () {
 
 #
 # list of pre install functions
-# fields : unique ID, function to process after install
+# fields : unique ID, function to process before install
 #
 AppsPreTrtFct="opera-stable;opera_PreTrtFct
 steam;steam_PreTrtFct
