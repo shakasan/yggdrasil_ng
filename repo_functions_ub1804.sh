@@ -312,6 +312,8 @@ javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 emma-cli;npm;javascript;emma-cli
 jshint;npm;javascript;jshint
+typescript;npm;javascript;typescript
+@angular/cli;npm;javascript;angularcli
 oracle-java10-installer;apt;java10;oracle-java10-installer
 oracle-java10-set-default;apt;java10;oracle-java10-set-default
 php7.0-cli;apt;php;php7.0-cli
@@ -1045,7 +1047,18 @@ mongodb;mongodb_PostTrtFct
 qttools5-dev-tools;qt_PostTrtFct
 plank;plank_PostTrtFct
 androidstudio;android_PostTrtFct
-nodejs8lts;nodejs8lts_PostTrtFct"
+nodejs8lts;nodejs8lts_PostTrtFct
+angularcli;angularcli_PostTrtFct"
+
+#
+# Angular CLI
+#
+function angularcli_PostTrtFct () {
+  if which yarn >/dev/null; then
+    runCmd "ng set --global packageManager=yarn"
+           "using yarn instead of nom for angular/cli"
+  fi
+}
 
 #
 # NodeJS 8 LTS
