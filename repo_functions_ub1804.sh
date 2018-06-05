@@ -266,7 +266,6 @@ numix-icon-theme-circle;apt;icons;numix-icon-theme-circle
 solaar;apt;solaar;solaar
 pcscd;apt;cardreader;pcscd
 pcsc-tools;apt;cardreader;pcsc-tools
-libacr38u;apt;cardreader;libacr38u
 guvcview;apt;webcam;guvcview
 cheese;apt;webcam;cheese
 nvidia-384;apt;nvidia-384;nvidia-384
