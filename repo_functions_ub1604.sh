@@ -958,7 +958,7 @@ function addRepo_Telegram () {
 #
 function addRepo_SkypeForLinux () {
   addKey "https://repo.skype.com/data/SKYPE-GPG-KEY"
-  addRepo "skypeforlinux.list" \
+  addRepo "skype-stable.list" \
           "deb [arch=amd64] https://repo.skype.com/deb stable main"
 }
 
