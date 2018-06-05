@@ -10,11 +10,22 @@ The purpose of this script is to provide a full set of tools to install, customi
 Installation
 ------------
 
+Linux Mint 18
+
 ```
-git clone https://github.com/shakasan/yggdrasil_ng.git
-cd yggdrasil_ng
-chmod +x yggdrasil.sh
-./yggdrasil.sh
+curl -L https://packagecloud.io/makoto/stable/gpgkey | sudo apt-key add -
+echo "deb https://packagecloud.io/makoto/stable/ubuntu/ xenial main" | sudo tee /etc/apt/sources.list.d/makoto.list
+sudo apt-get update
+sudo apt-get install yggdrasil
+```
+
+Linux Mint 19
+
+```
+curl -L https://packagecloud.io/makoto/stable/gpgkey | sudo apt-key add -
+echo "deb https://packagecloud.io/makoto/stable/ubuntu/ bionic main" | sudo tee /etc/apt/sources.list.d/makoto.list
+sudo apt-get update
+sudo apt-get install yggdrasil
 ```
 
 Credits
