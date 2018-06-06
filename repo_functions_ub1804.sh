@@ -329,7 +329,6 @@ codeblocks;apt;codeblocks;codeblocks
 codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
-geany-plugin-markdown;apt;geany;geany-plugin-markdown
 pycharm-community;snap;pycharm;pycharm
 sublime-text;apt;sublime-text;sublime-text
 kicad;apt;cad;kicad
