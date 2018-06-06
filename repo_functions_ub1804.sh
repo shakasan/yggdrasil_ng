@@ -947,7 +947,7 @@ function addRepo_Gyazo () {
 function addRepo_MongoDB3CE () {
   addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
   addRepo "mongodb-org-3.6.list" \
-          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse"
+          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
 }
 
 #
@@ -1086,7 +1086,6 @@ function angularcli_PostTrtFct () {
 # NodeJS 8 LTS
 #
 function nodejs8lts_PostTrtFct () {
-  msg "Sanitizing NodeJS install"
   if which /usr/local/bin/node >/dev/null; then
     runCmd "sudo rm /usr/local/bin/node" \
            "cleaning/removing legacy node files"
