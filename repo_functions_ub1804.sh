@@ -289,7 +289,6 @@ nvidia-settings;apt;nvidia-driver-396;nvidia-settings
 nvidia-utils-396;apt;nvidia-driver-396;nvidia-utils-396
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
-agave;apt;dev;agave
 gpick;apt;dev;gpick
 virtualbox-5.2;apt;dev;virtualbox-5.2
 build-essential;apt;dev;build-essential
@@ -304,7 +303,7 @@ shellcheck;apt;dev;shellcheck
 umbrello;apt;dev;umbrello
 ack-grep;apt;dev;ack-grep
 ansible;apt;dev;ansible
-docker-ce;apt;dev;docker-ce
+docker.io;apt;dev;dockerio
 remark-lint;npm;dev;remark-lint
 beautysh;pip;dev;beautysh
 mycli;pip;dev;mycli
@@ -1060,14 +1059,25 @@ qttools5-dev-tools;qt_PostTrtFct
 plank;plank_PostTrtFct
 androidstudio;android_PostTrtFct
 nodejs8lts;nodejs8lts_PostTrtFct
-angularcli;angularcli_PostTrtFct"
+angularcli;angularcli_PostTrtFct
+dockerio;dockerio_PostTrtFct"
+
+#
+#
+#
+function dockerio_PostTrtFct () {
+  runCmd "sudo systemctl start docker" \
+         "start docker service"
+  runCmd "sudo systemctl enable docker" \
+         "add docker service at boot"
+}
 
 #
 # Angular CLI
 #
 function angularcli_PostTrtFct () {
   if which yarn >/dev/null; then
-    runCmd "ng set --global packageManager=yarn"
+    runCmd "ng set --global packageManager=yarn" \
            "using yarn instead of nom for angular/cli"
   fi
 }
