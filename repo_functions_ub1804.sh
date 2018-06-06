@@ -200,6 +200,7 @@ SpoofMAC;pip;nettools;SpoofMAC
 speedtest-cli;pip;nettools;speedtest-cli
 nethogs;apt;nettools;nethogs
 ssh_scan;gem;nettools;sshscan
+whatismyip;npm;nettools;whatismyip
 caja-share;apt;cajaplugins;caja-share
 caja-wallpaper;apt;cajaplugins;caja-wallpaper
 caja-sendto;apt;cajaplugins;caka-sendto
