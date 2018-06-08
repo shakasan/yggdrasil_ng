@@ -452,9 +452,11 @@ function showHardwareMenu () {
         ;;
       "keyid")
         installKeyIDuDev
+        pressKey
         ;;
       "WI6320")
         fixWirelessIntel6320
+        pressKey
         ;;
       "Back")
         break
