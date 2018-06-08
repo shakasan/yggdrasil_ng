@@ -322,10 +322,11 @@ mainMenuOptions=$(whiptail \
 "5" "Themes & Icons" \
 "6" "Dev Apps" \
 "7" "System Config" \
-"8" "System Tools" \
-"9" "Reboot this computer" \
-"10" "About Yggdrasil" \
-"11" "Quit"  3>&1 1>&2 2>&3)
+"8" "Hardware" \
+"9" "System Tools" \
+"10" "Reboot this computer" \
+"11" "About Yggdrasil" \
+"12" "Quit"  3>&1 1>&2 2>&3)
 
 case $mainMenuOptions in
   "1")
@@ -351,15 +352,18 @@ case $mainMenuOptions in
     showConfigMenu;
     ;;
   "8")
-    showSysToolsMenu
+    showHardwareMenu
     ;;
   "9")
-    showRebootBoxMenu
+    showSysToolsMenu
     ;;
   "10")
-    showAboutBoxMenu
+    showRebootBoxMenu
     ;;
   "11")
+    showAboutBoxMenu
+    ;;
+  "12")
     exit
     ;;
 esac # main menu
