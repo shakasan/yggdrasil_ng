@@ -397,6 +397,8 @@ php-pear;apt;php;php-pear
 composer;apt;php;composer
 luajit;apt;lua;luajit
 ruby-dev;apt;ruby;ruby-dev
+ruby-full;apt;ruby;ruby-full
+ruby-rainbow;apt;ruby;ruby-rainbow
 anjuta;apt;anjuta;anjuta
 anjuta-extras;apt;anjuta;anjuta-extras
 brackets;apt;brackets;brackets
