@@ -60,7 +60,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
+while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
   case "$option" in
     a) # install all apps
       if [ $ygginitCount = false ]; then
@@ -228,17 +228,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       fi
       msg "Installing Nvidia Latest Driver"
       installNvidia396
-      ;;
-    g) # latest feee graphic drivers, mesa, ...
-      if [ $ygginitCount = false ]; then
-        msg "Initializing"
-        yggInit
-        msg "Updating the system"
-        updateSystem
-        ygginitCount=true
-      fi
-      msg "Installing Free Graphic Drivers"
-      installOibaf
       ;;
     k)
       if [ $ygginitCount = false ]; then

@@ -554,15 +554,6 @@ function addRepo_DhorMyWay () {
 }
 
 #
-# Oibaf
-#   - newest versions of free/open GPU drivers
-#   - newest versions of Mesa, ....
-#
-function addRepo_Oibaf () {
-  addPPA ppa:oibaf/graphics-drivers
-}
-
-#
 # Nvidia drivers
 #
 function addRepo_NvidiaDrivers () {

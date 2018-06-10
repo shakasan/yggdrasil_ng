@@ -413,7 +413,6 @@ function showHardwareMenu () {
     "solaar" "Solaar for Logitech Unifying devices" \
     "webcam" "Install webcam neede apps" \
     "microcode" "Update Intel/AMD CPU microcode" \
-    "oibaf" "latest version of free graphic drivers, mesa, ..." \
     "nvidia370" "Install Nvidia 370 graphic drivers" \
     "nvidia375" "Install Nvidia 375 graphic drivers" \
     "nvidia378" "Install Nvidia 378 graphic drivers" \
@@ -439,9 +438,6 @@ function showHardwareMenu () {
         ;;
       "microcode")
         updateMicrocode
-        ;;
-      "oibaf")
-        installOibafMenu
         ;;
       "nvidia370")
         installNvidia370Menu
