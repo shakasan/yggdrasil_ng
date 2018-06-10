@@ -408,7 +408,6 @@ librecad;apt;cad;librecad
 freecad;apt;cad;freecad
 code;apt;code;code
 atom;apt;atom;atom
-sync-settings;apm;atom;sync-settings
 sqlparse;pip;atom;sqlparse
 flake8;pip;atom;flake8
 autopep8;pip;atom;autopep8
