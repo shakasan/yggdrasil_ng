@@ -245,6 +245,10 @@ nautilus-dropbox;apt;nautilus;nautilus-dropbox
 nautilus-script-manager;apt;nautilus;nautilus-script-manager
 nautilus-columns;apt;nautilus;nautilus-columns
 insync-nautilus;apt;nautilus;insync-nautilus
+thunar;apt;thunar;thunar
+thunar-archive-plugin;apt;thunar;thunar-archive-plugin
+thunar-gtkhash;apt;thunar;thunar-gtkhash
+thunar-volman;apt;thunar;thunar-volman
 gtkam-gimp;apt;gimp;gtkam-gimp
 gimp-gluas;apt;gimp;gimp-gluas
 pandora;apt;gimp;pandora

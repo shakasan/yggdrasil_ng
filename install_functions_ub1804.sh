@@ -253,6 +253,20 @@ function installNautilusAndPluginsMenu () {
 }
 
 #
+# install Thunar + Plugins (headless)
+#
+function installThunar () {
+  installAppsFromList thunar
+}
+
+#
+# install Thunar + Plugins (Menu)
+#
+function installThunarMenu () {
+  installAppsFromListMenu thunar
+}
+
+#
 # install Gimp plugins (headless)
 #
 function installGimpPlugins () {

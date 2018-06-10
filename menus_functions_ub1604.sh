@@ -316,6 +316,7 @@ function showAppInstallMenu () {
     "nettools" "Network tools" \
     "cajaplugins" "Caja Plugins" \
     "nautilus" "Nautilus and plugins" \
+    "thunar" "Thunar file manager" \
     "gimp" "Gimp plugins" \
     "rhythmbox" "RhythmBox plugins" \
     "pidgin" "Pidgin plugins" \
@@ -354,6 +355,9 @@ function showAppInstallMenu () {
         ;;
       "nautilus")
         installNautilusAndPluginsMenu
+        ;;
+      "thunar")
+        installThunarMenu
         ;;
       "gimp")
         installGimpPluginsMenu

@@ -85,6 +85,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installWine
       installCajaPlugins
       installNautilusAndPlugins
+      installThunar
       installGimpPlugins
       installPidginPlugins
       installRhythmBoxPlugins
@@ -126,6 +127,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,g,w,p,k,T" option; do
       installWine
       installCajaPlugins
       installNautilusAndPlugins
+      installThunar
       installGimpPlugins
       installPidginPlugins
       installRhythmBoxPlugins
