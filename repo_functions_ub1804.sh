@@ -888,7 +888,7 @@ function addRepo_VirtualBox () {
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
   addKey "http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc"
   addRepo virtualbox.list \
-          "deb http://download.virtualbox.org/virtualbox/debian bionic contrib"
+          "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib"
 }
 
 #
@@ -953,15 +953,6 @@ function addRepo_MongoDB3CE () {
   addRepo "mongodb-org-3.6.list" \
           "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
 }
-
-#
-# Wine Build
-#
-# function addRepo_Wine () {
-#   addKey "https://dl.winehq.org/wine-builds/Release.key"
-#   addRepo "winehq.list" \
-#           "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
-#}
 
 #
 # LibreOffice 6
