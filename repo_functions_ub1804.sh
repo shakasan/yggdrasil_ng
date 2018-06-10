@@ -1183,13 +1183,6 @@ function plank_PostTrtFct () {
 function qt_PostTrtFct () {
   runCmd "sudo ln -s /usr/share/qtchooser/qt5-x86_64-linux-gnu.conf /usr/lib/x86_64-linux-gnu/qtchooser/default.conf" \
          "set QT5 as default"
-
-  createAppShortcut "/usr/bin/designer" \
-                    "" \
-                    "GNOME;GTK;Development;IDE" \
-                    "QT Designer 5" \
-                    "local" \
-  update-menus
 }
 
 #
