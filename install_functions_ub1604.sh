@@ -102,7 +102,7 @@ function installViberMenu () {
 # Franz (headless)
 #
 function installFranz () {
-  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
+  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb \
                      franz.deb \
                      no
 }
@@ -111,7 +111,7 @@ function installFranz () {
 # Franz (Menu)
 #
 function installFranzMenu () {
-  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.17/franz_5.0.0-beta.17_amd64.deb \
+  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb \
                      franz.deb \
                      yes
 }
