@@ -392,6 +392,7 @@ typescript;npm;javascript;typescript
 @angular/cli;npm;javascript;angularcli
 ionic;npm;javascript;ionic
 cordova;npm;javascript;cordova
+eslint;npm;javascript;eslint
 oracle-java10-installer;apt;java10;oracle-java10-installer
 oracle-java10-set-default;apt;java10;oracle-java10-set-default
 php7.0-cli;apt;php;php7.0-cli
