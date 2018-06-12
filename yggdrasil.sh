@@ -71,26 +71,26 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Apps"
-      installBase
-      installOffice
+      installAppsFromList base
+      installAppsFromList office
       installBurningTools
-      installEbook
-      installGames
-      installSteam
-      installInternet
+      installAppsFromList ebook
+      installAppsFromList games
+      installAppsFromList steam
+      installAppsFromList internet
       installJava10
-      installMiscUtilities
-      installMultimedia
-      installNetTools
-      installWine
-      installCajaPlugins
-      installNautilusAndPlugins
-      installThunar
-      installGimpPlugins
-      installPidginPlugins
-      installRhythmBoxPlugins
+      installAppsFromList utilities
+      installAppsFromList multimedia
+      installAppsFromList nettools
+      installAppsFromList wine
+      installAppsFromList cajaplugins
+      installAppsFromList nautilus
+      installAppsFromList thunar
+      installAppsFromList gimp
+      installAppsFromList pidgin
+      installAppsFromList rhythmbox
       msg "Installing HW related"
-      installWebcam
+      installAppsFromList webcam
       updateMicrocode
       msg "Applying system customizations"
       enableUFW
@@ -114,28 +114,28 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Apps"
-      installBase
-      installOffice
+      installAppsFromList base
+      installAppsFromList office
       installBurningTools
-      installEbook
-      installGames
-      installSteam
-      installInternet
+      installAppsFromList ebook
+      installAppsFromList games
+      installAppsFromList steam
+      installAppsFromList internet
       installJava10
-      installMiscUtilities
-      installMultimedia
-      installNetTools
-      installWine
-      installCajaPlugins
-      installNautilusAndPlugins
-      installThunar
-      installGimpPlugins
-      installPidginPlugins
-      installRhythmBoxPlugins
+      installAppsFromList utilities
+      installAppsFromList multimedia
+      installAppsFromList nettools
+      installAppsFromList wine
+      installAppsFromList cajaplugins
+      installAppsFromList nautilus
+      installAppsFromList thunar
+      installAppsFromList gimp
+      installAppsFromList pidgin
+      installAppsFromList rhythmbox
       msg "Installing HW related"
-      installWebcam
+      installAppsFromList webcam
       updateMicrocode
-      installCardReader
+      installAppsFromList cardreader
       msg "Applying system customizations"
       enableUFW
       enableNumLockX
@@ -144,8 +144,8 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       installUnattendedUpgrades
       enableUnbound
       msg "Installing additional themes/icons"
-      installIcons
-      installThemes
+      installAppsFromList icons
+      installAppsFromList gtkthemes
       msg "Installing external apps"
       installViber
       installFranz
@@ -162,8 +162,8 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Icons/Themes"
-      installIcons
-      installThemes
+      installAppsFromList icons
+      installAppsFromList gtkthemes
       ;;
     w) # nitrogen
       if [ $ygginitCount = false ]; then
@@ -174,7 +174,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Nitrogen"
-      installNitrogen
+      installAppsFromList nitrogen
       ;;
     d) # install Unbound DNS Cache
       if [ $ygginitCount = false ]; then
@@ -196,7 +196,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Card Readers Apps"
-      installCardReader
+      installAppsFromList cardreader
       ;;
     s) # solaar for logitech devices
       if [ $ygginitCount = false ]; then
@@ -207,7 +207,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Solaar"
-      installSolaar
+      installAppsFromList solaar
       ;;
     t) # tlp (laptop or low energy usage)
       if [ $ygginitCount = false ]; then
@@ -218,7 +218,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing TLP"
-      installTLP
+      installAppsFromList tlp
       ;;
     n) # latest nvidia driver (see menus if need older version)
       if [ $ygginitCount = false ]; then
@@ -228,8 +228,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         updateSystem
         ygginitCount=true
       fi
-      msg "Installing Nvidia Latest Driver"
-      installNvidia396
+      installAppsFromList nvidia-driver-396
       ;;
     k)
       if [ $ygginitCount = false ]; then
@@ -330,10 +329,10 @@ case $mainMenuOptions in
     showAppInstallMenu
     ;;
   "3")
-    showAppBetaInstallMenu
+    installAppsFromListMenu beta
     ;;
   "4")
-    showAppNightlyInstallMenu
+    installAppsFromListMenu nightly
     ;;
   "5")
     showThemesInstallMenu

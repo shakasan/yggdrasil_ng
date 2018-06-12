@@ -98,7 +98,7 @@ function showConfigMenu () {
         ;;
       "Unbound")
         clear
-        installUnbound
+        installAppsFromList unbound
         pressKey
         ;;
       "Back")
@@ -174,10 +174,10 @@ function showThemesInstallMenu () {
 
     case $themesInstallMenuOptions in
       "themes")
-        installThemesMenu
+        installAppsFromListMenu gtkthemes
         ;;
       "icons")
-        installIconsMenu
+        installAppsFromListMenu icons
         ;;
       "Back")
         break
@@ -225,67 +225,67 @@ function showDevInstallMenu () {
 
     case $devInstallMenuOptions in
       "devbase")
-        installDevAppsMenu
+        installAppsFromListMenu dev
         ;;
       "java10")
-        installJava10
+        installAppsFromListMenu java10
         ;;
       "javascript")
-        installJavascriptMenu
+        installAppsFromListMenu javascript
         ;;
       "mongodb3ce")
-        installMongo3CEMenu
+        installAppsFromListMenu mongodb
         ;;
       "php")
-        installPHPMenu
+        installAppsFromListMenu php
         ;;
       "lua")
-        installLUAMenu
+        installAppsFromListMenu lua
         ;;
       "ruby")
-        installRubyMenu
+        installAppsFromListMenu ruby
         ;;
       "qt")
-        installQTMenu
+        installAppsFromListMenu qt
         ;;
       "python")
-        installPythonMenu
+        installAppsFromListMenu python
         ;;
       "atom")
-        installAtomMenu
+        installAppsFromListMenu atom
         ;;
       "anjuta")
-        installAnjutaMenu
+        installAppsFromListMenu anjuta
         ;;
       "brackets")
-        installBracketsMenu
+        installAppsFromListMenu brackets
         ;;
       "codeblocks")
-        installCodeBlocksMenu
+        installAppsFromListMenu codeblocks
         ;;
       "geany")
-        installGeanyMenu
+        installAppsFromListMenu geany
         ;;
       "idea")
-        installIdeaMenu
+        installAppsFromListMenu idea
         ;;
       "eclipse")
-        installEclipseMenu
+        installAppsFromListMenu eclipse
         ;;
       "pycharm")
-        installPyCharmMenu
+        installAppsFromListMenu pycharm
         ;;
       "vsc")
-        installVisualStudioCodeMenu
+        installAppsFromListMenu code
         ;;
       "androidstudio")
-        installAndroidStudioMenu
+        installAppsFromListMenu androidstudio
         ;;
       "sublimetext")
-        installSublimeTextMenu
+        installAppsFromListMenu sublime-text
         ;;
       "cad")
-        installCADMenu
+        installAppsFromListMenu cad
         ;;
       "teamviewer13")
         installTeamViewer13Menu
@@ -317,9 +317,11 @@ function showAppInstallMenu () {
     "base" "Base Apps" \
     "office" "Office Apps" \
     "multimedia" "Multimedia Apps" \
+    "ebook" "eBook Apps" \
     "internet" "Internet Apps" \
     "utilities" "Misc Utilities" \
     "games" "Games & tools" \
+    "steam" "Steam" \
     "burningtools" "Disc Burning and tools" \
     "nettools" "Network tools" \
     "cajaplugins" "Caja Plugins" \
@@ -337,52 +339,58 @@ function showAppInstallMenu () {
 
     case $appsInstallMenuOptions in
       "base")
-        installBaseMenu
+        installAppsFromListMenu base
         ;;
       "office")
-        installOfficeMenu
+        installAppsFromListMenu office
         ;;
       "multimedia")
-        installMultimediaMenu
+        installAppsFromListMenu multimedia
+        ;;
+      "ebook")
+        installAppsFromListMenu ebook
         ;;
       "internet")
-        installInternetMenu
+        installAppsFromListMenu internet
         ;;
       "utilities")
-        installMiscUtilitiesMenu
+        installAppsFromListMenu utilities
         ;;
       "games")
-        installGamesMenu
+        installAppsFromListMenu games
+        ;;
+      "steam")
+        installAppsFromListMenu steam
         ;;
       "burningtools")
-        installBurningToolsMenu
+        installAppsFromListMenu burningtools
         ;;
       "nettools")
-        installNetToolsMenu
+        installAppsFromListMenu nettools
         ;;
       "cajaplugins")
-        installCajaPluginsMenu
+        installAppsFromListMenu cajaplugins
         ;;
       "nautilus")
         installNautilusAndPluginsMenu
         ;;
       "thunar")
-        installThunarMenu
+        installAppsFromListMenu thunar
         ;;
       "gimp")
-        installGimpPluginsMenu
+        installAppsFromListMenu gimp
         ;;
       "rhythmbox")
-        installRhythmBoxPluginsMenu
+        installAppsFromListMenu rhythmbox
         ;;
       "pidgin")
-        installPidginPluginsMenu
+        installAppsFromListMenu pidgin
         ;;
       "nitrogen")
-        installNitrogenMenu
+        installAppsFromListMenu nitrogen
         ;;
       "wine")
-        installWineMenu
+        installAppsFromListMenu wine
         ;;
       "viber")
         installViberMenu
@@ -440,31 +448,31 @@ function showHardwareMenu () {
 
     case $hardwareMenuOptions in
       "cardreader")
-        installCardReaderMenu
+        installAppsFromListMenu cardreader
         ;;
       "solaar")
-        installAppsFromListMenu
+        installAppsFromListMenu solaar
         ;;
       "webcam")
-        installWebcamMenu
+        installAppsFromListMenu webcam
         ;;
       "microcode")
         updateMicrocode
         ;;
       "nvidia384")
-        installNvidia384Menu
+        installAppsFromListMenu nvidia-384
         ;;
       "nvidia387")
-        installNvidia387Menu
+        installAppsFromListMenu nvidia-387
         ;;
       "nvidia390")
-        installNvidia390Menu
+        installAppsFromListMenu nvidia-390
         ;;
       "nvidia396")
-        installNvidia396Menu
+        installAppsFromListMenu nvidia-driver-396
         ;;
       "tlp")
-        installTLPMenu
+        installAppsFromListMenu tlp
         ;;
       "keyid")
         installKeyIDuDev
