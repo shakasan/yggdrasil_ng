@@ -219,6 +219,7 @@ function showDevInstallMenu () {
     "sublimetext" "Sublime Text" \
     "cad" "CAD tools" \
     "teamviewer13" "Teamviewer 13" \
+    "boostnotes" "Boostnotes Markdown wiki app" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
@@ -288,6 +289,9 @@ function showDevInstallMenu () {
       "teamviewer13")
         installTeamViewer13Menu
         ;;
+      "boostnotes")
+        installBoostnotesMenu
+        ;;
       "Back")
         break
         ;;
@@ -323,6 +327,7 @@ function showAppInstallMenu () {
     "nitrogen" "Nitrogen WP Manager" \
     "wine" "Wine Builds" \
     "viber" "Viber IM desktop app" \
+    "franz" "Franz, Multi IM app" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $appsInstallMenuOptions in
@@ -376,6 +381,9 @@ function showAppInstallMenu () {
         ;;
       "viber")
         installViberMenu
+        ;;
+      "franz")
+        installFranzMenu
         ;;
       "Back")
         break

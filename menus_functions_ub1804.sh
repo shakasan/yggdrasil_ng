@@ -219,6 +219,7 @@ function showDevInstallMenu () {
     "sublimetext" "Sublime Text" \
     "cad" "CAD tools" \
     "teamviewer13" "Teamviewer 13" \
+    "boostnotes" "Boostnotes Markdown wiki app" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
@@ -287,6 +288,9 @@ function showDevInstallMenu () {
         ;;
       "teamviewer13")
         installTeamViewer13Menu
+        ;;
+      "boostnotes")
+        installBoostnotesMenu
         ;;
       "Back")
         break
@@ -376,6 +380,9 @@ function showAppInstallMenu () {
         ;;
       "viber")
         installViberMenu
+        ;;
+      "franz")
+        installFranzMenu
         ;;
       "Back")
         break
