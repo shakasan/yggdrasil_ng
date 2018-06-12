@@ -123,6 +123,24 @@ function installFranzMenu () {
 }
 
 #
+# Boostnotes (headless)
+#
+function installBoostnotes () {
+  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
+                     boostnotes.deb \
+                     no
+}
+
+#
+# Boostnotes (Menu)
+#
+function installBoostnotesMenu () {
+  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
+                     boostnotes.deb \
+                     yes
+}
+
+#
 # XnViewMP (headless)
 #
 function installXnViewMP () {

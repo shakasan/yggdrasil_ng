@@ -101,6 +101,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       msg "Installing external apps"
       installViber
       installFranz
+      installBoostnotes
       installTeamViewer13
       installXnViewMP
       ;;
@@ -148,6 +149,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       msg "Installing external apps"
       installViber
       installFranz
+      installBoostnotes
       installTeamViewer13
       installXnViewMP
       ;;
