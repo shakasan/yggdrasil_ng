@@ -331,6 +331,7 @@ function showAppInstallMenu () {
     "nitrogen" "Nitrogen WP Manager" \
     "wine" "Wine Builds" \
     "viber" "Viber IM desktop app" \
+    "slack" "Slack App" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $appsInstallMenuOptions in
@@ -387,6 +388,9 @@ function showAppInstallMenu () {
         ;;
       "franz")
         installFranzMenu
+        ;;
+      "slack")
+        installSlackMenu
         ;;
       "Back")
         break

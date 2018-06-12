@@ -123,20 +123,20 @@ function installFranzMenu () {
 }
 
 #
-# Boostnotes (headless)
+# Slack (headless)
 #
-function installBoostnotes () {
-  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
-                     boostnotes.deb \
+function installSlack () {
+  installPackageDpkg https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb \
+                     slack.deb \
                      no
 }
 
 #
-# Boostnotes (Menu)
+# Slack (Menu)
 #
-function installBoostnotesMenu () {
-  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
-                     boostnotes.deb \
+function installSlackMenu () {
+  installPackageDpkg https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb \
+                     slack.deb \
                      yes
 }
 
@@ -907,6 +907,24 @@ function installCompass () {
 function installCompassMenu () {
   installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb \
                      compass.deb \
+                     yes
+}
+
+#
+# Boostnotes (headless)
+#
+function installBoostnotes () {
+  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
+                     boostnotes.deb \
+                     no
+}
+
+#
+# Boostnotes (Menu)
+#
+function installBoostnotesMenu () {
+  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
+                     boostnotes.deb \
                      yes
 }
 
