@@ -220,6 +220,7 @@ function showDevInstallMenu () {
     "cad" "CAD tools" \
     "teamviewer13" "Teamviewer 13" \
     "boostnotes" "Boostnotes Markdown wiki app" \
+    "compass" "MongoDB Compass GUI" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
@@ -291,6 +292,9 @@ function showDevInstallMenu () {
         ;;
       "boostnotes")
         installBoostnotesMenu
+        ;;
+      "compass")
+        installCompassMenu
         ;;
       "Back")
         break

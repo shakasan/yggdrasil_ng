@@ -934,6 +934,24 @@ function installTeamViewer13Menu () {
 }
 
 #
+# install Compass (headless)
+#
+function installCompass () {
+  installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb \
+                     compass.deb \
+                     no
+}
+
+#
+# install Compass (Menu)
+#
+function installCompassMenu () {
+  installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb \
+                     compass.deb \
+                     yes
+}
+
+#
 # install/enable Unboud (headless)
 #
 function installUnbound () {
