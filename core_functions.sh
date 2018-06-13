@@ -228,6 +228,7 @@ function kernelUpdate () {
 
 #
 # system update
+# input : normal/full
 #TODO: add pip, npm (yarn?), gem
 #
 function updateSystem () {
@@ -259,18 +260,28 @@ function updateSystem () {
     retCode $ret_code
   fi
 
+  if which npm >/dev/null; then
+    printf "[NPM] update npm "
+    printf "\n[NPM] update npm\n" &>> $logFile
+    sudo npm i -g npm &>> $logFile
+    ret_code=$?
+    retCode $ret_code
+  fi
+
   if which gem >/dev/null; then
-    printf "[GEM] updating --system "
-    printf "\n[GEM] updating --system\n" &>> $logFile
+    printf "[GEM] update --system "
+    printf "\n[GEM] update --system\n" &>> $logFile
     sudo gem update --system &>> $logFile
     ret_code=$?
     retCode $ret_code
 
-    printf "[GEM] updating gems "
-    printf "\n[GEM] updating gems\n" &>> $logFile
-    sudo gem update &>> $logFile
-    ret_code=$?
-    retCode $ret_code
+    if [ "$1" == "full" ]; then
+      printf "[GEM] update gems "
+      printf "\n[GEM] update gems\n" &>> $logFile
+      sudo gem update &>> $logFile
+      ret_code=$?
+      retCode $ret_code
+    fi
   fi
 
   repoAdded=0
