@@ -185,7 +185,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         ygginitCount=true
       fi
       msg "Installing Unbound"
-      installUnbound
+      installAppsFromList unbound
       ;;
     q) # cardreader
       if [ $ygginitCount = false ]; then
