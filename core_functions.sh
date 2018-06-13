@@ -259,6 +259,20 @@ function updateSystem () {
     retCode $ret_code
   fi
 
+  if which gem >/dev/null; then
+    printf "[GEM] updating --system "
+    printf "\n[GEM] updating --system\n" &>> $logFile
+    sudo gem update --system &>> $logFile
+    ret_code=$?
+    retCode $ret_code
+
+    printf "[GEM] updating gems "
+    printf "\n[GEM] updating gems\n" &>> $logFile
+    sudo gem update &>> $logFile
+    ret_code=$?
+    retCode $ret_code
+  fi
+
   repoAdded=0
 }
 
