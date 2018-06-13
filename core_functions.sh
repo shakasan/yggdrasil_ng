@@ -170,6 +170,11 @@ function yggInit () {
     installPackage apt "ruby-dev"
   else
     printf "[INIT][GEM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
+    printf "[GEM] update --system "
+    printf "\n[GEM] update --system\n" &>> $logFile
+    sudo gem update --system &>> $logFile
+    ret_code=$?
+    retCode $ret_code
   fi
 
   # SNAP
@@ -188,6 +193,11 @@ function yggInit () {
     installPackage apt "nodejs"
   else
     printf "[INIT][NPM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
+    printf "[NPM] update npm "
+    printf "\n[NPM] update npm\n" &>> $logFile
+    sudo npm i -g npm &>> $logFile
+    ret_code=$?
+    retCode $ret_code
   fi
 
   # PIP3
@@ -228,7 +238,6 @@ function kernelUpdate () {
 
 #
 # system update
-# input : normal/full
 #TODO: add pip, npm (yarn?), gem
 #
 function updateSystem () {
@@ -258,30 +267,6 @@ function updateSystem () {
     sudo snap refresh &>> $logFile
     ret_code=$?
     retCode $ret_code
-  fi
-
-  if which npm >/dev/null; then
-    printf "[NPM] update npm "
-    printf "\n[NPM] update npm\n" &>> $logFile
-    sudo npm i -g npm &>> $logFile
-    ret_code=$?
-    retCode $ret_code
-  fi
-
-  if which gem >/dev/null; then
-    printf "[GEM] update --system "
-    printf "\n[GEM] update --system\n" &>> $logFile
-    sudo gem update --system &>> $logFile
-    ret_code=$?
-    retCode $ret_code
-
-    if [ "$1" == "full" ]; then
-      printf "[GEM] update gems "
-      printf "\n[GEM] update gems\n" &>> $logFile
-      sudo gem update &>> $logFile
-      ret_code=$?
-      retCode $ret_code
-    fi
   fi
 
   repoAdded=0
