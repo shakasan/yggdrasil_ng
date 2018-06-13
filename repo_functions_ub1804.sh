@@ -125,6 +125,7 @@ deluge-gtk;apt;internet;deluge-gtk
 deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
+iridium-browser;apt;internet;iridiumbrowser
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
@@ -507,7 +508,18 @@ qt5ct;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8
-cpu-g;addRepo_Atareao"
+cpu-g;addRepo_Atareao
+iridiumbrowser;addRepo_Iridium"
+
+#
+# Iridium-Browser
+#
+function addRepo_Iridium () {
+  addKey "https://downloads.iridiumbrowser.de/ubuntu/iridium-release-sign-01.pub"
+  addRepo iridium-browser.list \
+          "deb [arch=amd64] https://downloads.iridiumbrowser.de/deb/ stable main" \
+          "deb-src https://downloads.iridiumbrowser.de/deb/ stable main"
+}
 
 #
 # Atareao ppa
