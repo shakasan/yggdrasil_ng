@@ -1340,7 +1340,7 @@ EOF
 
 #
 # Plank themes
-#TODO: test it
+#
 function plank_PostTrtFct () {
   typeset ret_code
 
