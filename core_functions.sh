@@ -366,7 +366,7 @@ function installPackageDpkg () {
 # install package from repositories
 # input : package manager, package name
 # package manager available : apt, pip, npm, gem, snap
-# TODO: add apm, flatpak, umake?, use yarn instead of npm ?
+# TODO: add apm, code, flatpak, umake?, use yarn instead of npm ?
 #
 function installPackage () {
   typeset pkg="$2"
