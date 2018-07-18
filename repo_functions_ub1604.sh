@@ -1266,7 +1266,7 @@ angularcli;angularcli_PostTrtFct"
 #
 function angularcli_PostTrtFct () {
   if which yarn >/dev/null; then
-    runCmd "ng set --global packageManager=yarn"
+    runCmd "ng config -g cli.packageManager yarn"
            "using yarn instead of nom for angular/cli"
   fi
 }
