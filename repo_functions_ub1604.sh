@@ -627,7 +627,15 @@ telegram-purple;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8
-iridiumbrowser;addRepo_Iridium"
+iridiumbrowser;addRepo_Iridium
+picard;addRepo_Picard"
+
+#
+# MusicBrainz Picard
+#
+function addRepo_Picard () {
+  addPPA ppa:musicbrainz-developers/stable
+}
 
 #
 # Iridium-Browser
