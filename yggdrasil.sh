@@ -73,12 +73,12 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       msg "Installing Apps"
       installAppsFromList base
       installAppsFromList office
-      installBurningTools
+      installAppsFromList burningtools
       installAppsFromList ebook
       installAppsFromList games
       installAppsFromList steam
       installAppsFromList internet
-      installJava10
+      installAppsFromList java10
       installAppsFromList utilities
       installAppsFromList multimedia
       installAppsFromList nettools
@@ -116,12 +116,12 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       msg "Installing Apps"
       installAppsFromList base
       installAppsFromList office
-      installBurningTools
+      installAppsFromList burningtools
       installAppsFromList ebook
       installAppsFromList games
       installAppsFromList steam
       installAppsFromList internet
-      installJava10
+      installAppsFromList java10
       installAppsFromList utilities
       installAppsFromList multimedia
       installAppsFromList nettools
@@ -142,7 +142,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       addScreenfetchBashrc
       enableHistoryTS
       installUnattendedUpgrades
-      enableUnbound
+      installAppsFromList unbound
       msg "Installing additional themes/icons"
       installAppsFromList icons
       installAppsFromList gtkthemes

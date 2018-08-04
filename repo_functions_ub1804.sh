@@ -103,7 +103,6 @@ python-musicbrainz2;apt;multimedia;python-musicbrainz2
 gmusicbrowser;apt;multimedia;gmusicbrowser
 peek;apt;multimedia;peek
 bino;apt;multimedia;bino
-owncloud-client;apt;internet;owncloud-client
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
@@ -399,7 +398,6 @@ etcher-electron;addRepo_Etcher
 sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
 virtualbox-5.2;addRepo_VirtualBox
-owncloud-client;addRepo_OwnCloud
 syncthing;addRepo_Syncthing
 syncthinggtk;addRepo_SyncthingGtk
 opera-stable;addRepo_Opera
@@ -888,15 +886,6 @@ function addRepo_Syncthing () {
   addKey "https://syncthing.net/release-key.txt"
   addRepo syncthing.list \
           "deb http://apt.syncthing.net/ syncthing release"
-}
-
-#
-# OwnCloud
-#
-function addRepo_OwnCloud () {
-  addKey "http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_16.04/Release.key"
-  addRepo owncloud-client.list \
-          "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_16.04/ /"
 }
 
 #
