@@ -16,7 +16,7 @@ Installation
 
 Linux Mint 18
 
-```
+```shell
 curl -L https://packagecloud.io/makoto/stable/gpgkey | sudo apt-key add -
 echo "deb https://packagecloud.io/makoto/stable/ubuntu/ xenial main" | sudo tee /etc/apt/sources.list.d/makoto.list
 sudo apt-get update
@@ -25,7 +25,7 @@ sudo apt-get install yggdrasil
 
 Linux Mint 19
 
-```
+```shell
 curl -L https://packagecloud.io/makoto/stable/gpgkey | sudo apt-key add -
 echo "deb https://packagecloud.io/makoto/stable/ubuntu/ bionic main" | sudo tee /etc/apt/sources.list.d/makoto.list
 sudo apt-get update
