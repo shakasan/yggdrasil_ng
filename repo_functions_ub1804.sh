@@ -131,6 +131,7 @@ screenfetch;apt;utilities;screenfetch
 xcalib;apt;utilities;xcalib
 conky-all;apt;utilities;conky-all
 plank;apt;utilities;plank
+docky;apt;utilities;docky
 indicator-sound-switcher;apt;utilities;indicator-sound-switcher
 y-ppa-manager;apt;utilities;y-ppa-manager
 synapse;apt;utilities;synapse

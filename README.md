@@ -3,9 +3,13 @@
 About
 -----
 
-!! Warnings : this is a early beta version !!
+__!! Warnings : this is a early beta version !!__
 
-The purpose of this script is to provide a full set of tools to install, customize and tweak a fresh installation of Linux Mint 18.x/19.x, Ubuntu 16.04/18.04 and derivatives
+The purpose of this script is to provide a tool to install, customize and tweak a fresh installation of Linux Mint 18.x/19.x, Ubuntu 16.04/18.04 and derivatives
+
+The Linux Mint 18 branch is now freezed and only bugs will be fixed.
+
+New features are only added to Linux Mint 19 branch from now.
 
 Installation
 ------------
@@ -33,7 +37,7 @@ Credits
 
 This script has been written by Francois B. (Makotosan)
 
-* Email : shakasan@sirenacorp.be
+* Email : francois@makotonoblog.be
 * Website : https://makotonoblog.be/
 
 Licence
