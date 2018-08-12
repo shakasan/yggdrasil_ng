@@ -182,6 +182,7 @@ PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
 weppy;pip;python;weppy
 py-term;pip;python;py-term
+idle3;apt;python;idle3
 jstest-gtk;apt;games;jstest-gtk
 dosbox;apt;games;dosbox
 steam;apt;steam;steam
