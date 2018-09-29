@@ -144,6 +144,7 @@ bleachbit;apt;utilities;bleachbit
 gparted;apt;utilities;gparted
 gsmartcontrol;apt;utilities;gsmartcontrol
 terminator;apt;utilities;terminator
+tilix;apt;utilities;tilix
 aptik;apt;utilities;aptik
 gufw;apt;utilities;gufw
 numlockx;apt;utilities;numlockx
