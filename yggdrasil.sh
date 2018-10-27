@@ -228,7 +228,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
         updateSystem
         ygginitCount=true
       fi
-      installAppsFromList nvidia-driver-396
+      installAppsFromList nvidia-driver-410
       ;;
     k)
       if [ $ygginitCount = false ]; then

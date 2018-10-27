@@ -1,4 +1,4 @@
-#-----------------------------------------------------------------------------#
+f#-----------------------------------------------------------------------------#
 # Yggdrasil NG                                                                #
 #    compatibility : see documentation or man pages                           #
 #    author : Francois B. (Makotosan/Shakasan)                                #
@@ -116,6 +116,7 @@ filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
 geary;apt;internet;geary
+birdtray;apt;internet;birdtray
 corebird;apt;internet;corebird
 telegram;apt;internet;telegram
 skypeforlinux;apt;internet;skypeforlinux
@@ -173,7 +174,6 @@ coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
-vulkan-utils;apt;utilities;vulkan-utils
 p7zip-desktop;snap;utilities;p7zip-desktop
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
@@ -298,6 +298,10 @@ nvidia-driver-396;apt;nvidia-driver-396;nvidia-driver-396
 nvidia-settings;apt;nvidia-driver-396;nvidia-settings
 nvidia-utils-396;apt;nvidia-driver-396;nvidia-utils-396
 libnvidia-gl-396:i386:apt;nvidia-driver-396;libnvidia-gl-396:i386
+nvidia-driver-410;apt;nvidia-driver-410;nvidia-driver-410
+nvidia-settings;apt;nvidia-driver-410;nvidia-settings
+nvidia-utils-410;apt;nvidia-driver-410;nvidia-utils-410
+libnvidia-gl-410:i386:apt;nvidia-driver-410;libnvidia-gl-410:i386
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
@@ -516,7 +520,15 @@ yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8
 cpu-g;addRepo_Atareao
 iridiumbrowser;addRepo_Iridium
-picard;addRepo_Picard"
+picard;addRepo_Picard
+birdtray;addRepo_Birdtray"
+
+#
+# Birdtray (for Thunderbird)
+#
+function addRepo_Birdtray () {
+  addPPA ppa:linuxuprising/apps
+}
 
 #
 # MusicBrainz Picard
