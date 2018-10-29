@@ -126,6 +126,8 @@ deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
 iridium-browser;apt;internet;iridiumbrowser
+youtube-dl;apt;internet;youtube-dl
+youtube-dlg;apt;internet;youtube-dlg
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
