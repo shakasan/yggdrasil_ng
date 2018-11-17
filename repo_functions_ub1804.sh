@@ -295,6 +295,7 @@ purple-facebook;apt;pidgin;purple-facebook
 unbound;apt;unbound;unbound
 arc-theme;apt;gtkthemes;arc-theme
 numix-gtk-theme;apt;gtkthemes;numix-gtk-theme
+plata-theme;apt;gtkthemes;plata-theme
 faenza-icon-theme;apt;icons;faenza-icon-theme
 numix-icon-theme;apt;icons;numix-icon-theme
 numix-icon-theme-circle;apt;icons;numix-icon-theme-circle
@@ -478,6 +479,7 @@ simplescreenrecorder-lib:i386;addRepo_SimpleScreenRecorder
 zim;addRepo_Zim
 grub-customizer;addRepo_GrubCustomizer
 numix-gtk-theme;addRepo_Numix
+plata-theme;addRepo_Plata
 numix-icon-theme;addRepo_Numix
 numix-icon-theme-circle;addRepo_Numix
 rhythmbox-plugin-alternative-toolbar;addRepo_Rhythmbox
@@ -544,6 +546,13 @@ cpu-g;addRepo_Atareao
 iridiumbrowser;addRepo_Iridium
 picard;addRepo_Picard
 birdtray;addRepo_Birdtray"
+
+#
+# Plata Theme
+#
+function addRepo_Plata () {
+  addPPA ppa:tista/plata-theme
+}
 
 #
 # Birdtray (for Thunderbird)
