@@ -629,6 +629,15 @@ iridiumbrowser;addRepo_Iridium
 picard;addRepo_Picard"
 
 #
+# Makoto no blog repo
+#
+function addRepo_Makoto () {
+  addKey "https://packagecloud.io/makoto/stable/gpgkey"
+  addRepo makoto.list \
+          "deb https://packagecloud.io/makoto/stable/ubuntu/ xenial main"
+}
+
+#
 # MusicBrainz Picard
 #
 function addRepo_Picard () {

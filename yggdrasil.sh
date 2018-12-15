@@ -316,9 +316,10 @@ mainMenuOptions=$(whiptail \
 "7" "System Config" \
 "8" "Hardware" \
 "9" "System Tools" \
-"10" "Reboot this computer" \
-"11" "About Yggdrasil" \
-"12" "Quit"  3>&1 1>&2 2>&3)
+"10" "Add Makoto no Blog repository" \
+"11" "Reboot this computer" \
+"12" "About Yggdrasil" \
+"13" "Quit"  3>&1 1>&2 2>&3)
 
 case $mainMenuOptions in
   "1")
@@ -350,12 +351,15 @@ case $mainMenuOptions in
     showSysToolsMenu
     ;;
   "10")
-    showRebootBoxMenu
+    addRepo_Makoto
     ;;
   "11")
-    showAboutBoxMenu
+    showRebootBoxMenu
     ;;
   "12")
+    showAboutBoxMenu
+    ;;
+  "13")
     exit
     ;;
 esac # main menu

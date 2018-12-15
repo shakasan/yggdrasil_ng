@@ -548,6 +548,15 @@ picard;addRepo_Picard
 birdtray;addRepo_Birdtray"
 
 #
+# Makoto no blog repo
+#
+function addRepo_Makoto () {
+  addKey "https://packagecloud.io/makoto/stable/gpgkey"
+  addRepo makoto.list \
+          "deb https://packagecloud.io/makoto/stable/ubuntu/ bionic main"
+}
+
+#
 # Plata Theme
 #
 function addRepo_Plata () {
@@ -1002,12 +1011,12 @@ function addRepo_Gyazo () {
 }
 
 #
-# MongoDB 3 CE
+# MongoDB 4 CE
 #
 function addRepo_MongoDB3CE () {
-  addKey "https://www.mongodb.org/static/pgp/server-3.6.asc"
-  addRepo "mongodb-org-3.6.list" \
-          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse"
+  addKey "https://www.mongodb.org/static/pgp/server-4.0.asc"
+  addRepo "mongodb-org-4.0.list" \
+          "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse"
 }
 
 #
