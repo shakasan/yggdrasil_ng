@@ -328,7 +328,7 @@ libnvidia-gl-410:i386:apt;nvidia-driver-410;libnvidia-gl-410:i386
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
-virtualbox-5.2;apt;dev;virtualbox-5.2
+virtualbox-6.0;apt;dev;virtualbox-6.0
 build-essential;apt;dev;build-essential
 ubuntu-make;apt;dev;ubuntu-make
 ghex;apt;dev;ghex
@@ -430,7 +430,7 @@ ansible;addRepo_Ansible
 etcher-electron;addRepo_Etcher
 sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
-virtualbox-5.2;addRepo_VirtualBox
+virtualbox-6.0;addRepo_VirtualBox
 syncthing;addRepo_Syncthing
 syncthinggtk;addRepo_SyncthingGtk
 opera-stable;addRepo_Opera
