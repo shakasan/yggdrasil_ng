@@ -1,4 +1,4 @@
-f#-----------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
 # Yggdrasil NG                                                                #
 #    compatibility : see documentation or man pages                           #
 #    author : Francois B. (Makotosan/Shakasan)                                #
