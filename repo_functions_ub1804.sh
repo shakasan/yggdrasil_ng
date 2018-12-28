@@ -66,7 +66,8 @@ openshot;apt;multimedia;openshot
 smplayer;apt;multimedia;smplayer
 smplayer-themes;apt;multimedia;smplayer-themes
 smplayer-l10n;apt;multimedia;smplayer-l10n
-handbrake;apt;multimedia;handbrake
+handbrake-cli;apt;multimedia;handbrake-cli
+handbrake-gtk;apt;multimedia;handbrake-gtk
 avidemux2.6-qt;apt;multimedia;avidemux2.6-qt
 avidemux2.6-plugins-qt;apt;multimedia;avidemux2.6-plugins-qt
 mjpegtools;apt;multimedia;mjpegtools
@@ -103,6 +104,7 @@ python-musicbrainz2;apt;multimedia;python-musicbrainz2
 gmusicbrowser;apt;multimedia;gmusicbrowser
 peek;apt;multimedia;peek
 bino;apt;multimedia;bino
+kdenlive;apt;multimedia;kdenlive
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
@@ -454,7 +456,8 @@ avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6
 quiterss;addRepo_Quiterss
 transmission-gtk;addRepo_Transmissionbt
-handbrake;addRepo_Handbrake
+handbrake-cli;addRepo_Handbrake
+handbrake-gtk;addRepo_Handbrake
 notepadqq;addRepo_Notepadqq
 flacon;addRepo_Flacon
 y-ppa-manager;addRepo_YPPAManager
@@ -545,7 +548,15 @@ woeusb;addRepo_Webupd8
 cpu-g;addRepo_Atareao
 iridiumbrowser;addRepo_Iridium
 picard;addRepo_Picard
-birdtray;addRepo_Birdtray"
+birdtray;addRepo_Birdtray
+kdenlive;addRepo_KDEnlive"
+
+#
+# KDEnlive
+#
+function addRepo_KDEnlive () {
+  addPPA ppa:kdenlive/kdenlive-stable
+}
 
 #
 # Makoto no blog repo
