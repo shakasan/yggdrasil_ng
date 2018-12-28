@@ -161,6 +161,7 @@ qt4-qtconfig;apt;utilities;qt4-qtconfig
 byobu;apt;utilities;byobu
 mupdf;apt;utilities;mupdf
 mupdf-tools;apt;utilities;mupdf-tools
+pdfarranger;apt;utilities;pdfarranger
 ukuu;apt;utilities;ukuu
 fcrackzip;apt;utilities;fcrackzip
 rarcrack;apt;utilities;rarcrack
@@ -548,7 +549,8 @@ woeusb;addRepo_Webupd8
 cpu-g;addRepo_Atareao
 iridiumbrowser;addRepo_Iridium
 picard;addRepo_Picard
-birdtray;addRepo_Birdtray
+birdtray;addRepo_Linuxuprising
+pdfarranger;addRepo_Linuxuprising
 kdenlive;addRepo_KDEnlive"
 
 #
@@ -575,9 +577,9 @@ function addRepo_Plata () {
 }
 
 #
-# Birdtray (for Thunderbird)
+# LinuxUpRising repo (Birdtray (for Thunderbird), PDFArranger)
 #
-function addRepo_Birdtray () {
+function addRepo_Linuxuprising () {
   addPPA ppa:linuxuprising/apps
 }
 
