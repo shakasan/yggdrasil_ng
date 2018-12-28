@@ -328,6 +328,10 @@ nvidia-driver-410;apt;nvidia-driver-410;nvidia-driver-410
 nvidia-settings;apt;nvidia-driver-410;nvidia-settings
 nvidia-utils-410;apt;nvidia-driver-410;nvidia-utils-410
 libnvidia-gl-410:i386:apt;nvidia-driver-410;libnvidia-gl-410:i386
+nvidia-driver-415;apt;nvidia-driver-415;nvidia-driver-415
+nvidia-settings;apt;nvidia-driver-415;nvidia-settings
+nvidia-utils-415;apt;nvidia-driver-415;nvidia-utils-415
+libnvidia-gl-415:i386:apt;nvidia-driver-415;libnvidia-gl-415:i386
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
@@ -411,7 +415,8 @@ fbreader;apt;ebook;fbreader
 calibre;apt;ebook;calibre
 android-studio;apt;androidstudio;androidstudio
 intellij-idea-community;snap;idea;idea
-eclipse;snap;eclipse;eclipse"
+eclipse;snap;eclipse;eclipse
+gitkraken;snap;gitkraken;gitkraken"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #

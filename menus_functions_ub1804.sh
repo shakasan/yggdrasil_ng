@@ -221,6 +221,7 @@ function showDevInstallMenu () {
     "teamviewer13" "Teamviewer 13" \
     "boostnotes" "Boostnotes Markdown wiki app" \
     "compass" "MongoDB Compass GUI" \
+    "gitkraken" "Gitkraken git gui" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
@@ -295,6 +296,9 @@ function showDevInstallMenu () {
         ;;
       "compass")
         installCompassMenu
+        ;;
+      "gitkraken")
+        installAppsFromListMenu gitkraken
         ;;
       "Back")
         break
@@ -442,6 +446,7 @@ function showHardwareMenu () {
     "nvidia390" "Install Nvidia 390 graphic drivers" \
     "nvidia396" "Install Nvidia 396 graphic drivers" \
     "nvidia410" "Install Nvidia 410 graphic drivers" \
+    "nvidia415" "Install Nvidia 415 graphic drivers" \
     "tlp" "Install/Enable TLP for better power management " \
     "keyid" "Add udev rules for Key-ID FIDO U2F usb key" \
     "WI6320" "Fix Intel Wireless 6320 card config problem" \
@@ -474,6 +479,9 @@ function showHardwareMenu () {
         ;;
       "nvidia410")
         installAppsFromListMenu nvidia-driver-410
+        ;;
+      "nvidia415")
+        installAppsFromListMenu nvidia-driver-415
         ;;
       "tlp")
         installAppsFromListMenu tlp
