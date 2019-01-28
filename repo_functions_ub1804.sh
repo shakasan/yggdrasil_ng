@@ -128,7 +128,7 @@ deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
 iridium-browser;apt;internet;iridiumbrowser
-youtube-dl;apt;internet;youtube-dl
+youtube-dl;pip;internet;youtube-dl
 youtube-dlg;apt;internet;youtube-dlg
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
@@ -1148,6 +1148,11 @@ function dockerio_PostTrtFct () {
          "start docker service"
   runCmd "sudo systemctl enable docker" \
          "add docker service at boot"
+  rundCmd "sudo groupadd docker" \
+          "add docker group"
+  cUser=$(whoami)
+  rundCmd "sudo usermod -aG docker $cUser" \
+          "add current user to docker group"
 }
 
 #
