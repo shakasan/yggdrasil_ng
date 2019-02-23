@@ -108,6 +108,7 @@ kdenlive;apt;multimedia;kdenlive
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
+megasync;apt;internet;megasync
 discord;snap;internet;discord
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
@@ -556,7 +557,17 @@ iridiumbrowser;addRepo_Iridium
 picard;addRepo_Picard
 birdtray;addRepo_Linuxuprising
 pdfarranger;addRepo_Linuxuprising
-kdenlive;addRepo_KDEnlive"
+kdenlive;addRepo_KDEnlive
+megasync;addRepo_MEGA"
+
+#
+# MEGASync
+#
+function addRepo_MEGA () {
+  addKey "https://mega.nz/linux/MEGAsync/xUbuntu_18.04/Release.key"
+  addRepo megasync.list \
+          "deb https://mega.nz/linux/MEGAsync/xUbuntu_18.04/ ./"
+}
 
 #
 # KDEnlive
