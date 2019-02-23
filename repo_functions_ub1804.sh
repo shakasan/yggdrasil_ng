@@ -109,6 +109,7 @@ syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
 megasync;apt;internet;megasync
+megacmd;apt;internet;megasync
 discord;snap;internet;discord
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
@@ -1149,10 +1150,23 @@ plank;plank_PostTrtFct
 androidstudio;android_PostTrtFct
 nodejs8lts;nodejs8lts_PostTrtFct
 angularcli;angularcli_PostTrtFct
-dockerio;dockerio_PostTrtFct"
+dockerio;dockerio_PostTrtFct
+megasync;megasync_PostTrtFct"
 
 #
+# MEGASync
 #
+function megasync_PostTrtFct () {
+  if which thunar >/dev/null; then
+    installPackage apt thunar-megasync
+  fi
+  if which nautilus >/dev/null; then
+    installPackage apt nautilus-megasync
+  fi
+}
+
+#
+# Docker
 #
 function dockerio_PostTrtFct () {
   runCmd "sudo systemctl start docker" \
