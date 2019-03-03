@@ -132,6 +132,7 @@ transmission-gtk;apt;internet;transmission-gtk
 iridium-browser;apt;internet;iridiumbrowser
 youtube-dl;pip;internet;youtube-dl
 youtube-dlg;apt;internet;youtube-dlg
+gnome-twitch;snap;internet;gnome-twitch
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
