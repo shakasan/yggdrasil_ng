@@ -181,7 +181,6 @@ mate-sensors-applet-nvidia;apt;utilities;mate-sensors-applets-nvidia
 woeusb;apt;utilities;woeusb
 screenkey;apt;utilities;screenkey
 tmsu;apt;utilities;tmsu
-etcher-electron;apt;utilities;etcher-electron
 pdfgrep;apt;utilities;pdfgrep
 coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
@@ -465,7 +464,6 @@ code;addRepo_VSCode
 androidstudio;addRepo_AndroidStudio
 docker-ce;addRepo_DockerCE
 ansible;addRepo_Ansible
-etcher-electron;addRepo_Etcher
 sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
 virtualbox-5.2;addRepo_VirtualBox
@@ -1108,16 +1106,6 @@ function addRepo_SublimeText () {
   addKey "https://download.sublimetext.com/sublimehq-pub.gpg"
   addRepo sublime-text.list \
           "deb https://download.sublimetext.com/ apt/dev/"
-}
-
-#
-# Etcher
-#
-function addRepo_Etcher () {
-  addKey "hkp://pgp.mit.edu:80" \
-         "379CE192D401AB61"
-  addRepo "etcher.list" \
-          "deb https://dl.bintray.com/resin-io/debian stable etcher"
 }
 
 #
