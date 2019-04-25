@@ -218,6 +218,7 @@ virtualenv;pip;python;virtualenv
 pipenv;pip;python;pipenv
 jstest-gtk;apt;games;jstest-gtk
 dosbox;apt;games;dosbox
+lutris;apt;games;lutris
 steam;apt;steam;steam
 brasero;apt;burningtools;brasero
 k3b;apt;burningtools;k3b
@@ -562,7 +563,15 @@ picard;addRepo_Picard
 birdtray;addRepo_Linuxuprising
 pdfarranger;addRepo_Linuxuprising
 kdenlive;addRepo_KDEnlive
-megasync;addRepo_MEGA"
+megasync;addRepo_MEGA
+lutris;addRepo_Lutris"
+
+#
+# Lutris
+#
+function addRepo_Lutris () {
+  addPPA ppa:lutris-team/lutris
+}
 
 #
 # MEGASync
