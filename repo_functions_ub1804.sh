@@ -562,7 +562,8 @@ birdtray;addRepo_Linuxuprising
 pdfarranger;addRepo_Linuxuprising
 kdenlive;addRepo_KDEnlive
 megasync;addRepo_MEGA
-lutris;addRepo_Lutris"
+lutris;addRepo_Lutris
+guake;addRepo_LinuxUprising_Guake"
 
 #
 # Lutris
@@ -644,7 +645,15 @@ function addRepo_SyncthingGtk () {
 }
 
 #
-# Audacious, Guake
+# Linux Uprising (Guake)
+#
+
+function addRepo_LinuxUprising_Guake () {
+  addPPA ppa:linuxuprising/guake
+}
+
+#
+# Webupd8 (Audacious, ...)
 #
 function addRepo_Webupd8 () {
   addPPA ppa:nilarimogard/webupd8
