@@ -200,7 +200,7 @@ function showDevInstallMenu () {
     "devbase" "dev apps and tools" \
     "java10" "Java 10 dev env" \
     "javascript" "JavaScript dev env" \
-    "mongodb3ce" "MongoDB 3 CE" \
+    "mongodbce" "MongoDB CE" \
     "php" "PHP dev env" \
     "lua" "Lua dev env" \
     "ruby" "Ruby dev env" \
@@ -234,7 +234,7 @@ function showDevInstallMenu () {
       "javascript")
         installAppsFromListMenu javascript
         ;;
-      "mongodb3ce")
+      "mongodbce")
         installAppsFromListMenu mongodb
         ;;
       "php")
