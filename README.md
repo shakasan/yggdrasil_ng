@@ -5,16 +5,16 @@ About
 
 __!! Warnings : this is a early beta version !!__
 
-The purpose of this script is to provide a tool to install, customize and tweak a fresh installation of Linux Mint 18.x/19.x, Ubuntu 16.04/18.04 and derivatives
+The purpose of this script is to provide a tool to install, customize and tweak a fresh installation of Linux Mint 19.x, Ubuntu 18.04
 
-The Linux Mint 18 branch is now freezed and only bugs will be fixed.
-
-New features are only added to Linux Mint 19 branch from now.
+The Linux Mint 18 / Ubuntu 16.04 branch is now removed since the 0.5.1 version of Yggdrasil.
+No bugs fixed, features or any changes will be made on this branch anymore.
+If you still need it, please use an older version from the repository at your own risk ;)
 
 Installation
 ------------
 
-Linux Mint 18
+Linux Mint 18 / Ubuntu 16.04 (Yggdrasil < 0.5.1)
 
 ```shell
 curl -L https://packagecloud.io/makoto/stable/gpgkey | sudo apt-key add -
@@ -23,7 +23,7 @@ sudo apt-get update
 sudo apt-get install yggdrasil
 ```
 
-Linux Mint 19
+Linux Mint 19 / Ubuntu 18.04 (Yggdrasil >= 0.5.1)
 
 ```shell
 curl -L https://packagecloud.io/makoto/stable/gpgkey | sudo apt-key add -
