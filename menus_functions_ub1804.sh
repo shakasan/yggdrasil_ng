@@ -198,7 +198,7 @@ function showDevInstallMenu () {
     --menu "Install Dev apps from different submenus" \
     25 80 16 \
     "devbase" "dev apps and tools" \
-    "java10" "Java 10 dev env" \
+    "java11" "OpenJDK Java 11 dev env" \
     "javascript" "JavaScript dev env" \
     "mongodbce" "MongoDB CE" \
     "php" "PHP dev env" \
@@ -228,8 +228,8 @@ function showDevInstallMenu () {
       "devbase")
         installAppsFromListMenu dev
         ;;
-      "java10")
-        installAppsFromListMenu java10
+      "java11")
+        installAppsFromListMenu java11
         ;;
       "javascript")
         installAppsFromListMenu javascript

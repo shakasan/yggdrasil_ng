@@ -342,8 +342,7 @@ ionic;npm;javascript;ionic
 cordova;npm;javascript;cordova
 eslint;npm;javascript;eslint
 web-ext;npm;javascript;web-ext
-oracle-java10-installer;apt;java10;oracle-java10-installer
-oracle-java10-set-default;apt;java10;oracle-java10-set-default
+openjdk-11-jdk;apt;java11;openjdk-11-jdk
 php7.2-cli;apt;php;php7.2-cli
 php-pear;apt;php;php-pear
 composer;apt;php;composer
@@ -1046,17 +1045,8 @@ function addRepo_AndroidStudio () {
 #
 AppsPreTrtFct="opera-stable;opera_PreTrtFct
 steam;steam_PreTrtFct
-wireshark;wireshark_PreTrtFct
-oracle-java10-installer;java10_PreTrtFct
-oracle-java10-set-default;java10_PreTrtFct"
+wireshark;wireshark_PreTrtFct"
 
-#
-# JAVA 10
-#
-function java10_PreTrtFct () {
-  runCmd "echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" \
-         "accepting Oracle Java SE 10 licence agreement"
-}
 #
 # Opera
 #
