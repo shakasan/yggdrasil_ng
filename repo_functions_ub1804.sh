@@ -50,8 +50,6 @@ dia;apt;multimedia;dia
 mpv;apt;multimedia;mpv
 picard;apt;multimedia;picard
 inkscape;apt;multimedia;inkscape
-mypaint;apt;multimedia;mypaint
-mypaint-data-extras;apt;multimedia;mypaint-data-extras
 audacity;apt;multimedia;audacity
 blender;apt;multimedia;blender
 kodi;apt;multimedia;kodi
@@ -504,6 +502,7 @@ qt5ct;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
 woeusb;addRepo_Webupd8
+youtube-dlg;addRepo_Webupd8
 cpu-g;addRepo_Atareao
 iridiumbrowser;addRepo_Iridium
 picard;addRepo_Picard
@@ -1124,10 +1123,10 @@ function dockerio_PostTrtFct () {
          "start docker service"
   runCmd "sudo systemctl enable docker" \
          "add docker service at boot"
-  rundCmd "sudo groupadd docker" \
+  runCmd "sudo groupadd docker" \
           "add docker group"
   cUser=$(whoami)
-  rundCmd "sudo usermod -aG docker $cUser" \
+  runCmd "sudo usermod -aG docker $cUser" \
           "add current user to docker group"
 }
 
