@@ -167,7 +167,6 @@ byobu;apt;utilities;byobu
 mupdf;apt;utilities;mupdf
 mupdf-tools;apt;utilities;mupdf-tools
 pdfarranger;apt;utilities;pdfarranger
-ukuu;apt;utilities;ukuu
 fcrackzip;apt;utilities;fcrackzip
 rarcrack;apt;utilities;rarcrack
 pdfcrack;apt;utilities;pdfcrack
@@ -175,7 +174,6 @@ figlet;apt;utilities;figlet
 alltray;apt;utilities;alltray
 kdocker;apt;utilities;kdocker
 cheat;pip;utilities;cheat
-mate-sensors-applet-nvidia;apt;utilities;mate-sensors-applets-nvidia
 woeusb;apt;utilities;woeusb
 screenkey;apt;utilities;screenkey
 pdfgrep;apt;utilities;pdfgrep
@@ -312,31 +310,6 @@ pcscd;apt;cardreader;pcscd
 pcsc-tools;apt;cardreader;pcsc-tools
 guvcview;apt;webcam;guvcview
 cheese;apt;webcam;cheese
-nvidia-384;apt;nvidia-384;nvidia-384
-nvidia-settings;apt;nvidia-384;nvidia-settings
-nvidia-opencl-icd-384;apt;nvidia-384;nvidia-opencl-icd-384
-libcuda1-384;apt;nvidia-384;libcuda1-384
-nvidia-387;apt;nvidia-387;nvidia-387
-nvidia-settings;apt;nvidia-387;nvidia-settings
-nvidia-opencl-icd-387;apt;nvidia-387;nvidia-opencl-icd-387
-libcuda1-387;apt;nvidia-387;libcuda1-387
-nvidia-390;apt;nvidia-390;nvidia-390
-nvidia-settings;apt;nvidia-390;nvidia-settings
-nvidia-opencl-icd-390;apt;nvidia-390;nvidia-opencl-icd-390
-nvidia-utils-390;apt;nvidia-390;nvidia-utils-390
-libcuda1-390;apt;nvidia-390;libcuda1-390
-nvidia-driver-396;apt;nvidia-driver-396;nvidia-driver-396
-nvidia-settings;apt;nvidia-driver-396;nvidia-settings
-nvidia-utils-396;apt;nvidia-driver-396;nvidia-utils-396
-libnvidia-gl-396:i386;apt;nvidia-driver-396;libnvidia-gl-396:i386
-nvidia-driver-410;apt;nvidia-driver-410;nvidia-driver-410
-nvidia-settings;apt;nvidia-driver-410;nvidia-settings
-nvidia-utils-410;apt;nvidia-driver-410;nvidia-utils-410
-libnvidia-gl-410:i386;apt;nvidia-driver-410;libnvidia-gl-410:i386
-nvidia-driver-415;apt;nvidia-driver-415;nvidia-driver-415
-nvidia-settings;apt;nvidia-driver-415;nvidia-settings
-nvidia-utils-415;apt;nvidia-driver-415;nvidia-utils-415
-libnvidia-gl-415:i386;apt;nvidia-driver-415;libnvidia-gl-415:i386
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
@@ -434,7 +407,7 @@ gitkraken;snap;gitkraken;gitkraken"
 AppsRepo="kodi-beta;addRepo_KodiBeta
 kodi-nightly;addRepo_KodiNightly
 libreoffice6;addRepo_Libreoffice6
-mongodb;addRepo_MongoDB3CE
+mongodb;addRepo_MongoDB_CE
 gyazo;addRepo_Gyazo
 code;addRepo_VSCode
 androidstudio;addRepo_AndroidStudio
@@ -460,7 +433,6 @@ skypeforlinux;addRepo_SkypeForLinux
 shotwell;addRepo_Shotwell
 peek;addRepo_Peek
 sqlitebrowser;addRepo_SQLiteBrowser
-ukuu;addRepo_Teejee2008
 aptik;addRepo_Teejee2008
 avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6
@@ -523,29 +495,6 @@ rhythmbox-plugin-spectrum;addRepo_Rhythmbox
 rhythmbox-plugin-suspend;addRepo_Rhythmbox
 rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
 rhythmbox-plugins;addRepo_Rhythmbox
-nvidia-settings;addRepo_NvidiaDrivers
-nvidia-370;addRepo_NvidiaDrivers
-nvidia-opencl-icd-370;addRepo_NvidiaDrivers
-nvidia-375;addRepo_NvidiaDrivers
-nvidia-opencl-icd-375;addRepo_NvidiaDrivers
-nvidia-378;addRepo_NvidiaDrivers
-nvidia-opencl-icd-378;addRepo_NvidiaDrivers
-libcuda1-378;addRepo_NvidiaDrivers
-nvidia-381;addRepo_NvidiaDrivers
-nvidia-opencl-icd-381;addRepo_NvidiaDrivers
-libcuda1-381;addRepo_NvidiaDrivers
-nvidia-384;addRepo_NvidiaDrivers
-nvidia-opencl-icd-384;addRepo_NvidiaDrivers
-libcuda1-384;addRepo_NvidiaDrivers
-nvidia-387;addRepo_NvidiaDrivers
-nvidia-opencl-icd-387;addRepo_NvidiaDrivers
-libcuda1-387;addRepo_NvidiaDrivers
-nvidia-390;addRepo_NvidiaDrivers
-nvidia-opencl-icd-390;addRepo_NvidiaDrivers
-libcuda1-390;addRepo_NvidiaDrivers
-nvidia-396;addRepo_NvidiaDrivers
-nvidia-opencl-icd-396;addRepo_NvidiaDrivers
-libcuda1-396;addRepo_NvidiaDrivers
 rawtherapee;addRepo_DhorMyWay
 entangle;addRepo_DhorMyWay
 mkvtoolnix-gui;addRepo_MKVToolnix
@@ -683,13 +632,6 @@ function addRepo_MKVToolnix () {
 #
 function addRepo_DhorMyWay () {
   addPPA ppa:dhor/myway
-}
-
-#
-# Nvidia drivers
-#
-function addRepo_NvidiaDrivers () {
-  addPPA ppa:graphics-drivers/ppa
 }
 
 #
@@ -862,7 +804,7 @@ function addRepo_Avidemux2.6 () {
 }
 
 #
-# aptik, conky-manager, selene, timeshift, ukuu
+# aptik, conky-manager, selene, timeshift
 #
 function addRepo_Teejee2008 () {
   addPPA ppa:teejee2008/ppa
@@ -1052,7 +994,7 @@ function addRepo_Gyazo () {
 #
 # MongoDB 4 CE
 #
-function addRepo_MongoDB3CE () {
+function addRepo_MongoDB_CE () {
   addKey "https://www.mongodb.org/static/pgp/server-4.0.asc"
   addRepo "mongodb-org-4.0.list" \
           "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse"
@@ -1303,7 +1245,7 @@ function qt_PostTrtFct () {
 }
 
 #
-# MongoDB 3 CE
+# MongoDB CE
 #
 function mongodb_PostTrtFct () {
   runCmd "sudo systemctl enable mongod.service" \

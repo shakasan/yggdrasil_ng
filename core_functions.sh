@@ -228,15 +228,6 @@ function yggInit () {
 }
 
 #
-# update kernel to the latest version
-#
-function kernelUpdate () {
-  checkAndInstallDep apt ukuu ukuu \
-  && runCmd "sudo ukuu --install-latest --yes" \
-            "installing latest kernel"
-}
-
-#
 # system update
 #TODO: add pip, npm (yarn?), gem
 #
@@ -618,7 +609,7 @@ function dispLogo () {
   printf "  ╚██╔╝  ██║   ██║██║   ██║██║  ██║██╔══██╗██╔══██║╚════██║██║██║     \n"
   printf "   ██║   ╚██████╔╝╚██████╔╝██████╔╝██║  ██║██║  ██║███████║██║███████╗\n"
   printf "   ╚═╝    ╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝\n"
-  printf "$BOLDROUGE                 Customize Linux Mint & Ubuntu derivatives made easier\n"
+  printf "$BOLDROUGE                             Customize Linux Mint & Ubuntu made easier\n"
   printf "$BOLDBLANC         ver "$version" - GPLv3 - Francois B. (Makotosan) - makotonoblog.be\n"
   printf $NORMAL
 	printf "\n"
@@ -640,8 +631,6 @@ function usage () {
   printf " "$BOLDVERT"-q"$NORMAL" : install cardreader apps\n"
   printf " "$BOLDVERT"-s"$NORMAL" : install Solaar for Logitech Unifying devices\n"
   printf " "$BOLDVERT"-t"$NORMAL" : install TLP for Laptops and low energy usage\n"
-  printf " "$BOLDVERT"-n"$NORMAL" : install lastest Nvidia graphic drivers\n"
-  printf " "$BOLDVERT"-k"$NORMAL" : update system to the latest kernel\n"
   printf " "$BOLDVERT"-u"$NORMAL" : update system (apt,snap,...)\n"
   printf " "$BOLDVERT"-p"$NORMAL" : clean useless packages\n"
 	printf " "$BOLDVERT"-v"$NORMAL" : show verison number\n"

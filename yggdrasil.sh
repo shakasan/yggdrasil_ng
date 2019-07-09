@@ -18,9 +18,11 @@ source /opt/yggdrasil/tools_functions.sh || exit 1
 OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
 case $OS in
   *"Ubuntu 16.04"* | *"Linux Mint 18"*)
-    source /opt/yggdrasil/repo_functions_ub1604.sh || exit 1
-    source /opt/yggdrasil/install_functions_ub1604.sh || exit 1
-    source /opt/yggdrasil/menus_functions_ub1604.sh || exit 1
+    printf "\n"
+    printf $BOLDROUGE"Yggdrasil for Ubuntu 16.04 / Linux Mint 18 is no longer available.\n"$NORMAL
+    printf "If you still need it, use an older version of Yggdrasil previous to 0.5.1.\n"
+    printf "Thanks for using Yggdrasil"
+    printf "\n"
     ;;
   *"Ubuntu 18.04"* | *"Linux Mint 19"*)
     source /opt/yggdrasil/repo_functions_ub1804.sh || exit 1
@@ -60,7 +62,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
+while getopts ":h,v,f,c,u,a,d,q,s,t,w,p" option; do
   case "$option" in
     a) # install all apps
       if [ $ygginitCount = false ]; then
@@ -219,27 +221,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,n,w,p,k" option; do
       fi
       msg "Installing TLP"
       installAppsFromList tlp
-      ;;
-    n) # latest nvidia driver (see menus if need older version)
-      if [ $ygginitCount = false ]; then
-        msg "Initializing"
-        yggInit
-        msg "Updating the system"
-        updateSystem
-        ygginitCount=true
-      fi
-      installAppsFromList nvidia-driver-415
-      ;;
-    k)
-      if [ $ygginitCount = false ]; then
-        msg "Initializing"
-        yggInit
-        msg "Updating the system"
-        updateSystem
-        ygginitCount=true
-      fi
-      msg "Updating Kernel"
-      kernelUpdate
       ;;
     u)
       msg "Initializing"

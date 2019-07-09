@@ -441,12 +441,6 @@ function showHardwareMenu () {
     "solaar" "Solaar for Logitech Unifying devices" \
     "webcam" "Install webcam neede apps" \
     "microcode" "Update Intel/AMD CPU microcode" \
-    "nvidia384" "Install Nvidia 384 graphic drivers" \
-    "nvidia387" "Install Nvidia 387 graphic drivers" \
-    "nvidia390" "Install Nvidia 390 graphic drivers" \
-    "nvidia396" "Install Nvidia 396 graphic drivers" \
-    "nvidia410" "Install Nvidia 410 graphic drivers" \
-    "nvidia415" "Install Nvidia 415 graphic drivers" \
     "tlp" "Install/Enable TLP for better power management " \
     "keyid" "Add udev rules for Key-ID FIDO U2F usb key" \
     "WI6320" "Fix Intel Wireless 6320 card config problem" \
@@ -464,24 +458,6 @@ function showHardwareMenu () {
         ;;
       "microcode")
         updateMicrocode
-        ;;
-      "nvidia384")
-        installAppsFromListMenu nvidia-384
-        ;;
-      "nvidia387")
-        installAppsFromListMenu nvidia-387
-        ;;
-      "nvidia390")
-        installAppsFromListMenu nvidia-390
-        ;;
-      "nvidia396")
-        installAppsFromListMenu nvidia-driver-396
-        ;;
-      "nvidia410")
-        installAppsFromListMenu nvidia-driver-410
-        ;;
-      "nvidia415")
-        installAppsFromListMenu nvidia-driver-415
         ;;
       "tlp")
         installAppsFromListMenu tlp
