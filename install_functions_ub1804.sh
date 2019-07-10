@@ -38,7 +38,7 @@ function installViberMenu () {
 # Franz (headless)
 #
 function installFranz () {
-  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb \
+  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.1.0/franz_5.1.0_amd64.deb \
                      franz.deb \
                      no
 }
@@ -47,7 +47,7 @@ function installFranz () {
 # Franz (Menu)
 #
 function installFranzMenu () {
-  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb \
+  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.1.0/franz_5.1.0_amd64.deb \
                      franz.deb \
                      yes
 }
@@ -56,7 +56,7 @@ function installFranzMenu () {
 # Slack (headless)
 #
 function installSlack () {
-  installPackageDpkg https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb \
+  installPackageDpkg https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb \
                      slack.deb \
                      no
 }
@@ -65,7 +65,7 @@ function installSlack () {
 # Slack (Menu)
 #
 function installSlackMenu () {
-  installPackageDpkg https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb \
+  installPackageDpkg https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb \
                      slack.deb \
                      yes
 }
@@ -167,7 +167,7 @@ function installTeamViewer13Menu () {
 # install Compass (headless)
 #
 function installCompass () {
-  installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb \
+  installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.18.0_amd64.deb \
                      compass.deb \
                      no
 }
@@ -176,7 +176,7 @@ function installCompass () {
 # install Compass (Menu)
 #
 function installCompassMenu () {
-  installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb \
+  installPackageDpkg https://downloads.mongodb.com/compass/mongodb-compass_1.18.0_amd64.deb \
                      compass.deb \
                      yes
 }
@@ -185,7 +185,7 @@ function installCompassMenu () {
 # Boostnotes (headless)
 #
 function installBoostnotes () {
-  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
+  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.17/boostnote_0.11.17_amd64.deb \
                      boostnotes.deb \
                      no
 }
@@ -194,7 +194,7 @@ function installBoostnotes () {
 # Boostnotes (Menu)
 #
 function installBoostnotesMenu () {
-  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.4/boostnote_0.11.4_amd64.deb \
+  installPackageDpkg https://github.com/BoostIO/boost-releases/releases/download/v0.11.17/boostnote_0.11.17_amd64.deb \
                      boostnotes.deb \
                      yes
 }
