@@ -213,7 +213,8 @@ function showDevInstallMenu () {
     "geany" "Geany" \
     "idea" "Idea" \
     "eclipse" "Eclipse" \
-    "pycharm" "PyCharm" \
+    "pycharmprofessional" "PyCharm Professional edition" \
+    "pycharmcommunity" "PyCharm Community edition" \
     "vsc" "Visual Studio Code" \
     "androidstudio" "Android Studio" \
     "sublimetext" "Sublime Text" \
@@ -273,8 +274,11 @@ function showDevInstallMenu () {
       "eclipse")
         installAppsFromListMenu eclipse
         ;;
-      "pycharm")
-        installAppsFromListMenu pycharm
+      "pycharmprofessional")
+        installAppsFromListMenu pycharm-professional
+        ;;
+      "pycharmcommunity")
+        installAppsFromListMenu pycharm-community
         ;;
       "vsc")
         installAppsFromListMenu code
