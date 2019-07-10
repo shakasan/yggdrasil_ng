@@ -395,8 +395,7 @@ eclipse;snap;eclipse;eclipse
 gitkraken;snap;gitkraken;gitkraken
 xserver-xorg-hwe-18.04;apt;hwe;xserver-xorg-hwe-18.04
 xserver-xorg-video-all-hwe-18.04;apt;hwe;xserver-xorg-video-all-hwe-18.04
-linux-generic-hwe-18.04;apt;hwe;linux-generic-hwe-18.04
-linux-hwe-tools;apt;hwe;linux-hwe-tools"
+linux-generic-hwe-18.04;apt;hwe;linux-generic-hwe-18.04"
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #
