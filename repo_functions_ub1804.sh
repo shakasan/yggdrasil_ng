@@ -376,7 +376,7 @@ nitrogen;apt;nitrogen;nitrogen
 firefox-trunk;apt;nightly;firefox-trunk
 firefox-trunk-locale-fr;apt;nightly;firefox-trunk-locale-fr
 libreoffice;apt;office;libreoffice6
-wine-development;apt;wine;wine-development
+winehq-stable;apt;wine;winehq-stable
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
 mongodb-org;apt;mongodb;mongodb
@@ -511,7 +511,17 @@ pdfarranger;addRepo_Linuxuprising
 kdenlive;addRepo_KDEnlive
 megasync;addRepo_MEGA
 lutris;addRepo_Lutris
-guake;addRepo_LinuxUprising_Guake"
+guake;addRepo_LinuxUprising_Guake
+winehq-stable;addRepo_WineHQ"
+
+#
+# Wine HQ
+#
+function addRepo_WineHQ () {
+  addKey "https://dl.winehq.org/wine-builds/winehq.key"
+  addRepo winehq.list \
+          "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
+}
 
 #
 # Lutris
