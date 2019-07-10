@@ -631,6 +631,7 @@ function usage () {
   printf " "$BOLDVERT"-q"$NORMAL" : install cardreader apps\n"
   printf " "$BOLDVERT"-s"$NORMAL" : install Solaar for Logitech Unifying devices\n"
   printf " "$BOLDVERT"-t"$NORMAL" : install TLP for Laptops and low energy usage\n"
+  printf " "$BOLDVERT"-k"$NORMAL" : install HWE (Ubuntu's Hardware Enablement Stack)(newer kernel+xorg)\n"
   printf " "$BOLDVERT"-u"$NORMAL" : update system (apt,snap,...)\n"
   printf " "$BOLDVERT"-p"$NORMAL" : clean useless packages\n"
 	printf " "$BOLDVERT"-v"$NORMAL" : show verison number\n"

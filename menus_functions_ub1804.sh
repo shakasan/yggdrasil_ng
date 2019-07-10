@@ -441,6 +441,7 @@ function showHardwareMenu () {
     --title "Yggdrasil $version - System Tools" \
     --menu "System tools to diagnose and optimize" \
     25 80 16 \
+    "HWE" "Ubuntu Hardware Enablement Stack (newer kernel+xorg)" \
     "cardreader" "Apps/tools needed for cardreaders" \
     "solaar" "Solaar for Logitech Unifying devices" \
     "webcam" "Install webcam neede apps" \
@@ -451,6 +452,9 @@ function showHardwareMenu () {
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $hardwareMenuOptions in
+      "HWE")
+        installAppsFromListMenu hwe
+        ;;
       "cardreader")
         installAppsFromListMenu cardreader
         ;;

@@ -62,7 +62,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,q,s,t,w,p" option; do
+while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
   case "$option" in
     a) # install all apps
       if [ $ygginitCount = false ]; then
@@ -221,6 +221,17 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,p" option; do
       fi
       msg "Installing TLP"
       installAppsFromList tlp
+      ;;
+    k) # Ubuntu Hardware Enablement Stack
+      if [ $ygginitCount = false ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=true
+      fi
+      msg "Installing HWE (newer kernel+xorg)"
+      installAppsFromList hwe
       ;;
     u)
       msg "Initializing"
