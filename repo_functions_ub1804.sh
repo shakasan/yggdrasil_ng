@@ -332,7 +332,7 @@ sqlitebrowser;apt;dev;sqlitebrowser
 mysql-workbench;apt;dev;mysql-workbench
 jq;apt;dev;jq
 tig;apt;dev;tig
-nodejs;apt;javascript;nodejs8lts
+nodejs;apt;javascript;nodejslts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 emma-cli;npm;javascript;emma-cli
@@ -429,7 +429,7 @@ wireshark;addRepo_WireShark
 darktable;addRepo_DarkTable
 brackets;addRepo_Brackets
 kicad;addRepo_Kicad
-nodejs8lts;addRepo_NodeLts8
+nodejslts;addRepo_NodeLts
 telegram;addRepo_Telegram
 skypeforlinux;addRepo_SkypeForLinux
 shotwell;addRepo_Shotwell
@@ -861,13 +861,13 @@ function addRepo_SkypeForLinux () {
 }
 
 #
-# Node 8 LTS
+# NodeJS LTS
 #
-function addRepo_NodeLts8 () {
+function addRepo_NodeLts () {
   addKey "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
   addRepo "nodesource.list" \
-          "deb https://deb.nodesource.com/node_8.x bionic main" \
-          "deb-src https://deb.nodesource.com/node_8.x bionic main"
+          "deb https://deb.nodesource.com/node_10.x bionic main" \
+          "deb-src https://deb.nodesource.com/node_10.x bionic main"
 }
 
 #
