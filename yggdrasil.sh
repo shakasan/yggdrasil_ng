@@ -1,7 +1,7 @@
 #!/bin/bash
 #------------------------------------------------------------------------------#
 # Yggdrasil NG                                                                 #
-#    compatibility :  Mint 18, Ubuntu 16.04, Elementary and other derivatives  #
+#    compatibility :  Mint 19, Ubuntu 18.04                                    #
 #    author : Francois B. (Makotosan/Shakasan)                                 #
 #    licence : GPLv3                                                           #
 #    website : https://makotonoblog.be/                                        #

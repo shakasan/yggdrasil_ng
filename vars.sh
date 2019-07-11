@@ -1,6 +1,6 @@
 #------------------------------------------------------------------------------#
 # Yggdrasil NG                                                                 #
-#    compatibility :  Mint 18, Ubuntu 16.04, Elementary and other derivatives  #
+#    compatibility : see documentation or man pages                            #
 #    author : Francois B. (Makotosan/Shakasan)                                 #
 #    licence : GPLv3                                                           #
 #    website : https://makotonoblog.be/                                        #
@@ -13,7 +13,7 @@
 #
 # app version number
 #
-version="0.5.1-b8"
+version="0.5.1-b9"
 
 #
 # myHomedir is used in full paths to the homedir
