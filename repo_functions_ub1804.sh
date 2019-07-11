@@ -331,6 +331,7 @@ mycli;pip;dev;mycli
 sqlitebrowser;apt;dev;sqlitebrowser
 mysql-workbench;apt;dev;mysql-workbench
 jq;apt;dev;jq
+tig;apt;dev;tig
 nodejs;apt;javascript;nodejs8lts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
