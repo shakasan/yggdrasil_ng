@@ -80,7 +80,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       installAppsFromList games
       installAppsFromList steam
       installAppsFromList internet
-      installAppsFromList java10
+      installAppsFromList java11
       installAppsFromList utilities
       installAppsFromList multimedia
       installAppsFromList nettools
@@ -123,7 +123,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       installAppsFromList games
       installAppsFromList steam
       installAppsFromList internet
-      installAppsFromList java10
+      installAppsFromList java11
       installAppsFromList utilities
       installAppsFromList multimedia
       installAppsFromList nettools

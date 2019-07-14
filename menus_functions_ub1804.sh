@@ -380,7 +380,7 @@ function showAppInstallMenu () {
         installAppsFromListMenu cajaplugins
         ;;
       "nautilus")
-        installNautilusAndPluginsMenu
+        installAppsFromList nautilus
         ;;
       "thunar")
         installAppsFromListMenu thunar
