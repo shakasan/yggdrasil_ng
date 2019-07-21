@@ -333,6 +333,7 @@ sqlitebrowser;apt;dev;sqlitebrowser
 mysql-workbench;apt;dev;mysql-workbench
 jq;apt;dev;jq
 tig;apt;dev;tig
+vagrant;apt;dev;vagrant
 nodejs;apt;javascript;nodejslts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
