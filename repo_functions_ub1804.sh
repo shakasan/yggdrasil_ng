@@ -181,6 +181,7 @@ tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
 p7zip-desktop;snap;utilities;p7zip-desktop
+balena-etcher-electron;apt;utilities;balena-etcher-electron
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
@@ -517,7 +518,19 @@ kdenlive;addRepo_KDEnlive
 megasync;addRepo_MEGA
 lutris;addRepo_Lutris
 guake;addRepo_LinuxUprising_Guake
-winehq-stable;addRepo_WineHQ"
+winehq-stable;addRepo_WineHQ
+balena-etcher-electron;addRepo_Belena"
+
+#
+# Belena Etcher
+#
+function addRepo_Belena () {
+  addKey  "keyserver.ubuntu.com" \
+          "379CE192D401AB61"
+  addRepo balena-etcher.list \
+          "deb https://deb.etcher.io stable etcher"
+}
+
 
 #
 # Wine HQ
