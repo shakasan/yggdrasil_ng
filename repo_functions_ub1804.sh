@@ -108,7 +108,7 @@ syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
 megasync;apt;internet;megasync
-megacmd;apt;internet;megasync
+megacmd;apt;internet;megacmd
 discord;snap;internet;discord
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
@@ -334,6 +334,7 @@ sqlitebrowser;apt;dev;sqlitebrowser
 mysql-workbench;apt;dev;mysql-workbench
 jq;apt;dev;jq
 tig;apt;dev;tig
+postman;snap;dev;postman
 nodejs;apt;javascript;nodejslts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
