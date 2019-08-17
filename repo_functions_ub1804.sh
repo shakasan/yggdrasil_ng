@@ -40,6 +40,7 @@ idle3-tools;apt;base;idle3-tools
 snapd;apt;base;snapd
 sysstat;apt;base;sysstat
 dcfldd;apt;base;dcfldd
+mdadm;apt;base;mdadm
 spotify;snap;multimedia;spotify
 sayonara;apt;multimedia;sayonara
 qmmp;apt;multimedia;qmmp
