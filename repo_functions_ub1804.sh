@@ -181,7 +181,6 @@ coinmon;npm;utilities;coinmon
 tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
-p7zip-desktop;snap;utilities;p7zip-desktop
 balena-etcher-electron;apt;utilities;balena-etcher-electron
 python3-dev;apt;python;python3-dev
 python3-pip;apt;python;python3-pip
