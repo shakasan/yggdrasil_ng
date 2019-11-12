@@ -1,6 +1,0 @@
-- Convert YggInit as a category (pre/post fct + add repo)
-- fix npm
-    npm config set prefix ~/.local
-    add in .bashrc
-    PATH=~/.local/bin/:$PATH
-
