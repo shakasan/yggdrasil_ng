@@ -4,3 +4,4 @@ deb/*
 .remote-sync.json
 *.sync-conflict-*
 utils/*
+TODO.txt
