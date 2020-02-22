@@ -1,19 +1,19 @@
-#------------------------------------------------------------------------------#
-# Yggdrasil NG                                                                 #
-#    compatibility : see documentation or man pages                            #
-#    author : Francois B. (Makotosan/Shakasan)                                 #
-#    licence : GPLv3                                                           #
-#    website : https://makotonoblog.be/                                        #
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
+# Yggdrasil NG                                                                #
+#    compatibility : see documentation or man pages                           #
+#    author : Francois B. (Makotosan/Shakasan)                                #
+#    licence : GPLv3                                                          #
+#    website : https://makotonoblog.be/                                       #
+#-----------------------------------------------------------------------------#
 
-#------------------------------------------------------------------------------#
-# Script's cons. and vars.                                                     #
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
+# Script's cons. and vars.                                                    #
+#-----------------------------------------------------------------------------#
 
 #
 # app version number
 #
-version="0.5.1-b11"
+version="0.5.2-b2"
 
 #
 # myHomedir is used in full paths to the homedir

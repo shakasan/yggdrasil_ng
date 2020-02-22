@@ -128,103 +128,19 @@ function isCinnamon () {
 # check and install required dependencies for Yggdrasil
 #
 function yggInit () {
-  typeset ret_code
+  msg "Performing some Initializing steps"
 
-  printf "[INIT]"
   runCmd "echo sience-config science-config/group select '$myHomedir ($myHomedir)' | sudo debconf-set-selections" \
          "apply settings for science-config pkg"
 
   if ! dpkg --print-foreign-architectures | grep -qi i386; then
-    printf "[INIT]"
     runCmd "sudo dpkg --add-architecture i386" \
            "adding i386 architecture"
   else
-    printf "[INIT] i386 architecture already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
+    printf "i386 architecture already added [ "$BOLDVERT"OK"$NORMAL" ] \n"
   fi
 
-  printf "[INIT]"
-  addPPA ppa:ubuntu-desktop/ubuntu-make
-
-  printf "[INIT][APT] update "
-  printf "\n[INIT][APT] update\n" &>> $logFile
-  sudo apt-get update &>> $logFile
-  ret_code=$?
-  retCode $ret_code
-
-  printf "[INIT]"
-  installPackage apt "apt-transport-https"
-
-  # UMAKE
-  if ! which umake >/dev/null; then
-    printf "[INIT][UMAKE] not found, installing...\n"
-    printf "\n[INIT][UMAKE] not found, installing...\n" &>> $logFile
-    installPackage apt "ubuntu-make"
-  else
-    printf "[INIT][UMAKE] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-  fi
-
-  # GEM
-  if ! which gem >/dev/null; then
-    printf "[INIT][GEM] not found, installing...\n"
-    printf "\n[INIT][GEM] not found, installing...\n" &>> $logFile
-    installPackage apt "ruby-dev"
-  else
-    printf "[INIT][GEM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-    printf "[GEM] update --system "
-    printf "\n[GEM] update --system\n" &>> $logFile
-    sudo gem update --system &>> $logFile
-    ret_code=$?
-    retCode $ret_code
-  fi
-
-  # SNAP
-  if ! which snap >/dev/null; then
-    printf "[INIT][SNAP] not found, installing...\n"
-    printf "\n[INIT][SNAP] not found, installing...\n" &>> $logFile
-    installPackage apt "snapd"
-  else
-    printf "[INIT][SNAP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-  fi
-
-  # NPM
-  if ! which npm >/dev/null; then
-    printf "[INIT][NPM] not found, installing...\n"
-    printf "\n[INIT][NPM] not found, installing...\n" &>> $logFile
-    installPackage apt "nodejs"
-  else
-    printf "[INIT][NPM] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-    printf "[NPM] update npm "
-    printf "\n[NPM] update npm\n" &>> $logFile
-    sudo npm i -g npm &>> $logFile
-    ret_code=$?
-    retCode $ret_code
-  fi
-
-  # PIP3
-  if ! which pip3 >/dev/null; then
-    printf "[INIT][PIP] not found, installing...\n"
-    printf "\n[INIT][PIP] not found, installing...\n" &>> $logFile
-    printf "[INIT]"
-    installPackage apt "python3-pip"
-    if isMint19; then
-      printf "[INIT]"
-      installPackage apt "python3-distutils"
-    fi
-    printf "[INIT]"
-    installPackage pip "pip"
-    printf "[INIT]"
-    installPackage pip "setuptools"
-  else
-    printf "[INIT][PIP] found [ "$BOLDVERT"OK"$NORMAL" ] \n"
-    if isMint19; then
-      printf "[INIT]"
-      installPackage apt "python3-distutils"
-    fi
-    printf "[INIT]"
-    installPackage pip "pip"
-    printf "[INIT]"
-    installPackage pip "setuptools"
-  fi
+  installAppsFromList init
 }
 
 #
@@ -256,6 +172,14 @@ function updateSystem () {
     printf "[SNAP] refresh "
     printf "\n[SNAP] refresh\n" &>> $logFile
     sudo snap refresh &>> $logFile
+    ret_code=$?
+    retCode $ret_code
+  fi
+
+  if which flatpak >/dev/null; then
+    printf "[FLATPAK] update "
+    printf "\n[FLATPAK] update\n" &>> $logFile
+    sudo flatpak update -y &>> $logFile
     ret_code=$?
     retCode $ret_code
   fi
@@ -384,7 +308,7 @@ function installPackage () {
     if which npm >/dev/null; then
       printf "[NPM] Installing $pkg "
       printf "\n[NPM] installing $pkg\n" &>> $logFile
-      sudo npm install -g $pkg &>> $logFile
+      npm install -g $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
     fi
@@ -403,6 +327,15 @@ function installPackage () {
       printf "[SNAP] Installing $pkg "
       printf "\n[SNAP] installing $pkg\n" &>> $logFile
       sudo snap install $pkg --classic &>> $logFile
+      ret_code=$?
+      retCode $ret_code
+    fi
+    ;;
+  "flatpak")
+    if which flatpak >/dev/null; then
+      printf "[FLATPAK] Installing $pkg "
+      printf "\n[FLATPAK] installing $pkg\n" &>> $logFile
+      sudo flatpak install -y $pkg &>> $logFile
       ret_code=$?
       retCode $ret_code
     fi

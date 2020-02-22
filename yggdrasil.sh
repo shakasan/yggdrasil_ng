@@ -1,11 +1,11 @@
 #!/bin/bash
-#------------------------------------------------------------------------------#
-# Yggdrasil NG                                                                 #
-#    compatibility :  Mint 19, Ubuntu 18.04                                    #
-#    author : Francois B. (Makotosan/Shakasan)                                 #
-#    licence : GPLv3                                                           #
-#    website : https://makotonoblog.be/                                        #
-#------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------#
+# Yggdrasil NG                                                                #
+#    compatibility :  Mint 19, Ubuntu 18.04                                   #
+#    author : Francois B. (Makotosan/Shakasan)                                #
+#    licence : GPLv3                                                          #
+#    website : https://makotonoblog.be/                                       #
+#-----------------------------------------------------------------------------#
 
 #
 # include functions and vars from external files
@@ -106,6 +106,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       installBoostnotes
       installTeamViewer13
       installXnViewMP
+      installAppImageLauncher
       ;;
     f) # full install
       if [ $ygginitCount = false ]; then
@@ -154,6 +155,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       installBoostnotes
       installTeamViewer13
       installXnViewMP
+      installAppImageLauncher
       ;;
     c) # install themes and icons
       if [ $ygginitCount = false ]; then

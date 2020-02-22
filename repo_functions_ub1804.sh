@@ -20,7 +20,18 @@
 # List of packages available
 # fields : package name, package manager, category, unique ID for external functions
 #
-Apps="cifs-utils;apt;base;cifs-utils
+Apps="apt-transport-https;apt;init;apt-transport-https
+flatpak;apt;init;flatpak
+snapd;apt;init;snapd
+ubuntu-make;apt;init;ubuntu-make
+gcc-8 g++-8;apt;init;gcc8
+ruby-dev;apt;init;ruby-dev
+nodejs;apt;init;nodejslts
+python3-pip;apt;init;python3-pip
+python3-distutils;apt;init;python3-distutils
+pip;pip;init;setuptools
+setuptools;pip;init;setuptools
+cifs-utils;apt;base;cifs-utils
 xterm;apt;base;xterm
 curl;apt;base;curl
 mc;apt;base;mc
@@ -37,10 +48,10 @@ iptraf;apt;base;iptraf
 mpg123;apt;base;mpg123
 debconf-utils;apt;base;debconf-utils
 idle3-tools;apt;base;idle3-tools
-snapd;apt;base;snapd
 sysstat;apt;base;sysstat
 dcfldd;apt;base;dcfldd
 mdadm;apt;base;mdadm
+ncdu;apt;base;ncdu
 spotify;snap;multimedia;spotify
 sayonara;apt;multimedia;sayonara
 qmmp;apt;multimedia;qmmp
@@ -105,12 +116,14 @@ gmusicbrowser;apt;multimedia;gmusicbrowser
 peek;apt;multimedia;peek
 bino;apt;multimedia;bino
 kdenlive;apt;multimedia;kdenlive
+com.github.huluti.ImCompressor;flatpak;multimedia;ImCompressor
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
 megasync;apt;internet;megasync
 megacmd;apt;internet;megacmd
 discord;snap;internet;discord
+com.teamspeak.TeamSpeak;flatpak;internet;TeamSpeak
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
 google-chrome-stable;apt;internet;google-chrome-stable
@@ -119,9 +132,8 @@ chromium-browser-l10n;apt;internet;chromium-browser-l10n
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
-geary;apt;internet;geary
+org.gnome.Geary;flatpak;internet;geary
 birdtray;apt;internet;birdtray
-corebird;apt;internet;corebird
 telegram;apt;internet;telegram
 skypeforlinux;apt;internet;skypeforlinux
 nextcloud-client;apt;internet;nextcloud-client
@@ -132,9 +144,8 @@ transmission-gtk;apt;internet;transmission-gtk
 iridium-browser;apt;internet;iridiumbrowser
 youtube-dl;pip;internet;youtube-dl
 youtube-dlg;apt;internet;youtube-dlg
-gnome-twitch;snap;internet;gnome-twitch
-gnome-twitch-player-backend-mpv-opengl;apt;internet;gnome-twitch
 gallery-dl;pip;internet;gallery-dl
+cawbird;apt;internet;cawbird
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
@@ -182,12 +193,13 @@ tldr;pip;utilities;tldr
 gyazo;apt;utilities;gyazo
 fdupes;apt;utilities;fdupes
 balena-etcher-electron;apt;utilities;balena-etcher-electron
+org.gabmus.hydrapaper;flatpak;utilities;hydrapaper
+nvme-cli;apt;utilities;nvme-cli
+translatium;snap;utilities;translatium
+font-manager;apt;utilities;font-manager
 python3-dev;apt;python;python3-dev
-python3-pip;apt;python;python3-pip
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
-pip;pip;python;setuptools
-setuptools;pip;python;setuptools
 PyOpenGL;pip;python;PyOpenGL
 tweepy;pip;python;tweepy
 weppy;pip;python;weppy
@@ -313,9 +325,10 @@ cheese;apt;webcam;cheese
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
-virtualbox-6.0;apt;dev;virtualbox-6.0
+virtualbox-6.1;apt;dev;virtualbox-6.1
+virtualbox-dkms;apt;dev;virtualbox-6.1
+libelf-dev;apt;dev;virtualbox-6.1
 build-essential;apt;dev;build-essential
-ubuntu-make;apt;dev;ubuntu-make
 ghex;apt;dev;ghex
 glade;apt;dev;glade
 eric;apt;dev;eric
@@ -335,7 +348,6 @@ mysql-workbench;apt;dev;mysql-workbench
 jq;apt;dev;jq
 tig;apt;dev;tig
 postman;snap;dev;postman
-nodejs;apt;javascript;nodejslts
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 emma-cli;npm;javascript;emma-cli
@@ -450,7 +462,6 @@ flacon;addRepo_Flacon
 y-ppa-manager;addRepo_YPPAManager
 diodon;addRepo_Diodon
 sayonara;addRepo_Sayonara
-corebird;addRepo_Corebird
 deluge-torrent;addRepo_Deluge
 deluge-gtk;addRepo_Deluge
 kodi;addRepo_Kodi
@@ -458,7 +469,6 @@ indicator-sound-switcher;addRepo_IndicatorSoundSwitcher
 krita;addRepo_Krita
 gimp-gmic;addRepo_Gimp
 gimp;addRepo_Gimp
-geary;addRepo_Geary
 vidcutter;addRepo_Vidcutter
 oracle-java10-installer;addRepo_Java10
 oracle-java10-set-default;addRepo_Java10
@@ -520,7 +530,43 @@ megasync;addRepo_MEGA
 lutris;addRepo_Lutris
 guake;addRepo_LinuxUprising_Guake
 winehq-stable;addRepo_WineHQ
-balena-etcher-electron;addRepo_Belena"
+flatpak;addRepo_flatpak
+balena-etcher-electron;addRepo_Belena
+font-manager;addRepo_FontManager
+cawbird;addRepo_Cawbird
+ubuntu-make;addRepo_UbuntuMake"
+
+#
+# Ubuntu Make
+#
+function addRepo_UbuntuMake () {
+  addPPA ppa:ubuntu-desktop/ubuntu-make
+}
+
+#
+# Cawbird
+#
+function addRepo_Cawbird () {
+  addKey "https://download.opensuse.org/repositories/home:IBBoard:cawbird/xUbuntu_18.04/Release.key"
+  addRepo cawbird.list \
+          "deb http://download.opensuse.org/repositories/home:/IBBoard:/cawbird/xUbuntu_18.04/ /"
+}
+
+#
+# Font Manager
+#
+function addRepo_FontManager () {
+  addPPA ppa:font-manager/staging
+}
+
+
+#
+# Flatpak
+#
+function addRepo_flatpak () {
+  addPPA ppa:alexlarsson/flatpak
+}
+
 
 #
 # Belena Etcher
@@ -537,6 +583,7 @@ function addRepo_Belena () {
 # Wine HQ
 #
 function addRepo_WineHQ () {
+  addPPA ppa:cybermax-dexter/sdl2-backport
   addKey "https://dl.winehq.org/wine-builds/winehq.key"
   addRepo winehq.list \
           "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
@@ -718,14 +765,6 @@ function addRepo_Vidcutter () {
   addPPA ppa:ozmartian/apps
 }
 
-
-#
-# Geary
-#
-function addRepo_Geary () {
-  addPPA ppa:geary-team/releases
-}
-
 #
 # Gimp / Gmic
 #
@@ -759,13 +798,6 @@ function addRepo_Kodi () {
 #
 function addRepo_Deluge () {
   addPPA ppa:deluge-team/ppa
-}
-
-#
-# Corebird
-#
-function addRepo_Corebird () {
-  addPPA ppa:ubuntuhandbook1/corebird
 }
 
 #
@@ -942,9 +974,10 @@ function addRepo_ChromeStable () {
 # Insync
 #
 function addRepo_Insync () {
-  addKey "https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key"
+  addKey  "keyserver.ubuntu.com" \
+          "ACCAF35C"
   addRepo insync.list \
-          "deb http://apt.insynchq.com/ubuntu bionic non-free contrib"
+          "deb http://apt.insync.io/ubuntu bionic non-free contrib"
 }
 
 #
@@ -1066,7 +1099,7 @@ function addRepo_AndroidStudio () {
 }
 
 #-----------------------------------------------------------------------------#
-# Package pre install functions list                                         #
+# Package pre install functions list                                          #
 #-----------------------------------------------------------------------------#
 
 #
@@ -1118,10 +1151,76 @@ mongodb;mongodb_PostTrtFct
 qttools5-dev-tools;qt_PostTrtFct
 plank;plank_PostTrtFct
 androidstudio;android_PostTrtFct
-nodejs8lts;nodejs8lts_PostTrtFct
+nodejslts;nodejslts_PostTrtFct
 angularcli;angularcli_PostTrtFct
 dockerio;dockerio_PostTrtFct
-megasync;megasync_PostTrtFct"
+megasync;megasync_PostTrtFct
+flatpak;flatpak_PostTrtFct
+gcc8;gcc8_PostTrtFct
+ruby-dev;ruby-dev_PostTrtFct"
+
+#
+# NPM Update
+#
+function nodejslts_PostTrtFct () {
+  printf "[NPM] set prefix in ~/.local "
+  printf "\n[NPM] set prefix in ~/.local\n" &>> $logFile
+  npm config set prefix /home/$myHomedir/.local &>> $logFile
+  ret_code=$?
+  retCode $ret_code
+
+  if [ `grep 'PATH=~/.local/bin/:$PATH' ~/.bashrc | wc -l` -gt 0 ]; then
+    printf "[NPM] add ~/.local/bin to PATH ... already added  [ "$BOLDVERT"OK"$NORMAL" ] "
+  else
+    printf "[NPM] add ~/.local/bin to PATH "
+    printf "\n[NPM] add ~/.local/bin to PATH\n" &>> $logFile
+    echo 'PATH=~/.local/bin/:$PATH' | tee -a ~/.bashrc &>> $logFile
+    ret_code=$?
+    retCode $ret_code
+  fi
+
+  printf "[NPM] update npm "
+  printf "\n[NPM] update npm\n" &>> $logFile
+  npm i -g npm &>> $logFile
+  ret_code=$?
+  retCode $ret_code
+}
+
+
+#
+# GEM / Ruby Dev
+#
+function ruby-dev_PostTrtFct () {
+  printf "[GEM] update --system "
+  printf "\n[GEM] update --system\n" &>> $logFile
+  sudo gem update --system &>> $logFile
+  ret_code=$?
+  retCode $ret_code
+}
+
+#
+# GCC 8
+#
+function gcc8_PostTrtFct () {
+  runCmd "sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7" \
+         "adding GCC-7 as alternative"
+  runCmd "sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8" \
+         "adding GCC-8 as alternative by default"
+}
+
+#
+# Flatpak
+#
+function flatpak_PostTrtFct () {
+  if which flatpak >/dev/null; then
+      printf "[FLATPAK] Adding Flathub repository "
+      printf "\n[FLATPAK] Adding Flathub repository\n" &>> $logFile
+      sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &>> $logFile
+      ret_code=$?
+      retCode $ret_code
+  fi
+}
+
 
 #
 # MEGASync
@@ -1157,18 +1256,6 @@ function angularcli_PostTrtFct () {
   if which yarn >/dev/null; then
     runCmd "ng config -g cli.packageManager yarn" \
            "using yarn instead of nom for angular/cli"
-  fi
-}
-
-#
-# NodeJS 8 LTS
-#
-function nodejs8lts_PostTrtFct () {
-  if which /usr/local/bin/node >/dev/null; then
-    runCmd "sudo rm /usr/local/bin/node" \
-           "cleaning/removing legacy node files"
-  else
-    print "[INFO] nothing to clean, good :-)"
   fi
 }
 

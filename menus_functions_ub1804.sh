@@ -223,6 +223,7 @@ function showDevInstallMenu () {
     "boostnotes" "Boostnotes Markdown wiki app" \
     "compass" "MongoDB Compass GUI" \
     "gitkraken" "Gitkraken git gui" \
+    "Vagrant" "Vagrant" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
@@ -304,6 +305,9 @@ function showDevInstallMenu () {
       "gitkraken")
         installAppsFromListMenu gitkraken
         ;;
+      "vagrant")
+        installVagrantMenu
+        ;;
       "Back")
         break
         ;;
@@ -343,6 +347,7 @@ function showAppInstallMenu () {
     "viber" "Viber IM desktop app" \
     "franz" "Franz multi IM app" \
     "slack" "Slack App" \
+    "appimagelauncher" "AppImage Launcher" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $appsInstallMenuOptions in
@@ -408,6 +413,9 @@ function showAppInstallMenu () {
         ;;
       "slack")
         installSlackMenu
+        ;;
+      "appimagelauncher")
+        installAppImageLauncherMenu
         ;;
       "Back")
         break
