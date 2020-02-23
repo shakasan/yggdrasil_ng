@@ -29,6 +29,11 @@ case $OS in
     source /opt/yggdrasil/install_functions_ub1804.sh || exit 1
     source /opt/yggdrasil/menus_functions_ub1804.sh || exit 1
     ;;
+  *"Ubuntu 20.04"* | *"Linux Mint 20"*)
+    source /opt/yggdrasil/repo_functions_ub2004.sh || exit 1
+    source /opt/yggdrasil/install_functions_ub2004.sh || exit 1
+    source /opt/yggdrasil/menus_functions_ub2004.sh || exit 1
+    ;;
   *)
     printf "\n"
     printf $BOLDROUGE"Linux distro not supported"$NORMAL
