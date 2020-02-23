@@ -326,8 +326,6 @@ tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
 virtualbox-6.1;apt;dev;virtualbox-6.1
-virtualbox-dkms;apt;dev;virtualbox-6.1
-libelf-dev;apt;dev;virtualbox-6.1
 build-essential;apt;dev;build-essential
 ghex;apt;dev;ghex
 glade;apt;dev;glade
@@ -1157,7 +1155,17 @@ dockerio;dockerio_PostTrtFct
 megasync;megasync_PostTrtFct
 flatpak;flatpak_PostTrtFct
 gcc8;gcc8_PostTrtFct
-ruby-dev;ruby-dev_PostTrtFct"
+ruby-dev;ruby-dev_PostTrtFct
+virtualbox-6.1;virtualbox-6.1_PostTrtFct"
+
+#
+# virtualbox-6.1
+#
+function virtualbox-6.1_PostTrtFct () {
+  cUser=$(whoami)
+  runCmd "sudo adduser $cUser vboxusers" \
+         "adding user to vboxusers group"
+}
 
 #
 # NPM Update
