@@ -426,7 +426,6 @@ mongodb;addRepo_MongoDB_CE
 gyazo;addRepo_Gyazo
 code;addRepo_VSCode
 androidstudio;addRepo_AndroidStudio
-docker-ce;addRepo_DockerCE
 ansible;addRepo_Ansible
 sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
@@ -1029,15 +1028,6 @@ function addRepo_SublimeText () {
 #
 function addRepo_Ansible () {
   addPPA ppa:ansible/ansible
-}
-
-#
-# Docker CE
-#
-function addRepo_DockerCE () {
-  addKey "https://download.docker.com/linux/ubuntu/gpg"
-  addRepo "docker.list" \
-          "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 }
 
 #
