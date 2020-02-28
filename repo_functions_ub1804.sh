@@ -430,7 +430,7 @@ docker-ce;addRepo_DockerCE
 ansible;addRepo_Ansible
 sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
-virtualbox-6.0;addRepo_VirtualBox
+virtualbox-6.1;addRepo_VirtualBox
 syncthing;addRepo_Syncthing
 syncthinggtk;addRepo_SyncthingGtk
 opera-stable;addRepo_Opera
