@@ -911,8 +911,8 @@ function addRepo_SkypeForLinux () {
 function addRepo_NodeLts () {
   addKey "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
   addRepo "nodesource.list" \
-          "deb https://deb.nodesource.com/node_10.x bionic main" \
-          "deb-src https://deb.nodesource.com/node_10.x bionic main"
+          "deb https://deb.nodesource.com/node_12.x bionic main" \
+          "deb-src https://deb.nodesource.com/node_12.x bionic main"
 }
 
 #
