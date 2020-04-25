@@ -223,7 +223,7 @@ function showDevInstallMenu () {
     "boostnotes" "Boostnotes Markdown wiki app" \
     "compass" "MongoDB Compass GUI" \
     "gitkraken" "Gitkraken git gui" \
-    "Vagrant" "Vagrant" \
+    "vagrant" "Vagrant" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $devInstallMenuOptions in
