@@ -308,17 +308,15 @@ mainMenuOptions=$(whiptail \
 25 80 16 \
 "1" "System update" \
 "2" "Applications" \
-"3" "Applications (BETA)" \
-"4" "Applications (Nightly)" \
-"5" "Themes & Icons" \
-"6" "Dev Apps" \
-"7" "System Config" \
-"8" "Hardware" \
-"9" "System Tools" \
-"10" "Add Makoto no Blog repository" \
-"11" "Reboot this computer" \
-"12" "About Yggdrasil" \
-"13" "Quit"  3>&1 1>&2 2>&3)
+"3" "Themes & Icons" \
+"4" "Dev Apps" \
+"5" "System Config" \
+"6" "Hardware" \
+"7" "System Tools" \
+"8" "Add Makoto no Blog repository" \
+"9" "Reboot this computer" \
+"10" "About Yggdrasil" \
+"11" "Quit"  3>&1 1>&2 2>&3)
 
 case $mainMenuOptions in
   "1")
@@ -329,36 +327,30 @@ case $mainMenuOptions in
     showAppInstallMenu
     ;;
   "3")
-    installAppsFromListMenu beta
-    ;;
-  "4")
-    installAppsFromListMenu nightly
-    ;;
-  "5")
     showThemesInstallMenu
     ;;
-  "6")
+  "4")
     showDevInstallMenu
     ;;
-  "7")
+  "5")
     showConfigMenu;
     ;;
-  "8")
+  "6")
     showHardwareMenu
     ;;
-  "9")
+  "7")
     showSysToolsMenu
     ;;
-  "10")
+  "8")
     addRepo_Makoto
     ;;
-  "11")
+  "9")
     showRebootBoxMenu
     ;;
-  "12")
+  "10")
     showAboutBoxMenu
     ;;
-  "13")
+  "11")
     exit
     ;;
 esac # main menu

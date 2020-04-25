@@ -430,20 +430,6 @@ function showAppInstallMenu () {
 }
 
 #
-# show menu to install beta apps from different categories
-#
-function showAppBetaInstallMenu () {
-  installBetaMenu
-}
-
-#
-# show menu to install nightly apps from different categories
-#
-function showAppNightlyInstallMenu () {
-  installNightlyMenu
-}
-
-#
 # show menu about install/config hardware
 #
 function showHardwareMenu () {

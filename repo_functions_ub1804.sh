@@ -384,11 +384,7 @@ sqlparse;pip;atom;sqlparse
 flake8;pip;atom;flake8
 autopep8;pip;atom;autopep8
 htmlbeautifier;gem;atom;htmlbeautifier
-kodi;apt;beta;kodi-beta
-kodi;apt;nightly;kodi-nightly
 nitrogen;apt;nitrogen;nitrogen
-firefox-trunk;apt;nightly;firefox-trunk
-firefox-trunk-locale-fr;apt;nightly;firefox-trunk-locale-fr
 libreoffice;apt;office;libreoffice6
 winehq-stable;apt;wine;winehq-stable
 winetricks;apt;wine;winetricks
