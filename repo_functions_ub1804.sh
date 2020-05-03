@@ -1162,7 +1162,7 @@ function nodejslts_PostTrtFct () {
   retCode $ret_code
 
   if [ `grep 'PATH=~/.local/bin/:$PATH' ~/.bashrc | wc -l` -gt 0 ]; then
-    printf "[NPM] add ~/.local/bin to PATH ... already added  [ "$BOLDVERT"OK"$NORMAL" ] "
+    printf "[NPM] add ~/.local/bin to PATH ... already added  [ "$BOLDVERT"OK"$NORMAL" ]\n "
   else
     printf "[NPM] add ~/.local/bin to PATH "
     printf "\n[NPM] add ~/.local/bin to PATH\n" &>> $logFile
