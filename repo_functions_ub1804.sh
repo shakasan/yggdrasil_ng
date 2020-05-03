@@ -166,7 +166,6 @@ gparted;apt;utilities;gparted
 gsmartcontrol;apt;utilities;gsmartcontrol
 terminator;apt;utilities;terminator
 tilix;apt;utilities;tilix
-aptik;apt;utilities;aptik
 gufw;apt;utilities;gufw
 numlockx;apt;utilities;numlockx
 grub-customizer;apt;utilities;grub-customizer
@@ -443,7 +442,6 @@ skypeforlinux;addRepo_SkypeForLinux
 shotwell;addRepo_Shotwell
 peek;addRepo_Peek
 sqlitebrowser;addRepo_SQLiteBrowser
-aptik;addRepo_Teejee2008
 avidemux2.6-plugins-qt;addRepo_Avidemux2.6
 avidemux2.6-qt;addRepo_Avidemux2.6
 quiterss;addRepo_Quiterss
@@ -857,7 +855,7 @@ function addRepo_Avidemux2.6 () {
 }
 
 #
-# aptik, conky-manager, selene, timeshift
+# conky-manager, selene, timeshift
 #
 function addRepo_Teejee2008 () {
   addPPA ppa:teejee2008/ppa
