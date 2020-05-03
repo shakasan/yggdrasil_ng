@@ -464,6 +464,7 @@ function showHardwareMenu () {
         ;;
       "microcode")
         updateMicrocode
+        pressKey
         ;;
       "tlp")
         installAppsFromListMenu tlp
