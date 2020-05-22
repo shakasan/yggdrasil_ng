@@ -77,7 +77,6 @@ smplayer-l10n;apt;multimedia;smplayer-l10n
 handbrake-cli;apt;multimedia;handbrake-cli
 handbrake;apt;multimedia;handbrake
 avidemux2.7-qt5;apt;multimedia;avidemux2.7-qt5
-avidemux2.7-plugins-settings;apt;multimedia;avidemux2.7-plugins-settings
 mjpegtools;apt;multimedia;mjpegtools
 twolame;apt;multimedia;twolame
 lame;apt;multimedia;lame
@@ -104,7 +103,6 @@ kdenlive;apt;multimedia;kdenlive
 com.github.huluti.ImCompressor;flatpak;multimedia;ImCompressor
 flacon;apt;multimedia;flacon
 simplescreenrecorder;apt;multimedia;simplescreenrecorder
-selene;apt;multimedia;selene
 vidcutter;snap;multimedia;vidcutter
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
@@ -179,7 +177,6 @@ nvme-cli;apt;utilities;nvme-cli
 translatium;snap;utilities;translatium
 font-manager;apt;utilities;font-manager
 gyazo;apt;utilities;gyazo
-woeusb;apt;utilities;woeusb
 snap-store;snap;utilities;snap-store
 inxi;apt;utilities;inxi
 python3-dev;apt;python;python3-dev
@@ -361,7 +358,7 @@ autopep8;pip;atom;autopep8
 htmlbeautifier;gem;atom;htmlbeautifier
 nitrogen;apt;nitrogen;nitrogen
 libreoffice;apt;office;libreoffice6
-wine-stable;apt;wine;wine-stable
+winehq-stable;apt;wine;winehq-stable
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
 qt5-doc;apt;qt;qt5-doc
@@ -378,7 +375,7 @@ gitkraken;snap;gitkraken;gitkraken
 linux-generic-hwe-20.04;apt;hwe;linux-generic-hwe-20.04"
 
 #TODO
-#winehq-stable;apt;wine;winehq-stable
+#OLD : wine-stable;apt;wine;wine-stable
 #TODO : no focal support yet
 #aptik;apt;utilities;aptik
 #brackets;apt;brackets;brackets
@@ -446,7 +443,6 @@ audacious;addRepo_Webupd8
 qt5ct;addRepo_Webupd8
 screenkey;addRepo_Webupd8
 yad;addRepo_Webupd8
-woeusb;addRepo_Webupd8
 cpu-g;addRepo_Atareao
 picard;addRepo_Picard
 birdtray;addRepo_Linuxuprising
@@ -463,7 +459,6 @@ flacon;addRepo_Flacon
 gyazo;addRepo_Gyazo
 simplescreenrecorder;addRepo_SimpleScreenRecorder
 guake;addRepo_LinuxUprising_Guake
-selene;addRepo_Teejee2008
 peek;addRepo_Peek
 quiterss;addRepo_Quiterss
 virtualbox;addRepo_VirtualBox
@@ -474,13 +469,13 @@ mkvtoolnix-gui;addRepo_MKVToolnix
 transmission-gtk;addRepo_Transmissionbt
 handbrake-cli;addRepo_Handbrake
 handbrake;addRepo_Handbrake
-kodi;addRepo_Kodi"
+kodi;addRepo_Kodi
+avidemux2.7;addRepo_Avidemux
+winehq-stable;addRepo_WineHQ"
 
-#TODO
-#winehq-stable;addRepo_WineHQ
-#TODO : to check
-#avidemux2.7;addRepo_Avidemux
 #TODO : no focal support yet / or not needed yet
+#woeusb;addRepo_Webupd8
+#selene;addRepo_Teejee2008
 #youtube-dlg;addRepo_Webupd8
 #brackets;addRepo_Brackets
 #vidcutter;addRepo_Vidcutter
@@ -540,14 +535,13 @@ function addRepo_Belena () {
 
 
 #
-# Wine HQ #TODO
+# Wine HQ
 #
-# function addRepo_WineHQ () {
-#   addPPA ppa:cybermax-dexter/sdl2-backport
-#   addKey "https://dl.winehq.org/wine-builds/winehq.key"
-#   addRepo winehq.list \
-#           "deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main"
-# }
+function addRepo_WineHQ () {
+  addKey "https://dl.winehq.org/wine-builds/winehq.key"
+  addRepo winehq.list \
+          "deb https://dl.winehq.org/wine-builds/ubuntu/ focal main"
+}
 
 #
 # Lutris
@@ -776,11 +770,11 @@ function addRepo_Quiterss () {
 }
 
 #
-# Avidemux #TODO to keep ?
+# Avidemux
 #
-# function addRepo_Avidemux () {
-#   addPPA ppa:ubuntuhandbook1/avidemux
-# }
+function addRepo_Avidemux () {
+  addPPA ppa:ubuntuhandbook1/avidemux
+}
 
 #
 # conky-manager, selene, timeshift
