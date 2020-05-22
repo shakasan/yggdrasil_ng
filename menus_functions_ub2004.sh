@@ -122,9 +122,7 @@ function showSysToolsMenu () {
     "inxi" "System informations" \
     "speedtest-cli" "Bandwidth test" \
     "packetloss" "Packetloss test (ping)" \
-    "OptimizeFirefox" "Firefox SQLite databases optimization" \
     "Autoremove" "Remove useless Deb packages" \
-    "CleanOldKernels" "Removing old kernels (keep 2 last kernels)" \
     "SoundCardsDetection" "Sound Cards Detection" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
@@ -138,14 +136,8 @@ function showSysToolsMenu () {
       "packetloss")
         clear; toolPacketLoss; pressKey
         ;;
-      "OptimizeFirefox")
-        clear; toolOptimizeFirefox; pressKey
-        ;;
       "Autoremove")
         clear; toolAutoremove; pressKey
-        ;;
-      "CleanOldKernels")
-        clear; toolClearOldKernels; pressKey
         ;;
       "SoundCardsDetection")
         clear; toolSoundCardsDetection; pressKey

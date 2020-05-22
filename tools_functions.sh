@@ -102,40 +102,11 @@ function toolPacketLoss () {
 }
 
 #
-# Optimization of SQLite databases of Firefox and Firefox Nightly
-#
-function toolOptimizeFirefox () {
-  if (whiptail --title "Firefox SQLite DB Optimization" --yesno "Terminate Firefox and proceed ?" 10 60) then
-    if which firefox >/dev/null; then
-      printf "Optimizing Firefox"
-      pkill -9 firefox
-      for f in ~/.mozilla/firefox/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
-      printf "\n"
-    fi
-    if which firefox-trunk >/dev/null; then
-      printf "Optimizing Firefox Nightly"
-      pkill -9 firefox-trunk
-      for f in ~/.mozilla/firefox-trunk/*/*.sqlite; do sqlite3 $f 'VACUUM; REINDEX;'; done
-      printf "\n"
-    fi
-  fi
-}
-
-#
 # remove useless packages (depedencies)
 #
 function toolAutoremove () {
   runCmd "sudo apt-get -y autoremove" \
          "removing not necessary dependencies"
-}
-
-#
-# remove old versions of installed kernels
-#
-function toolClearOldKernels () {
-  checkAndInstallDep apt ukuu ukuu \
-  && runCmd "sudo ukuu --purge-old-kernels --yes" \
-            "removing old kernels"
 }
 
 #
