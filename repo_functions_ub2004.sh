@@ -1096,7 +1096,7 @@ function dockerio_PostTrtFct () {
          "start docker service"
   runCmd "sudo systemctl enable docker" \
          "add docker service at boot"
-  runCmd "sudo groupadd --quiet docker" \
+  runCmd "sudo groupadd --force docker" \
           "add docker group"
   cUser=$(whoami)
   runCmd "sudo usermod -aG docker $cUser" \
