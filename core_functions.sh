@@ -182,6 +182,12 @@ function updateSystem () {
     sudo flatpak update -y &>> $logFile
     ret_code=$?
     retCode $ret_code
+
+    printf "[FLATPAK] uninstall --unused "
+    printf "\n[FLATPAK] uninstall --unused\n" &>> $logFile
+    sudo flatpak uninstall --unused -y &>> $logFile
+    ret_code=$?
+    retCode $ret_code
   fi
 
   repoAdded=0
