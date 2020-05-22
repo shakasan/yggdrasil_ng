@@ -5,6 +5,3 @@ deb/*
 *.sync-conflict-*
 utils/*
 TODO.txt
-repo_functions_ub2004.sh
-menus_functions_ub2004.sh
-install_functions_ub2004.sh
