@@ -79,11 +79,11 @@ function pressKey () {
 }
 
 #
-# check if OS is Mint 18
+# check if OS is Mint 18 / Ubuntu 16.04
 #
 function isMint18 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-  if [[ $OS == *"Linux Mint 18"* ]]; then
+  if [[ $OS == *"Linux Mint 18"* || $OS == *"Ubuntu 16.04"* ]]; then
     return 0
   else
     return 1
@@ -91,11 +91,23 @@ function isMint18 () {
 }
 
 #
-# check if OS is Mint 19
+# check if OS is Mint 19 / Ubuntu 18.04
 #
 function isMint19 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-  if [[ $OS == *"Linux Mint 19"* ]]; then
+  if [[ $OS == *"Linux Mint 19"* || $OS == *"Ubuntu 18.04"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#
+# check if OS is Mint 20 / Ubuntu 20.04
+#
+function isMint20 () {
+  OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
+  if [[ $OS == *"Linux Mint 20"* || $OS == *"Ubuntu 20.04"* ]]; then
     return 0
   else
     return 1
@@ -207,7 +219,11 @@ function addPPA () {
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ${str2search}; then
     printf "[PPA] adding : $* "
     printf "\n[PPA] adding $*\n" &>> $logFile
-    sudo add-apt-repository -y $* &>> $logFile
+    if isMint20; then
+      sudo add-apt-repository -yn $* &>> $logFile
+    else
+      sudo add-apt-repository -y $* &>> $logFile
+    fi
     ret_code=$?
     retCode $ret_code
   else
