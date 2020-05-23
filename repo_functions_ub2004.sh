@@ -76,7 +76,7 @@ smplayer-themes;apt;multimedia;smplayer-themes
 smplayer-l10n;apt;multimedia;smplayer-l10n
 handbrake-cli;apt;multimedia;handbrake-cli
 handbrake;apt;multimedia;handbrake
-avidemux2.7-qt5;apt;multimedia;avidemux2.7-qt5
+avidemux2.7-qt5;apt;multimedia;avidemux
 mjpegtools;apt;multimedia;mjpegtools
 twolame;apt;multimedia;twolame
 lame;apt;multimedia;lame
@@ -470,7 +470,7 @@ transmission-gtk;addRepo_Transmissionbt
 handbrake-cli;addRepo_Handbrake
 handbrake;addRepo_Handbrake
 kodi;addRepo_Kodi
-avidemux2.7;addRepo_Avidemux
+avidemux;addRepo_Avidemux
 winehq-stable;addRepo_WineHQ"
 
 #TODO : no focal support yet / or not needed yet
