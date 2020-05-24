@@ -525,7 +525,15 @@ flatpak;addRepo_flatpak
 balena-etcher-electron;addRepo_Belena
 font-manager;addRepo_FontManager
 cawbird;addRepo_Cawbird
-ubuntu-make;addRepo_UbuntuMake"
+ubuntu-make;addRepo_UbuntuMake
+audacity;addRepo_Audacity"
+
+#
+# Audacity
+#
+function addRepo_Audacity () {
+  addPPA ppa:ubuntuhandbook1/audacity
+}
 
 #
 # Ubuntu Make

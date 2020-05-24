@@ -106,7 +106,9 @@ function toolPacketLoss () {
 #
 function toolAutoremove () {
   runCmd "sudo apt-get -y autoremove" \
-         "removing not necessary dependencies"
+         "removing useless APT dependencies"
+  runCmd "sudo flatpak uninstall --unused -y" \
+         "removing useless FLATPAK dependencies"
 }
 
 #

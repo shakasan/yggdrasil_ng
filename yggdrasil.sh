@@ -248,6 +248,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       exit
       ;;
     p)
+      msg "Removing useless dependencies"
       toolAutoremove
       exit
       ;;

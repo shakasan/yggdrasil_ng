@@ -471,7 +471,8 @@ handbrake-cli;addRepo_Handbrake
 handbrake;addRepo_Handbrake
 kodi;addRepo_Kodi
 avidemux;addRepo_Avidemux
-winehq-stable;addRepo_WineHQ"
+winehq-stable;addRepo_WineHQ
+audacity;addRepo_Audacity"
 
 #TODO : no focal support yet / or not needed yet
 #woeusb;addRepo_Webupd8
@@ -490,6 +491,13 @@ winehq-stable;addRepo_WineHQ"
 #mongodb;addRepo_MongoDB_CE
 #ubuntu-make;addRepo_UbuntuMake
 #flatpak;addRepo_flatpak
+
+#
+# Audacity
+#
+function addRepo_Audacity () {
+  addPPA ppa:ubuntuhandbook1/audacity
+}
 
 #
 # Ubuntu Make #TODO : no focal support yet
