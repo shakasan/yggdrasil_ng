@@ -182,10 +182,6 @@ inxi;apt;utilities;inxi
 python3-dev;apt;python;python3-dev
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
-PyOpenGL;pip;python;PyOpenGL
-tweepy;pip;python;tweepy
-weppy;pip;python;weppy
-py-term;pip;python;py-term
 idle3;apt;python;idle3
 python-gi;apt;python;python-gi
 python-gi-cairo;apt;python;python-gi-cairo
