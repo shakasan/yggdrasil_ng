@@ -967,7 +967,18 @@ function addRepo_AndroidStudio () {
 #
 AppsPreTrtFct="opera-stable;opera_PreTrtFct
 steam;steam_PreTrtFct
-wireshark;wireshark_PreTrtFct"
+wireshark;wireshark_PreTrtFct
+snapd;snapd_PreTrtFct"
+
+#
+# Snap
+#
+function snapd_PreTrtFct () {
+  if isMint20; then
+    runCmd "sudo rm /etc/apt/preferences.d/nosnap.pref" \
+           "remove snapd installation restriction [ I'm allergic to it, but need it for some pieces of software... Devs, please provide deb package ;) ]"
+  fi
+}
 
 #
 # Opera

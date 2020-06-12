@@ -13,7 +13,7 @@
 #
 # app version number
 #
-version="0.6.0-b5"
+version="0.6.0-b6"
 
 #
 # myHomedir is used in full paths to the homedir
