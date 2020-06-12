@@ -79,11 +79,11 @@ function pressKey () {
 }
 
 #
-# check if OS is Mint 18 / Ubuntu 16.04
+# check if OS is Mint 18
 #
 function isMint18 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-  if [[ $OS == *"Linux Mint 18"* || $OS == *"Ubuntu 16.04"* ]]; then
+  if [[ $OS == *"Linux Mint 18"* ]]; then
     return 0
   else
     return 1
@@ -91,11 +91,23 @@ function isMint18 () {
 }
 
 #
-# check if OS is Mint 19 / Ubuntu 18.04
+# check if OS is Ubuntu 16.04
+#
+function isUbuntu1604 () {
+  OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
+  if [[ $OS == *"Ubuntu 16.04"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#
+# check if OS is Mint 19
 #
 function isMint19 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-  if [[ $OS == *"Linux Mint 19"* || $OS == *"Ubuntu 18.04"* ]]; then
+  if [[ $OS == *"Linux Mint 19"* ]]; then
     return 0
   else
     return 1
@@ -103,11 +115,35 @@ function isMint19 () {
 }
 
 #
-# check if OS is Mint 20 / Ubuntu 20.04
+# check if OS is Ubuntu 18.04
+#
+function isUbuntu1804 () {
+  OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
+  if [[ $OS == *"Ubuntu 18.04"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#
+# check if OS is Mint 20
 #
 function isMint20 () {
   OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
-  if [[ $OS == *"Linux Mint 20"* || $OS == *"Ubuntu 20.04"* ]]; then
+  if [[ $OS == *"Linux Mint 20"* ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+#
+# check if OS is Ubuntu 20.04
+#
+function isUbuntu2004 () {
+  OS=`lsb_release -d | awk -F':' '{print $2}' | awk -F'\t' '{print $2}'`
+  if [[ $OS == *"Ubuntu 20.04"* ]]; then
     return 0
   else
     return 1
@@ -213,7 +249,7 @@ function addPPA () {
   if ! grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -q ${str2search}; then
     printf "[PPA] adding : $* "
     printf "\n[PPA] adding $*\n" &>> $logFile
-    if isMint20; then
+    if isUbuntu2004; then
       sudo add-apt-repository -yn $* &>> $logFile
     else
       sudo add-apt-repository -y $* &>> $logFile
