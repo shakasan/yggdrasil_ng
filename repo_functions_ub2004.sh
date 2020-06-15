@@ -103,13 +103,13 @@ kdenlive;apt;multimedia;kdenlive
 com.github.huluti.ImCompressor;flatpak;multimedia;ImCompressor
 flacon;apt;multimedia;flacon
 simplescreenrecorder;apt;multimedia;simplescreenrecorder
-vidcutter;snap;multimedia;vidcutter
+com.ozmartians.VidCutter;flatpak;multimedia;vidcutter
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
 megasync;apt;internet;megasync
 megacmd;apt;internet;megacmd
-discord;snap;internet;discord
+com.discordapp.Discord;flatpak;internet;discord
 com.teamspeak.TeamSpeak;flatpak;internet;TeamSpeak
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
@@ -175,10 +175,8 @@ fdupes;apt;utilities;fdupes
 balena-etcher-electron;apt;utilities;balena-etcher-electron
 org.gabmus.hydrapaper;flatpak;utilities;hydrapaper
 nvme-cli;apt;utilities;nvme-cli
-translatium;snap;utilities;translatium
 font-manager;apt;utilities;font-manager
 gyazo;apt;utilities;gyazo
-snap-store;snap;utilities;snap-store
 inxi;apt;utilities;inxi
 python3-dev;apt;python;python3-dev
 python3-pyqt5;apt;python;python3-pyqt5
@@ -340,7 +338,7 @@ codeblocks;apt;codeblocks;codeblocks
 codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
-brackets;snap;brackets;brackets
+io.brackets.Brackets;flatpak;brackets;brackets
 pycharm-community;snap;pycharm-community;pycharm-community
 pycharm-professional;snap;pycharm-professional;pycharm-professional
 sublime-text;apt;sublime-text;sublime-text
@@ -367,16 +365,11 @@ fbreader;apt;ebook;fbreader
 calibre;apt;ebook;calibre
 android-studio;apt;androidstudio;androidstudio
 intellij-idea-community;snap;idea;idea
-eclipse;snap;eclipse;eclipse
 com.axosoft.GitKraken;flatpak;gitkraken;gitkraken
 linux-generic-hwe-20.04;apt;hwe;linux-generic-hwe-20.04"
 
-#TODO
-#OLD : wine-stable;apt;wine;wine-stable
 #TODO : no focal support yet
 #aptik;apt;utilities;aptik
-#brackets;apt;brackets;brackets
-#vidcutter;apt;multimedia;vidcutter
 #green-recorder;apt;multimedia;green-recorder
 #mongodb-org;apt;mongodb;mongodb
 
