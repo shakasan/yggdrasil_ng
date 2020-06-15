@@ -51,9 +51,9 @@ sysstat;apt;base;sysstat
 dcfldd;apt;base;dcfldd
 mdadm;apt;base;mdadm
 ncdu;apt;base;ncdu
-spotify;snap;multimedia;spotify
+com.spotify.Client;flatpak;multimedia;spotify
 qmmp;apt;multimedia;qmmp
-shotcut;snap;multimedia;shotcut
+org.shotcut.Shotcut;flatpak;multimedia;shotcut
 audacious;apt;multimedia;audacious
 dia;apt;multimedia;dia
 mpv;apt;multimedia;mpv
@@ -129,7 +129,8 @@ vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
 youtube-dl;pip;internet;youtube-dl
 gallery-dl;pip;internet;gallery-dl
-cawbird;apt;internet;cawbird
+uk.co.ibboard.cawbird;flatpak;internet;cawbird
+us.zoom.Zoom;flatpak;internet;zoom
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
@@ -314,7 +315,7 @@ mycli;pip;dev;mycli
 sqlitebrowser;apt;dev;sqlitebrowser
 jq;apt;dev;jq
 tig;apt;dev;tig
-postman;snap;dev;postman
+com.getpostman.Postman;flatpak;dev;postman
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 emma-cli;npm;javascript;emma-cli
@@ -367,7 +368,7 @@ calibre;apt;ebook;calibre
 android-studio;apt;androidstudio;androidstudio
 intellij-idea-community;snap;idea;idea
 eclipse;snap;eclipse;eclipse
-gitkraken;snap;gitkraken;gitkraken
+com.axosoft.GitKraken;flatpak;gitkraken;gitkraken
 linux-generic-hwe-20.04;apt;hwe;linux-generic-hwe-20.04"
 
 #TODO
