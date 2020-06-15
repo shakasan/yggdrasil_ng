@@ -469,7 +469,8 @@ handbrake;addRepo_Handbrake
 kodi;addRepo_Kodi
 avidemux;addRepo_Avidemux
 winehq-stable;addRepo_WineHQ
-audacity;addRepo_Audacity"
+audacity;addRepo_Audacity
+ubuntu-make;addRepo_UbuntuMake"
 
 #TODO : no focal support yet / or not needed yet
 #woeusb;addRepo_Webupd8
@@ -486,7 +487,6 @@ audacity;addRepo_Audacity"
 #wireshark;addRepo_WireShark
 #green-recorder;addRepo_GreenRecorder
 #mongodb;addRepo_MongoDB_CE
-#ubuntu-make;addRepo_UbuntuMake
 #flatpak;addRepo_flatpak
 
 #
@@ -497,12 +497,11 @@ function addRepo_Audacity () {
 }
 
 #
-# Ubuntu Make #TODO : no focal support yet
-# lyzardking ?
+# Ubuntu Make
 #
-# function addRepo_UbuntuMake () {
-#   addPPA ppa:ubuntu-desktop/ubuntu-make
-# }
+function addRepo_UbuntuMake () {
+  addPPA ppa:lyzardking/ubuntu-make
+}
 
 #
 # Cawbird #TODO
