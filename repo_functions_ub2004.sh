@@ -129,7 +129,7 @@ vivaldi-stable;apt;internet;vivaldi-stable
 transmission-gtk;apt;internet;transmission-gtk
 youtube-dl;pip;internet;youtube-dl
 gallery-dl;pip;internet;gallery-dl
-uk.co.ibboard.cawbird;flatpak;internet;cawbird
+cawbird;apt;internet;cawbird
 us.zoom.Zoom;flatpak;internet;zoom
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
@@ -498,6 +498,7 @@ function addRepo_Audacity () {
 
 #
 # Ubuntu Make #TODO : no focal support yet
+# lyzardking ?
 #
 # function addRepo_UbuntuMake () {
 #   addPPA ppa:ubuntu-desktop/ubuntu-make
