@@ -52,11 +52,11 @@ sysstat;apt;base;sysstat
 dcfldd;apt;base;dcfldd
 mdadm;apt;base;mdadm
 ncdu;apt;base;ncdu
-spotify;snap;multimedia;spotify
+com.spotify.Client;flatpak;multimedia;spotify
 sayonara;apt;multimedia;sayonara
 qmmp;apt;multimedia;qmmp
 qmmp-plugin-projectm;apt;multimedia;qmmp-plugin-projectm
-shotcut;snap;multimedia;shotcut
+org.shotcut.Shotcut;flatpak;multimedia;shotcut
 audacious;apt;multimedia;audacious
 dia;apt;multimedia;dia
 mpv;apt;multimedia;mpv
@@ -122,7 +122,7 @@ syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
 megasync;apt;internet;megasync
 megacmd;apt;internet;megacmd
-discord;snap;internet;discord
+com.discordapp.Discord;flatpak;internet;discord
 com.teamspeak.TeamSpeak;flatpak;internet;TeamSpeak
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
@@ -146,6 +146,7 @@ youtube-dl;pip;internet;youtube-dl
 youtube-dlg;apt;internet;youtube-dlg
 gallery-dl;pip;internet;gallery-dl
 cawbird;apt;internet;cawbird
+us.zoom.Zoom;flatpak;internet;zoom
 qtqr;apt;utilities;qtqr
 cpu-g;apt;utilities;cpu-g
 screenfetch;apt;utilities;screenfetch
@@ -194,7 +195,6 @@ fdupes;apt;utilities;fdupes
 balena-etcher-electron;apt;utilities;balena-etcher-electron
 org.gabmus.hydrapaper;flatpak;utilities;hydrapaper
 nvme-cli;apt;utilities;nvme-cli
-translatium;snap;utilities;translatium
 font-manager;apt;utilities;font-manager
 python3-dev;apt;python;python3-dev
 python3-pyqt5;apt;python;python3-pyqt5
@@ -340,7 +340,7 @@ sqlitebrowser;apt;dev;sqlitebrowser
 mysql-workbench;apt;dev;mysql-workbench
 jq;apt;dev;jq
 tig;apt;dev;tig
-postman;snap;dev;postman
+com.getpostman.Postman;flatpak;dev;postman
 javascript-common;apt;javascript;javascript-common
 yarn;npm;javascript;yarn
 emma-cli;npm;javascript;emma-cli
@@ -396,8 +396,7 @@ fbreader;apt;ebook;fbreader
 calibre;apt;ebook;calibre
 android-studio;apt;androidstudio;androidstudio
 intellij-idea-community;snap;idea;idea
-eclipse;snap;eclipse;eclipse
-gitkraken;snap;gitkraken;gitkraken
+com.axosoft.GitKraken;flatpak;gitkraken;gitkraken
 xserver-xorg-hwe-18.04;apt;hwe;xserver-xorg-hwe-18.04
 xserver-xorg-video-all-hwe-18.04;apt;hwe;xserver-xorg-video-all-hwe-18.04
 linux-generic-hwe-18.04;apt;hwe;linux-generic-hwe-18.04"
