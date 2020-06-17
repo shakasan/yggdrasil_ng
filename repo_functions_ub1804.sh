@@ -102,7 +102,7 @@ simplescreenrecorder-lib:i386;apt;multimedia;simplescreenrecorder-lib:i386
 cuetools;apt;multimedia;cuetools
 shntool;apt;multimedia;shntool
 flac;apt;multimedia;flac
-entangle;apt;multimedia;entangle
+org.entangle_photo.Manager;flatpak;multimedia;entangle
 krita;apt;multimedia;krita
 soundconverter;apt;multimedia;soundconverter
 gimp;apt;multimedia;gimp
@@ -497,7 +497,6 @@ rhythmbox-plugin-suspend;addRepo_Rhythmbox
 rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
 rhythmbox-plugins;addRepo_Rhythmbox
 rawtherapee;addRepo_DhorMyWay
-entangle;addRepo_DhorMyWay
 mkvtoolnix-gui;addRepo_MKVToolnix
 purple-facebook;addRepo_Jgeboski
 audacious;addRepo_Webupd8

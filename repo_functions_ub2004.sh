@@ -92,7 +92,7 @@ webp;apt;multimedia;webp
 cuetools;apt;multimedia;cuetools
 shntool;apt;multimedia;shntool
 flac;apt;multimedia;flac
-entangle;apt;multimedia;entangle
+org.entangle_photo.Manager;flatpak;multimedia;entangle
 krita;apt;multimedia;krita
 soundconverter;apt;multimedia;soundconverter
 gimp;apt;multimedia;gimp
@@ -427,8 +427,6 @@ rhythmbox-plugin-spectrum;addRepo_Rhythmbox
 rhythmbox-plugin-suspend;addRepo_Rhythmbox
 rhythmbox-plugin-wikipedia;addRepo_Rhythmbox
 rhythmbox-plugins;addRepo_Rhythmbox
-rawtherapee;addRepo_DhorMyWay
-entangle;addRepo_DhorMyWay
 audacious;addRepo_Webupd8
 qt5ct;addRepo_Webupd8
 screenkey;addRepo_Webupd8
@@ -466,6 +464,8 @@ audacity;addRepo_Audacity
 ubuntu-make;addRepo_UbuntuMake"
 
 #TODO : no focal support yet / or not needed yet
+#rawtherapee;addRepo_DhorMyWay
+#entangle;addRepo_DhorMyWay
 #woeusb;addRepo_Webupd8
 #selene;addRepo_Teejee2008
 #youtube-dlg;addRepo_Webupd8
@@ -635,11 +635,11 @@ function addRepo_MKVToolnix () {
 }
 
 #
-# Entangle, Rawtherapee
+# Entangle, Rawtherapee #TODO : no focal support yet ?
 #
-function addRepo_DhorMyWay () {
-  addPPA ppa:dhor/myway
-}
+# function addRepo_DhorMyWay () {
+#   addPPA ppa:dhor/myway
+# }
 
 #
 # Rhythmbox
