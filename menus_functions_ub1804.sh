@@ -337,7 +337,6 @@ function showAppInstallMenu () {
     "nitrogen" "Nitrogen WP Manager" \
     "wine" "Wine Builds" \
     "viber" "Viber IM desktop app" \
-    "franz" "Franz multi IM app" \
     "slack" "Slack App" \
     "appimagelauncher" "AppImage Launcher" \
     "xnviewmp" "XNView MP" \
@@ -400,9 +399,6 @@ function showAppInstallMenu () {
         ;;
       "viber")
         installViberMenu
-        ;;
-      "franz")
-        installFranzMenu
         ;;
       "slack")
         installSlackMenu

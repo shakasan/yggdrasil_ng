@@ -107,7 +107,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       installUnattendedUpgrades
       msg "Installing external apps"
       installViber
-      installFranz
       installBoostnotes
       installTeamViewer13
       installXnViewMP
@@ -156,7 +155,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       installAppsFromList gtkthemes
       msg "Installing external apps"
       installViber
-      installFranz
       installBoostnotes
       installTeamViewer13
       installXnViewMP

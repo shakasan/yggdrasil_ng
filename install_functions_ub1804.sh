@@ -35,24 +35,6 @@ function installViberMenu () {
 }
 
 #
-# Franz (headless)
-#
-function installFranz () {
-  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.4.0/franz_5.4.0_amd64.deb \
-                     franz.deb \
-                     no
-}
-
-#
-# Franz (Menu)
-#
-function installFranzMenu () {
-  installPackageDpkg https://github.com/meetfranz/franz/releases/download/v5.4.0/franz_5.4.0_amd64.deb \
-                     franz.deb \
-                     yes
-}
-
-#
 # Slack (headless)
 #
 function installSlack () {
