@@ -104,6 +104,7 @@ com.github.huluti.ImCompressor;flatpak;multimedia;ImCompressor
 flacon;apt;multimedia;flacon
 simplescreenrecorder;apt;multimedia;simplescreenrecorder
 com.ozmartians.VidCutter;flatpak;multimedia;vidcutter
+com.orama_interactive.Pixelorama;flatpak;multimedia;pixelorama
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
