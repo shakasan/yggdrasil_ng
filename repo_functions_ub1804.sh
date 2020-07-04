@@ -1143,12 +1143,12 @@ flatpak;flatpak_PostTrtFct
 gcc8;gcc8_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
 virtualbox-6.1;virtualbox-6.1_PostTrtFct
-numlockx;numlockx_PostTrtFct"
+gufw;gufw_PostTrtFct"
 
 #
-# numlockx
+# ufw enablement + add rules
 #
-function numlockx_PostTrtFct () {
+function gufw_PostTrtFct () {
   runCmd "sudo ufw enable"\
          "enabling UFW at boot"
 

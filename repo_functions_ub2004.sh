@@ -1023,12 +1023,12 @@ megasync;megasync_PostTrtFct
 flatpak;flatpak_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
 virtualbox;virtualbox_PostTrtFct
-numlockx;numlockx_PostTrtFct"
+gufw;gufw_PostTrtFct"
 
 #
-# numlockx
+# ufw enablement + add rules
 #
-function numlockx_PostTrtFct () {
+function gufw_PostTrtFct () {
   runCmd "sudo ufw enable"\
          "enabling UFW at boot"
 
