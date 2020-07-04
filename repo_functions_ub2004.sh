@@ -1023,7 +1023,22 @@ megasync;megasync_PostTrtFct
 flatpak;flatpak_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
 virtualbox;virtualbox_PostTrtFct
-gufw;gufw_PostTrtFct"
+gufw;gufw_PostTrtFct
+numlockx;numlockx_PostTrtFct"
+
+#
+# numlockx
+#
+function numlockx_PostTrtFct () {
+  if which lightdm >/dev/null; then
+    runCmd "sudo touch /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
+           "creating lightdm config file if necessary"
+    runCmd "sudo cp /etc/lightdm/lightdm.conf.d/70-linuxmint.conf /etc/lightdm/lightdm.conf.d/70-linuxmint.conf.yggbak" \
+           "backing up lightdm original config file"
+    runCmd "echo -e '\ngreeter-setup-script=/usr/bin/numlockx on' | sudo tee -a /etc/lightdm/lightdm.conf.d/70-linuxmint.conf" \
+           "enabling numlockx on in lightdm at boot"
+  fi
+}
 
 #
 # ufw enablement + add rules

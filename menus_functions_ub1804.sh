@@ -56,7 +56,6 @@ function showConfigMenu () {
     --title "Yggdrasil $version - System Config" \
     --menu "System Config" \
     25 80 16 \
-    "Ufw" "Enable Firewall (ufw)" \
     "TmpRAM" "/tmp stored in RAM" \
     "screenfetch" "screenfetch added to .bashrc" \
     "historyTS" "TimeStamp enabled in Shell History" \
@@ -65,11 +64,6 @@ function showConfigMenu () {
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $configMenuOptions in
-      "Ufw")
-        clear
-        enableUFW
-        pressKey
-        ;;
       "TmpRAM")
         clear
         enableTmpRAM

@@ -100,11 +100,8 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       installAppsFromList webcam
       updateMicrocode
       msg "Applying system customizations"
-      enableUFW
-      enableNumLockX
       addScreenfetchBashrc
       enableHistoryTS
-      installUnattendedUpgrades
       msg "Installing external apps"
       installViber
       installBoostnotes
@@ -144,11 +141,8 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       updateMicrocode
       installAppsFromList cardreader
       msg "Applying system customizations"
-      enableUFW
-      enableNumLockX
       addScreenfetchBashrc
       enableHistoryTS
-      installUnattendedUpgrades
       installAppsFromList unbound
       msg "Installing additional themes/icons"
       installAppsFromList icons
