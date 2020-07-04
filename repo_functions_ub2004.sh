@@ -20,10 +20,7 @@
 # List of packages available
 # fields : package name, package manager, category, unique ID for external functions
 #
-Apps="unattended-upgrades;apt;unattended-upgrades;unattended-upgrades
-snapd;apt;snap;snapd
-snap-store;snap;snap;snap-store
-apt-transport-https;apt;init;apt-transport-https
+Apps="apt-transport-https;apt;init;apt-transport-https
 flatpak;apt;init;flatpak
 ubuntu-make;apt;init;ubuntu-make
 ruby-dev;apt;init;ruby-dev
@@ -32,6 +29,9 @@ python3-pip;apt;init;python3-pip
 python3-distutils;apt;init;python3-distutils
 pip;pip;init;setuptools
 setuptools;pip;init;setuptools
+unattended-upgrades;apt;unattended-upgrades;unattended-upgrades
+snapd;apt;snap;snapd
+snap-store;snap;snap;snap-store
 cifs-utils;apt;base;cifs-utils
 xterm;apt;base;xterm
 curl;apt;base;curl

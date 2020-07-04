@@ -320,8 +320,7 @@ function installPackageDpkg () {
   printf "\n[PKG] installing $2 from $1\n" &>> $logFile
   cd /tmp \
   && wget -q -O $2 $1 &>> $logFile \
-  && sudo dpkg -i $2 &>> $logFile
-  sudo apt-get install -fy &>> $logFile
+  && sudo apt-get install -fy /tmp/$2 &>> $logFile
   ret_code=$?
   retCode $ret_code
   if [ "$3" == "yes" ]; then
