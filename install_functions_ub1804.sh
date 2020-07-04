@@ -93,18 +93,6 @@ function updateMicrocode () {
 }
 
 #
-# fix some config issue with Intel Wireless 6320 cards
-#
-function fixWirelessIntel6320 () {
-  runCmd "sudo cp /etc/modprobe.d/iwlwifi.conf /etc/modprobe.d/iwlwifi.conf.bak" \
-         "backing up config file"
-  runCmd "echo options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8 | sudo tee /etc/modprobe.d/iwlwifi.conf" \
-         "applying new config"
-  printf "[INFO] reboot required !!!"
-  printf "\n"
-}
-
-#
 # Key-ID USB Fido U2F device udev rules
 #
 function installKeyIDuDev () {

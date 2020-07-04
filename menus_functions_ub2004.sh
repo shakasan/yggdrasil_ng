@@ -421,7 +421,6 @@ function showHardwareMenu () {
     "microcode" "Update Intel/AMD CPU microcode" \
     "tlp" "Install/Enable TLP for better power management " \
     "keyid" "Add udev rules for Key-ID FIDO U2F usb key" \
-    "WI6320" "Fix Intel Wireless 6320 card config problem" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $hardwareMenuOptions in
@@ -446,10 +445,6 @@ function showHardwareMenu () {
         ;;
       "keyid")
         installKeyIDuDev
-        pressKey
-        ;;
-      "WI6320")
-        fixWirelessIntel6320
         pressKey
         ;;
       "Back")
