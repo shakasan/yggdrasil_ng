@@ -20,7 +20,8 @@
 # List of packages available
 # fields : package name, package manager, category, unique ID for external functions
 #
-Apps="snapd;apt;snap;snapd
+Apps="unattended-upgrades;apt;unattended-upgrades;unattended-upgrades
+snapd;apt;snap;snapd
 snap-store;snap;snap;snap-store
 apt-transport-https;apt;init;apt-transport-https
 flatpak;apt;init;flatpak

@@ -72,13 +72,6 @@ function enableHistoryTS () {
 }
 
 #
-# install/enable auto install of security updates
-#
-function installUnattendedUpgrades () {
-  installPackage apt unattended-upgrades
-}
-
-#
 # display useful system/hardware informations
 #
 function toolInxi () {

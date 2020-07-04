@@ -93,7 +93,7 @@ function showConfigMenu () {
         ;;
       "unattendedUpgrades")
         clear
-        installUnattendedUpgrades
+        installAppsFromList unattended-upgrades
         pressKey
         ;;
       "Unbound")
