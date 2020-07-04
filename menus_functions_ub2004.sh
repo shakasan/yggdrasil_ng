@@ -71,11 +71,6 @@ function showConfigMenu () {
         enableUFW
         pressKey
         ;;
-      "NumLockX")
-        clear
-        enableNumLockX
-        pressKey
-        ;;
       "TmpRAM")
         clear
         enableTmpRAM

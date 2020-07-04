@@ -11,19 +11,6 @@
 #-----------------------------------------------------------------------------#
 
 #
-# enable ufw at boot time and add rules for installed apps
-#
-function enableUFW () {
-  runCmd "sudo ufw enable"\
-         "enabling UFW at boot"
-
-  if which syncthing >/dev/null; then
-    runCmd "sudo ufw allow syncthing" \
-           "adding UFW rules for Syncthing"
-  fi
-}
-
-#
 # enable numlock by default on LightDM
 #
 function enableNumLockX () {

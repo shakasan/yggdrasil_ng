@@ -57,7 +57,6 @@ function showConfigMenu () {
     --menu "System Config" \
     25 80 16 \
     "Ufw" "Enable Firewall (ufw)" \
-    "NumLockX" "NumLock Enabled at boot time" \
     "TmpRAM" "/tmp stored in RAM" \
     "screenfetch" "screenfetch added to .bashrc" \
     "historyTS" "TimeStamp enabled in Shell History" \
@@ -69,11 +68,6 @@ function showConfigMenu () {
       "Ufw")
         clear
         enableUFW
-        pressKey
-        ;;
-      "NumLockX")
-        clear
-        enableNumLockX
         pressKey
         ;;
       "TmpRAM")

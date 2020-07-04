@@ -1142,7 +1142,21 @@ megasync;megasync_PostTrtFct
 flatpak;flatpak_PostTrtFct
 gcc8;gcc8_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
-virtualbox-6.1;virtualbox-6.1_PostTrtFct"
+virtualbox-6.1;virtualbox-6.1_PostTrtFct
+numlockx;numlockx_PostTrtFct"
+
+#
+# numlockx
+#
+function numlockx_PostTrtFct () {
+  runCmd "sudo ufw enable"\
+         "enabling UFW at boot"
+
+  if which syncthing >/dev/null; then
+    runCmd "sudo ufw allow syncthing" \
+           "adding UFW rules for Syncthing"
+  fi
+}
 
 #
 # virtualbox-6.1
