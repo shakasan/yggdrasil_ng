@@ -69,11 +69,6 @@ function showConfigMenu () {
         enableTmpRAM
         pressKey
         ;;
-      "screenfetch")
-        clear
-        addScreenfetchBashrc
-        pressKey
-        ;;
       "historyTS")
         clear
         enableHistoryTS

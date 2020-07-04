@@ -100,7 +100,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       installAppsFromList webcam
       updateMicrocode
       msg "Applying system customizations"
-      addScreenfetchBashrc
       enableHistoryTS
       msg "Installing external apps"
       installViber
@@ -141,7 +140,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       updateMicrocode
       installAppsFromList cardreader
       msg "Applying system customizations"
-      addScreenfetchBashrc
       enableHistoryTS
       installAppsFromList unbound
       msg "Installing additional themes/icons"

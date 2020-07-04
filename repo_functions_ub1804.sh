@@ -1144,7 +1144,18 @@ gcc8;gcc8_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
 virtualbox-6.1;virtualbox-6.1_PostTrtFct
 gufw;gufw_PostTrtFct
-numlockx;numlockx_PostTrtFct"
+numlockx;numlockx_PostTrtFct
+screenfetch;screenfetch_PostTrtFct"
+
+#
+# screenfetch in .bashrc
+#
+function screenfetch_PostTrtFct () {
+  runCmd "touch /home/$myHomedir/.bashrc" \
+         "creating .bashrc file if necessary"
+  runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc" \
+         "adding screenfetch to .bashrc"
+}
 
 #
 # numlockx

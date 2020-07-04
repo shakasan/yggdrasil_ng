@@ -22,17 +22,6 @@ function enableTmpRAM () {
 }
 
 #
-# add screenfetch exec in .bashrc
-#
-function addScreenfetchBashrc () {
-  checkAndInstallDep apt screenfetch screenfetch
-  runCmd "touch /home/$myHomedir/.bashrc" \
-         "creating .bashrc file if necessary"
-  runCmd "echo 'screenfetch -t' | tee -a /home/$myHomedir/.bashrc" \
-         "adding screenfetch to .bashrc"
-}
-
-#
 # cli history cmd timestamp enable
 #
 function enableHistoryTS () {
