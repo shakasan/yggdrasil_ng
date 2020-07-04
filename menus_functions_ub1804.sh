@@ -336,6 +336,7 @@ function showAppInstallMenu () {
     "pidgin" "Pidgin plugins" \
     "nitrogen" "Nitrogen WP Manager" \
     "wine" "Wine Builds" \
+    "snap" "Unlock/Install SNAP + Store" \
     "viber" "Viber IM desktop app" \
     "slack" "Slack App" \
     "appimagelauncher" "AppImage Launcher" \
@@ -396,6 +397,9 @@ function showAppInstallMenu () {
         ;;
       "wine")
         installAppsFromListMenu wine
+        ;;
+      "snap")
+        installAppsFromListMenu snap
         ;;
       "viber")
         installViberMenu

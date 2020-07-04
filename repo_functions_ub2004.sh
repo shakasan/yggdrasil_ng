@@ -20,9 +20,10 @@
 # List of packages available
 # fields : package name, package manager, category, unique ID for external functions
 #
-Apps="apt-transport-https;apt;init;apt-transport-https
+Apps="snapd;apt;snap;snapd
+snap-store;snap;snap;snap-store
+apt-transport-https;apt;init;apt-transport-https
 flatpak;apt;init;flatpak
-snapd;apt;init;snapd
 ubuntu-make;apt;init;ubuntu-make
 ruby-dev;apt;init;ruby-dev
 nodejs;apt;init;nodejslts
@@ -96,6 +97,7 @@ org.entangle_photo.Manager;flatpak;multimedia;entangle
 krita;apt;multimedia;krita
 soundconverter;apt;multimedia;soundconverter
 gimp;apt;multimedia;gimp
+gimp-help-fr;apt;multimedia;gimp
 quodlibet;apt;multimedia;quodlibet
 peek;apt;multimedia;peek
 bino;apt;multimedia;bino
@@ -340,8 +342,6 @@ codeblocks-contrib;apt;codeblocks;codeblocks-contrib
 geany;apt;geany;geany
 geany-plugins;apt;geany;geany-plugins
 io.brackets.Brackets;flatpak;brackets;brackets
-pycharm-community;snap;pycharm-community;pycharm-community
-pycharm-professional;snap;pycharm-professional;pycharm-professional
 sublime-text;apt;sublime-text;sublime-text
 kicad;apt;cad;kicad
 librecad;apt;cad;librecad
@@ -365,7 +365,6 @@ qttools5-doc-html;apt;qt;qttools5-doc-html
 fbreader;apt;ebook;fbreader
 calibre;apt;ebook;calibre
 android-studio;apt;androidstudio;androidstudio
-intellij-idea-community;snap;idea;idea
 com.axosoft.GitKraken;flatpak;gitkraken;gitkraken
 linux-generic-hwe-20.04;apt;hwe;linux-generic-hwe-20.04"
 

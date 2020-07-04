@@ -67,7 +67,7 @@ echo "--[ Yggdrasil log ]--[ "$cDate" ]--[ "$cTime" ]-----------------------" >>
 #
 # arguments/options management with getopts
 
-while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
+while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,k,p" option; do
   case "$option" in
     a) # install all apps
       if [ $ygginitCount = false ]; then
@@ -237,6 +237,17 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,k,p" option; do
       fi
       msg "Installing HWE (newer kernel+xorg)"
       installAppsFromList hwe
+      ;;
+    g) # Unlock+Install SNAP + Store
+      if [ $ygginitCount = false ]; then
+        msg "Initializing"
+        yggInit
+        msg "Updating the system"
+        updateSystem
+        ygginitCount=true
+      fi
+      msg "Unlock/Install SNAP + Store"
+      installAppsFromList snap
       ;;
     u)
       msg "Initializing"
