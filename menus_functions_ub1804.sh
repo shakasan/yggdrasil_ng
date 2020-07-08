@@ -186,10 +186,6 @@ function showDevInstallMenu () {
     "brackets" "Brackets" \
     "codeblocks" "CodeBlocks" \
     "geany" "Geany" \
-    "idea" "Idea" \
-    "eclipse" "Eclipse" \
-    "pycharmprofessional" "PyCharm Professional edition" \
-    "pycharmcommunity" "PyCharm Community edition" \
     "vsc" "Visual Studio Code" \
     "androidstudio" "Android Studio" \
     "sublimetext" "Sublime Text" \
@@ -243,18 +239,6 @@ function showDevInstallMenu () {
         ;;
       "geany")
         installAppsFromListMenu geany
-        ;;
-      "idea")
-        installAppsFromListMenu idea
-        ;;
-      "eclipse")
-        installAppsFromListMenu eclipse
-        ;;
-      "pycharmprofessional")
-        installAppsFromListMenu pycharm-professional
-        ;;
-      "pycharmcommunity")
-        installAppsFromListMenu pycharm-community
         ;;
       "vsc")
         installAppsFromListMenu code
