@@ -118,8 +118,6 @@ com.teamspeak.TeamSpeak;flatpak;internet;TeamSpeak
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
 google-chrome-stable;apt;internet;google-chrome-stable
-chromium-browser;apt;internet;chromium-browser
-chromium-browser-l10n;apt;internet;chromium-browser-l10n
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
