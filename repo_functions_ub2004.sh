@@ -629,8 +629,8 @@ function addRepo_Webupd8 () {
 function addRepo_MKVToolnix () {
   addKey "https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt"
   addRepo mkv.list \
-          "deb https://mkvtoolnix.download/ubuntu/ focal main" \
-          "deb-src https://mkvtoolnix.download/ubuntu/ focal main"
+          "deb [arch=amd64] https://mkvtoolnix.download/ubuntu/ focal main" \
+          "deb-src [arch=amd64] https://mkvtoolnix.download/ubuntu/ focal main"
 }
 
 #
