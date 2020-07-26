@@ -1018,6 +1018,7 @@ nodejslts;nodejslts_PostTrtFct
 angularcli;angularcli_PostTrtFct
 dockerio;dockerio_PostTrtFct
 megasync;megasync_PostTrtFct
+nextcloud-desktop;nextcloud_PostTrtFct
 flatpak;flatpak_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
 virtualbox;virtualbox_PostTrtFct
@@ -1098,7 +1099,6 @@ function nodejslts_PostTrtFct () {
   retCode $ret_code
 }
 
-
 #
 # GEM / Ruby Dev
 #
@@ -1123,7 +1123,6 @@ function flatpak_PostTrtFct () {
   fi
 }
 
-
 #
 # MEGASync
 #
@@ -1133,6 +1132,18 @@ function megasync_PostTrtFct () {
   fi
   if which nautilus >/dev/null; then
     installPackage apt nautilus-megasync
+  fi
+}
+
+#
+# Nextcloud
+#
+function nextcloud_PostTrtFct () {
+  if which nautilus >/dev/null; then
+    installPackage apt nautilus-nextcloud
+  fi
+  if which caja >/dev/null; then
+    installPackage apt caja-nextcloud
   fi
 }
 

@@ -139,7 +139,7 @@ org.gnome.Geary;flatpak;internet;geary
 birdtray;apt;internet;birdtray
 telegram;apt;internet;telegram
 skypeforlinux;apt;internet;skypeforlinux
-nextcloud-client;apt;internet;nextcloud-client
+nextcloud-desktop;apt;internet;nextcloud-desktop
 deluge-gtk;apt;internet;deluge-gtk
 deluge-torrent;apt;internet;deluge-torrent
 vivaldi-stable;apt;internet;vivaldi-stable
@@ -249,7 +249,6 @@ caja-wallpaper;apt;cajaplugins;caja-wallpaper
 caja-sendto;apt;cajaplugins;caka-sendto
 caja-image-converter;apt;cajaplugins;caja-image-converter
 insync-caja;apt;cajaplugins;insync-caja
-nextcloud-client-caja;apt;cajaplugins;nextcloud-client-caja
 nautilus;apt;nautilus;nautilus
 file-roller;apt;nautilus;file-roller
 nautilus-emblems;apt;nautilus;nautilus-emblems
@@ -426,7 +425,7 @@ opera-stable;addRepo_Opera
 insync;addRepo_Insync
 google-chrome-stable;addRepo_ChromeStable
 atom;addRepo_Atom
-nextcloud-client;addRepo_NextCloud
+nextcloud-desktop;addRepo_NextCloud
 wireshark;addRepo_WireShark
 darktable;addRepo_DarkTable
 brackets;addRepo_Brackets
@@ -1139,6 +1138,7 @@ nodejslts;nodejslts_PostTrtFct
 angularcli;angularcli_PostTrtFct
 dockerio;dockerio_PostTrtFct
 megasync;megasync_PostTrtFct
+nextcloud-desktop;nextcloud_PostTrtFct
 flatpak;flatpak_PostTrtFct
 gcc8;gcc8_PostTrtFct
 ruby-dev;ruby-dev_PostTrtFct
@@ -1220,7 +1220,6 @@ function nodejslts_PostTrtFct () {
   retCode $ret_code
 }
 
-
 #
 # GEM / Ruby Dev
 #
@@ -1255,7 +1254,6 @@ function flatpak_PostTrtFct () {
   fi
 }
 
-
 #
 # MEGASync
 #
@@ -1265,6 +1263,18 @@ function megasync_PostTrtFct () {
   fi
   if which nautilus >/dev/null; then
     installPackage apt nautilus-megasync
+  fi
+}
+
+#
+# Nextcloud
+#
+function nextcloud_PostTrtFct () {
+  if which nautilus >/dev/null; then
+    installPackage apt nextcloud-client-nautilus
+  fi
+  if which caja >/dev/null; then
+    installPackage apt nextcloud-client-caja
   fi
 }
 
