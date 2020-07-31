@@ -53,6 +53,24 @@ function installSlackMenu () {
 }
 
 #
+# XnViewMP (headless)
+#
+function installXnViewMP () {
+  installPackageDpkg https://download.xnview.com/XnViewMP-linux-x64.deb \
+                     xnviewmp.deb \
+                     no
+}
+
+#
+# XnViewMP (Menu)
+#
+function installXnViewMPMenu () {
+  installPackageDpkg https://download.xnview.com/XnViewMP-linux-x64.deb \
+                     xnviewmp.deb \
+                     yes
+}
+
+#
 # update AMD/Intel CPU Microcode
 #
 function updateMicrocode () {

@@ -120,7 +120,6 @@ peek;apt;multimedia;peek
 bino;apt;multimedia;bino
 kdenlive;apt;multimedia;kdenlive
 com.github.huluti.ImCompressor;flatpak;multimedia;ImCompressor
-com.xnview.XnViewMP;flatpak;multimedia;xnviewmp
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync

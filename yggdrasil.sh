@@ -106,6 +106,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       installBoostnotes
       installTeamViewer13
       installAppImageLauncher
+      installXnViewMP
       ;;
     f) # full install
       if [ $ygginitCount = false ]; then
@@ -149,6 +150,7 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       installBoostnotes
       installTeamViewer13
       installAppImageLauncher
+      installXnViewMP
       ;;
     c) # install themes and icons
       if [ $ygginitCount = false ]; then
