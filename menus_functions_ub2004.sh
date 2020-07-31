@@ -303,7 +303,6 @@ function showAppInstallMenu () {
     "viber" "Viber IM desktop app" \
     "slack" "Slack App" \
     "appimagelauncher" "AppImage Launcher" \
-    "xnviewmp" "XNView MP" \
     "Back" "Back"  3>&1 1>&2 2>&3)
 
     case $appsInstallMenuOptions in
@@ -372,9 +371,6 @@ function showAppInstallMenu () {
         ;;
       "appimagelauncher")
         installAppImageLauncherMenu
-        ;;
-      "xnviewmp")
-        installXnViewMPMenu
         ;;
       "Back")
         break

@@ -108,6 +108,7 @@ flacon;apt;multimedia;flacon
 simplescreenrecorder;apt;multimedia;simplescreenrecorder
 com.ozmartians.VidCutter;flatpak;multimedia;vidcutter
 com.orama_interactive.Pixelorama;flatpak;multimedia;pixelorama
+com.xnview.XnViewMP;flatpak;multimedia;xnviewmp
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync

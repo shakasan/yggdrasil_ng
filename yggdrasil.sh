@@ -105,7 +105,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       installViber
       installBoostnotes
       installTeamViewer13
-      installXnViewMP
       installAppImageLauncher
       ;;
     f) # full install
@@ -149,7 +148,6 @@ while getopts ":h,v,f,c,u,a,d,q,s,t,w,g,j,k,p" option; do
       installViber
       installBoostnotes
       installTeamViewer13
-      installXnViewMP
       installAppImageLauncher
       ;;
     c) # install themes and icons
