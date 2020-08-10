@@ -380,7 +380,7 @@ flake8;pip;atom;flake8
 autopep8;pip;atom;autopep8
 htmlbeautifier;gem;atom;htmlbeautifier
 nitrogen;apt;nitrogen;nitrogen
-libreoffice;apt;office;libreoffice6
+libreoffice;apt;office;libreoffice
 winehq-stable;apt;wine;winehq-stable
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
@@ -410,7 +410,7 @@ linux-generic-hwe-18.04;apt;hwe;linux-generic-hwe-18.04"
 #
 AppsRepo="kodi-beta;addRepo_KodiBeta
 kodi-nightly;addRepo_KodiNightly
-libreoffice6;addRepo_Libreoffice6
+libreoffice;addRepo_Libreoffice
 mongodb;addRepo_MongoDB_CE
 gyazo;addRepo_Gyazo
 code;addRepo_VSCode
@@ -1045,9 +1045,9 @@ function addRepo_MongoDB_CE () {
 }
 
 #
-# LibreOffice 6
+# LibreOffice
 #
-function addRepo_Libreoffice6 () {
+function addRepo_Libreoffice () {
   addPPA ppa:libreoffice/ppa
 }
 

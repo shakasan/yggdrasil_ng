@@ -352,7 +352,7 @@ flake8;pip;atom;flake8
 autopep8;pip;atom;autopep8
 htmlbeautifier;gem;atom;htmlbeautifier
 nitrogen;apt;nitrogen;nitrogen
-libreoffice;apt;office;libreoffice6
+libreoffice;apt;office;libreoffice
 winehq-stable;apt;wine;winehq-stable
 winetricks;apt;wine;winetricks
 playonlinux;apt;wine;playonlinux
@@ -381,6 +381,7 @@ linux-generic-hwe-20.04;apt;hwe;linux-generic-hwe-20.04"
 # fields : unique ID, function to add repo
 #
 AppsRepo="code;addRepo_VSCode
+libreoffice;addRepo_Libreoffice
 androidstudio;addRepo_AndroidStudio
 sublime-text;addRepo_SublimeText
 vivaldi-stable;addRepo_Vivaldi
@@ -933,6 +934,13 @@ function addRepo_Gyazo () {
 #   addRepo "mongodb-org-4.2.list" \
 #           "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse"
 # }
+
+#
+# LibreOffice
+#
+function addRepo_Libreoffice () {
+  addPPA ppa:libreoffice/ppa
+}
 
 #
 # Visual Studio Code
