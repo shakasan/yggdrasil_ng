@@ -118,6 +118,7 @@ com.teamspeak.TeamSpeak;flatpak;internet;TeamSpeak
 quiterss;apt;internet;quiterss
 opera-stable;apt;internet;opera-stable
 google-chrome-stable;apt;internet;google-chrome-stable
+chromium-browser;apt;internet;chromium-browser
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
@@ -461,7 +462,8 @@ kodi;addRepo_Kodi
 avidemux;addRepo_Avidemux
 winehq-stable;addRepo_WineHQ
 audacity;addRepo_Audacity
-ubuntu-make;addRepo_UbuntuMake"
+ubuntu-make;addRepo_UbuntuMake
+chromium-browser;addRepo_ChromiumBrowser"
 
 #TODO : no focal support yet / or not needed yet
 #rawtherapee;addRepo_DhorMyWay
@@ -481,6 +483,13 @@ ubuntu-make;addRepo_UbuntuMake"
 #green-recorder;addRepo_GreenRecorder
 #mongodb;addRepo_MongoDB_CE
 #flatpak;addRepo_flatpak
+
+#
+# Chromium Browser BETA (to avoid SNAP version)
+#
+function addRepo_ChromiumBrowser () {
+  addPPA ppa:saiarcot895/chromium-beta
+}
 
 #
 # Audacity
@@ -969,7 +978,25 @@ function addRepo_AndroidStudio () {
 AppsPreTrtFct="opera-stable;opera_PreTrtFct
 steam;steam_PreTrtFct
 wireshark;wireshark_PreTrtFct
-snapd;snapd_PreTrtFct"
+snapd;snapd_PreTrtFct
+chromium-browser;chromium_PreTrtFct"
+
+#
+# Chromium BETA PPA Pinning
+#
+function chromium_PreTrtFct () {
+  if [ ! -f /etc/apt/preferences.d/saiarcot895-chromium-beta.pref ]; then
+    printf "[CMD] APT Pinning Chromium BETA PPA "
+    printf "[CMD] APT Pinning Chromium BETA PPA\n" &>> $logFile
+    topin='# Ensure packages from saiarcot895-chromium-beta PPA have priority\n'
+    topin+='Package: *\n'
+    topin+='Pin: release o=LP-PPA-saiarcot895-chromium-beta\n'
+    topin+='Pin-Priority: 800\n'
+    echo -e $topin | sudo tee /etc/apt/preferences.d/saiarcot895-chromium-beta.pref &>> $logFile
+    ret_code=$?
+    retCode $ret_code
+  fi
+}
 
 #
 # Snap
@@ -1091,7 +1118,7 @@ function nodejslts_PostTrtFct () {
   retCode $ret_code
 
   if [ `grep 'PATH=~/.local/bin/:$PATH' ~/.bashrc | wc -l` -gt 0 ]; then
-    printf "[NPM] add ~/.local/bin to PATH ... already added  [ "$BOLDVERT"OK"$NORMAL" ]\n "
+    printf "[NPM] add ~/.local/bin to PATH ... already added  [ "$BOLDVERT"OK"$NORMAL" ]\n"
   else
     printf "[NPM] add ~/.local/bin to PATH "
     printf "\n[NPM] add ~/.local/bin to PATH\n" &>> $logFile
