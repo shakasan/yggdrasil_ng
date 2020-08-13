@@ -199,6 +199,7 @@ balena-etcher-electron;apt;utilities;balena-etcher-electron
 org.gabmus.hydrapaper;flatpak;utilities;hydrapaper
 nvme-cli;apt;utilities;nvme-cli
 font-manager;apt;utilities;font-manager
+com.github.tchx84.Flatseal;flatpak;utilities;flatseal
 python3-dev;apt;python;python3-dev
 python3-pyqt5;apt;python;python3-pyqt5
 pyqt5-dev-tools;apt;python;pyqt5-dev-tools
