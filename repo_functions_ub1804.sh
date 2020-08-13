@@ -135,7 +135,7 @@ chromium-browser-l10n;apt;internet;chromium-browser-l10n
 filezilla;apt;internet;filezilla
 hexchat;apt;internet;hexchat
 mumble;apt;internet;mumble
-org.gnome.Geary;flatpak;internet;geary
+geary;apt;internet;geary
 birdtray;apt;internet;birdtray
 telegram;apt;internet;telegram
 skypeforlinux;apt;internet;skypeforlinux
