@@ -298,7 +298,7 @@ cheese;apt;webcam;cheese
 tlp;apt;tlp;tlp
 notepadqq;apt;dev;notepadqq
 gpick;apt;dev;gpick
-virtualbox;apt;dev;virtualbox
+virtualbox-6.1;apt;dev;virtualbox
 build-essential;apt;dev;build-essential
 ghex;apt;dev;ghex
 glade;apt;dev;glade
