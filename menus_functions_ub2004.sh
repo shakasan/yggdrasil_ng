@@ -175,6 +175,7 @@ function showDevInstallMenu () {
     "devbase" "dev apps and tools" \
     "java11" "OpenJDK Java 11 dev env" \
     "javascript" "JavaScript dev env" \
+    "mongodb" "MongoDB CE 4" \
     "php" "PHP dev env" \
     "lua" "Lua dev env" \
     "ruby" "Ruby dev env" \
@@ -205,6 +206,9 @@ function showDevInstallMenu () {
         ;;
       "javascript")
         installAppsFromListMenu javascript
+        ;;
+      "mongodb")
+        installAppsFromListMenu mongodb
         ;;
       "php")
         installAppsFromListMenu php

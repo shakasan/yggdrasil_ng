@@ -108,6 +108,7 @@ flacon;apt;multimedia;flacon
 simplescreenrecorder;apt;multimedia;simplescreenrecorder
 com.ozmartians.VidCutter;flatpak;multimedia;vidcutter
 com.orama_interactive.Pixelorama;flatpak;multimedia;pixelorama
+vainfo;apt;multimedia;vainfo
 syncthing;apt;internet;syncthing
 syncthing-gtk;apt;internet;syncthinggtk
 insync;apt;internet;insync
@@ -328,6 +329,7 @@ ionic;npm;javascript;ionic
 cordova;npm;javascript;cordova
 eslint;npm;javascript;eslint
 web-ext;npm;javascript;web-ext
+mongodb-org;apt;mongodb;mongodb
 openjdk-11-jdk;apt;java11;openjdk-11-jdk
 php7.4-cli;apt;php;php7.4-cli
 php-pear;apt;php;php-pear
@@ -372,7 +374,7 @@ linux-generic-hwe-20.04;apt;hwe;linux-generic-hwe-20.04"
 #TODO : no focal support yet
 #aptik;apt;utilities;aptik
 #green-recorder;apt;multimedia;green-recorder
-#mongodb-org;apt;mongodb;mongodb
+
 
 #-----------------------------------------------------------------------------#
 # Specific Repo list and functions                                            #
@@ -464,7 +466,8 @@ avidemux;addRepo_Avidemux
 winehq-stable;addRepo_WineHQ
 audacity;addRepo_Audacity
 ubuntu-make;addRepo_UbuntuMake
-chromium-browser;addRepo_ChromiumBrowser"
+chromium-browser;addRepo_ChromiumBrowser
+mongodb;addRepo_MongoDB_CE"
 
 #TODO : no focal support yet / or not needed yet
 #rawtherapee;addRepo_DhorMyWay
@@ -482,7 +485,6 @@ chromium-browser;addRepo_ChromiumBrowser"
 #syncthinggtk;addRepo_SyncthingGtk
 #wireshark;addRepo_WireShark
 #green-recorder;addRepo_GreenRecorder
-#mongodb;addRepo_MongoDB_CE
 #flatpak;addRepo_flatpak
 
 #
@@ -937,13 +939,13 @@ function addRepo_Gyazo () {
 }
 
 #
-# MongoDB 4 CE #TODO : no focal support yet
+# MongoDB 4 CE
 #
-# function addRepo_MongoDB_CE () {
-#   addKey "https://www.mongodb.org/static/pgp/server-4.2.asc"
-#   addRepo "mongodb-org-4.2.list" \
-#           "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse"
-# }
+function addRepo_MongoDB_CE () {
+  addKey "https://www.mongodb.org/static/pgp/server-4.4.asc"
+  addRepo "mongodb-org-4.4.list" \
+          "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse"
+}
 
 #
 # LibreOffice
